@@ -33,6 +33,8 @@ test("old-theme preserves observed Wharton shell and layout measurements", async
       heroHeight: box(".p-hero").height,
       contentWidth: box(".p-section .u-container").width,
       brandOffset: box(".g-global-header__brand").x,
+      programCenter: box(".g-global-header__program").y + (box(".g-global-header__program").height / 2),
+      knowledgeLogoCenter: box(".g-program-navigation__logo").y + (box(".g-program-navigation__logo").height / 2),
       contentToken: root.getPropertyValue("--size-content").trim(),
       navigationToken: root.getPropertyValue("--breakpoint-navigation").trim(),
       cardRadius: card.borderRadius,
@@ -53,6 +55,7 @@ test("old-theme preserves observed Wharton shell and layout measurements", async
     expect(values.heroHeight).toBe(580);
     expect(values.contentWidth).toBe(1225);
     expect(values.brandOffset).toBe(100);
+    expect(values.knowledgeLogoCenter).toBeCloseTo(values.programCenter, 1);
     const knowledgeLink = page.getByRole("link", { name: "Knowledge at Wharton" });
     await expect(knowledgeLink).toBeVisible();
     const knowledgeLogo = knowledgeLink.locator("img");
