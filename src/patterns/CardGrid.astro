@@ -11,7 +11,7 @@ const { id, eyebrow, heading, items, columns = 3, variant = "promotional" } = As
   <Container>
     {eyebrow && <p class="c-eyebrow">{eyebrow}</p>}
     {heading && <Heading as="h2" id={`${id}-heading`}>{heading}</Heading>}
-    <div class="p-card-grid" style={`--grid-columns: ${columns}`}>
+    <div class:list={["p-card-grid", `p-card-grid--${variant}`]} style={`--grid-columns: ${columns}`}>
       {items.map((item) => <Card {...item} {variant} />)}
     </div>
   </Container>

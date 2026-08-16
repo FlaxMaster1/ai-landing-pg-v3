@@ -74,6 +74,16 @@ test("current theme applies observed Wharton form and tab treatments", async ({ 
   await expect(tab).toHaveCSS("background-color", "rgb(250, 250, 250)");
 });
 
+test("catalog uses image-led story tiles", async ({ page }) => {
+  await page.goto("/catalog/");
+  const section = page.locator("#story-tiles");
+  await expect(section.getByRole("heading", { name: "Story tiles" })).toBeVisible();
+  const tiles = section.locator(".c-card--promotional");
+  await expect(tiles).toHaveCount(3);
+  await expect(tiles.locator(".u-responsive-media img")).toHaveCount(3);
+  await expect(tiles.first().locator(".c-card__action")).toBeHidden();
+});
+
 test("desktop global search uses the supplied normal and rollover artwork", async ({ page }, testInfo) => {
   test.skip(testInfo.project.name !== "chromium-desktop", "The supplied artwork is specific to the desktop white program bar.");
 

@@ -43,16 +43,20 @@
   :where(.c-card--promotional, .c-card--navigation, .c-card--feature, .c-card--media-led) > * { grid-area: 1 / 1; }
   :where(.c-card--promotional, .c-card--navigation, .c-card--feature, .c-card--media-led)::after {
     content: "";
+    position: absolute;
+    inset: 0;
     z-index: 1;
-    grid-area: 1 / 1;
-    background: linear-gradient(180deg, rgb(0 44 119 / 16%) 10%, rgb(0 30 75 / 86%) 100%);
+    background: linear-gradient(180deg, rgb(0 0 0 / 34%), rgb(0 0 0 / 64%));
     pointer-events: none;
   }
-  :where(.c-card--promotional, .c-card--navigation, .c-card--feature, .c-card--media-led) > .u-responsive-media { inline-size: 100%; block-size: 100%; }
+  :where(.c-card--promotional, .c-card--navigation, .c-card--feature, .c-card--media-led) > .u-responsive-media { position: absolute; inset: 0; inline-size: 100%; block-size: 100%; }
   :where(.c-card--promotional, .c-card--navigation, .c-card--feature, .c-card--media-led) .u-responsive-media img { block-size: 100%; aspect-ratio: auto; }
   :where(.c-card--promotional, .c-card--navigation, .c-card--feature, .c-card--media-led) .u-responsive-media figcaption { display: none; }
   :where(.c-card--promotional, .c-card--navigation, .c-card--feature, .c-card--media-led) .c-card__body { z-index: 2; align-self: end; }
   :where(.c-card--promotional, .c-card--navigation, .c-card--feature, .c-card--media-led) :where(h3, .c-card__title, .c-eyebrow) { color: inherit; }
+  .c-card--promotional .c-card__title { font-size: clamp(1.75rem, 3cqw, 2.5rem); line-height: 1.08; }
+  .c-card--promotional .c-card__action { display: none; }
+  .c-card--promotional .c-card__body { position: absolute; inset-inline: 0; inset-block-end: 0; }
   .c-card--promotional .c-card__action, .c-card--navigation .c-card__action, .c-card--feature .c-card__action, .c-card--media-led .c-card__action { color: inherit; }
   .c-card--promotional .c-eyebrow, .c-card--navigation .c-eyebrow, .c-card--feature .c-eyebrow, .c-card--media-led .c-eyebrow { color: inherit; }
   :where(.c-card--editorial, .c-card--compact, .c-card--text-led) { border-block-end: var(--border-thin) solid var(--color-neutral-400); }

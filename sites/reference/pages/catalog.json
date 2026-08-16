@@ -10,14 +10,14 @@
       { "type": "pageIntro", "id": "catalog-intro", "eyebrow": "Development catalog", "text": "A lightweight catalog route exercises approved shared components and patterns without adding Storybook or a client framework." },
       {
         "type": "cardGrid",
-        "id": "card-variants",
-        "heading": "Card anatomy and variants",
+        "id": "story-tiles",
+        "heading": "Story tiles",
         "columns": 3,
         "variant": "promotional",
         "items": [
-          { "eyebrow": "Editorial metadata", "title": "Media-led card", "description": "A stable asset ID resolves to local site media.", "image": { "assetId": "abstract-campus" }, "action": { "label": "View asset handling", "url": "/resources/" } },
-          { "eyebrow": "Navigation", "title": "Text-led card", "description": "The same component omits its optional media region.", "action": { "label": "View patterns", "url": "/academics/" } },
-          { "eyebrow": "Composition", "title": "Shared semantics", "description": "Variant data changes presentation without creating a new component.", "action": { "label": "View entities", "url": "/people/" } }
+          { "title": "A structured authoring workflow", "description": "Content architecture", "image": { "assetId": "abstract-collaboration" }, "action": { "label": "Read story", "url": "/insights/structured-content/" } },
+          { "title": "Shared patterns across site configurations", "description": "Components", "image": { "assetId": "abstract-campus" }, "action": { "label": "Read story", "url": "/catalog/#story-tiles" } },
+          { "title": "Accessible interaction as a contract", "description": "Accessibility", "image": { "assetId": "portrait-a" }, "action": { "label": "Read story", "url": "/catalog/#frequently-asked" } }
         ]
       },
       {
