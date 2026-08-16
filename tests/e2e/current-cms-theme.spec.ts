@@ -1,8 +1,24 @@
-import { expect, test } from "@playwright/test";
+import { expect, test } from "../support/playwright";
 
 test("current theme preserves observed Wharton shell and layout measurements", async ({ page }, testInfo) => {
   await page.goto("/");
   await page.evaluate(async () => { await document.fonts.ready; });
+
+  const requiredFonts = [
+    "Acumin Pro",
+    "Acumin Pro Bold",
+    "Acumin Pro Black",
+    "Acumin Pro Condensed",
+    "Acumin Pro Condensed Bold",
+    "Acumin Pro Condensed Black",
+    "Minion Pro"
+  ];
+  const fontStatuses = await page.evaluate((families) =>
+    families.map((family) => ({
+      family,
+      status: [...document.fonts].find((font) => font.family === family)?.status
+    })), requiredFonts);
+  expect(fontStatuses).toEqual(requiredFonts.map((family) => ({ family, status: "loaded" })));
 
   const values = await page.evaluate(() => {
     const box = (selector: string) => document.querySelector(selector)!.getBoundingClientRect();

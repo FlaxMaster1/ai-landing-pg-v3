@@ -1,4 +1,4 @@
-import { expect, test } from "@playwright/test";
+import { expect, test } from "../support/playwright";
 
 test("tabs support selection and arrow-key movement", async ({ page }) => {
   await page.goto("/academics/");

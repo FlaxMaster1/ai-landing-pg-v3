@@ -1,5 +1,5 @@
 import AxeBuilder from "@axe-core/playwright";
-import { expect, test } from "@playwright/test";
+import { expect, test } from "../support/playwright";
 
 const routes = ["/", "/catalog/", "/academics/", "/insights/structured-content/", "/events/", "/people/", "/search/", "/resources/"];
 
