@@ -5,6 +5,8 @@ import PageRenderer from "../rendering/PageRenderer.astro";
 import { findPage, loadSite } from "../rendering/site-loader";
 import { routeToSlug } from "../utilities/route";
 
+export const prerender = true;
+
 export const getStaticPaths = (() => {
   const site = loadSite();
   return site.pages

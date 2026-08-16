@@ -17,12 +17,17 @@ Two operational details were resolved inside the approved architecture:
 
 The newest TypeScript 7 release was not used because the current Astro checker supports TypeScript 5 or 6. The project pins TypeScript 6.0.3; this is compatibility management, not an architecture deviation.
 
+## ChatGPT Sites validation
+
+The neutral reference implementation was successfully deployed as an owner-only ChatGPT Site on August 16, 2026. All eight routes, shared assets, responsive layouts, keyboard interactions, dialogs, navigation, search, prototype form behavior, design tokens, accessibility scans, and local visual baselines were exercised against the hosted result. See `sites-validation.md` for the deployment record and compatibility changes.
+
 ## Remaining gaps
 
-- ChatGPT Sites compatibility and publishing cannot be validated from this local workspace; it remains an external gate.
 - The workspace began without Git metadata. It is now connected to `FlaxMaster1/wharton-prototype-framework`; the approved Step 6 implementation is synchronized to the authoritative `main` branch, with its review history preserved in pull request 1.
 - Undergraduate global navigation, real content, template reproduction, and production responsive comparison are deliberately deferred to Step 7.
 - Production adapters for Events HQ, Faculty Data, forms, content feeds, search, video, authentication, and analytics are interfaces only; fixtures/prototype behavior is intentional for Step 6.
 - Canonical inventory items not needed for the foundation demo remain unimplemented, including Icon, Video, standalone FormLabel/FormMessage and Tab primitives, Pagination, LoadMore, FilterControl/FilterBar, carousels, comparison, calendars, course/publication/award views, newsletter/lead-generation specializations, and live search results.
 - Automated accessibility checks pass, but manual assistive-technology and content review remains required.
 - Visual baselines currently target Chromium on macOS; broader cross-browser behavioral coverage belongs in the next quality expansion.
+- The neutral navigation fixture marks “Framework home” current on every route; Step 7 should derive current-page state from the selected route when real site navigation is introduced.
+- No favicon is configured for the neutral reference fixture. The hosted framework pages and declared assets load successfully, but browsers request `/favicon.ico` and receive a non-blocking 404.

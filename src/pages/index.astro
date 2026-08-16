@@ -2,6 +2,7 @@
 import SiteLayout from "../layouts/SiteLayout.astro";
 import PageRenderer from "../rendering/PageRenderer.astro";
 import { findPage, loadSite } from "../rendering/site-loader";
+export const prerender = true;
 const site = loadSite();
 const page = findPage(site, "/");
 ---
