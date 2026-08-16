@@ -1,0 +1,5 @@
+---
+interface Props { as?: "p" | "div" | "span"; class?: string; }
+const { as: Element = "p", class: className }: Props = Astro.props;
+---
+<Element class={className}><slot /></Element>

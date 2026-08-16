@@ -1,0 +1,41 @@
+{
+  "additionalLinks": [
+    { "label": "Framework catalog", "url": "/catalog/" },
+    { "label": "Reference routes", "url": "/resources/" }
+  ],
+  "institutionalGroups": [
+    {
+      "heading": "Templates",
+      "links": [
+        { "label": "Homepage", "url": "/" },
+        { "label": "Landing", "url": "/academics/" },
+        { "label": "Article", "url": "/insights/structured-content/" }
+      ]
+    },
+    {
+      "heading": "Structured data",
+      "links": [
+        { "label": "People", "url": "/people/" },
+        { "label": "Events", "url": "/events/" }
+      ]
+    },
+    {
+      "heading": "Framework",
+      "links": [
+        { "label": "Catalog", "url": "/catalog/" },
+        { "label": "Search", "url": "/search/" }
+      ]
+    },
+    {
+      "heading": "Review",
+      "links": [
+        { "label": "Responsive behavior", "url": "/academics/#learning-modes" },
+        { "label": "Accessibility conventions", "url": "/catalog/#frequently-asked" }
+      ]
+    }
+  ],
+  "legal": [
+    { "label": "Placeholder privacy", "url": "/resources/#privacy" },
+    { "label": "Placeholder accessibility", "url": "/resources/#accessibility" }
+  ]
+}

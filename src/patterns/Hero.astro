@@ -1,0 +1,28 @@
+---
+import type { Action, Asset } from "@entities/index";
+import Button from "@components/Button.astro";
+import Heading from "@components/Heading.astro";
+import Image from "@components/Image.astro";
+import Container from "@utilities/Container.astro";
+interface Props {
+  id: string;
+  eyebrow?: string;
+  heading: string;
+  text?: string;
+  image?: Asset;
+  actions?: Action[];
+  variant?: "short" | "tall" | "media";
+}
+const { id, eyebrow, heading, text, image, actions = [], variant = "short" } = Astro.props;
+---
+<section id={id} class:list={["p-hero", `p-hero--${variant}`]} aria-labelledby={`${id}-heading`}>
+  <Container class="p-hero__layout">
+    <div class="p-hero__content">
+      {eyebrow && <p class="c-eyebrow">{eyebrow}</p>}
+      <Heading as="h1" id={`${id}-heading`}>{heading}</Heading>
+      {text && <p class="p-hero__text">{text}</p>}
+      {actions.length > 0 && <div class="u-layout--cluster">{actions.map((action) => <Button href={action.url} variant={action.type} external={action.external}>{action.label}</Button>)}</div>}
+    </div>
+    {image && <Image asset={image} loading="eager" class="p-hero__media" />}
+  </Container>
+</section>

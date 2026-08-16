@@ -1,0 +1,64 @@
+[
+  {
+    "route": "/",
+    "template": "homepage",
+    "title": "A reusable foundation for Wharton prototypes",
+    "titleMode": "hero",
+    "width": "full-window",
+    "sidebar": "none",
+    "seo": { "title": "Framework demonstration" },
+    "sections": [
+      {
+        "type": "hero",
+        "id": "overview",
+        "eyebrow": "Reference implementation",
+        "heading": "A reusable foundation for Wharton prototypes",
+        "text": "Structured configuration, shared contracts, and static-first rendering combine into a portable demonstration site.",
+        "image": { "assetId": "abstract-campus" },
+        "actions": [
+          { "label": "Explore the catalog", "url": "/catalog/", "type": "primary" },
+          { "label": "See template routes", "url": "/resources/", "type": "secondary" }
+        ],
+        "variant": "media"
+      },
+      {
+        "type": "cardGrid",
+        "id": "foundation",
+        "eyebrow": "Framework layers",
+        "heading": "Composition from stable contracts",
+        "columns": 3,
+        "variant": "navigation",
+        "items": [
+          { "title": "Shared presentation", "description": "Components and patterns contain structure and behavior, not site copy.", "action": { "label": "View catalog", "url": "/catalog/" } },
+          { "title": "Structured entities", "description": "Stories, events, people, and courses stay independent from their cards and lists.", "action": { "label": "View directory", "url": "/people/" } },
+          { "title": "Generic templates", "description": "Functional templates resolve from validated page data.", "action": { "label": "View landing page", "url": "/academics/" } }
+        ]
+      },
+      {
+        "type": "statsGroup",
+        "id": "proof-points",
+        "heading": "Reference proof points",
+        "items": [
+          { "value": "8", "label": "Canonical template resolvers" },
+          { "value": "1", "label": "Shared rendering pipeline" },
+          { "value": "0", "label": "Client frameworks" }
+        ]
+      },
+      {
+        "type": "storyCollection",
+        "id": "stories",
+        "heading": "Fixture-backed stories",
+        "entityIds": ["structured-authoring", "shared-patterns", "accessible-defaults"],
+        "variant": "grid"
+      },
+      {
+        "type": "callout",
+        "id": "next",
+        "heading": "Change content without changing components",
+        "text": "Every sentence on this page comes from reference-site configuration or entity data.",
+        "action": { "label": "Read the structured article", "url": "/insights/structured-content/", "type": "primary" },
+        "surface": "brand-accent"
+      }
+    ]
+  }
+]

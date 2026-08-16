@@ -1,0 +1,25 @@
+{
+  "$description": "Primitive color values. Names describe the scale rather than editorial usage.",
+  "color": {
+    "red": {
+      "700": { "$type": "color", "$value": "#990000" },
+      "800": { "$type": "color", "$value": "#740014" }
+    },
+    "blue": {
+      "700": { "$type": "color", "$value": "#001f5b" },
+      "900": { "$type": "color", "$value": "#00143d" }
+    },
+    "gold": {
+      "400": { "$type": "color", "$value": "#f2c14e" }
+    },
+    "neutral": {
+      "0": { "$type": "color", "$value": "#ffffff" },
+      "50": { "$type": "color", "$value": "#f7f7f5" },
+      "100": { "$type": "color", "$value": "#ecebe7" },
+      "300": { "$type": "color", "$value": "#c7c5be" },
+      "600": { "$type": "color", "$value": "#5c5a55" },
+      "800": { "$type": "color", "$value": "#292825" },
+      "950": { "$type": "color", "$value": "#11110f" }
+    }
+  }
+}

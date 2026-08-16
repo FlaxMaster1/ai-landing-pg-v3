@@ -1,0 +1,22 @@
+---
+import type { GetStaticPaths } from "astro";
+import SiteLayout from "../layouts/SiteLayout.astro";
+import PageRenderer from "../rendering/PageRenderer.astro";
+import { findPage, loadSite } from "../rendering/site-loader";
+import { routeToSlug } from "../utilities/route";
+
+export const getStaticPaths = (() => {
+  const site = loadSite();
+  return site.pages
+    .filter((page) => page.route !== "/")
+    .map((page) => ({ params: { slug: routeToSlug(page.route) }, props: { route: page.route } }));
+}) satisfies GetStaticPaths;
+
+interface Props { route: string; }
+const { route } = Astro.props;
+const site = loadSite();
+const page = findPage(site, route);
+---
+<SiteLayout {site} title={page.seo?.title ?? page.title} description={page.seo?.description}>
+  <PageRenderer {site} {page} />
+</SiteLayout>

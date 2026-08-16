@@ -1,0 +1,13 @@
+@layer reset {
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body, h1, h2, h3, p, ul, ol, figure { margin: 0; }
+  img, picture, video { display: block; max-inline-size: 100%; }
+  button, input, textarea, select { font: inherit; }
+  button { cursor: pointer; }
+  ul[role="list"], ol[role="list"] { list-style: none; padding: 0; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+  }
+}

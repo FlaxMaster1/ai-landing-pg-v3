@@ -1,0 +1,22 @@
+{
+  "extends": "astro/tsconfigs/strictest",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "exactOptionalPropertyTypes": false,
+    "noUncheckedIndexedAccess": true,
+    "paths": {
+      "@components/*": ["src/components/*"],
+      "@entities/*": ["src/entities/*"],
+      "@global/*": ["src/global/*"],
+      "@integrations/*": ["src/integrations/*"],
+      "@patterns/*": ["src/patterns/*"],
+      "@rendering/*": ["src/rendering/*"],
+      "@schemas/*": ["src/schemas/*"],
+      "@templates/*": ["src/templates/*"],
+      "@utilities/*": ["src/utilities/*"]
+    },
+    "types": ["node", "vite/client"]
+  },
+  "include": [".astro/types.d.ts", "**/*"],
+  "exclude": ["dist"]
+}

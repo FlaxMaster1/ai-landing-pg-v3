@@ -1,0 +1,37 @@
+{
+  "id": "reference",
+  "name": "Wharton Framework Reference",
+  "referenceDomain": "https://example.invalid/",
+  "prototypeTitle": "Wharton Web Prototype Framework reference implementation",
+  "theme": "core",
+  "featureFlags": {
+    "search": true,
+    "mobileNavigation": true
+  },
+  "defaultSeo": {
+    "titleSuffix": " | Framework Reference",
+    "description": "Representative placeholder content demonstrating the reusable Wharton Web Prototype Framework."
+  },
+  "ui": {
+    "skipToContent": "Skip to main content",
+    "menu": "Menu",
+    "closeMenu": "Close",
+    "back": "Back",
+    "search": "Search this reference site",
+    "searchSubmit": "Search",
+    "backToTop": "Back to top",
+    "eventEmpty": "No events are available in this fixture.",
+    "formSuccess": "Thanks. This prototype recorded no personal data.",
+    "programNavigationLabel": "Program navigation",
+    "primaryNavigationLabel": "Reference site navigation",
+    "footerLabel": "Institutional footer"
+  },
+  "integrations": {
+    "events": { "provider": "fixture" },
+    "content": { "provider": "fixture" },
+    "faculty": { "provider": "fixture" },
+    "forms": { "provider": "prototype" },
+    "search": { "provider": "fixture" },
+    "analytics": { "provider": "noop" }
+  }
+}

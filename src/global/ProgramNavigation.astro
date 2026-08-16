@@ -1,0 +1,8 @@
+---
+import type { NavigationItem } from "@entities/index";
+interface Props { items: NavigationItem[]; label: string; }
+const { items, label } = Astro.props;
+---
+<nav class="g-program-navigation" aria-label={label}>
+  <ul role="list">{items.map((item) => <li><a href={item.url} aria-current={item.active ? "page" : undefined} target={item.external ? "_blank" : undefined} rel={item.external ? "noreferrer" : undefined}>{item.label}</a></li>)}</ul>
+</nav>

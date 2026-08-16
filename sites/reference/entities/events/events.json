@@ -1,0 +1,26 @@
+[
+  {
+    "id": "framework-review",
+    "title": "Framework review session",
+    "url": "/events/#framework-review",
+    "start": "2027-02-18T14:00:00-05:00",
+    "end": "2027-02-18T15:30:00-05:00",
+    "location": "Review Room",
+    "format": "hybrid",
+    "description": "A fixture event that proves provider-independent event presentation.",
+    "category": "Review",
+    "series": "Reference demonstrations"
+  },
+  {
+    "id": "content-workshop",
+    "title": "Structured content workshop",
+    "url": "/events/#content-workshop",
+    "start": "2027-03-04T10:00:00-05:00",
+    "end": "2027-03-04T12:00:00-05:00",
+    "location": "Online",
+    "format": "online",
+    "description": "A second fixture used by the topic template demonstration.",
+    "category": "Workshop",
+    "series": "Reference demonstrations"
+  }
+]

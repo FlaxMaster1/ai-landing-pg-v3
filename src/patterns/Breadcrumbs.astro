@@ -1,0 +1,8 @@
+---
+import type { NavigationItem } from "@entities/index";
+interface Props { label: string; items: NavigationItem[]; }
+const { label, items } = Astro.props;
+---
+<nav class="p-breadcrumbs" aria-label={label}>
+  <ol>{items.map((item, index) => <li>{index < items.length - 1 ? <a href={item.url}>{item.label}</a> : <span aria-current="page">{item.label}</span>}</li>)}</ol>
+</nav>

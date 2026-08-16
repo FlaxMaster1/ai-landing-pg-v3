@@ -1,0 +1,8 @@
+---
+import type { PageConfig } from "@schemas/page";
+import BaseTemplate from "./BaseTemplate.astro";
+import type { NavigationItem } from "@entities/index";
+interface Props { page: PageConfig; sectionNavigation?: { label: string; items: NavigationItem[] }; }
+const { page, sectionNavigation } = Astro.props;
+---
+<BaseTemplate {page} templateName="sidebar" {sectionNavigation}><slot /></BaseTemplate>

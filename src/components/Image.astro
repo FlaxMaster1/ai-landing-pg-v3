@@ -1,0 +1,7 @@
+---
+import type { Asset } from "@entities/index";
+import ResponsiveMedia from "@utilities/ResponsiveMedia.astro";
+interface Props { asset: Asset; loading?: "eager" | "lazy"; class?: string; }
+const { asset, loading, class: className } = Astro.props;
+---
+<ResponsiveMedia {asset} {loading} class={className} />

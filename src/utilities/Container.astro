@@ -1,0 +1,9 @@
+---
+interface Props {
+  as?: "div" | "section";
+  size?: "content" | "text";
+  class?: string;
+}
+const { as: Element = "div", size = "content", class: className }: Props = Astro.props;
+---
+<Element class:list={["u-container", `u-container--${size}`, className]}><slot /></Element>

@@ -1,0 +1,22 @@
+[
+  {
+    "route": "/insights/structured-content/",
+    "template": "article",
+    "title": "Structured content without embedded presentation",
+    "titleMode": "default",
+    "width": "contained",
+    "sidebar": "none",
+    "contentId": "structured-content",
+    "sections": [
+      {
+        "type": "callout",
+        "id": "article-next-step",
+        "eyebrow": "Reference pattern",
+        "heading": "The article body and callout remain separate",
+        "text": "Markdown supplies long-form narrative while JSON supplies the reusable promotional pattern.",
+        "action": { "label": "Return to stories", "url": "/#stories", "type": "primary" },
+        "surface": "subtle"
+      }
+    ]
+  }
+]

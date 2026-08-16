@@ -1,0 +1,33 @@
+---
+import type { SectionConfig } from "@schemas/page";
+import type { LoadedSite } from "./site-loader";
+import type { IntegrationProviders } from "@integrations/contracts";
+import { resolveAsset } from "./site-loader";
+import { resolvePattern } from "./pattern-registry";
+interface Props { section: SectionConfig; site: LoadedSite; providers: IntegrationProviders; }
+const { section, site, providers } = Astro.props;
+const Pattern = resolvePattern(section.type) as any;
+let properties: Record<string, unknown> = { ...section };
+
+if (section.type === "hero" || section.type === "featureRow") {
+  properties = { ...section, image: section.image ? resolveAsset(site, section.image.assetId) : undefined };
+}
+if (section.type === "cardGrid") {
+  properties = { ...section, items: section.items.map((item) => ({ ...item, image: item.image ? resolveAsset(site, item.image.assetId) : undefined })) };
+}
+if (section.type === "storyCollection") {
+  const stories = await providers.content.stories({ ids: section.entityIds });
+  properties = { ...section, stories: stories.map((story) => ({ story, image: story.image ? resolveAsset(site, story.image) : undefined })) };
+}
+if (section.type === "eventList") {
+  properties = { ...section, events: await providers.events.list({ ids: section.entityIds }), emptyLabel: site.config.ui.eventEmpty };
+}
+if (section.type === "personList") {
+  const people = await providers.faculty.people({ ids: section.entityIds });
+  properties = { ...section, people: people.map((person) => ({ person, image: person.image ? resolveAsset(site, person.image) : undefined })) };
+}
+if (section.type === "form") {
+  properties = { ...section, successMessage: site.config.ui.formSuccess, provider: site.config.integrations.forms?.provider ?? "prototype" };
+}
+---
+<Pattern {...properties} />

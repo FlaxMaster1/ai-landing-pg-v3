@@ -1,0 +1,24 @@
+---
+import type { NavigationItem } from "@entities/index";
+import BackControl from "@components/BackControl.astro";
+import CloseControl from "@components/CloseControl.astro";
+interface Props { id: string; items: NavigationItem[]; label: string; closeLabel: string; backLabel: string; }
+const { id, items, label, closeLabel, backLabel } = Astro.props;
+---
+<dialog class="g-mobile-navigation" {id} aria-label={label} data-mobile-dialog>
+  <div class="g-mobile-navigation__header"><strong>{label}</strong><CloseControl label={closeLabel} /></div>
+  <nav aria-label={label}>
+    <div data-menu-panel="root">
+      <ul role="list">
+        {items.map((item, index) => <li>{item.children?.length ? <button type="button" data-submenu-open={`submenu-${index}`}>{item.label}<span aria-hidden="true">→</span></button> : <a href={item.url}>{item.label}</a>}</li>)}
+      </ul>
+    </div>
+    {items.map((item, index) => item.children?.length && (
+      <div data-menu-panel={`submenu-${index}`} hidden>
+        <BackControl label={backLabel} />
+        <p class="g-mobile-navigation__section">{item.label}</p>
+        <ul role="list">{item.children.map((child) => <li><a href={child.url}>{child.label}</a></li>)}</ul>
+      </div>
+    ))}
+  </nav>
+</dialog>

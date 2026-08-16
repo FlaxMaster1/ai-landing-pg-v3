@@ -1,0 +1,13 @@
+{
+  "$description": "Button-level aliases demonstrate the primitive → semantic → component relationship.",
+  "button": {
+    "primary": {
+      "background": { "$type": "color", "$value": "{surface.brandAccent}" },
+      "text": { "$type": "color", "$value": "{text.inverse}" }
+    },
+    "secondary": {
+      "background": { "$type": "color", "$value": "{surface.page}" },
+      "text": { "$type": "color", "$value": "{text.default}" }
+    }
+  }
+}

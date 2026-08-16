@@ -1,0 +1,13 @@
+---
+import type { Event } from "@entities/index";
+import { formatDateRange } from "@utilities/format-date";
+import Heading from "./Heading.astro";
+interface Props { event: Event; variant?: "list" | "grid" | "featured"; }
+const { event, variant = "list" } = Astro.props;
+---
+<article class:list={["c-event-card", `c-event-card--${variant}`]}>
+  <p class="c-eyebrow"><time datetime={event.start}>{formatDateRange(event.start, event.end)}</time></p>
+  <Heading as="h3"><a href={event.url}>{event.title}</a></Heading>
+  {(event.location || event.format) && <p class="c-event-card__meta">{[event.location, event.format].filter(Boolean).join(" · ")}</p>}
+  {event.description && <p>{event.description}</p>}
+</article>

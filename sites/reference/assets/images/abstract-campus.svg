@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" role="img" aria-labelledby="title desc">
+  <title id="title">Abstract campus</title>
+  <desc id="desc">Geometric blocks and arches in navy, red, cream, and gold.</desc>
+  <rect width="1200" height="750" fill="#ecebe7"/>
+  <rect x="80" y="250" width="1040" height="410" fill="#001f5b"/>
+  <path d="M160 660V380h240v280M470 660V300h260v360M800 660V400h240v260" fill="#fff"/>
+  <path d="M210 660V500a70 70 0 0 1 140 0v160M540 660V430a60 60 0 0 1 120 0v230M850 660V520a70 70 0 0 1 140 0v140" fill="#990000"/>
+  <circle cx="600" cy="170" r="85" fill="#f2c14e"/>
+</svg>

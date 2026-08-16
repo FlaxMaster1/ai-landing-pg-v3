@@ -1,0 +1,11 @@
+---
+interface Props {
+  as?: "div" | "section" | "aside";
+  tone?: "page" | "subtle" | "brand-primary" | "brand-accent" | "inverse";
+  class?: string;
+  id?: string;
+  ariaLabelledby?: string;
+}
+const { as: Element = "div", tone = "page", class: className, id, ariaLabelledby }: Props = Astro.props;
+---
+<Element class:list={["u-surface", `u-surface--${tone}`, className]} {id} aria-labelledby={ariaLabelledby}><slot /></Element>

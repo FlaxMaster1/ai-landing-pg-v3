@@ -1,0 +1,3 @@
+@layer site {
+  [data-site-theme="core"] { --site-accent: var(--surface-brand-accent); }
+}

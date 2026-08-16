@@ -1,0 +1,7 @@
+---
+import type { PageConfig } from "@schemas/page";
+import BaseTemplate from "./BaseTemplate.astro";
+interface Props { page: PageConfig; sectionNavigation?: never; }
+const { page } = Astro.props;
+---
+<BaseTemplate {page} templateName="standard"><slot /></BaseTemplate>

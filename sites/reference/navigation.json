@@ -1,0 +1,21 @@
+{
+  "program": [
+    { "label": "Framework home", "url": "/", "active": true },
+    { "label": "Component catalog", "url": "/catalog/" },
+    { "label": "Architecture notes", "url": "/resources/" }
+  ],
+  "primary": [
+    {
+      "label": "Explore",
+      "url": "/academics/",
+      "children": [
+        { "label": "Landing template", "url": "/academics/" },
+        { "label": "Topic template", "url": "/events/" },
+        { "label": "Directory template", "url": "/people/" }
+      ]
+    },
+    { "label": "Article", "url": "/insights/structured-content/" },
+    { "label": "Resources", "url": "/resources/" },
+    { "label": "Catalog", "url": "/catalog/" }
+  ]
+}

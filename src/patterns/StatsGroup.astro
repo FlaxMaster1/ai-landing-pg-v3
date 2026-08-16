@@ -1,0 +1,13 @@
+---
+import Heading from "@components/Heading.astro";
+import Stat from "@components/Stat.astro";
+import Container from "@utilities/Container.astro";
+interface Props { id: string; heading?: string; items: Array<{ value: string; label: string; detail?: string }>; }
+const { id, heading, items } = Astro.props;
+---
+<section id={id} class="p-section" aria-labelledby={heading ? `${id}-heading` : undefined}>
+  <Container>
+    {heading && <Heading as="h2" id={`${id}-heading`}>{heading}</Heading>}
+    <div class="p-stats-group">{items.map((item) => <Stat {...item} />)}</div>
+  </Container>
+</section>

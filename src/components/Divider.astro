@@ -1,0 +1,5 @@
+---
+interface Props { label?: string; }
+const { label } = Astro.props;
+---
+{label ? <div class="c-divider c-divider--text" role="separator"><span>{label}</span></div> : <hr class="c-divider" />}

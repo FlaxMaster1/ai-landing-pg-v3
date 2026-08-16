@@ -1,0 +1,19 @@
+---
+import type { NavigationItem } from "@entities/index";
+interface Props { items: NavigationItem[]; label: string; }
+const { items, label } = Astro.props;
+---
+<nav class="g-primary-navigation u-visible-wide" aria-label={label}>
+  <ul role="list">
+    {items.map((item) => (
+      <li>
+        {item.children?.length ? (
+          <details>
+            <summary>{item.label}</summary>
+            <ul role="list">{item.children.map((child) => <li><a href={child.url} aria-current={child.active ? "page" : undefined}>{child.label}</a></li>)}</ul>
+          </details>
+        ) : <a href={item.url} aria-current={item.active ? "page" : undefined}>{item.label}</a>}
+      </li>
+    ))}
+  </ul>
+</nav>

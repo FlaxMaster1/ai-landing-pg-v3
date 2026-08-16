@@ -1,0 +1,35 @@
+[
+  {
+    "route": "/resources/",
+    "template": "sidebar",
+    "title": "Reference resources",
+    "titleMode": "default",
+    "width": "contained",
+    "sidebar": "start",
+    "sectionNavigation": {
+      "label": "On this page",
+      "items": [
+        { "label": "Rendering", "url": "#rendering", "active": true },
+        { "label": "Accessibility", "url": "#accessibility" },
+        { "label": "Privacy", "url": "#privacy" }
+      ]
+    },
+    "sections": [
+      { "type": "pageIntro", "id": "rendering", "heading": "Generic rendering", "text": "Routes identify the selected site, validate page data, resolve the canonical template, and compose sections through a controlled registry." },
+      {
+        "type": "callout",
+        "id": "accessibility",
+        "heading": "Accessibility conventions",
+        "text": "Semantic landmarks, exactly one H1, native controls, visible focus, focus return, reduced motion, and automated axe scans are framework-level responsibilities.",
+        "surface": "brand-primary"
+      },
+      {
+        "type": "callout",
+        "id": "privacy",
+        "heading": "Prototype data behavior",
+        "text": "The reference form simulates a result locally and does not persist or transmit visitor data.",
+        "surface": "subtle"
+      }
+    ]
+  }
+]

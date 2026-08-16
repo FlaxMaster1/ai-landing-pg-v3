@@ -1,0 +1,10 @@
+---
+import Button from "@components/Button.astro";
+import SearchInput from "@components/SearchInput.astro";
+interface Props { action: string; label: string; submitLabel: string; compact?: boolean; }
+const { action, label, submitLabel, compact = false } = Astro.props;
+---
+<form class:list={["p-search-form", compact && "p-search-form--compact"]} method="get" {action} role="search">
+  <SearchInput id={compact ? "global-search-query" : "search-query"} {label} />
+  <Button type="submit">{submitLabel}</Button>
+</form>

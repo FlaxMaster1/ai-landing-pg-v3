@@ -1,22 +1,23 @@
-# CMS Mapping
+# CMS-to-framework mapping
 
-This document will track how reusable prototype elements correspond to Wharton’s production WordPress CMS and, where applicable, the evolving Figma design system.
+The framework preserves functional traceability without importing WordPress naming into canonical source names.
 
-## Mapping Fields
+| Current CMS concept | Implemented canonical concept | Step 6 status |
+|---|---|---|
+| Hero Header | Hero | Implemented |
+| Classic / Rowhouse / Page Tile | Card / CardGrid | Implemented foundation |
+| Story Tile / Top Stories | StoryCard / StoryCollection | Implemented with fixture ContentFeed |
+| Bio Card / Staff Listing | PersonCard / PersonList | Implemented with fixture FacultyData |
+| Events HQ Embed | EventCard / EventList / EventsProvider | Implemented with fixture provider |
+| FAQ Toggle / Accordion | Disclosure / FAQ | Implemented with native details/summary |
+| New / Horizontal / Vertical Tabs | Tabs | Implemented horizontal and vertical contracts |
+| Message Box | Message | Implemented |
+| Callout Block / functional Info Box | Callout | Implemented |
+| Counter | Stat / StatsGroup | Implemented |
+| Gravity / Campaign Monitor / Pardot form | Form / FormProvider | Prototype provider only |
+| Search | SearchInput / SearchForm / SearchProvider | Static fixture foundation |
+| Full Window / Full Width | Template width property | Implemented |
+| With / No Title | Validated titleMode and H1 ownership | Implemented as default or Hero-owned title |
+| VC Row / Columns | Layout utilities | Implemented without VC terminology in APIs |
 
-Each reusable element should eventually document:
-
-- Prototype element name
-- Element type: token, component, pattern, or template
-- Current WordPress/CMS equivalent
-- Current CMS behavior and constraints
-- Approved Figma/design-system equivalent
-- Migration or replacement status
-- Accessibility requirements
-- Responsive behavior
-- Implementation notes
-- Known exceptions or project-specific variations
-
-## Status
-
-Initial placeholder. Detailed mappings will be added as the current CMS is audited and the Undergraduate validation project is converted into the framework.
+Mappings for unimplemented canonical capabilities remain in the governing specification and are not represented by empty component shells.

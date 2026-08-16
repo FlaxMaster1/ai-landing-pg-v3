@@ -1,0 +1,14 @@
+[
+  {
+    "route": "/people/",
+    "template": "directory",
+    "title": "People directory demonstration",
+    "titleMode": "default",
+    "width": "contained",
+    "sidebar": "none",
+    "sections": [
+      { "type": "pageIntro", "id": "directory-intro", "text": "Person entities are loaded through the FacultyData interface and rendered by semantic PersonCard components." },
+      { "type": "personList", "id": "people-list", "heading": "Reference people", "entityIds": ["alex-rivera", "morgan-lee"], "variant": "directory" }
+    ]
+  }
+]
