@@ -107,9 +107,90 @@
   .g-global-footer__legal { justify-content: space-between; padding-block-start: var(--space-6); border-block-start: var(--border-thin) solid rgb(255 255 255 / 35%); font-family: var(--font-family-sans-condensed); font-size: 1rem; }
 
   @media (max-width: 61.99rem) {
+    .g-global-header__program {
+      block-size: 7.625rem;
+    }
+
+    .g-global-header__program-inner {
+      padding-inline: clamp(1rem, 6vw, 2.375rem) clamp(1rem, 4vw, 1.625rem);
+    }
+
+    .g-global-header__brand {
+      flex-basis: clamp(11rem, 40vw, 15rem);
+      justify-self: start;
+    }
+
+    .g-global-header__brand img {
+      inline-size: clamp(11rem, 40vw, 15rem);
+    }
+
     .g-program-navigation { display: none; }
-    .g-site-header__inner { min-block-size: 4.375rem; grid-template-rows: 4.375rem; grid-template-areas: "identity actions"; }
-    .g-site-identity { font-size: 1.5rem; line-height: 1.1; }
+
+    .g-site-header {
+      min-block-size: 10.3125rem;
+      margin-block-start: -7.625rem;
+      color: var(--surface-brand-primary);
+      background: linear-gradient(to bottom, transparent 0 7.625rem, var(--surface-brand-primary) 7.625rem);
+    }
+
+    .g-site-header__inner {
+      min-block-size: 7.625rem;
+      grid-template-rows: 7.625rem;
+      grid-template-areas: "identity actions";
+      padding-inline: clamp(1rem, 6vw, 2.375rem) clamp(1rem, 4vw, 1.625rem);
+    }
+
+    .g-site-identity {
+      overflow: hidden;
+      inline-size: 1px;
+      block-size: 1px;
+      clip-path: inset(50%);
+      white-space: nowrap;
+    }
+
+    .g-site-header__actions {
+      gap: clamp(0.875rem, 2.75vw, 1rem);
+    }
+
+    .g-site-header__actions > [data-search-open] {
+      inline-size: clamp(3.125rem, 12vw, 4.375rem);
+      min-block-size: clamp(3.125rem, 12vw, 4.375rem);
+      border-width: 0.25rem;
+      font-size: 0;
+    }
+
+    .g-site-header__actions > [data-search-open]::before {
+      inline-size: 1rem;
+      block-size: 1rem;
+      border-width: 0.25rem;
+    }
+
+    .g-site-header__actions > [data-search-open]::after {
+      inline-size: 1rem;
+      block-size: 0.25rem;
+      margin: clamp(0.9375rem, 3.5vw, 1.3125rem) 0 0 clamp(0.9375rem, 3.5vw, 1.3125rem);
+    }
+
+    .c-menu-toggle {
+      position: relative;
+      inline-size: clamp(3rem, 9.5vw, 3.5rem);
+      min-block-size: 3.75rem;
+      padding: 0;
+      overflow: hidden;
+      border: 0;
+      font-size: 0;
+    }
+
+    .c-menu-toggle::before {
+      content: "";
+      position: absolute;
+      inset-block-start: 0.625rem;
+      inset-inline: 0;
+      block-size: 0.5625rem;
+      border-radius: 0.125rem;
+      background: currentColor;
+      box-shadow: 0 1.3125rem 0 currentColor, 0 2.625rem 0 currentColor;
+    }
   }
 
   @media (min-width: 42rem) { .g-global-footer__groups { grid-template-columns: repeat(2, minmax(0, 1fr)); } }

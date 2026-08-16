@@ -43,13 +43,13 @@ test("old-theme preserves observed Wharton shell and layout measurements", async
   });
 
   expect(values.theme).toBe("old-theme");
-  expect(values.programHeight).toBe(50);
   expect(values.contentToken).toBe("76.5625rem");
   expect(values.navigationToken).toBe("62rem");
   expect(values.cardRadius).toBe("0px");
   expect(values.cardShadow).toBe("none");
 
   if (testInfo.project.name === "chromium-desktop") {
+    expect(values.programHeight).toBe(50);
     expect(values.siteHeaderHeight).toBe(132);
     expect(values.heroWidth).toBe(1440);
     expect(values.heroHeight).toBe(580);
@@ -62,8 +62,11 @@ test("old-theme preserves observed Wharton shell and layout measurements", async
     await expect(knowledgeLogo).toHaveAttribute("src", "/shared/logos/kw-logo.svg");
     await expect(knowledgeLogo).toHaveCSS("height", "15px");
   } else {
-    expect(values.siteHeaderHeight).toBe(70);
+    expect(values.programHeight).toBe(122);
+    expect(values.siteHeaderHeight).toBe(165);
     expect(values.heroWidth).toBe(390);
+    await expect(page.locator(".g-global-header__brand img")).toHaveCSS("width", "176px");
+    await expect(page.getByRole("button", { name: "Search" })).toHaveCSS("width", "50px");
     await expect(page.getByRole("button", { name: "Menu" })).toBeVisible();
   }
 });
