@@ -21,7 +21,7 @@ Page schemas reject unknown section or template discriminants. They also enforce
 - Components are reusable semantic units with explicit Astro/TypeScript props.
 - Global elements receive site configuration and compose the shared header/footer shell.
 - Integrations expose typed interfaces. Fixture adapters are the Step 6 default; shared UI never imports a production provider.
-- Site roots own copy, page composition, navigation, footer links, Markdown, entities, and asset metadata.
+- Site roots own copy, page composition, navigation, footer links, Markdown, entities, asset metadata, and optional institutional-brand URLs/alternative text used by the global shell.
 
 `tests/unit/architecture-boundaries.test.ts` prevents concrete site imports from shared components, patterns, globals, and templates.
 
@@ -35,7 +35,7 @@ Native CSS uses explicit cascade order:
 reset → tokens → base → utilities → components → patterns → globals → site
 ```
 
-Site CSS is limited to legitimate theme-level aliases. Responsive behavior is mobile-first and uses flexible grids, fluid tokenized typography/spacing, intrinsic sizing, and content-driven transitions.
+Site CSS is limited to legitimate theme-level aliases. The reference site selects `theme: current`, whose shared token and CSS layers represent the observed current Wharton CMS. Responsive behavior is mobile-first and uses flexible grids, fluid tokenized typography/spacing, intrinsic sizing, and content-driven transitions.
 
 ## Content and Markdown
 

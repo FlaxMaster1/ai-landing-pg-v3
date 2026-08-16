@@ -16,6 +16,7 @@ interface Props {
 const { id, eyebrow, heading, text, image, actions = [], variant = "short" } = Astro.props;
 ---
 <section id={id} class:list={["p-hero", `p-hero--${variant}`]} aria-labelledby={`${id}-heading`}>
+  {image && <Image asset={image} loading="eager" class="p-hero__media" />}
   <Container class="p-hero__layout">
     <div class="p-hero__content">
       {eyebrow && <p class="c-eyebrow">{eyebrow}</p>}
@@ -23,6 +24,5 @@ const { id, eyebrow, heading, text, image, actions = [], variant = "short" } = A
       {text && <p class="p-hero__text">{text}</p>}
       {actions.length > 0 && <div class="u-layout--cluster">{actions.map((action) => <Button href={action.url} variant={action.type} external={action.external}>{action.label}</Button>)}</div>}
     </div>
-    {image && <Image asset={image} loading="eager" class="p-hero__media" />}
   </Container>
 </section>

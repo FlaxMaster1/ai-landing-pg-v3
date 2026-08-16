@@ -14,6 +14,7 @@ const templates = [
 for (const [route, name] of templates) {
   test(`${name} visual baseline`, async ({ page }) => {
     await page.goto(route);
+    await page.evaluate(async () => { await document.fonts.ready; });
     await page.locator("img").evaluateAll((images) => {
       for (const image of images) (image as HTMLImageElement).loading = "eager";
     });

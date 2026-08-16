@@ -1,4 +1,4 @@
-# Final Step 6 repository tree
+# Current framework repository tree
 
 Generated build/cache/dependency folders (`dist`, `.astro`, `node_modules`, test reports) are omitted.
 
@@ -21,6 +21,7 @@ Generated build/cache/dependency folders (`dist`, `.astro`, `node_modules`, test
 │   ├── cms-audit/README.md
 │   ├── cms-mapping.md
 │   ├── component-model.md
+│   ├── current-cms-visual-fidelity.md
 │   ├── dependencies.md
 │   ├── framework-charter.md
 │   ├── implementation-status.md
@@ -179,6 +180,7 @@ Generated build/cache/dependency folders (`dist`, `.astro`, `node_modules`, test
 └── tests
     ├── accessibility/axe.spec.ts
     ├── e2e
+    │   ├── current-cms-theme.spec.ts
     │   ├── foundation.spec.ts
     │   ├── interactions.spec.ts
     │   ├── responsive.spec.ts

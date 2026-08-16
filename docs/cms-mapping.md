@@ -21,3 +21,9 @@ The framework preserves functional traceability without importing WordPress nami
 | VC Row / Columns | Layout utilities | Implemented without VC terminology in APIs |
 
 Mappings for unimplemented canonical capabilities remain in the governing specification and are not represented by empty component shells.
+
+## Current-theme fidelity status
+
+The `current` theme now expresses the live CMS treatment for the implemented mappings above rather than a generic interpretation: Acumin/Minion type roles, live Wharton blue/red aliases, the 1,225px content boundary, square button and form controls, flat/overlay tile treatments, 300px and 580px Hero heights, current tabs and FAQ styling, and the current header/footer proportions. Detailed evidence and unresolved fidelity limits are in `current-cms-visual-fidelity.md`.
+
+This mapping does not claim that every legacy Classic, Rowhouse, Page Tile, form-provider, or header plugin variation has one identical visual form. The canonical variants remain the approved normalization boundary.

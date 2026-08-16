@@ -9,7 +9,16 @@ const { site } = Astro.props;
 const ui = site.config.ui;
 ---
 <header class="g-global-header">
-  <div class="g-global-header__program"><div class="u-container"><ProgramNavigation items={site.navigation.program} label={ui.programNavigationLabel} /></div></div>
+  <div class="g-global-header__program">
+    <div class="u-container g-global-header__program-inner">
+      {site.config.institutionalBrand && (
+        <a class="g-global-header__brand" href={site.config.institutionalBrand.homeUrl}>
+          <img src={site.config.institutionalBrand.headerLogo.src} alt={site.config.institutionalBrand.headerLogo.alt} width="120" height="30" />
+        </a>
+      )}
+      <ProgramNavigation items={site.navigation.program} label={ui.programNavigationLabel} />
+    </div>
+  </div>
   <SiteHeader {site} />
   <MobileNavigation id="mobile-navigation" items={site.navigation.primary} label={ui.primaryNavigationLabel} closeLabel={ui.closeMenu} backLabel={ui.back} />
   {site.config.featureFlags.search && <GlobalSearch id="global-search" label={ui.search} submitLabel={ui.searchSubmit} closeLabel={ui.closeMenu} />}

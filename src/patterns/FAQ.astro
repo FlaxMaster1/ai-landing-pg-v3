@@ -6,7 +6,7 @@ interface Props { id: string; heading?: string; items: Array<{ question: string;
 const { id, heading, items } = Astro.props;
 ---
 <section id={id} class="p-section" aria-labelledby={heading ? `${id}-heading` : undefined}>
-  <Container size="text">
+  <Container>
     {heading && <Heading as="h2" id={`${id}-heading`}>{heading}</Heading>}
     <div class="p-faq">{items.map((item) => <Disclosure summary={item.question}><p>{item.answer}</p></Disclosure>)}</div>
   </Container>

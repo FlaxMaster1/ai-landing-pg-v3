@@ -3,7 +3,18 @@
   "name": "Wharton Framework Reference",
   "referenceDomain": "https://example.invalid/",
   "prototypeTitle": "Wharton Web Prototype Framework reference implementation",
-  "theme": "core",
+  "theme": "current",
+  "institutionalBrand": {
+    "homeUrl": "https://www.wharton.upenn.edu/",
+    "headerLogo": {
+      "src": "https://martechdev.wharton.upenn.edu/wp-content/plugins/martech-chupacabra/includes/images/wharton-logo.svg",
+      "alt": "The Wharton School of the University of Pennsylvania"
+    },
+    "footerLogo": {
+      "src": "https://martechdev.wharton.upenn.edu/wp-content/plugins/martech-chupacabra/includes/images/penn-logo-white.svg",
+      "alt": "University of Pennsylvania"
+    }
+  },
   "featureFlags": {
     "search": true,
     "mobileNavigation": true
@@ -24,7 +35,8 @@
     "formSuccess": "Thanks. This prototype recorded no personal data.",
     "programNavigationLabel": "Program navigation",
     "primaryNavigationLabel": "Reference site navigation",
-    "footerLabel": "Institutional footer"
+    "footerLabel": "Institutional footer",
+    "footerAdditionalLinks": "Additional Links"
   },
   "integrations": {
     "events": { "provider": "fixture" },

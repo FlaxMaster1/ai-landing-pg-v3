@@ -14,11 +14,11 @@ test("design tokens and typography resolve", async ({ page }) => {
     };
   });
 
-  expect(styles.brand).toBe("#001f5b");
-  expect(styles.focus).toBe("#f2c14e");
-  expect(styles.sans).toContain("Arial");
-  expect(styles.bodyFont).toContain("Arial");
-  expect(styles.headingFont).toContain("Georgia");
+  expect(styles.brand).toBe("#004785");
+  expect(styles.focus).toBe("#06aafc");
+  expect(styles.sans).toContain("Acumin Pro");
+  expect(styles.bodyFont).toContain("Acumin Pro");
+  expect(styles.headingFont).toContain("Acumin Pro Condensed Black");
 });
 
 test("configured images and shared assets load", async ({ page }) => {
@@ -36,11 +36,16 @@ test("configured images and shared assets load", async ({ page }) => {
 
 test("global navigation and footer links route successfully", async ({ page }) => {
   await page.goto("/");
-  await page.getByRole("link", { name: "Component catalog" }).click();
+  const catalogLink = page.getByRole("link", { name: "Catalog", exact: true });
+  if (!(await catalogLink.isVisible())) {
+    await page.getByRole("button", { name: "Menu" }).click();
+  }
+  await catalogLink.click();
   await expect(page).toHaveURL(/\/catalog\/$/);
   await expect(page.locator("main[data-template='standard']")).toBeVisible();
 
-  await page.getByRole("link", { name: "Privacy" }).click();
+  await page.getByText("Additional Links", { exact: true }).click();
+  await page.getByRole("link", { name: "Placeholder privacy" }).click();
   await expect(page).toHaveURL(/\/resources\/#privacy$/);
   await expect(page.locator("#privacy")).toBeVisible();
 });

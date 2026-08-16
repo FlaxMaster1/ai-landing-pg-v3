@@ -4,6 +4,8 @@ Reusable, static-first framework for high-fidelity Wharton website prototypes. T
 
 Step 6 includes a neutral `reference` site—not an Undergraduate migration—to prove that validated site configuration, structured entities, Markdown, and stable asset IDs can render shared components, patterns, global elements, and all eight canonical template types.
 
+The reference site’s `current` theme implements the observed visual language of the live Wharton CMS: the institutional/program shell, Acumin and Minion typography, current blue/red palette, 1,225px content grid, square controls, media-overlay heroes, tiles, tabs, disclosures, forms, and footer treatment. It remains neutral framework content, not an Undergraduate site.
+
 This repository is the permanent source of truth for framework code, documentation, reusable elements, version history, and project templates. It is intended to reflect the current Wharton CMS as accurately as practical, evolve with approved UX/Figma work, support realistic stakeholder review, and preserve traceability for eventual WordPress handoff.
 
 ## Requirements
@@ -72,7 +74,7 @@ Important paths:
 - `sites/reference`: structured demonstration configuration and placeholder content.
 - `tests`: unit, browser, accessibility, responsive, and visual regression coverage.
 
-See `docs/architecture.md`, `docs/component-model.md`, `docs/testing.md`, `docs/sites-validation.md`, and `docs/implementation-status.md` for detailed guidance.
+See `docs/architecture.md`, `docs/component-model.md`, `docs/current-cms-visual-fidelity.md`, `docs/testing.md`, `docs/sites-validation.md`, and `docs/implementation-status.md` for detailed guidance.
 
 ## First validation project
 

@@ -9,7 +9,7 @@ interface Props { id: string; heading: string; text?: string; submitLabel: strin
 const { id, heading, text, submitLabel, fields, successMessage, provider } = Astro.props;
 ---
 <section id={id} class="p-section" aria-labelledby={`${id}-heading`}>
-  <Container size="text">
+  <Container>
     <Heading as="h2" id={`${id}-heading`}>{heading}</Heading>
     {text && <p>{text}</p>}
     <form class="p-form" data-prototype-form data-provider={provider}>

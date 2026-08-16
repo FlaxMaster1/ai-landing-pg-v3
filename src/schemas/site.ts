@@ -12,6 +12,13 @@ export const siteConfigSchema = z.object({
   referenceDomain: z.url().optional(),
   prototypeTitle: z.string().min(1),
   theme: z.string().default("core"),
+  institutionalBrand: z
+    .object({
+      homeUrl: z.url(),
+      headerLogo: z.object({ src: z.url(), alt: z.string().min(1) }),
+      footerLogo: z.object({ src: z.url(), alt: z.string().min(1) })
+    })
+    .optional(),
   featureFlags: featureFlagsSchema.default({ search: true, mobileNavigation: true }),
   defaultSeo: z.object({ titleSuffix: z.string(), description: z.string() }),
   ui: z.object({
@@ -26,7 +33,8 @@ export const siteConfigSchema = z.object({
     formSuccess: z.string().min(1),
     programNavigationLabel: z.string().min(1),
     primaryNavigationLabel: z.string().min(1),
-    footerLabel: z.string().min(1)
+    footerLabel: z.string().min(1),
+    footerAdditionalLinks: z.string().min(1).default("Additional Links")
   }),
   integrations: z.record(z.string(), z.object({ provider: z.string() })).default({})
 });

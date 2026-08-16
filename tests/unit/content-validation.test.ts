@@ -8,6 +8,8 @@ describe("validated site content", () => {
     expect(site.pages).toHaveLength(8);
     expect(site.assets).toHaveLength(4);
     expect(site.entities.stories).toHaveLength(3);
+    expect(site.config.theme).toBe("current");
+    expect(site.config.institutionalBrand?.headerLogo.src).toMatch(/^https:\/\/martechdev\.wharton\.upenn\.edu\//);
     expect(site.pages.map(({ template }) => template)).toEqual(expect.arrayContaining([
       "homepage", "standard", "landing", "article", "topic", "directory", "search", "sidebar"
     ]));
