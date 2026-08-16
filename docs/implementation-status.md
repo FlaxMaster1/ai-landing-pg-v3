@@ -20,7 +20,7 @@ The newest TypeScript 7 release was not used because the current Astro checker s
 ## Remaining gaps
 
 - ChatGPT Sites compatibility and publishing cannot be validated from this local workspace; it remains an external gate.
-- The workspace had no Git metadata or configured GitHub remote at the start, so documentation was updated locally but no external GitHub issue, wiki, branch, or pull request was changed.
+- The workspace began without Git metadata. It is now connected to `FlaxMaster1/wharton-prototype-framework`, with Step 6 published on `agent/implement-step-6` for review before merging to `main`.
 - Undergraduate global navigation, real content, template reproduction, and production responsive comparison are deliberately deferred to Step 7.
 - Production adapters for Events HQ, Faculty Data, forms, content feeds, search, video, authentication, and analytics are interfaces only; fixtures/prototype behavior is intentional for Step 6.
 - Canonical inventory items not needed for the foundation demo remain unimplemented, including Icon, Video, standalone FormLabel/FormMessage and Tab primitives, Pagination, LoadMore, FilterControl/FilterBar, carousels, comparison, calendars, course/publication/award views, newsletter/lead-generation specializations, and live search results.
