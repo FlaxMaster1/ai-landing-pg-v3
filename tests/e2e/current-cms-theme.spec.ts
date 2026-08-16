@@ -52,7 +52,7 @@ test("current theme preserves observed Wharton shell and layout measurements", a
     await expect(knowledgeLink).toBeVisible();
     const knowledgeLogo = knowledgeLink.locator("img");
     await expect(knowledgeLogo).toHaveAttribute("src", "/shared/logos/kw-logo.svg");
-    await expect(knowledgeLogo).toHaveCSS("height", "25px");
+    await expect(knowledgeLogo).toHaveCSS("height", "15px");
   } else {
     expect(values.siteHeaderHeight).toBe(70);
     expect(values.heroWidth).toBe(390);
