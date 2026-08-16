@@ -25,6 +25,7 @@ Generated build/cache/dependency folders (`dist`, `.astro`, `node_modules`, test
 │   ├── framework-charter.md
 │   ├── implementation-status.md
 │   ├── repository-tree.md
+│   ├── sites-validation.md
 │   ├── testing.md
 │   └── decisions
 │       ├── 001-astro.md
@@ -178,6 +179,7 @@ Generated build/cache/dependency folders (`dist`, `.astro`, `node_modules`, test
 └── tests
     ├── accessibility/axe.spec.ts
     ├── e2e
+    │   ├── foundation.spec.ts
     │   ├── interactions.spec.ts
     │   ├── responsive.spec.ts
     │   └── templates.spec.ts

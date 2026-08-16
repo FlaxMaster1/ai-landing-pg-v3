@@ -32,4 +32,6 @@ Visual baselines cover all eight templates at 1440 × 900 and 390 × 844 in Chro
 
 `build:sites` is an additional compatibility gate. It must prerender the same eight routes and four site assets, include Sites metadata, and emit a Cloudflare-compatible worker without changing the ordinary static reference build.
 
+Hosted validation reuses the same Playwright configuration by setting `SITES_BASE_URL` and an uncommitted `SITES_BEARER_TOKEN`. The token supplies identity-less access to an owner-only test deployment and must never be written to source, logs, screenshots, or documentation. Visual tests explicitly wait for lazy images before capture so remote latency does not create false screenshot differences.
+
 Automated axe testing is evidence, not complete WCAG conformance. Step 7 should add manual keyboard, screen-reader, zoom/reflow, alternative-text, and content-quality review against real site content.

@@ -37,6 +37,17 @@ test("global search uses meaningful URL state", async ({ page }) => {
   await expect(page).toHaveURL(/\/search\/\?q=accessibility$/);
 });
 
+test("global search dialog supports Escape and focus return", async ({ page }) => {
+  await page.goto("/");
+  const trigger = page.getByRole("button", { name: "Search this reference site" });
+  await trigger.click();
+  const dialog = page.getByRole("dialog", { name: "Search this reference site" });
+  await expect(dialog.getByRole("button", { name: "Close" })).toBeFocused();
+  await page.keyboard.press("Escape");
+  await expect(dialog).not.toBeVisible();
+  await expect(trigger).toBeFocused();
+});
+
 test("mobile drill-down navigation manages state and focus", async ({ page }, testInfo) => {
   test.skip(!testInfo.project.name.includes("mobile"), "Mobile navigation applies below the shared navigation breakpoint");
   const trigger = page.getByRole("button", { name: "Menu" });
@@ -48,6 +59,6 @@ test("mobile drill-down navigation manages state and focus", async ({ page }, te
   await expect(dialog.getByRole("link", { name: "Landing template" })).toBeVisible();
   await dialog.getByRole("button", { name: "Back" }).click();
   await expect(dialog.getByRole("button", { name: "Explore" })).toBeFocused();
-  await dialog.getByRole("button", { name: "Close" }).click();
+  await page.keyboard.press("Escape");
   await expect(trigger).toBeFocused();
 });

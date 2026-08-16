@@ -72,7 +72,7 @@ Important paths:
 - `sites/reference`: structured demonstration configuration and placeholder content.
 - `tests`: unit, browser, accessibility, responsive, and visual regression coverage.
 
-See `docs/architecture.md`, `docs/component-model.md`, `docs/testing.md`, and `docs/implementation-status.md` for detailed guidance.
+See `docs/architecture.md`, `docs/component-model.md`, `docs/testing.md`, `docs/sites-validation.md`, and `docs/implementation-status.md` for detailed guidance.
 
 ## First validation project
 
