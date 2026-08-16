@@ -18,7 +18,7 @@
     "width": { "$type": "dimension", "$value": "0.1875rem" }
   },
   "layout": {
-    "gutter": { "$type": "dimension", "$value": "clamp(0.9375rem, 3vw, 2.5rem)" },
+    "gutter": { "$type": "dimension", "$value": "0.9375rem" },
     "section": { "$type": "dimension", "$value": "clamp(3.125rem, 6vw, 5rem)" },
     "sectionLarge": { "$type": "dimension", "$value": "clamp(4rem, 8vw, 6.25rem)" }
   },

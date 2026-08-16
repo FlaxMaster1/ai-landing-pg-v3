@@ -6,6 +6,8 @@ The repository now contains the reusable framework foundation and a neutral refe
 
 The neutral reference now selects `old-theme`. Its tokens and shared presentation preserve the approved current-CMS fidelity implementation. The theme registry and development selector can render the same content through the `new-theme` scaffold without duplicating the functional system; Step 7 will supply that scaffold's Figma-derived visual rules.
 
+Step 6C finalized the remaining measured current-CMS differences in the content boundary, responsive shell offsets, Story Tile typography, FAQ row sizing, and footer typography. The implementation is ready to be frozen as `old-theme`; no `new-theme` visual rules were added.
+
 Undergraduate HTML and production content were not migrated.
 
 ## Architecture deviations

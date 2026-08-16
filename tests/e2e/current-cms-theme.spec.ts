@@ -31,6 +31,8 @@ test("old-theme preserves observed Wharton shell and layout measurements", async
       siteHeaderHeight: box(".g-site-header").height,
       heroWidth: box(".p-hero").width,
       heroHeight: box(".p-hero").height,
+      contentWidth: box(".p-section .u-container").width,
+      brandOffset: box(".g-global-header__brand").x,
       contentToken: root.getPropertyValue("--size-content").trim(),
       navigationToken: root.getPropertyValue("--breakpoint-navigation").trim(),
       cardRadius: card.borderRadius,
@@ -49,6 +51,8 @@ test("old-theme preserves observed Wharton shell and layout measurements", async
     expect(values.siteHeaderHeight).toBe(132);
     expect(values.heroWidth).toBe(1440);
     expect(values.heroHeight).toBe(580);
+    expect(values.contentWidth).toBe(1225);
+    expect(values.brandOffset).toBe(100);
     const knowledgeLink = page.getByRole("link", { name: "Knowledge at Wharton" });
     await expect(knowledgeLink).toBeVisible();
     const knowledgeLogo = knowledgeLink.locator("img");
@@ -83,6 +87,11 @@ test("catalog uses image-led story tiles", async ({ page }) => {
   await expect(tiles).toHaveCount(3);
   await expect(tiles.locator(".u-responsive-media img")).toHaveCount(3);
   await expect(tiles.first().locator(".c-card__action")).toBeHidden();
+  await expect(tiles.first().locator(".c-card__title")).toHaveCSS("font-size", "30px");
+  await expect(tiles.first().locator(".c-card__title")).toHaveCSS("line-height", "33px");
+  await expect(page.locator(".c-disclosure summary").first()).toHaveCSS("height", "65px");
+  await expect(page.locator(".g-global-footer")).toHaveCSS("font-size", "16px");
+  await expect(page.locator(".g-global-footer")).toHaveCSS("line-height", "24px");
 });
 
 test("desktop global search uses the supplied normal and rollover artwork", async ({ page }, testInfo) => {

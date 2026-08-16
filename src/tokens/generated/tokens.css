@@ -60,7 +60,7 @@
     --text-inverse: var(--color-neutral-0);
     --focus-color: var(--color-blue-500);
     --focus-width: 0.1875rem;
-    --layout-gutter: clamp(0.9375rem, 3vw, 2.5rem);
+    --layout-gutter: 0.9375rem;
     --layout-section: clamp(3.125rem, 6vw, 5rem);
     --layout-section-large: clamp(4rem, 8vw, 6.25rem);
     --type-display: clamp(2.5rem, 5vw, 3.125rem);

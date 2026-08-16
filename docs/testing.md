@@ -3,7 +3,7 @@
 Run the complete local gate:
 
 ```sh
-npm run validate
+npm run validate:complete
 ```
 
 It performs:
@@ -14,7 +14,10 @@ It performs:
 4. Vitest unit, registry, integration-adapter, and architecture-boundary tests;
 5. a selected-site static build;
 6. a generated-output audit for all routes, one H1, shared landmarks, template markers, and assets;
-7. Playwright desktop/mobile behavior, responsive overflow, axe WCAG A/AA scans, and visual baselines.
+7. Playwright desktop/mobile behavior, responsive overflow, axe WCAG A/AA scans, and visual baselines;
+8. `npm run audit:dependencies`, which fails for high or critical npm advisories.
+
+`npm run validate` runs the framework gate without the final npm advisory query. `npm run validate:complete` adds that dependency audit.
 
 Useful focused commands:
 

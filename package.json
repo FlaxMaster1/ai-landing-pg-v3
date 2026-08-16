@@ -27,6 +27,7 @@
     "check": "npm run check:tokens && astro check",
     "content:validate": "vitest run tests/unit/content-validation.test.ts",
     "audit:build": "node scripts/audit-build.mjs",
+    "audit:dependencies": "npm audit --audit-level=high",
     "test": "vitest run",
     "test:unit": "vitest run tests/unit",
     "test:e2e": "npm run build:reference && playwright test",
@@ -35,7 +36,8 @@
     "test:visual": "npm run build:reference && playwright test tests/visual",
     "test:visual:update": "npm run build:reference && playwright test tests/visual --update-snapshots",
     "test:e2e:update": "playwright test --update-snapshots",
-    "validate": "npm run content:validate && npm run check && npm run test:unit && npm run test:theme-preview && npm run build:reference && npm run audit:build && npm run test:e2e:built"
+    "validate": "npm run content:validate && npm run check && npm run test:unit && npm run test:theme-preview && npm run build:reference && npm run audit:build && npm run test:e2e:built",
+    "validate:complete": "npm run validate && npm run audit:dependencies"
   },
   "dependencies": {
     "astro": "7.2.2",

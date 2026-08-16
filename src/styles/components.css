@@ -54,7 +54,7 @@
   :where(.c-card--promotional, .c-card--navigation, .c-card--feature, .c-card--media-led) .u-responsive-media figcaption { display: none; }
   :where(.c-card--promotional, .c-card--navigation, .c-card--feature, .c-card--media-led) .c-card__body { z-index: 2; align-self: end; }
   :where(.c-card--promotional, .c-card--navigation, .c-card--feature, .c-card--media-led) :where(h3, .c-card__title, .c-eyebrow) { color: inherit; }
-  .c-card--promotional .c-card__title { font-size: clamp(1.75rem, 3cqw, 2.5rem); line-height: 1.08; }
+  .c-card--promotional .c-card__title { margin-block-end: 0.625rem; font-size: 1.875rem; line-height: 1.1; }
   .c-card--promotional .c-card__action { display: none; }
   .c-card--promotional .c-card__body { position: absolute; inset-inline: 0; inset-block-end: 0; }
   .c-card--promotional .c-card__action, .c-card--navigation .c-card__action, .c-card--feature .c-card__action, .c-card--media-led .c-card__action { color: inherit; }
@@ -79,19 +79,20 @@
 
   .c-disclosure { border-block-end: var(--border-thin) solid var(--color-neutral-400); }
   .c-disclosure summary {
+    position: relative;
     display: flex;
     min-block-size: 4.0625rem;
     align-items: center;
     justify-content: space-between;
     gap: var(--space-4);
-    padding: 1.25rem 0;
+    padding: 1.25rem 2.5rem 1.25rem 0;
     color: var(--text-default);
     font-family: var(--font-family-sans-bold);
     font-size: 1rem;
     line-height: 1;
     cursor: pointer;
   }
-  .c-disclosure summary span { color: var(--surface-brand-accent); font-family: var(--font-family-sans); font-size: 1.75rem; transition: transform var(--motion-fast); }
+  .c-disclosure summary span { position: absolute; inset-inline-end: 0; color: var(--surface-brand-accent); font-family: var(--font-family-sans); font-size: 1.75rem; line-height: 1; transition: transform var(--motion-fast); }
   .c-disclosure[open] summary span { transform: rotate(45deg); }
   .c-disclosure__content { padding: 1.25rem 5% 1.5625rem; background: #f5f5f5; border-radius: 0 0 1.25rem 1.25rem; }
 
