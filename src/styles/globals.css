@@ -108,36 +108,37 @@
 
   @media (max-width: 61.99rem) {
     .g-global-header__program {
-      block-size: 7.625rem;
+      block-size: 3.125rem;
     }
 
     .g-global-header__program-inner {
-      padding-inline: clamp(1rem, 6vw, 2.375rem) clamp(1rem, 4vw, 1.625rem);
+      padding-inline: clamp(1rem, 3vw, 1.5rem);
     }
 
     .g-global-header__brand {
-      flex-basis: clamp(11rem, 40vw, 15rem);
+      flex-basis: 7rem;
       justify-self: start;
     }
 
     .g-global-header__brand img {
-      inline-size: clamp(11rem, 40vw, 15rem);
+      inline-size: auto;
+      block-size: 1.75rem;
     }
 
     .g-program-navigation { display: none; }
 
     .g-site-header {
-      min-block-size: 10.3125rem;
-      margin-block-start: -7.625rem;
+      min-block-size: 5.8125rem;
+      margin-block-start: -3.125rem;
       color: var(--surface-brand-primary);
-      background: linear-gradient(to bottom, transparent 0 7.625rem, var(--surface-brand-primary) 7.625rem);
+      background: linear-gradient(to bottom, transparent 0 3.125rem, var(--surface-brand-primary) 3.125rem);
     }
 
     .g-site-header__inner {
-      min-block-size: 7.625rem;
-      grid-template-rows: 7.625rem;
+      min-block-size: 3.125rem;
+      grid-template-rows: 3.125rem;
       grid-template-areas: "identity actions";
-      padding-inline: clamp(1rem, 6vw, 2.375rem) clamp(1rem, 4vw, 1.625rem);
+      padding-inline: clamp(1rem, 3vw, 1.5rem);
     }
 
     .g-site-identity {
@@ -149,32 +150,32 @@
     }
 
     .g-site-header__actions {
-      gap: clamp(0.875rem, 2.75vw, 1rem);
+      gap: 0.8125rem;
     }
 
     .g-site-header__actions > [data-search-open] {
-      inline-size: clamp(3.125rem, 12vw, 4.375rem);
-      min-block-size: clamp(3.125rem, 12vw, 4.375rem);
-      border-width: 0.25rem;
+      inline-size: 2.25rem;
+      min-block-size: 2.25rem;
+      border-width: 0.1875rem;
       font-size: 0;
     }
 
     .g-site-header__actions > [data-search-open]::before {
-      inline-size: 1rem;
-      block-size: 1rem;
-      border-width: 0.25rem;
+      inline-size: 0.625rem;
+      block-size: 0.625rem;
+      border-width: 0.1875rem;
     }
 
     .g-site-header__actions > [data-search-open]::after {
-      inline-size: 1rem;
-      block-size: 0.25rem;
-      margin: clamp(0.9375rem, 3.5vw, 1.3125rem) 0 0 clamp(0.9375rem, 3.5vw, 1.3125rem);
+      inline-size: 0.625rem;
+      block-size: 0.1875rem;
+      margin: 0.8125rem 0 0 0.8125rem;
     }
 
     .c-menu-toggle {
       position: relative;
-      inline-size: clamp(3rem, 9.5vw, 3.5rem);
-      min-block-size: 3.75rem;
+      inline-size: 2.25rem;
+      min-block-size: 2.25rem;
       padding: 0;
       overflow: hidden;
       border: 0;
@@ -184,12 +185,12 @@
     .c-menu-toggle::before {
       content: "";
       position: absolute;
-      inset-block-start: 0.625rem;
+      inset-block-start: 0.1875rem;
       inset-inline: 0;
-      block-size: 0.5625rem;
-      border-radius: 0.125rem;
+      block-size: 0.3125rem;
+      border-radius: 0.0625rem;
       background: currentColor;
-      box-shadow: 0 1.3125rem 0 currentColor, 0 2.625rem 0 currentColor;
+      box-shadow: 0 0.75rem 0 currentColor, 0 1.5rem 0 currentColor;
     }
   }
 

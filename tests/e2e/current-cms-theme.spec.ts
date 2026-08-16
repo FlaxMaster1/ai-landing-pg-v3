@@ -62,11 +62,11 @@ test("old-theme preserves observed Wharton shell and layout measurements", async
     await expect(knowledgeLogo).toHaveAttribute("src", "/shared/logos/kw-logo.svg");
     await expect(knowledgeLogo).toHaveCSS("height", "15px");
   } else {
-    expect(values.programHeight).toBe(122);
-    expect(values.siteHeaderHeight).toBe(165);
+    expect(values.programHeight).toBe(50);
+    expect(values.siteHeaderHeight).toBe(93);
     expect(values.heroWidth).toBe(390);
-    await expect(page.locator(".g-global-header__brand img")).toHaveCSS("width", "176px");
-    await expect(page.getByRole("button", { name: "Search" })).toHaveCSS("width", "50px");
+    await expect(page.locator(".g-global-header__brand img")).toHaveCSS("height", "28px");
+    await expect(page.getByRole("button", { name: "Search" })).toHaveCSS("width", "36px");
     await expect(page.getByRole("button", { name: "Menu" })).toBeVisible();
   }
 });
