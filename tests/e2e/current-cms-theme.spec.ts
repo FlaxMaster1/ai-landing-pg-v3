@@ -50,7 +50,9 @@ test("current theme preserves observed Wharton shell and layout measurements", a
     expect(values.heroHeight).toBe(580);
     const knowledgeLink = page.getByRole("link", { name: "Knowledge at Wharton" });
     await expect(knowledgeLink).toBeVisible();
-    await expect(knowledgeLink.locator("img")).toHaveAttribute("src", "/shared/logos/kw-logo.svg");
+    const knowledgeLogo = knowledgeLink.locator("img");
+    await expect(knowledgeLogo).toHaveAttribute("src", "/shared/logos/kw-logo.svg");
+    await expect(knowledgeLogo).toHaveCSS("height", "25px");
   } else {
     expect(values.siteHeaderHeight).toBe(70);
     expect(values.heroWidth).toBe(390);
