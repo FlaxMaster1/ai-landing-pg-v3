@@ -24,7 +24,7 @@ The newest TypeScript 7 release was not used because the current Astro checker s
 
 ## ChatGPT Sites validation
 
-The neutral reference implementation was successfully deployed as an owner-only ChatGPT Site on August 16, 2026. All eight routes, shared assets, responsive layouts, keyboard interactions, dialogs, navigation, search, prototype form behavior, design tokens, accessibility scans, and local visual baselines were exercised against the hosted result. See `sites-validation.md` for the deployment record and compatibility changes.
+The neutral reference implementation was successfully deployed as an owner-only ChatGPT Site on August 16, 2026. The finalized Step 6C output is Sites version 13, sourced from tested implementation commit `af55e491280b8390a65080a571e60f0ca84e4c47`. All eight routes, shared assets, responsive layouts, keyboard interactions, dialogs, navigation, search, prototype form behavior, design tokens, accessibility scans, and local visual baselines were exercised against the hosted result. See `sites-validation.md` for the deployment record and compatibility changes.
 
 ## Remaining gaps
 

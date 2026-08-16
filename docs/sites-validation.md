@@ -6,6 +6,12 @@ The reference implementation now named `old-theme` was successfully deployed on 
 
 The deployed Site is a versioned snapshot of validated Git source. It is not a live connection to the local workspace or GitHub. No Undergraduate content, Figma work, or new framework capability was added.
 
+## Step 6C redeployment
+
+The finalized current-CMS fidelity implementation was saved and deployed as Sites version 13 from Git commit `af55e491280b8390a65080a571e60f0ca84e4c47`. The production deployment completed successfully at the existing owner-only URL.
+
+After propagation, the full hosted Playwright suite was rerun against the deployed origin. It produced the same result as the local artifact: 80 passes and two intentional project-specific skips across all eight routes, desktop and mobile layouts, current-theme measurements, navigation and dialogs, tabs, disclosures, search, the prototype form, Axe scans, asset/font loading, and all sixteen visual baselines. No Sites-specific code or compatibility change was required for Step 6C.
+
 ## Compatibility implementation
 
 The ordinary framework path remains `output: "static"`. `SITES_BUILD=true` activates only the deployment adapter:
@@ -67,4 +73,4 @@ The remaining limitations belong to the reference fixture or current-CMS evidenc
 
 ## Validation decision
 
-`old-theme` is validated for private ChatGPT Sites deployment. The neutral reference represents the observed current Wharton CMS visual system at the framework level, subject to the explicitly unresolved evidence and asset-licensing items above. `new-theme` is not visually implemented or deployment-validated yet. Step 7 does not require a Sites architecture change, but should retain manual assistive-technology, zoom/reflow, real-content, photography, route-aware navigation, favicon, and broader cross-browser review.
+`old-theme` is validated for private ChatGPT Sites deployment and is ready to be frozen. The neutral reference represents the observed current Wharton CMS visual system at the framework level, subject to the explicitly unresolved evidence and asset-licensing items above. `new-theme` is not visually implemented or deployment-validated yet. Step 7 does not require a Sites architecture change, but should retain manual assistive-technology, zoom/reflow, real-content, photography, route-aware navigation, favicon, and broader cross-browser review.
