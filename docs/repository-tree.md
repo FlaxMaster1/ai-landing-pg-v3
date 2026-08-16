@@ -13,6 +13,7 @@ Generated build/cache/dependency folders (`dist`, `.astro`, `node_modules`, test
 ├── package.json
 ├── package-lock.json
 ├── playwright.config.ts
+├── playwright.theme.config.ts
 ├── tsconfig.json
 ├── vitest.config.ts
 ├── docs
@@ -28,6 +29,7 @@ Generated build/cache/dependency folders (`dist`, `.astro`, `node_modules`, test
 │   ├── repository-tree.md
 │   ├── sites-validation.md
 │   ├── testing.md
+│   ├── themes.md
 │   └── decisions
 │       ├── 001-astro.md
 │       ├── 002-static-rendering.md
@@ -36,7 +38,8 @@ Generated build/cache/dependency folders (`dist`, `.astro`, `node_modules`, test
 │       ├── 005-multisite.md
 │       ├── 006-native-css.md
 │       ├── 007-provider-adapters.md
-│       └── 008-generic-renderer.md
+│       ├── 008-generic-renderer.md
+│       └── 009-theme-boundary.md
 ├── public/shared
 │   ├── icons/search.svg
 │   ├── institutional/README.md
@@ -151,7 +154,14 @@ Generated build/cache/dependency folders (`dist`, `.astro`, `node_modules`, test
 │   │   ├── patterns.css
 │   │   ├── reset.css
 │   │   ├── site.css
+│   │   ├── theme-preview.css
 │   │   └── utilities.css
+│   ├── themes
+│   │   ├── contracts.ts
+│   │   ├── index.ts
+│   │   ├── ThemeSelector.astro
+│   │   ├── old-theme/index.css
+│   │   └── new-theme/index.css
 │   ├── templates
 │   │   ├── Article.astro
 │   │   ├── BaseTemplate.astro
@@ -181,6 +191,7 @@ Generated build/cache/dependency folders (`dist`, `.astro`, `node_modules`, test
 │   └── env.d.ts
 └── tests
     ├── accessibility/axe.spec.ts
+    ├── development/theme-preview.spec.ts
     ├── e2e
     │   ├── current-cms-theme.spec.ts
     │   ├── foundation.spec.ts
@@ -193,6 +204,7 @@ Generated build/cache/dependency folders (`dist`, `.astro`, `node_modules`, test
     │   ├── integrations.test.ts
     │   ├── registry.test.ts
     │   ├── rendering.test.ts
+    │   ├── themes.test.ts
     │   └── tokens.test.ts
     └── visual
         ├── templates.spec.ts

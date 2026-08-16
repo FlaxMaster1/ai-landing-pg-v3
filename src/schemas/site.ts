@@ -1,9 +1,11 @@
 import { z } from "zod";
 import { navigationItemSchema } from "./entities";
+import { DEFAULT_THEME, themeIds } from "../themes/contracts";
 
 export const featureFlagsSchema = z.object({
   search: z.boolean().default(true),
-  mobileNavigation: z.boolean().default(true)
+  mobileNavigation: z.boolean().default(true),
+  themePreview: z.boolean().default(false)
 });
 
 export const siteConfigSchema = z.object({
@@ -11,7 +13,7 @@ export const siteConfigSchema = z.object({
   name: z.string().min(1),
   referenceDomain: z.url().optional(),
   prototypeTitle: z.string().min(1),
-  theme: z.string().default("core"),
+  theme: z.enum(themeIds).default(DEFAULT_THEME),
   institutionalBrand: z
     .object({
       homeUrl: z.url(),
@@ -19,7 +21,7 @@ export const siteConfigSchema = z.object({
       footerLogo: z.object({ src: z.url(), alt: z.string().min(1) })
     })
     .optional(),
-  featureFlags: featureFlagsSchema.default({ search: true, mobileNavigation: true }),
+  featureFlags: featureFlagsSchema.default({ search: true, mobileNavigation: true, themePreview: false }),
   defaultSeo: z.object({ titleSuffix: z.string(), description: z.string() }),
   ui: z.object({
     skipToContent: z.string().min(1),
@@ -34,7 +36,11 @@ export const siteConfigSchema = z.object({
     programNavigationLabel: z.string().min(1),
     primaryNavigationLabel: z.string().min(1),
     footerLabel: z.string().min(1),
-    footerAdditionalLinks: z.string().min(1).default("Additional Links")
+    footerAdditionalLinks: z.string().min(1).default("Additional Links"),
+    themeSelector: z.string().min(1).default("Preview theme"),
+    oldTheme: z.string().min(1).default("Old theme"),
+    newTheme: z.string().min(1).default("New theme — Step 7 scaffold"),
+    configuredTheme: z.string().min(1).default("Configured theme")
   }),
   integrations: z.record(z.string(), z.object({ provider: z.string() })).default({})
 });

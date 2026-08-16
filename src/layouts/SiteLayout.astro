@@ -3,19 +3,28 @@ import type { LoadedSite } from "@rendering/site-loader";
 import GlobalFooter from "@global/GlobalFooter.astro";
 import GlobalHeader from "@global/GlobalHeader.astro";
 import BackToTop from "@components/BackToTop.astro";
-import "../styles/index.css";
+import ThemeSelector from "../themes/ThemeSelector.astro";
+import { resolveThemeDefinition, themeRegistry, type ThemeId } from "../themes";
+import sharedStylesheet from "../styles/index.css?url";
 interface Props { site: LoadedSite; title: string; description?: string; }
 const { site, title, description = site.config.defaultSeo.description } = Astro.props;
 const documentTitle = `${title}${site.config.defaultSeo.titleSuffix}`;
+const theme = resolveThemeDefinition(site.config.theme);
+const themeStylesheets = Object.fromEntries(
+  Object.entries(themeRegistry).map(([id, definition]) => [id, definition.stylesheet])
+) as Record<ThemeId, string>;
+const themePreviewEnabled = import.meta.env.DEV && site.config.featureFlags.themePreview;
 ---
 <!doctype html>
-<html lang="en" data-site-theme={site.config.theme}>
+<html lang="en" data-site-theme={theme.id} data-configured-theme={theme.id}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content={description} />
     <meta name="generator" content={Astro.generator} />
     <title>{documentTitle}</title>
+    <link rel="stylesheet" href={sharedStylesheet} data-shared-stylesheet />
+    <link rel="stylesheet" href={theme.stylesheet} data-theme-stylesheet />
   </head>
   <body id="page-top">
     <a class="g-skip-link" href="#main-content">{site.config.ui.skipToContent}</a>
@@ -23,5 +32,15 @@ const documentTitle = `${title}${site.config.defaultSeo.titleSuffix}`;
     <slot />
     <BackToTop label={site.config.ui.backToTop} />
     <GlobalFooter {site} />
+    {themePreviewEnabled && (
+      <ThemeSelector
+        configuredTheme={theme.id}
+        label={site.config.ui.themeSelector}
+        oldThemeLabel={site.config.ui.oldTheme}
+        newThemeLabel={site.config.ui.newTheme}
+        configuredLabel={site.config.ui.configuredTheme}
+        stylesheets={themeStylesheets}
+      />
+    )}
   </body>
 </html>

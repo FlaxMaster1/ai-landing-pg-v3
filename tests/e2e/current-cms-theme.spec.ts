@@ -1,7 +1,8 @@
 import { expect, test } from "../support/playwright";
 
-test("current theme preserves observed Wharton shell and layout measurements", async ({ page }, testInfo) => {
+test("old-theme preserves observed Wharton shell and layout measurements", async ({ page }, testInfo) => {
   await page.goto("/");
+  await expect(page.locator("[data-theme-preview]")).toHaveCount(0);
   await page.evaluate(async () => { await document.fonts.ready; });
 
   const requiredFonts = [
@@ -37,7 +38,7 @@ test("current theme preserves observed Wharton shell and layout measurements", a
     };
   });
 
-  expect(values.theme).toBe("current");
+  expect(values.theme).toBe("old-theme");
   expect(values.programHeight).toBe(50);
   expect(values.contentToken).toBe("76.5625rem");
   expect(values.navigationToken).toBe("62rem");
@@ -60,7 +61,7 @@ test("current theme preserves observed Wharton shell and layout measurements", a
   }
 });
 
-test("current theme applies observed Wharton form and tab treatments", async ({ page }) => {
+test("old-theme applies observed Wharton form and tab treatments", async ({ page }) => {
   await page.goto("/catalog/");
   const form = await page.locator(".c-form-control input").first().evaluate((input) => {
     const style = getComputedStyle(input);

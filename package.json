@@ -14,6 +14,7 @@
     "dev": "astro dev",
     "predev:reference": "npm run generate:tokens",
     "dev:reference": "SITE=reference astro dev",
+    "test:theme-preview": "playwright test -c playwright.theme.config.ts",
     "prebuild": "npm run generate:tokens",
     "build": "astro build",
     "prebuild:reference": "npm run generate:tokens",
@@ -34,7 +35,7 @@
     "test:visual": "npm run build:reference && playwright test tests/visual",
     "test:visual:update": "npm run build:reference && playwright test tests/visual --update-snapshots",
     "test:e2e:update": "playwright test --update-snapshots",
-    "validate": "npm run content:validate && npm run check && npm run test:unit && npm run build:reference && npm run audit:build && npm run test:e2e:built"
+    "validate": "npm run content:validate && npm run check && npm run test:unit && npm run test:theme-preview && npm run build:reference && npm run audit:build && npm run test:e2e:built"
   },
   "dependencies": {
     "astro": "7.2.2",

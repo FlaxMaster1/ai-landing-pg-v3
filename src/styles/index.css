@@ -1,10 +1,4 @@
 @layer reset, tokens, base, utilities, components, patterns, globals, site;
 
 @import "./reset.css";
-@import "../tokens/generated/tokens.css";
-@import "./base.css";
-@import "./utilities.css";
-@import "./components.css";
-@import "./patterns.css";
-@import "./globals.css";
-@import "./site.css";
+@import "./theme-preview.css";

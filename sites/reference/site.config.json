@@ -3,7 +3,7 @@
   "name": "Wharton Framework Reference",
   "referenceDomain": "https://example.invalid/",
   "prototypeTitle": "Wharton Web Prototype Framework reference implementation",
-  "theme": "current",
+  "theme": "old-theme",
   "institutionalBrand": {
     "homeUrl": "https://www.wharton.upenn.edu/",
     "headerLogo": {
@@ -17,7 +17,8 @@
   },
   "featureFlags": {
     "search": true,
-    "mobileNavigation": true
+    "mobileNavigation": true,
+    "themePreview": true
   },
   "defaultSeo": {
     "titleSuffix": " | Framework Reference",
@@ -36,7 +37,11 @@
     "programNavigationLabel": "Program navigation",
     "primaryNavigationLabel": "Reference site navigation",
     "footerLabel": "Institutional footer",
-    "footerAdditionalLinks": "Additional Links"
+    "footerAdditionalLinks": "Additional Links",
+    "themeSelector": "Preview theme",
+    "oldTheme": "Old theme — current CMS",
+    "newTheme": "New theme — Step 7 scaffold",
+    "configuredTheme": "Configured theme"
   },
   "integrations": {
     "events": { "provider": "fixture" },

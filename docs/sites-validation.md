@@ -2,7 +2,7 @@
 
 ## Result
 
-The current-CMS reference theme was successfully deployed on August 16, 2026 as the owner-only Site [Wharton Framework Reference Test](https://wharton-framework-reference-test.flaxmaster1.chatgpt.site).
+The reference implementation now named `old-theme` was successfully deployed on August 16, 2026 as the owner-only Site [Wharton Framework Reference Test](https://wharton-framework-reference-test.flaxmaster1.chatgpt.site).
 
 The deployed Site is a versioned snapshot of validated Git source. It is not a live connection to the local workspace or GitHub. No Undergraduate content, Figma work, or new framework capability was added.
 
@@ -67,4 +67,4 @@ The remaining limitations belong to the reference fixture or current-CMS evidenc
 
 ## Validation decision
 
-The current-CMS theme is validated for private ChatGPT Sites deployment. The neutral reference now represents the observed current Wharton CMS visual system at the framework level, subject to the explicitly unresolved evidence and asset-licensing items above. Step 7 does not require a Sites architecture change, but should retain manual assistive-technology, zoom/reflow, real-content, photography, route-aware navigation, favicon, and broader cross-browser review.
+`old-theme` is validated for private ChatGPT Sites deployment. The neutral reference represents the observed current Wharton CMS visual system at the framework level, subject to the explicitly unresolved evidence and asset-licensing items above. `new-theme` is not visually implemented or deployment-validated yet. Step 7 does not require a Sites architecture change, but should retain manual assistive-technology, zoom/reflow, real-content, photography, route-aware navigation, favicon, and broader cross-browser review.

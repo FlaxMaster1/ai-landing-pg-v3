@@ -2,7 +2,7 @@
 
 ## Scope and decision
 
-This pass makes the framework’s `current` theme visually and behaviorally representative of the existing Wharton WordPress CMS. It does not redesign Wharton, add the future Figma system, migrate Undergraduate content, or alter the approved template/renderer architecture.
+This pass is preserved as the framework’s `old-theme`, visually and behaviorally representative of the existing Wharton WordPress CMS. It does not redesign Wharton, add the future Figma system, migrate Undergraduate content, or alter the approved template/renderer architecture.
 
 The evidence review occurred on August 16, 2026. Primary sources were the approved canonical CMS audit, the live [Wharton Martech Development pattern library](https://martechdev.wharton.upenn.edu/), the official [Wharton web guide](https://marcomm.wharton.upenn.edu/web-guide/), and representative current Wharton-managed sites including [Wharton Operations](https://operations.wharton.upenn.edu/) and [Wharton Global](https://global.wharton.upenn.edu/).
 
@@ -59,7 +59,7 @@ These values describe the reviewed current Martech plugin output, not a promise 
 
 ## Unresolved fidelity limits
 
-- The current production stylesheet exposes both `#A90533` and legacy `#981E32` reds. The default current theme uses the newer live component value `#A90533`; legacy exceptions are not generalized into a second theme.
+- The current production stylesheet exposes both `#A90533` and legacy `#981E32` reds. The default `old-theme` uses the newer live component value `#A90533`; legacy exceptions are not generalized into another visual theme.
 - Webfonts and institutional logo files are loaded from the official live Martech asset host because repository licensing and redistribution rights were not established. They have system fallbacks, but long-term vendoring/CDN ownership remains a production decision.
 - Classic, Rowhouse, Page Tile, Story Tile, and provider-owned form variations use several aspect ratios and local exceptions. The implemented canonical variants represent the reviewed dominant treatments; exhaustive legacy subclass reproduction is not claimed.
 - The neutral reference intentionally uses abstract fixture art, so production photography, crops, focal points, and editorial art direction cannot be validated until a real site is configured.

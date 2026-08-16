@@ -4,7 +4,7 @@
 
 The repository now contains the reusable framework foundation and a neutral reference implementation. The reference site renders eight routes from structured configuration, exercises all canonical template resolvers, uses JSON entities behind fixture provider interfaces, renders long-form Markdown, emits local assets by stable ID, and demonstrates global navigation, mobile drill-down, search, tabs, native disclosure, cards, collections, a directory, events, a form, responsive behavior, and accessibility conventions.
 
-The neutral reference now selects the `current` theme. Its tokens and shared presentation have been reconciled with the approved CMS audit and live Wharton/Martech evidence so the demonstration is a useful visual reference for the current WordPress CMS without importing Undergraduate content.
+The neutral reference now selects `old-theme`. Its tokens and shared presentation preserve the approved current-CMS fidelity implementation. The theme registry and development selector can render the same content through the `new-theme` scaffold without duplicating the functional system; Step 7 will supply that scaffold's Figma-derived visual rules.
 
 Undergraduate HTML and production content were not migrated.
 

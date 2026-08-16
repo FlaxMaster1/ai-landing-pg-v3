@@ -13,6 +13,7 @@
       "@rendering/*": ["src/rendering/*"],
       "@schemas/*": ["src/schemas/*"],
       "@templates/*": ["src/templates/*"],
+      "@themes/*": ["src/themes/*"],
       "@utilities/*": ["src/utilities/*"]
     },
     "types": ["node", "vite/client"]

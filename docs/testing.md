@@ -30,7 +30,7 @@ npm run build:sites
 
 Visual baselines cover all eight templates at 1440 × 900 and 390 × 844 in Chromium. Updating snapshots is an explicit review action.
 
-`tests/e2e/current-cms-theme.spec.ts` protects the measured current-theme shell heights, 1,225px content boundary, 992px navigation transition, square/flat card treatment, 42px form controls, and selected-tab styling in both desktop and mobile projects.
+`tests/e2e/current-cms-theme.spec.ts` protects the measured `old-theme` shell heights, 1,225px content boundary, 992px navigation transition, square/flat card treatment, 42px form controls, and selected-tab styling in both desktop and mobile projects. `npm run test:theme-preview` starts the development server and proves the reference selector can swap between registered stylesheets without changing page composition.
 
 `build:sites` is an additional compatibility gate. It must prerender the same eight routes and four site assets, include Sites metadata, and emit a Cloudflare-compatible worker without changing the ordinary static reference build.
 

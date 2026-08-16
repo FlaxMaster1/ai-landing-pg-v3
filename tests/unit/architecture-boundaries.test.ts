@@ -11,11 +11,19 @@ function filesBelow(directory: string): string[] {
 
 describe("framework and site boundaries", () => {
   it("keeps shared presentation independent from concrete sites", () => {
-    const sharedRoots = ["components", "patterns", "global", "templates"].map((folder) => path.join(process.cwd(), "src", folder));
+    const sharedRoots = ["components", "patterns", "global", "templates", "themes"].map((folder) => path.join(process.cwd(), "src", folder));
     for (const file of sharedRoots.flatMap(filesBelow)) {
       const source = readFileSync(file, "utf8");
       expect(source, file).not.toMatch(/sites\/(reference|undergraduate)/);
       expect(source, file).not.toContain("Framework Reference");
+    }
+  });
+
+  it("keeps functional Astro layers free of theme-specific branching", () => {
+    const functionalRoots = ["components", "patterns", "global", "templates", "utilities"].map((folder) => path.join(process.cwd(), "src", folder));
+    for (const file of functionalRoots.flatMap(filesBelow).filter((file) => file.endsWith(".astro") || file.endsWith(".ts"))) {
+      const source = readFileSync(file, "utf8");
+      expect(source, file).not.toMatch(/old-theme|new-theme/);
     }
   });
 

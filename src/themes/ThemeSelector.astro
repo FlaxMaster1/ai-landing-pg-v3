@@ -1,0 +1,60 @@
+---
+import type { ThemeId } from "./contracts";
+
+interface Props {
+  configuredTheme: ThemeId;
+  label: string;
+  oldThemeLabel: string;
+  newThemeLabel: string;
+  configuredLabel: string;
+  stylesheets: Record<ThemeId, string>;
+}
+
+const { configuredTheme, label, oldThemeLabel, newThemeLabel, configuredLabel, stylesheets } = Astro.props;
+---
+<aside
+  class="t-theme-preview"
+  aria-label={label}
+  data-theme-preview
+  data-configured-theme={configuredTheme}
+  data-theme-stylesheets={JSON.stringify(stylesheets)}
+>
+  <label for="framework-theme-selector">{label}</label>
+  <select id="framework-theme-selector" data-theme-selector>
+    <option value="old-theme">{oldThemeLabel}</option>
+    <option value="new-theme">{newThemeLabel}</option>
+  </select>
+  <small>{configuredLabel}: <code>{configuredTheme}</code></small>
+</aside>
+
+<script>
+  const preview = document.querySelector<HTMLElement>("[data-theme-preview]");
+  const selector = preview?.querySelector<HTMLSelectElement>("[data-theme-selector]");
+  const stylesheet = document.querySelector<HTMLLinkElement>("[data-theme-stylesheet]");
+
+  if (preview && selector && stylesheet) {
+    const configuredTheme = preview.dataset.configuredTheme ?? "old-theme";
+    const stylesheets = JSON.parse(preview.dataset.themeStylesheets ?? "{}") as Record<string, string>;
+    const allowedThemes = Object.keys(stylesheets);
+
+    const applyTheme = (theme: string) => {
+      const resolvedTheme = allowedThemes.includes(theme) ? theme : configuredTheme;
+      const resolvedStylesheet = stylesheets[resolvedTheme] ?? stylesheets["old-theme"];
+      if (!resolvedStylesheet) return;
+      document.documentElement.dataset.siteTheme = resolvedTheme;
+      stylesheet.href = resolvedStylesheet;
+      selector.value = resolvedTheme;
+    };
+
+    const url = new URL(window.location.href);
+    applyTheme(url.searchParams.get("theme") ?? configuredTheme);
+
+    selector.addEventListener("change", () => {
+      const nextUrl = new URL(window.location.href);
+      if (selector.value === configuredTheme) nextUrl.searchParams.delete("theme");
+      else nextUrl.searchParams.set("theme", selector.value);
+      window.history.replaceState({}, "", nextUrl);
+      applyTheme(selector.value);
+    });
+  }
+</script>
