@@ -6,8 +6,7 @@
     position: relative;
     display: grid;
     min-block-size: 18.75rem;
-    inline-size: min(100%, var(--size-content));
-    margin-inline: auto;
+    inline-size: 100%;
     overflow: hidden;
     color: var(--text-inverse);
     background: var(--surface-brand-primary);

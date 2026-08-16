@@ -46,7 +46,7 @@ test("current theme preserves observed Wharton shell and layout measurements", a
 
   if (testInfo.project.name === "chromium-desktop") {
     expect(values.siteHeaderHeight).toBe(132);
-    expect(values.heroWidth).toBe(1225);
+    expect(values.heroWidth).toBe(1440);
     expect(values.heroHeight).toBe(580);
     const knowledgeLink = page.getByRole("link", { name: "Knowledge at Wharton" });
     await expect(knowledgeLink).toBeVisible();

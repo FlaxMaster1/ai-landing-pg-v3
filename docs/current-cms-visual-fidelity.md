@@ -36,7 +36,7 @@ The live CMS instead showed:
 
 - Corrected links, buttons, eyebrows, dividers, cards, story/person/event presentations, stats, disclosures, form controls, and BackToTop typography.
 - Restyled promotional/navigation Cards as current classic tiles and retained flatter editorial/entity cards for their distinct semantics.
-- Changed Hero media from a split column to a full-background layer with overlay, measured height variants, centered content, and current button treatments.
+- Changed Hero media from a split column to a full-width, full-background layer with overlay, measured height variants, centered content, and current button treatments.
 - Corrected CardGrid gaps, FeatureRow rhythm, Callout surfaces, FAQ rows/panels, Tabs, forms, Breadcrumbs styling, section navigation, and section spacing.
 - Preserved native disclosure semantics, the accessible Tabs keyboard model, native form validation, one-H1 enforcement, and reduced-motion behavior.
 
