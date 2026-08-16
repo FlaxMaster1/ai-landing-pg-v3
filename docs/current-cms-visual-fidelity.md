@@ -46,6 +46,7 @@ The live CMS instead showed:
 - Added optional configured institutional header/footer brand assets so shared globals do not contain site identity copy.
 - Replaced the neutral program links with the current Wharton network destinations in the reference site configuration.
 - Replaced the text presentation of the Knowledge at Wharton program link with the supplied Knowledge at Wharton SVG while preserving the configured label as the link's accessible name.
+- Replaced the CSS-drawn desktop global-search glyph with the supplied normal and rollover artwork; keyboard focus receives the same visible rollover state.
 - Corrected the current blue footer, collapsed additional-links treatment, Penn mark, legal row, and typography.
 - Corrected centered default page titles, left-aligned Sidebar titles, content/reading widths, and Sidebar title placement without adding templates.
 

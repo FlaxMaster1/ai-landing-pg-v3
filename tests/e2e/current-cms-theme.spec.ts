@@ -71,3 +71,18 @@ test("current theme applies observed Wharton form and tab treatments", async ({ 
   await expect(tab).toHaveCSS("font-family", /Acumin Pro/);
   await expect(tab).toHaveCSS("background-color", "rgb(250, 250, 250)");
 });
+
+test("desktop global search uses the supplied normal and rollover artwork", async ({ page }, testInfo) => {
+  test.skip(testInfo.project.name !== "chromium-desktop", "The supplied artwork is specific to the desktop white program bar.");
+
+  await page.goto("/");
+  const search = page.getByRole("button", { name: "Search" });
+  const normalState = await search.evaluate((element) => getComputedStyle(element).backgroundImage);
+
+  await search.hover();
+  const rolloverState = await search.evaluate((element) => getComputedStyle(element).backgroundImage);
+
+  expect(normalState).toContain("data:image/png;base64,");
+  expect(rolloverState).toContain("data:image/png;base64,");
+  expect(rolloverState).not.toBe(normalState);
+});
