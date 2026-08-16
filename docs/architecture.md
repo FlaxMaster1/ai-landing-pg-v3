@@ -48,3 +48,7 @@ Site assets remain under `sites/{site}/assets` and are referenced by stable IDs 
 ## Site builds
 
 `SITE={site-id}` selects routes, shell configuration, content, entities, assets, theme, and integration settings. The checked-in scripts provide the reference shorthand `npm run build:reference`; future sites may add equivalent convenience scripts without changing framework code.
+
+## ChatGPT Sites compatibility
+
+`npm run build:sites` preserves the same Astro routes and prerenders all reference pages and assets, while adding the official Astro Cloudflare adapter and Sites deployment metadata around the static output. `scripts/prepare-sites-build.mjs` supplies the conventional worker entry filename expected by Sites; it does not introduce an alternate renderer or change the normal `build:reference` output.

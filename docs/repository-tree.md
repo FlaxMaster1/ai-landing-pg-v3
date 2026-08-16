@@ -5,6 +5,7 @@ Generated build/cache/dependency folders (`dist`, `.astro`, `node_modules`, test
 ```text
 .
 ├── .gitignore
+├── .openai/hosting.json
 ├── AGENTS.md
 ├── README.md
 ├── WHARTON_WEB_PROTOTYPE_FRAMEWORK_CANONICAL_SPEC.md
@@ -41,6 +42,7 @@ Generated build/cache/dependency folders (`dist`, `.astro`, `node_modules`, test
 ├── scripts
 │   ├── audit-build.mjs
 │   ├── generate-tokens.mjs
+│   ├── prepare-sites-build.mjs
 │   └── serve-dist.mjs
 ├── sites/reference
 │   ├── site.config.json

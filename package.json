@@ -18,6 +18,9 @@
     "build": "astro build",
     "prebuild:reference": "npm run generate:tokens",
     "build:reference": "SITE=reference astro build",
+    "prebuild:sites": "npm run generate:tokens",
+    "build:sites": "SITE=reference SITES_BUILD=true astro build",
+    "postbuild:sites": "node scripts/prepare-sites-build.mjs",
     "preview": "node scripts/serve-dist.mjs",
     "preview:astro": "astro preview",
     "check": "npm run check:tokens && astro check",
@@ -39,10 +42,13 @@
   },
   "devDependencies": {
     "@astrojs/check": "0.9.10",
+    "@astrojs/cloudflare": "^14.2.1",
     "@axe-core/playwright": "4.13.0",
+    "@openai/sites-vite-plugin": "^0.1.0",
     "@playwright/test": "1.62.1",
     "@types/node": "26.2.0",
     "typescript": "6.0.3",
-    "vitest": "4.1.10"
+    "vitest": "4.1.10",
+    "wrangler": "^4.123.0"
   }
 }

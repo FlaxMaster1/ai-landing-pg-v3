@@ -14,6 +14,8 @@ const mimeTypes: Record<string, string> = {
   ".mp4": "video/mp4"
 };
 
+export const prerender = true;
+
 export const getStaticPaths = (() => {
   const site = loadSite();
   return site.assets.map((asset) => ({
