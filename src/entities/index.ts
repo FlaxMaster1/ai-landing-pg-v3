@@ -8,6 +8,11 @@ export interface Action {
 export interface NavigationItem {
   label: string;
   url: string;
+  logo?: {
+    src: string;
+    width: number;
+    height: number;
+  };
   children?: NavigationItem[];
   external?: boolean;
   active?: boolean;

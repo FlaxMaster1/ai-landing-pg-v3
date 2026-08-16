@@ -4,5 +4,20 @@ interface Props { items: NavigationItem[]; label: string; }
 const { items, label } = Astro.props;
 ---
 <nav class="g-program-navigation" aria-label={label}>
-  <ul role="list">{items.map((item) => <li><a href={item.url} aria-current={item.active ? "page" : undefined} target={item.external ? "_blank" : undefined} rel={item.external ? "noreferrer" : undefined}>{item.label}</a></li>)}</ul>
+  <ul role="list">{items.map((item) => (
+    <li>
+      <a
+        href={item.url}
+        class:list={{ "g-program-navigation__logo-link": Boolean(item.logo) }}
+        aria-label={item.logo ? item.label : undefined}
+        aria-current={item.active ? "page" : undefined}
+        target={item.external ? "_blank" : undefined}
+        rel={item.external ? "noreferrer" : undefined}
+      >
+        {item.logo
+          ? <img class="g-program-navigation__logo" src={item.logo.src} alt="" width={item.logo.width} height={item.logo.height} />
+          : item.label}
+      </a>
+    </li>
+  ))}</ul>
 </nav>

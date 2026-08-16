@@ -32,6 +32,10 @@ test("configured images and shared assets load", async ({ page }) => {
   const logoResponse = await page.request.get("/shared/logos/framework-mark.svg");
   expect(logoResponse.ok()).toBe(true);
   expect(logoResponse.headers()["content-type"]).toContain("image/svg+xml");
+
+  const knowledgeLogoResponse = await page.request.get("/shared/logos/kw-logo.svg");
+  expect(knowledgeLogoResponse.ok()).toBe(true);
+  expect(knowledgeLogoResponse.headers()["content-type"]).toContain("image/svg+xml");
 });
 
 test("global navigation and footer links route successfully", async ({ page }) => {

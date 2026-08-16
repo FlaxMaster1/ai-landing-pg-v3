@@ -10,6 +10,11 @@ describe("validated site content", () => {
     expect(site.entities.stories).toHaveLength(3);
     expect(site.config.theme).toBe("current");
     expect(site.config.institutionalBrand?.headerLogo.src).toMatch(/^https:\/\/martechdev\.wharton\.upenn\.edu\//);
+    expect(site.navigation.program.find(({ label }) => label === "Knowledge at Wharton")?.logo).toEqual({
+      src: "/shared/logos/kw-logo.svg",
+      width: 313,
+      height: 25
+    });
     expect(site.pages.map(({ template }) => template)).toEqual(expect.arrayContaining([
       "homepage", "standard", "landing", "article", "topic", "directory", "search", "sidebar"
     ]));

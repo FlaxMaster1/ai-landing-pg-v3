@@ -10,6 +10,7 @@ export const actionSchema = z.object({
 export const navigationItemSchema: z.ZodType<{
   label: string;
   url: string;
+  logo?: { src: string; width: number; height: number };
   children?: Array<unknown>;
   external?: boolean;
   active?: boolean;
@@ -17,6 +18,11 @@ export const navigationItemSchema: z.ZodType<{
   z.object({
     label: z.string().min(1),
     url: z.string().min(1),
+    logo: z.object({
+      src: z.string().min(1),
+      width: z.number().int().positive(),
+      height: z.number().int().positive()
+    }).optional(),
     children: z.array(navigationItemSchema).optional(),
     external: z.boolean().optional(),
     active: z.boolean().optional()

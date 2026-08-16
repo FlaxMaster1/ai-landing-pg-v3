@@ -98,7 +98,7 @@ export const frameworkRegistry: RegistryEntry[] = [
   register({ id: "ENT-event", name: "Event", category: "entity", description: "Provider-independent event data.", requiredFields: ["id", "title", "url", "start"] }),
   register({ id: "ENT-person", name: "Person", category: "entity", description: "Structured person, affiliation, biography, and contact data.", requiredFields: ["id", "name"] }),
   register({ id: "ENT-course", name: "Course", category: "entity", description: "Structured course data independent from schedule presentation.", requiredFields: ["id", "courseId", "title"] }),
-  register({ id: "ENT-navigation-item", name: "NavigationItem", category: "entity", description: "Recursive configured navigation data.", requiredFields: ["label", "url"] }),
+  register({ id: "ENT-navigation-item", name: "NavigationItem", category: "entity", description: "Recursive configured navigation data with optional logo presentation metadata.", requiredFields: ["label", "url"] }),
   register({ id: "ENT-action", name: "Action", category: "entity", description: "A labeled destination and presentation intent.", requiredFields: ["label", "url"] }),
   register({ id: "ENT-asset", name: "Asset", category: "entity", description: "Stable asset ID, source, alternative text, credit, and focal metadata.", requiredFields: ["id", "file", "alt"] }),
 
@@ -138,7 +138,7 @@ export const frameworkRegistry: RegistryEntry[] = [
   register({ id: "PAT-breadcrumbs", name: "Breadcrumbs", category: "pattern", description: "Ordered hierarchical route context.", requiredFields: ["label", "items"], accessibility: ["Name the navigation landmark and identify the current page."] }),
   register({ id: "PAT-section-navigation", name: "SectionNavigation", category: "pattern", description: "Configured sibling or in-page navigation.", requiredFields: ["label", "items"], accessibility: ["Name the navigation landmark and identify the active item."] }),
 
-  register({ id: "GBL-program-navigation", name: "ProgramNavigation", category: "global", description: "Global program-level navigation from site configuration.", requiredFields: ["items", "label"], accessibility: a11yControl }),
+  register({ id: "GBL-program-navigation", name: "ProgramNavigation", category: "global", description: "Global program-level navigation from site configuration, with optional configured logo presentation that retains the item label as its accessible name.", requiredFields: ["items", "label"], accessibility: a11yControl }),
   register({ id: "GBL-site-identity", name: "SiteIdentity", category: "global", description: "Configured site identity and home destination.", requiredFields: ["name"] }),
   register({ id: "GBL-site-header", name: "SiteHeader", category: "global", description: "Configured identity, local navigation, search trigger, and mobile menu trigger.", requiredFields: ["site"] }),
   register({ id: "GBL-primary-navigation", name: "PrimaryNavigation", category: "global", description: "Desktop local navigation with hierarchical disclosure.", requiredFields: ["items", "label"], accessibility: a11yControl }),

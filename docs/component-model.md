@@ -21,6 +21,8 @@ Tokens → Entities → Components → Patterns → Global Elements → Template
 
 The registry intentionally does not claim that every capability in the audited canonical inventory is implemented. Remaining items are listed in `implementation-status.md` and should be admitted only when a Step 7 use case confirms their contract.
 
+ProgramNavigation items remain label-and-destination navigation contracts. An item may optionally configure a logo image; its required label remains the link's accessible name, so visual branding does not replace navigation semantics.
+
 ## Adding or changing an element
 
 1. Confirm the functional concept is supported by the CMS audit and passes the reusability admission rules.

@@ -27,6 +27,8 @@
     line-height: 1.6875;
     white-space: nowrap;
   }
+  .g-program-navigation__logo-link { display: flex; align-items: center; }
+  .g-program-navigation__logo { display: block; max-inline-size: 100%; block-size: auto; }
 
   .g-site-header { color: var(--text-inverse); background: var(--surface-brand-primary); }
   .g-site-header__inner {

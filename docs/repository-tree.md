@@ -40,7 +40,9 @@ Generated build/cache/dependency folders (`dist`, `.astro`, `node_modules`, test
 ├── public/shared
 │   ├── icons/search.svg
 │   ├── institutional/README.md
-│   └── logos/framework-mark.svg
+│   └── logos
+│       ├── framework-mark.svg
+│       └── kw-logo.svg
 ├── scripts
 │   ├── audit-build.mjs
 │   ├── generate-tokens.mjs

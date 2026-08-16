@@ -9,7 +9,12 @@
     { "label": "PhD", "url": "https://doctoral.wharton.upenn.edu/", "external": true },
     { "label": "Exec Ed", "url": "https://executiveeducation.wharton.upenn.edu/", "external": true },
     { "label": "Wharton Online", "url": "https://online.wharton.upenn.edu/", "external": true },
-    { "label": "Knowledge at Wharton", "url": "https://knowledge.wharton.upenn.edu/", "external": true }
+    {
+      "label": "Knowledge at Wharton",
+      "url": "https://knowledge.wharton.upenn.edu/",
+      "external": true,
+      "logo": { "src": "/shared/logos/kw-logo.svg", "width": 313, "height": 25 }
+    }
   ],
   "primary": [
     {
