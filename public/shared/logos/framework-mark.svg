@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-labelledby="title">
+  <title id="title">Wharton prototype framework placeholder mark</title>
+  <rect width="120" height="120" rx="8" fill="#001f5b"/>
+  <path d="M20 30h16l12 55 12-40h14l12 40 12-55h16L96 96H78L67 61 56 96H38z" fill="#fff"/>
+</svg>

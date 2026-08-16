@@ -1,0 +1,17 @@
+---
+import type { Action } from "@entities/index";
+import Button from "@components/Button.astro";
+import Heading from "@components/Heading.astro";
+import Container from "@utilities/Container.astro";
+import Surface from "@utilities/Surface.astro";
+interface Props { id: string; eyebrow?: string; heading: string; text: string; action?: Action; surface?: "brand-primary" | "brand-accent" | "subtle"; }
+const { id, eyebrow, heading, text, action, surface = "brand-primary" } = Astro.props;
+---
+<Surface as="section" tone={surface} class="p-callout" {id} ariaLabelledby={`${id}-heading`}>
+  <Container size="text">
+    {eyebrow && <p class="c-eyebrow">{eyebrow}</p>}
+    <Heading as="h2" id={`${id}-heading`}>{heading}</Heading>
+    <p>{text}</p>
+    {action && <Button href={action.url} variant={surface === "subtle" ? action.type : "secondary"} external={action.external}>{action.label}</Button>}
+  </Container>
+</Surface>

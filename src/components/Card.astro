@@ -1,0 +1,26 @@
+---
+import type { Action, Asset } from "@entities/index";
+import Heading from "./Heading.astro";
+import Image from "./Image.astro";
+interface Props {
+  title: string;
+  description?: string;
+  eyebrow?: string;
+  image?: Asset;
+  action?: Action;
+  variant?: "editorial" | "promotional" | "navigation" | "feature" | "compact" | "media-led" | "text-led";
+  headingLevel?: "h2" | "h3";
+}
+const { title, description, eyebrow, image, action, variant = "promotional", headingLevel = "h3" } = Astro.props;
+---
+<article class:list={["c-card", `c-card--${variant}`]}>
+  {image && <Image asset={image} />}
+  <div class="c-card__body">
+    {eyebrow && <p class="c-eyebrow">{eyebrow}</p>}
+    <Heading as={headingLevel} class="c-card__title">
+      {action ? <a href={action.url}>{title}</a> : title}
+    </Heading>
+    {description && <p>{description}</p>}
+    {action && <span class="c-card__action" aria-hidden="true">{action.label} →</span>}
+  </div>
+</article>

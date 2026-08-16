@@ -1,0 +1,5 @@
+---
+interface Props { tone?: "info" | "success" | "warning" | "error"; role?: "status" | "alert"; }
+const { tone = "info", role = "status" } = Astro.props;
+---
+<div class:list={["c-message", `c-message--${tone}`]} {role}><slot /></div>

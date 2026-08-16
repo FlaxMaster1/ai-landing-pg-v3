@@ -1,0 +1,34 @@
+[
+  {
+    "id": "structured-authoring",
+    "title": "A structured authoring workflow",
+    "url": "/insights/structured-content/",
+    "excerpt": "A representative story entity rendered through a semantic StoryCard.",
+    "image": "abstract-collaboration",
+    "date": "2026-06-12",
+    "author": "Framework Team",
+    "topic": "Content architecture",
+    "source": "Reference fixtures"
+  },
+  {
+    "id": "shared-patterns",
+    "title": "Shared patterns across site configurations",
+    "url": "/catalog/",
+    "excerpt": "The same pattern contracts can accept different site-owned copy and entities.",
+    "image": "abstract-campus",
+    "date": "2026-07-08",
+    "author": "Framework Team",
+    "topic": "Components",
+    "source": "Reference fixtures"
+  },
+  {
+    "id": "accessible-defaults",
+    "title": "Accessible interaction as a contract",
+    "url": "/catalog/#frequently-asked",
+    "excerpt": "Native controls, focus return, and one canonical H1 owner are foundational conventions.",
+    "date": "2026-08-01",
+    "author": "Framework Team",
+    "topic": "Accessibility",
+    "source": "Reference fixtures"
+  }
+]

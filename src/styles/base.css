@@ -1,0 +1,14 @@
+@layer base {
+  html { color: var(--text-default); background: var(--surface-page); font-family: var(--font-family-sans); line-height: 1.6; }
+  body { min-block-size: 100vh; }
+  main { display: block; }
+  :where(h1, h2, h3) { font-family: var(--font-family-serif); line-height: 1.12; text-wrap: balance; }
+  h1 { font-size: var(--type-display); }
+  h2 { font-size: var(--type-heading); }
+  h3 { font-size: var(--type-subheading); }
+  p { max-inline-size: 70ch; }
+  a { color: var(--text-link); text-underline-offset: 0.2em; text-decoration-thickness: 0.08em; }
+  a:hover { text-decoration-thickness: 0.15em; }
+  :where(a, button, input, textarea, select, summary):focus-visible { outline: var(--focus-width) solid var(--focus-color); outline-offset: 0.2rem; }
+  ::selection { color: var(--text-default); background: var(--focus-color); }
+}

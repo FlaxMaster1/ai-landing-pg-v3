@@ -1,0 +1,10 @@
+---
+import CloseControl from "@components/CloseControl.astro";
+import SearchForm from "@patterns/SearchForm.astro";
+interface Props { id: string; label: string; submitLabel: string; closeLabel: string; action?: string; }
+const { id, label, submitLabel, closeLabel, action = "/search/" } = Astro.props;
+---
+<dialog class="g-global-search" {id} aria-label={label} data-search-dialog>
+  <div class="g-global-search__header"><CloseControl label={closeLabel} /></div>
+  <SearchForm {action} {label} {submitLabel} />
+</dialog>

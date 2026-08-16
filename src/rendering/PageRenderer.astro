@@ -1,0 +1,23 @@
+---
+import { getEntry, render } from "astro:content";
+import type { PageConfig } from "@schemas/page";
+import type { LoadedSite } from "./site-loader";
+import { createFixtureProviders } from "@integrations/fixtures";
+import { resolveTemplate } from "./template-registry";
+import SectionRenderer from "./SectionRenderer.astro";
+import Container from "@utilities/Container.astro";
+interface Props { site: LoadedSite; page: PageConfig; }
+const { site, page } = Astro.props;
+const Template = resolveTemplate(page.template) as any;
+const providers = createFixtureProviders(site);
+let Narrative: any = undefined;
+if (page.contentId) {
+  const entry = await getEntry("narratives", `${site.id}/content/${page.contentId}`);
+  if (!entry) throw new Error(`Markdown entry '${page.contentId}' was validated on disk but not found by Astro content loader`);
+  Narrative = (await render(entry)).Content;
+}
+---
+<Template {page} sectionNavigation={page.sectionNavigation}>
+  {Narrative && <Container size="text" class="t-article__body"><Narrative /></Container>}
+  {page.sections.map((section) => <SectionRenderer {section} {site} {providers} />)}
+</Template>

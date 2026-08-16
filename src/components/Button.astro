@@ -1,0 +1,18 @@
+---
+interface Props {
+  href?: string;
+  type?: "button" | "submit";
+  variant?: "primary" | "secondary" | "text";
+  external?: boolean;
+  class?: string;
+}
+const { href, type = "button", variant = "primary", external = false, class: className } = Astro.props;
+const classes = ["c-button", `c-button--${variant}`, className];
+---
+{href ? (
+  <a {href} class:list={classes} target={external ? "_blank" : undefined} rel={external ? "noreferrer" : undefined}>
+    <slot />{external && <span class="u-screen-reader"> (opens in a new tab)</span>}
+  </a>
+) : (
+  <button {type} class:list={classes}><slot /></button>
+)}

@@ -1,0 +1,14 @@
+---
+import type { Event } from "@entities/index";
+import EventCard from "@components/EventCard.astro";
+import Heading from "@components/Heading.astro";
+import Container from "@utilities/Container.astro";
+interface Props { id: string; heading?: string; events: Event[]; variant?: "list" | "grid" | "featured"; emptyLabel: string; }
+const { id, heading, events, variant = "list", emptyLabel } = Astro.props;
+---
+<section id={id} class="p-section" aria-labelledby={heading ? `${id}-heading` : undefined}>
+  <Container>
+    {heading && <Heading as="h2" id={`${id}-heading`}>{heading}</Heading>}
+    {events.length > 0 ? <div class:list={["p-event-list", `p-event-list--${variant}`]}>{events.map((event) => <EventCard {event} {variant} />)}</div> : <p>{emptyLabel}</p>}
+  </Container>
+</section>

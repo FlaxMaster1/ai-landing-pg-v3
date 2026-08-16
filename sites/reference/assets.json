@@ -1,0 +1,25 @@
+[
+  {
+    "id": "abstract-campus",
+    "file": "images/abstract-campus.svg",
+    "alt": "Abstract geometric illustration of an institutional campus",
+    "caption": "Local reference asset",
+    "credit": "Framework fixture",
+    "focalPoint": { "x": 0.5, "y": 0.45 }
+  },
+  {
+    "id": "abstract-collaboration",
+    "file": "images/abstract-collaboration.svg",
+    "alt": "Abstract illustration of overlapping circles representing collaboration"
+  },
+  {
+    "id": "portrait-a",
+    "file": "images/portrait-a.svg",
+    "alt": "Abstract placeholder portrait with a warm red background"
+  },
+  {
+    "id": "portrait-b",
+    "file": "images/portrait-b.svg",
+    "alt": "Abstract placeholder portrait with a dark blue background"
+  }
+]

@@ -1,0 +1,19 @@
+---
+import type { LoadedSite } from "@rendering/site-loader";
+import MenuToggle from "@components/MenuToggle.astro";
+import PrimaryNavigation from "./PrimaryNavigation.astro";
+import SiteIdentity from "./SiteIdentity.astro";
+interface Props { site: LoadedSite; }
+const { site } = Astro.props;
+const ui = site.config.ui;
+---
+<div class="g-site-header">
+  <div class="u-container g-site-header__inner">
+    <SiteIdentity name={site.config.name} />
+    <PrimaryNavigation items={site.navigation.primary} label={ui.primaryNavigationLabel} />
+    <div class="g-site-header__actions">
+      {site.config.featureFlags.search && <button class="c-control" type="button" aria-haspopup="dialog" aria-controls="global-search" data-search-open>{ui.search}</button>}
+      {site.config.featureFlags.mobileNavigation && <div class="u-hidden-wide"><MenuToggle controls="mobile-navigation" label={ui.menu} /></div>}
+    </div>
+  </div>
+</div>

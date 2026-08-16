@@ -1,0 +1,10 @@
+---
+import SiteLayout from "../layouts/SiteLayout.astro";
+import PageRenderer from "../rendering/PageRenderer.astro";
+import { findPage, loadSite } from "../rendering/site-loader";
+const site = loadSite();
+const page = findPage(site, "/");
+---
+<SiteLayout {site} title={page.seo?.title ?? page.title} description={page.seo?.description}>
+  <PageRenderer {site} {page} />
+</SiteLayout>

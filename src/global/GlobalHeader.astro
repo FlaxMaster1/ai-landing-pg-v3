@@ -1,0 +1,47 @@
+---
+import type { LoadedSite } from "@rendering/site-loader";
+import GlobalSearch from "./GlobalSearch.astro";
+import MobileNavigation from "./MobileNavigation.astro";
+import ProgramNavigation from "./ProgramNavigation.astro";
+import SiteHeader from "./SiteHeader.astro";
+interface Props { site: LoadedSite; }
+const { site } = Astro.props;
+const ui = site.config.ui;
+---
+<header class="g-global-header">
+  <div class="g-global-header__program"><div class="u-container"><ProgramNavigation items={site.navigation.program} label={ui.programNavigationLabel} /></div></div>
+  <SiteHeader {site} />
+  <MobileNavigation id="mobile-navigation" items={site.navigation.primary} label={ui.primaryNavigationLabel} closeLabel={ui.closeMenu} backLabel={ui.back} />
+  {site.config.featureFlags.search && <GlobalSearch id="global-search" label={ui.search} submitLabel={ui.searchSubmit} closeLabel={ui.closeMenu} />}
+</header>
+<script>
+  const focusable = "a[href], button:not([disabled]), input:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex='-1'])";
+
+  const menu = document.querySelector<HTMLDialogElement>("[data-mobile-dialog]");
+  const menuOpen = document.querySelector<HTMLButtonElement>("[data-menu-open]");
+  const showPanel = (name: string) => {
+    menu?.querySelectorAll<HTMLElement>("[data-menu-panel]").forEach((panel) => { panel.hidden = panel.dataset.menuPanel !== name; });
+    menu?.querySelector<HTMLElement>(`[data-menu-panel='${name}']`)?.querySelector<HTMLElement>(focusable)?.focus();
+  };
+  menuOpen?.addEventListener("click", () => {
+    menu?.showModal();
+    menuOpen.setAttribute("aria-expanded", "true");
+    showPanel("root");
+  });
+  menu?.querySelectorAll<HTMLElement>("[data-submenu-open]").forEach((button) => button.addEventListener("click", () => showPanel(button.dataset.submenuOpen ?? "root")));
+  menu?.querySelectorAll<HTMLElement>("[data-submenu-back]").forEach((button) => button.addEventListener("click", () => showPanel("root")));
+  menu?.querySelector<HTMLElement>("[data-dialog-close]")?.addEventListener("click", () => menu.close());
+  menu?.addEventListener("close", () => {
+    menuOpen?.setAttribute("aria-expanded", "false");
+    menuOpen?.focus();
+  });
+
+  const search = document.querySelector<HTMLDialogElement>("[data-search-dialog]");
+  const searchOpen = document.querySelector<HTMLButtonElement>("[data-search-open]");
+  searchOpen?.addEventListener("click", () => {
+    search?.showModal();
+    search?.querySelector<HTMLElement>(focusable)?.focus();
+  });
+  search?.querySelector<HTMLElement>("[data-dialog-close]")?.addEventListener("click", () => search.close());
+  search?.addEventListener("close", () => searchOpen?.focus());
+</script>

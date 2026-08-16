@@ -1,0 +1,23 @@
+@layer utilities {
+  .u-container { inline-size: min(100% - (2 * var(--layout-gutter)), var(--size-content)); margin-inline: auto; }
+  .u-container--text { max-inline-size: var(--size-text); }
+  .u-layout { display: grid; gap: var(--space-8); }
+  .u-layout--cluster { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-4); }
+  .u-layout--sidebar { grid-template-columns: minmax(0, 1fr); }
+  .u-visible-wide { display: none; }
+  .u-screen-reader { position: absolute; inline-size: 1px; block-size: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+  .u-surface--page { background: var(--surface-page); }
+  .u-surface--subtle { background: var(--surface-subtle); }
+  .u-surface--brand-primary { color: var(--text-inverse); background: var(--surface-brand-primary); }
+  .u-surface--brand-accent { color: var(--text-inverse); background: var(--surface-brand-accent); }
+  .u-surface--inverse { color: var(--text-inverse); background: var(--surface-inverse); }
+  .u-anchor-target { position: relative; inset-block-start: -6rem; }
+  .u-responsive-media img { inline-size: 100%; block-size: 100%; object-fit: cover; aspect-ratio: 16 / 10; }
+  .u-responsive-media figcaption { display: flex; justify-content: space-between; gap: var(--space-4); margin-block-start: var(--space-2); color: var(--text-muted); font-size: 0.85rem; }
+  .u-aspect-ratio { aspect-ratio: var(--aspect-ratio, 16 / 9); overflow: hidden; }
+  @media (min-width: 52rem) {
+    .u-visible-wide { display: initial; }
+    .u-hidden-wide { display: none !important; }
+    .u-layout--sidebar { grid-template-columns: minmax(14rem, 1fr) minmax(0, 3fr); }
+  }
+}

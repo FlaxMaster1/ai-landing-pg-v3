@@ -1,0 +1,22 @@
+[
+  {
+    "id": "alex-rivera",
+    "name": "Alex Rivera",
+    "title": "Framework Steward",
+    "affiliation": "Reference Program",
+    "image": "portrait-a",
+    "bio": "Representative placeholder biography for the Person entity and PersonCard contract.",
+    "contact": { "email": "alex@example.invalid" },
+    "links": [{ "label": "Profile", "url": "/people/#alex-rivera", "type": "text" }]
+  },
+  {
+    "id": "morgan-lee",
+    "name": "Morgan Lee",
+    "title": "Content Architect",
+    "affiliation": "Reference Program",
+    "image": "portrait-b",
+    "bio": "Representative placeholder biography demonstrating site-owned structured person data.",
+    "contact": { "email": "morgan@example.invalid" },
+    "links": [{ "label": "Profile", "url": "/people/#morgan-lee", "type": "text" }]
+  }
+]

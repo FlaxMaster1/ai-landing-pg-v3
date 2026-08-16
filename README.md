@@ -1,54 +1,79 @@
 # Wharton Web Prototype Framework
 
-A reusable system for planning, designing, building, and reviewing high-fidelity Wharton website prototypes that closely reflect the production WordPress CMS.
+Reusable, static-first framework for high-fidelity Wharton website prototypes. The implementation follows `WHARTON_WEB_PROTOTYPE_FRAMEWORK_CANONICAL_SPEC.md` and keeps the shared framework independent from any one Wharton site.
 
-## Purpose
+Step 6 includes a neutral `reference` site—not an Undergraduate migration—to prove that validated site configuration, structured entities, Markdown, and stable asset IDs can render shared components, patterns, global elements, and all eight canonical template types.
 
-This repository is the permanent source of truth for the framework code, documentation, reusable components, version history, and project templates used to build Wharton website prototypes.
+This repository is the permanent source of truth for framework code, documentation, reusable elements, version history, and project templates. It is intended to reflect the current Wharton CMS as accurately as practical, evolve with approved UX/Figma work, support realistic stakeholder review, and preserve traceability for eventual WordPress handoff.
 
-The framework is intended to:
+## Requirements
 
-- Reflect the current Wharton CMS as accurately as practical.
-- Evolve alongside approved Wharton UX and Figma design-system work.
-- Give Codex a consistent technical foundation for new prototype sites.
-- Keep content separate from layout and presentation wherever practical.
-- Support realistic responsive behavior and interaction.
-- Produce prototypes suitable for stakeholder review in ChatGPT Sites.
-- Make eventual handoff to the Wharton WordPress development team easier.
-- Document the relationship between prototype components and production CMS components.
+- Node.js 22.12 or newer
+- npm 9.6.5 or newer
+- Chromium installed for Playwright (`npx playwright install chromium`)
 
-## Repository Structure
+## Run locally
 
-```text
-wharton-prototype-framework/
-├── README.md
-├── docs/
-│   ├── framework-charter.md
-│   ├── architecture.md
-│   ├── cms-mapping.md
-│   └── decisions/
-├── src/
-│   ├── tokens/
-│   ├── components/
-│   ├── patterns/
-│   ├── templates/
-│   └── utilities/
-├── content/
-├── public/
-│   ├── images/
-│   ├── icons/
-│   └── fonts/
-├── sites/
-│   └── undergraduate/
-└── tests/
+```sh
+npm install
+npm run dev:reference
 ```
 
-## First Validation Project
+Open `http://localhost:4321/`.
 
-The Wharton Undergraduate website will be the first full implementation and validation of the framework. Existing Undergraduate HTML pages will be converted into this reusable architecture rather than simply combined into a larger static site.
+Build and preview the static output:
 
-Lessons from that implementation will be used to refine the framework before it is applied to additional Wharton websites.
+```sh
+npm run build:reference
+npm run preview
+```
 
-## Current Status
+Run the complete local quality gate:
 
-The repository is being initialized with a stack-neutral architecture. Frontend framework, build tooling, CSS strategy, content model, and deployment conventions will be defined in a later technical architecture decision rather than assumed here.
+```sh
+npm run validate
+```
+
+Visual baselines are checked by `npm run validate`; update them intentionally with `npm run test:visual:update` after reviewing the rendered change.
+
+## Site selection
+
+The `SITE` environment variable selects a site root:
+
+```sh
+SITE=reference npm run dev
+SITE=reference npm run build
+```
+
+An unknown or malformed site ID fails before rendering. A new site should be created under `sites/{site-id}` and should contain configuration, navigation, footer groups, pages, content, entities, assets, and fixtures—not copies of shared framework components.
+
+## Architecture at a glance
+
+```text
+sites/{site}/ JSON + Markdown + assets
+                 ↓
+       Zod validation and reference checks
+                 ↓
+   generic route → template registry → pattern registry
+                 ↓
+ shared Astro components + native layered CSS + local JS
+                 ↓
+            static HTML and assets
+```
+
+Important paths:
+
+- `src/tokens`: DTCG-compatible token sources and generated CSS.
+- `src/entities` and `src/schemas`: typed data contracts and build-time validation.
+- `src/components`, `src/patterns`, `src/global`, `src/templates`: reusable presentation.
+- `src/rendering`: selected-site loading, controlled registries, and page composition.
+- `src/integrations`: provider interfaces and fixture/prototype adapters.
+- `src/registry/framework-elements.ts`: machine-readable implementation registry.
+- `sites/reference`: structured demonstration configuration and placeholder content.
+- `tests`: unit, browser, accessibility, responsive, and visual regression coverage.
+
+See `docs/architecture.md`, `docs/component-model.md`, `docs/testing.md`, and `docs/implementation-status.md` for detailed guidance.
+
+## First validation project
+
+Wharton Undergraduate remains the first full real-site validation. Step 7 should implement it through site configuration, structured content, assets, and shared framework composition rather than by combining or directly migrating legacy HTML.

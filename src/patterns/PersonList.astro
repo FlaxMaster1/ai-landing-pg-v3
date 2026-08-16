@@ -1,0 +1,14 @@
+---
+import type { Asset, Person } from "@entities/index";
+import Heading from "@components/Heading.astro";
+import PersonCard from "@components/PersonCard.astro";
+import Container from "@utilities/Container.astro";
+interface Props { id: string; heading?: string; people: Array<{ person: Person; image?: Asset }>; variant?: "cards" | "directory"; }
+const { id, heading, people, variant = "cards" } = Astro.props;
+---
+<section id={id} class="p-section" aria-labelledby={heading ? `${id}-heading` : undefined}>
+  <Container>
+    {heading && <Heading as="h2" id={`${id}-heading`}>{heading}</Heading>}
+    <div class:list={["p-person-list", `p-person-list--${variant}`]}>{people.map(({ person, image }) => <PersonCard {person} {image} variant={variant === "directory" ? "directory" : "card"} />)}</div>
+  </Container>
+</section>

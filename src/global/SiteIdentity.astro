@@ -1,0 +1,5 @@
+---
+interface Props { name: string; url?: string; }
+const { name, url = "/" } = Astro.props;
+---
+<a class="g-site-identity" href={url}>{name}</a>

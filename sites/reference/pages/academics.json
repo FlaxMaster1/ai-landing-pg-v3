@@ -1,0 +1,49 @@
+[
+  {
+    "route": "/academics/",
+    "template": "landing",
+    "title": "Learning model demonstration",
+    "titleMode": "default",
+    "width": "full",
+    "sidebar": "none",
+    "sections": [
+      {
+        "type": "pageIntro",
+        "id": "introduction",
+        "eyebrow": "Landing template",
+        "heading": "One composition, several reusable patterns",
+        "text": "This placeholder landing page demonstrates template-owned title behavior, responsive feature media, tabs, and native disclosures."
+      },
+      {
+        "type": "featureRow",
+        "id": "configured-feature",
+        "eyebrow": "Site-owned data",
+        "heading": "Presentation remains reusable",
+        "text": "The image, heading, narrative, action, and media position are page configuration. The layout and semantics live in the shared FeatureRow pattern.",
+        "image": { "assetId": "abstract-collaboration" },
+        "action": { "label": "Inspect the catalog", "url": "/catalog/", "type": "primary" },
+        "mediaPosition": "end"
+      },
+      {
+        "type": "tabs",
+        "id": "learning-modes",
+        "heading": "Selective interaction",
+        "orientation": "horizontal",
+        "items": [
+          { "label": "Static first", "content": "The server emits meaningful HTML before interaction JavaScript runs." },
+          { "label": "Local state", "content": "Tab selection stays inside the Tabs pattern and does not require global state." },
+          { "label": "Keyboard ready", "content": "Arrow, Home, and End keys update the selected tab and associated panel." }
+        ]
+      },
+      {
+        "type": "faq",
+        "id": "landing-faq",
+        "heading": "Landing page questions",
+        "items": [
+          { "question": "Does the landing page contain custom component code?", "answer": "No. Its route and sections are fully described by validated JSON." },
+          { "question": "Is the Undergraduate site being migrated here?", "answer": "No. This neutral reference site proves the framework without importing Undergraduate HTML or production content." }
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "route": "/events/",
+    "template": "topic",
+    "title": "Event topic demonstration",
+    "titleMode": "default",
+    "width": "contained",
+    "sidebar": "none",
+    "sections": [
+      { "type": "pageIntro", "id": "event-intro", "text": "Event presentation consumes the fixture EventsProvider, preserving a future Events HQ adapter boundary." },
+      { "type": "eventList", "id": "reference-events", "heading": "Reference events", "entityIds": ["framework-review", "content-workshop"], "variant": "list" }
+    ]
+  }
+]

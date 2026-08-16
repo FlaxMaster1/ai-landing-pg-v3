@@ -1,0 +1,46 @@
+[
+  {
+    "route": "/catalog/",
+    "template": "standard",
+    "title": "Framework-native catalog",
+    "titleMode": "default",
+    "width": "contained",
+    "sidebar": "none",
+    "sections": [
+      { "type": "pageIntro", "id": "catalog-intro", "eyebrow": "Development catalog", "text": "A lightweight catalog route exercises approved shared components and patterns without adding Storybook or a client framework." },
+      {
+        "type": "cardGrid",
+        "id": "card-variants",
+        "heading": "Card anatomy and variants",
+        "columns": 3,
+        "variant": "promotional",
+        "items": [
+          { "eyebrow": "Editorial metadata", "title": "Media-led card", "description": "A stable asset ID resolves to local site media.", "image": { "assetId": "abstract-campus" }, "action": { "label": "View asset handling", "url": "/resources/" } },
+          { "eyebrow": "Navigation", "title": "Text-led card", "description": "The same component omits its optional media region.", "action": { "label": "View patterns", "url": "/academics/" } },
+          { "eyebrow": "Composition", "title": "Shared semantics", "description": "Variant data changes presentation without creating a new component.", "action": { "label": "View entities", "url": "/people/" } }
+        ]
+      },
+      {
+        "type": "faq",
+        "id": "frequently-asked",
+        "heading": "Disclosure contract",
+        "items": [
+          { "question": "Why use details and summary?", "answer": "Native disclosure semantics provide keyboard operation and state without shipping custom JavaScript." },
+          { "question": "Where does this answer live?", "answer": "In reference-site page configuration, not inside the shared FAQ pattern." }
+        ]
+      },
+      {
+        "type": "form",
+        "id": "catalog-form",
+        "heading": "Prototype form",
+        "text": "The demonstration simulates success and sends no data to an external provider.",
+        "submitLabel": "Test the form",
+        "fields": [
+          { "id": "name", "label": "Name", "type": "text", "required": true },
+          { "id": "email", "label": "Email", "type": "email", "required": true, "hint": "Use any syntactically valid placeholder address." },
+          { "id": "notes", "label": "Review notes", "type": "textarea", "required": false }
+        ]
+      }
+    ]
+  }
+]

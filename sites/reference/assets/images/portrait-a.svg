@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" role="img" aria-labelledby="title">
+  <title id="title">Abstract portrait A</title>
+  <rect width="600" height="600" fill="#990000"/>
+  <circle cx="300" cy="235" r="115" fill="#f2c14e"/>
+  <path d="M115 600c15-160 85-245 185-245s170 85 185 245" fill="#fff"/>
+</svg>

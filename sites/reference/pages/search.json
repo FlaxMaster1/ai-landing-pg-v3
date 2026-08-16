@@ -1,0 +1,14 @@
+[
+  {
+    "route": "/search/",
+    "template": "search",
+    "title": "Search demonstration",
+    "titleMode": "default",
+    "width": "contained",
+    "sidebar": "none",
+    "sections": [
+      { "type": "pageIntro", "id": "search-intro", "text": "The global search entry point uses URL query state. This static reference page shows fixture results; a future provider can supply live results behind SearchProvider." },
+      { "type": "storyCollection", "id": "search-results", "heading": "Representative results", "entityIds": ["structured-authoring", "accessible-defaults"], "variant": "list" }
+    ]
+  }
+]

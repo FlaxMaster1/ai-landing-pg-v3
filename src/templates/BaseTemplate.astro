@@ -1,0 +1,18 @@
+---
+import type { NavigationItem } from "@entities/index";
+import type { PageConfig } from "@schemas/page";
+import Heading from "@components/Heading.astro";
+import SectionNavigation from "@patterns/SectionNavigation.astro";
+import Container from "@utilities/Container.astro";
+interface Props { page: PageConfig; templateName: PageConfig["template"]; sectionNavigation?: { label: string; items: NavigationItem[] }; }
+const { page, templateName, sectionNavigation } = Astro.props;
+const hasSidebar = page.sidebar !== "none";
+---
+<main id="main-content" tabindex="-1" data-template={templateName} data-width={page.width}>
+  {page.titleMode === "default" && <header class="t-page-title"><Container><Heading as="h1">{page.title}</Heading></Container></header>}
+  <div class:list={["t-page-body", `t-page-body--${page.width}`, hasSidebar && "u-container u-layout u-layout--sidebar"]}>
+    {hasSidebar && sectionNavigation && page.sidebar === "start" && <aside><SectionNavigation {...sectionNavigation} /></aside>}
+    <div class="t-page-content"><slot /></div>
+    {hasSidebar && sectionNavigation && page.sidebar === "end" && <aside><SectionNavigation {...sectionNavigation} /></aside>}
+  </div>
+</main>

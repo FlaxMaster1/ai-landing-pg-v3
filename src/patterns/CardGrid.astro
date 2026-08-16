@@ -1,0 +1,18 @@
+---
+import type { Action, Asset } from "@entities/index";
+import Card from "@components/Card.astro";
+import Heading from "@components/Heading.astro";
+import Container from "@utilities/Container.astro";
+interface CardItem { title: string; description?: string; eyebrow?: string; image?: Asset; action?: Action; }
+interface Props { id: string; eyebrow?: string; heading?: string; items: CardItem[]; columns?: 2 | 3; variant?: "editorial" | "promotional" | "navigation"; }
+const { id, eyebrow, heading, items, columns = 3, variant = "promotional" } = Astro.props;
+---
+<section id={id} class="p-section" aria-labelledby={heading ? `${id}-heading` : undefined}>
+  <Container>
+    {eyebrow && <p class="c-eyebrow">{eyebrow}</p>}
+    {heading && <Heading as="h2" id={`${id}-heading`}>{heading}</Heading>}
+    <div class="p-card-grid" style={`--grid-columns: ${columns}`}>
+      {items.map((item) => <Card {...item} {variant} />)}
+    </div>
+  </Container>
+</section>

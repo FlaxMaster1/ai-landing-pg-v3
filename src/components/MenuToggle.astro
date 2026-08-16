@@ -1,0 +1,5 @@
+---
+interface Props { controls: string; label: string; }
+const { controls, label } = Astro.props;
+---
+<button class="c-control c-menu-toggle" type="button" aria-controls={controls} aria-expanded="false" data-menu-open>{label}</button>

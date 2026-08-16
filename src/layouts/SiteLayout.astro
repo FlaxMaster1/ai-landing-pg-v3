@@ -1,0 +1,27 @@
+---
+import type { LoadedSite } from "@rendering/site-loader";
+import GlobalFooter from "@global/GlobalFooter.astro";
+import GlobalHeader from "@global/GlobalHeader.astro";
+import BackToTop from "@components/BackToTop.astro";
+import "../styles/index.css";
+interface Props { site: LoadedSite; title: string; description?: string; }
+const { site, title, description = site.config.defaultSeo.description } = Astro.props;
+const documentTitle = `${title}${site.config.defaultSeo.titleSuffix}`;
+---
+<!doctype html>
+<html lang="en" data-site-theme={site.config.theme}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+    <title>{documentTitle}</title>
+  </head>
+  <body id="page-top">
+    <a class="g-skip-link" href="#main-content">{site.config.ui.skipToContent}</a>
+    <GlobalHeader {site} />
+    <slot />
+    <BackToTop label={site.config.ui.backToTop} />
+    <GlobalFooter {site} />
+  </body>
+</html>

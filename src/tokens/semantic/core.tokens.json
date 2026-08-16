@@ -1,0 +1,32 @@
+{
+  "$description": "Semantic aliases consumed by shared framework styles.",
+  "surface": {
+    "page": { "$type": "color", "$value": "{color.neutral.0}" },
+    "subtle": { "$type": "color", "$value": "{color.neutral.50}" },
+    "brandPrimary": { "$type": "color", "$value": "{color.blue.700}" },
+    "brandAccent": { "$type": "color", "$value": "{color.red.700}" },
+    "inverse": { "$type": "color", "$value": "{color.blue.900}" }
+  },
+  "text": {
+    "default": { "$type": "color", "$value": "{color.neutral.950}" },
+    "muted": { "$type": "color", "$value": "{color.neutral.600}" },
+    "link": { "$type": "color", "$value": "{color.red.700}" },
+    "inverse": { "$type": "color", "$value": "{color.neutral.0}" }
+  },
+  "focus": {
+    "color": { "$type": "color", "$value": "{color.gold.400}" },
+    "width": { "$type": "dimension", "$value": "{border.thick}" }
+  },
+  "layout": {
+    "gutter": { "$type": "dimension", "$value": "clamp(1rem, 4vw, 2rem)" },
+    "section": { "$type": "dimension", "$value": "clamp(3rem, 8vw, 6rem)" },
+    "sectionLarge": { "$type": "dimension", "$value": "clamp(4rem, 11vw, 8rem)" }
+  },
+  "type": {
+    "display": { "$type": "dimension", "$value": "clamp(2.5rem, 7vw, 5.5rem)" },
+    "heading": { "$type": "dimension", "$value": "clamp(2rem, 4.5vw, 3.5rem)" },
+    "subheading": { "$type": "dimension", "$value": "clamp(1.35rem, 2.4vw, 2rem)" },
+    "lead": { "$type": "dimension", "$value": "clamp(1.15rem, 2.2vw, 1.45rem)" },
+    "stat": { "$type": "dimension", "$value": "clamp(2.5rem, 7vw, 5rem)" }
+  }
+}

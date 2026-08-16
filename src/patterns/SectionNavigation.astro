@@ -1,0 +1,8 @@
+---
+import type { NavigationItem } from "@entities/index";
+interface Props { label: string; items: NavigationItem[]; }
+const { label, items } = Astro.props;
+---
+<nav class="p-section-navigation" aria-label={label}>
+  <ul role="list">{items.map((item) => <li><a href={item.url} aria-current={item.active ? "page" : undefined}>{item.label}</a></li>)}</ul>
+</nav>

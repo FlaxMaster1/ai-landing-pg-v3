@@ -1,0 +1,47 @@
+{
+  "$description": "Primitive type, space, size, border, elevation, motion, and breakpoint values.",
+  "font": {
+    "family": {
+      "sans": { "$type": "fontFamily", "$value": ["Arial", "Helvetica", "sans-serif"] },
+      "serif": { "$type": "fontFamily", "$value": ["Georgia", "Times New Roman", "serif"] }
+    },
+    "weight": {
+      "regular": { "$type": "fontWeight", "$value": 400 },
+      "medium": { "$type": "fontWeight", "$value": 600 },
+      "bold": { "$type": "fontWeight", "$value": 700 }
+    }
+  },
+  "space": {
+    "0": { "$type": "dimension", "$value": "0rem" },
+    "1": { "$type": "dimension", "$value": "0.25rem" },
+    "2": { "$type": "dimension", "$value": "0.5rem" },
+    "3": { "$type": "dimension", "$value": "0.75rem" },
+    "4": { "$type": "dimension", "$value": "1rem" },
+    "6": { "$type": "dimension", "$value": "1.5rem" },
+    "8": { "$type": "dimension", "$value": "2rem" },
+    "12": { "$type": "dimension", "$value": "3rem" },
+    "16": { "$type": "dimension", "$value": "4rem" },
+    "24": { "$type": "dimension", "$value": "6rem" }
+  },
+  "size": {
+    "content": { "$type": "dimension", "$value": "72rem" },
+    "text": { "$type": "dimension", "$value": "46rem" },
+    "touch": { "$type": "dimension", "$value": "2.75rem" }
+  },
+  "border": {
+    "thin": { "$type": "dimension", "$value": "0.0625rem" },
+    "thick": { "$type": "dimension", "$value": "0.25rem" },
+    "radius": { "$type": "dimension", "$value": "0.25rem" }
+  },
+  "elevation": {
+    "raised": { "$type": "shadow", "$value": { "color": "#11110f24", "offsetX": "0rem", "offsetY": "0.25rem", "blur": "1rem", "spread": "0rem" } }
+  },
+  "motion": {
+    "fast": { "$type": "duration", "$value": "120ms" },
+    "standard": { "$type": "duration", "$value": "220ms" }
+  },
+  "breakpoint": {
+    "navigation": { "$type": "dimension", "$value": "52rem" },
+    "wide": { "$type": "dimension", "$value": "70rem" }
+  }
+}

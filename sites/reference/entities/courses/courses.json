@@ -1,0 +1,11 @@
+[
+  {
+    "id": "ref-101",
+    "courseId": "REF 101",
+    "title": "Structured Prototyping Foundations",
+    "description": "Representative course data retained separately from any CourseList presentation.",
+    "term": "2027A",
+    "semesterType": "Spring",
+    "faculty": ["alex-rivera"]
+  }
+]

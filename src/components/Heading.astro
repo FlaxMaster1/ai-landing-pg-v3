@@ -1,0 +1,9 @@
+---
+interface Props {
+  as?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+  id?: string;
+  class?: string;
+}
+const { as: Element = "h2", id, class: className }: Props = Astro.props;
+---
+<Element {id} class={className}><slot /></Element>
