@@ -7,20 +7,22 @@ This repository is developed collaboratively by Codex and Claude Code. `AGENTS.m
 Before making changes, read:
 
 1. `WHARTON_WEB_PROTOTYPE_FRAMEWORK_CANONICAL_SPEC.md`
-2. `docs/agent-collaboration.md`
-3. `docs/deployment.md`
-4. `docs/implementation-status.md`
-5. `docs/handoffs/current.md` when continuing or reviewing another agent's work
+2. `WHARTON_DESIGN_DECISION_FRAMEWORK.md` when selecting, composing, modifying, or creating interface elements
+3. `docs/agent-collaboration.md`
+4. `docs/deployment.md`
+5. `docs/implementation-status.md`
+6. `docs/handoffs/current.md` when continuing or reviewing another agent's work
 
 If instructions conflict, use this priority order:
 
 1. canonical specification
 2. accepted ADRs in `docs/decisions/`
 3. this file
-4. `docs/deployment.md`
-5. `docs/agent-collaboration.md`
-6. task-specific handoff/instructions
-7. conversational context
+4. `WHARTON_DESIGN_DECISION_FRAMEWORK.md` for component/pattern selection decisions
+5. `docs/deployment.md`
+6. `docs/agent-collaboration.md`
+7. task-specific handoff/instructions
+8. conversational context
 
 ## Production model
 
@@ -57,27 +59,28 @@ If instructions conflict, use this priority order:
 ## Repository rules
 
 1. Do not place site copy in shared components.
-2. Do not create a component when composition or an existing variant is sufficient.
-3. Use tokens instead of arbitrary reusable design values.
-4. Validate additions against Tokens → Entities → Components → Patterns → Global Elements → Templates → Utilities → Integrations.
-5. Preserve semantic HTML, keyboard operation, visible focus, accessible names, and exactly one H1 owner per page.
-6. Keep site-specific work in `sites/{site}` unless it passes the reusability admission rules.
-7. Do not add a dependency without documenting its concrete need.
-8. Run the appropriate validation for the scope. Use `npm run validate` for full local framework QA when practical; deployment-critical checks are defined by `.github/workflows/pages.yml`.
-9. For deployment-affecting work, run `npm run build:pages` when practical.
-10. Update contracts, the registry, tests, and documentation together.
-11. Record architecture changes in an ADR before implementing them.
-12. Never duplicate shared framework components into a site folder.
-13. Use functional names rather than WordPress, plugin, or appearance-based names.
-14. Do not add a client framework without an approved ADR and concrete need.
-15. Keep external systems behind typed provider interfaces.
-16. Do not introduce Undergraduate-specific framework shortcuts.
-17. Preserve the static-first rendering default and opt into client JavaScript only for interaction.
-18. Keep one task per branch and avoid unrelated cleanup.
-19. Before editing a shared subsystem, inspect current `main` and any named handoff branch for overlapping work.
-20. Do not casually change shared contracts, routing, build configuration, design tokens, or content schemas. If required, document the reason and update dependent tests/docs together.
-21. Leave the working tree clean and reviewable before handoff.
-22. Do not bypass GitHub Pages with a separate manual production copy.
+2. Before selecting or creating an interface element, inspect `src/registry/framework-elements.ts` and apply `WHARTON_DESIGN_DECISION_FRAMEWORK.md`. Prefer an existing registered component, pattern, or composition before introducing a new element or variant.
+3. Do not create a component when composition or an existing variant is sufficient.
+4. Use tokens instead of arbitrary reusable design values.
+5. Validate additions against Tokens → Entities → Components → Patterns → Global Elements → Templates → Utilities → Integrations.
+6. Preserve semantic HTML, keyboard operation, visible focus, accessible names, and exactly one H1 owner per page.
+7. Keep site-specific work in `sites/{site}` unless it passes the reusability admission rules.
+8. Do not add a dependency without documenting its concrete need.
+9. Run the appropriate validation for the scope. Use `npm run validate` for full local framework QA when practical; deployment-critical checks are defined by `.github/workflows/pages.yml`.
+10. For deployment-affecting work, run `npm run build:pages` when practical.
+11. Update contracts, the registry, tests, and documentation together.
+12. Record architecture changes in an ADR before implementing them.
+13. Never duplicate shared framework components into a site folder.
+14. Use functional names rather than WordPress, plugin, or appearance-based names.
+15. Do not add a client framework without an approved ADR and concrete need.
+16. Keep external systems behind typed provider interfaces.
+17. Do not introduce Undergraduate-specific framework shortcuts.
+18. Preserve the static-first rendering default and opt into client JavaScript only for interaction.
+19. Keep one task per branch and avoid unrelated cleanup.
+20. Before editing a shared subsystem, inspect current `main` and any named handoff branch for overlapping work.
+21. Do not casually change shared contracts, routing, build configuration, design tokens, or content schemas. If required, document the reason and update dependent tests/docs together.
+22. Leave the working tree clean and reviewable before handoff.
+23. Do not bypass GitHub Pages with a separate manual production copy.
 
 ## Required Git workflow
 
