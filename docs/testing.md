@@ -1,6 +1,10 @@
 # Testing and validation
 
-Run the complete local gate:
+The repository has two related but distinct validation paths: the full local framework QA gate and the GitHub Pages production deployment gate.
+
+## Full local framework QA
+
+Run:
 
 ```sh
 npm run validate:complete
@@ -19,6 +23,20 @@ It performs:
 
 `npm run validate` runs the framework gate without the final npm advisory query. `npm run validate:complete` adds that dependency audit.
 
+## GitHub Pages production gate
+
+`.github/workflows/pages.yml` intentionally uses a narrower, platform-stable deployment gate. It requires:
+
+1. `npm run content:validate`;
+2. `npm run check`;
+3. `npm run test:unit`;
+4. `npm run build:reference`;
+5. `npm run audit:build`;
+6. `npm run build:pages`;
+7. successful artifact upload and GitHub Pages deployment.
+
+The Pages workflow does not require the full Playwright visual/E2E suite because screenshot baselines are platform-specific and should not block production solely because GitHub Actions runs on Linux. Full Playwright QA remains required when the scope warrants it, particularly for visual, responsive, accessibility, or framework releases.
+
 Useful focused commands:
 
 ```sh
@@ -28,15 +46,16 @@ npm run test:unit
 npm run test:a11y
 npm run test:visual
 npm run test:visual:update
+npm run build:pages
 npm run build:sites
 ```
 
 Visual baselines cover all eight templates at 1440 × 900 and 390 × 844 in Chromium. Updating snapshots is an explicit review action.
 
-`tests/e2e/current-cms-theme.spec.ts` protects the measured `old-theme` shell heights, 1,225px content boundary, 992px navigation transition, square/flat card treatment, 42px form controls, and selected-tab styling in both desktop and mobile projects. `npm run test:theme-preview` starts the development server and proves the reference selector can swap between registered stylesheets without changing page composition.
+`tests/e2e/current-cms-theme.spec.ts` protects measured `old-theme` shell and layout behavior. `npm run test:theme-preview` starts the development server and proves the reference selector can swap between registered stylesheets without changing page composition.
 
-`build:sites` is an additional compatibility gate. It must prerender the same eight routes and four site assets, include Sites metadata, and emit a Cloudflare-compatible worker without changing the ordinary static reference build.
+`build:sites` remains an additional compatibility gate only. It must prerender the same eight routes and four site assets, include Sites metadata, and emit a Cloudflare-compatible worker without changing the ordinary static reference build. ChatGPT Sites is not the primary production host.
 
-Hosted validation reuses the same Playwright configuration by setting `SITES_BASE_URL` and an uncommitted `SITES_BEARER_TOKEN`. The token supplies identity-less access to an owner-only test deployment and must never be written to source, logs, screenshots, or documentation. Visual tests explicitly wait for document fonts and all images before capture so remote latency does not create false screenshot differences.
+Hosted validation may still use the Playwright configuration with `SITES_BASE_URL` and an uncommitted `SITES_BEARER_TOKEN` for compatibility testing. The token must never be written to source, logs, screenshots, or documentation.
 
 Automated axe testing is evidence, not complete WCAG conformance. Step 7 should add manual keyboard, screen-reader, zoom/reflow, alternative-text, and content-quality review against real site content.

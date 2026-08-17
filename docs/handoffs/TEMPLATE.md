@@ -32,9 +32,9 @@ Summarize implementation completed. Do not paste a full diff.
 
 ## Validation
 
-- [ ] `npm run validate`
+- [ ] Focused tests for changed behavior
+- [ ] `npm run validate` when full local framework QA is practical
 - [ ] `npm run build:pages` when deployment-affecting
-- [ ] Relevant focused tests
 - [ ] Responsive review
 - [ ] Keyboard/accessibility review
 - [ ] Visual comparison where applicable
@@ -52,12 +52,18 @@ List unresolved defects, assumptions, merge risks, or dependencies. Write `None 
 ## Production readiness
 
 - **Ready to merge to `main`:** yes | no
+- **Production URL:** `https://flaxmaster1.github.io/wharton-prototype-framework/`
 - **Expected production impact:**
-- **GitHub Pages deployment required:** yes | no
+- **Requires Pages deployment after merge:** yes | no
+- **Pages workflow status:** not started | pending | success | failed | not applicable
+- **Workflow run / URL:**
+- **Live verification completed:** yes | no | not applicable
 - **Notes:**
 
-A merge to `main` is a production deployment approval because `.github/workflows/pages.yml` automatically validates, builds, and deploys the reference site to GitHub Pages.
+A merge to `main` is a production deployment approval. `.github/workflows/pages.yml` automatically validates the production gate, builds the Pages artifact, and deploys it. Do not call a change live until that workflow succeeds.
+
+Full Playwright visual/E2E QA may be recorded separately and should not be confused with the narrower GitHub Pages production gate.
 
 ## Exact next action
 
-Give the next developer a concrete first action, including the branch/commit or PR to inspect.
+Give the next developer a concrete first action, including the branch/commit or PR to inspect and whether the Pages workflow must be monitored after merge.
