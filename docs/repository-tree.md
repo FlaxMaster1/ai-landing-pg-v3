@@ -1,36 +1,41 @@
-# Current framework repository tree
+# Current framework repository structure
 
-Generated build/cache/dependency folders (`dist`, `.astro`, `node_modules`, test reports) are omitted.
+Generated build/cache/dependency folders (`dist`, `.astro`, `node_modules`, test reports) are omitted. This document describes the maintained structure and responsibilities rather than attempting to mirror every generated or fixture file.
 
 ```text
 .
-├── .gitignore
-├── .openai/hosting.json
-├── AGENTS.md
+├── .github/
+│   └── workflows/pages.yml            # validate/build/deploy GitHub Pages
+├── .openai/                           # ChatGPT Sites compatibility metadata
+├── AGENTS.md                          # shared Codex + Claude Code instructions
 ├── README.md
 ├── WHARTON_WEB_PROTOTYPE_FRAMEWORK_CANONICAL_SPEC.md
+├── WHARTON_DESIGN_DECISION_FRAMEWORK.md
 ├── astro.config.ts
 ├── package.json
-├── package-lock.json
-├── playwright.config.ts
-├── playwright.theme.config.ts
+├── playwright*.config.ts
 ├── tsconfig.json
 ├── vitest.config.ts
-├── docs
+├── docs/
+│   ├── README.md                      # documentation map
 │   ├── adding-a-site.md
+│   ├── agent-collaboration.md
 │   ├── architecture.md
-│   ├── cms-audit/README.md
-│   ├── cms-mapping.md
+│   ├── component-handbook.md
 │   ├── component-model.md
-│   ├── current-cms-visual-fidelity.md
-│   ├── dependencies.md
-│   ├── framework-charter.md
-│   ├── implementation-status.md
-│   ├── repository-tree.md
-│   ├── sites-validation.md
+│   ├── page-recipes.md
+│   ├── deployment.md
 │   ├── testing.md
+│   ├── implementation-status.md
+│   ├── framework-charter.md
 │   ├── themes.md
-│   └── decisions
+│   ├── current-cms-visual-fidelity.md
+│   ├── cms-mapping.md
+│   ├── cms-audit/
+│   ├── handoffs/
+│   │   ├── TEMPLATE.md
+│   │   └── current.md
+│   └── decisions/
 │       ├── 001-astro.md
 │       ├── 002-static-rendering.md
 │       ├── 003-design-tokens.md
@@ -39,174 +44,66 @@ Generated build/cache/dependency folders (`dist`, `.astro`, `node_modules`, test
 │       ├── 006-native-css.md
 │       ├── 007-provider-adapters.md
 │       ├── 008-generic-renderer.md
-│       └── 009-theme-boundary.md
-├── public/shared
-│   ├── icons/search.svg
-│   ├── institutional/README.md
-│   └── logos
-│       ├── framework-mark.svg
-│       └── kw-logo.svg
-├── scripts
-│   ├── audit-build.mjs
-│   ├── generate-tokens.mjs
-│   ├── prepare-sites-build.mjs
-│   └── serve-dist.mjs
-├── sites/reference
-│   ├── site.config.json
-│   ├── navigation.json
-│   ├── footer.json
-│   ├── assets.json
-│   ├── assets/images
-│   │   ├── abstract-campus.svg
-│   │   ├── abstract-collaboration.svg
-│   │   ├── portrait-a.svg
-│   │   └── portrait-b.svg
-│   ├── content/structured-content.md
-│   ├── entities
-│   │   ├── courses/courses.json
-│   │   ├── events/events.json
-│   │   ├── people/people.json
-│   │   └── stories/stories.json
-│   ├── fixtures/README.md
-│   └── pages
-│       ├── academics.json
-│       ├── article.json
-│       ├── catalog.json
-│       ├── events.json
-│       ├── home.json
-│       ├── people.json
-│       ├── resources.json
-│       └── search.json
-├── sites/undergraduate/.gitkeep
-├── src
-│   ├── components
-│   │   ├── BackControl.astro
-│   │   ├── BackToTop.astro
-│   │   ├── Button.astro
-│   │   ├── Card.astro
-│   │   ├── CloseControl.astro
-│   │   ├── Disclosure.astro
-│   │   ├── Divider.astro
-│   │   ├── EventCard.astro
-│   │   ├── FormControl.astro
-│   │   ├── Heading.astro
-│   │   ├── Image.astro
-│   │   ├── Link.astro
-│   │   ├── MenuToggle.astro
-│   │   ├── Message.astro
-│   │   ├── PersonCard.astro
-│   │   ├── SearchInput.astro
-│   │   ├── Stat.astro
-│   │   ├── StoryCard.astro
-│   │   └── Text.astro
-│   ├── entities/index.ts
-│   ├── global
-│   │   ├── GlobalFooter.astro
-│   │   ├── GlobalHeader.astro
-│   │   ├── GlobalSearch.astro
-│   │   ├── MobileNavigation.astro
-│   │   ├── PrimaryNavigation.astro
-│   │   ├── ProgramNavigation.astro
-│   │   ├── SiteHeader.astro
-│   │   └── SiteIdentity.astro
-│   ├── integrations
-│   │   ├── contracts.ts
-│   │   ├── fixtures.ts
-│   │   └── index.ts
-│   ├── layouts/SiteLayout.astro
-│   ├── pages
-│   │   ├── index.astro
-│   │   ├── [...slug].astro
-│   │   └── site-assets/[...path].ts
-│   ├── patterns
-│   │   ├── Breadcrumbs.astro
-│   │   ├── Callout.astro
-│   │   ├── CardGrid.astro
-│   │   ├── EventList.astro
-│   │   ├── FAQ.astro
-│   │   ├── FeatureRow.astro
-│   │   ├── Form.astro
-│   │   ├── Hero.astro
-│   │   ├── PageIntro.astro
-│   │   ├── PersonList.astro
-│   │   ├── SearchForm.astro
-│   │   ├── SectionNavigation.astro
-│   │   ├── StatsGroup.astro
-│   │   ├── StoryCollection.astro
-│   │   └── Tabs.astro
-│   ├── registry/framework-elements.ts
-│   ├── rendering
-│   │   ├── PageRenderer.astro
-│   │   ├── SectionRenderer.astro
-│   │   ├── pattern-registry.ts
-│   │   ├── site-loader.ts
-│   │   └── template-registry.ts
-│   ├── schemas
-│   │   ├── entities.ts
-│   │   ├── index.ts
-│   │   ├── page.ts
-│   │   └── site.ts
-│   ├── styles
-│   │   ├── base.css
-│   │   ├── components.css
-│   │   ├── globals.css
-│   │   ├── index.css
-│   │   ├── patterns.css
-│   │   ├── reset.css
-│   │   ├── site.css
-│   │   ├── theme-preview.css
-│   │   └── utilities.css
-│   ├── themes
-│   │   ├── contracts.ts
-│   │   ├── index.ts
-│   │   ├── ThemeSelector.astro
-│   │   ├── old-theme/index.css
-│   │   └── new-theme/index.css
-│   ├── templates
-│   │   ├── Article.astro
-│   │   ├── BaseTemplate.astro
-│   │   ├── Directory.astro
-│   │   ├── Homepage.astro
-│   │   ├── Landing.astro
-│   │   ├── Search.astro
-│   │   ├── Sidebar.astro
-│   │   ├── Standard.astro
-│   │   └── Topic.astro
-│   ├── tokens
-│   │   ├── component/button.tokens.json
-│   │   ├── generated/tokens.css
-│   │   ├── primitive/color.tokens.json
-│   │   ├── primitive/foundation.tokens.json
-│   │   └── semantic/core.tokens.json
-│   ├── utilities
-│   │   ├── AnchorTarget.astro
-│   │   ├── Container.astro
-│   │   ├── ResponsiveMedia.astro
-│   │   ├── ScreenReaderText.astro
-│   │   ├── Surface.astro
-│   │   ├── focus-management.ts
-│   │   ├── format-date.ts
-│   │   └── route.ts
-│   ├── content.config.ts
-│   └── env.d.ts
-└── tests
-    ├── accessibility/axe.spec.ts
-    ├── development/theme-preview.spec.ts
-    ├── e2e
-    │   ├── current-cms-theme.spec.ts
-    │   ├── foundation.spec.ts
-    │   ├── interactions.spec.ts
-    │   ├── responsive.spec.ts
-    │   └── templates.spec.ts
-    ├── unit
-    │   ├── architecture-boundaries.test.ts
-    │   ├── content-validation.test.ts
-    │   ├── integrations.test.ts
-    │   ├── registry.test.ts
-    │   ├── rendering.test.ts
-    │   ├── themes.test.ts
-    │   └── tokens.test.ts
-    └── visual
-        ├── templates.spec.ts
-        └── templates.spec.ts-snapshots/ (16 PNG baselines)
+│       ├── 009-theme-boundary.md
+│       └── 010-github-pages-hosting.md
+├── public/shared/                     # shared framework assets
+├── scripts/                           # validation/build/token/Sites helpers
+├── sites/
+│   ├── reference/                     # neutral framework demonstration site
+│   └── undergraduate/                 # first real-site validation target
+├── src/
+│   ├── components/                    # semantic reusable UI units
+│   ├── entities/                      # provider-independent entity contracts
+│   ├── global/                        # shared shell/navigation/footer systems
+│   ├── integrations/                  # typed provider interfaces/adapters
+│   ├── layouts/
+│   ├── pages/                         # generic routes + validated site assets
+│   ├── patterns/                      # reusable purposeful compositions
+│   ├── registry/
+│   │   └── framework-elements.ts      # machine-readable framework inventory
+│   ├── rendering/                     # selected-site loader and registries
+│   ├── schemas/                       # Zod site/page/entity validation
+│   ├── styles/                        # shared CSS layers
+│   ├── templates/                     # page-level structures
+│   ├── themes/                        # visual implementation boundary
+│   ├── tokens/                        # DTCG token sources/generated CSS
+│   └── utilities/                     # meaning-neutral helpers
+└── tests/
+    ├── accessibility/
+    ├── development/
+    ├── e2e/
+    ├── unit/
+    └── visual/
 ```
+
+## Documentation relationships
+
+The most important non-code paths form a deliberate decision stack:
+
+```text
+WHARTON_WEB_PROTOTYPE_FRAMEWORK_CANONICAL_SPEC.md
+                        ↓
+WHARTON_DESIGN_DECISION_FRAMEWORK.md
+                        ↓
+src/registry/framework-elements.ts
+                        ↓
+docs/component-handbook.md
+                        ↓
+docs/page-recipes.md
+                        ↓
+sites/{site}/ implementation
+```
+
+`docs/README.md` is the maintained documentation index and should be updated whenever a new governing or operational document is added.
+
+## Site boundary
+
+A concrete site belongs under `sites/{site-id}` and should own configuration, routes/page composition, navigation/footer data, content, entities, asset metadata/files, and fixtures. It should not copy shared framework code.
+
+## Shared framework boundary
+
+Reusable behavior belongs under `src/` only when it passes the framework admission rules. New reusable elements must be registered in `src/registry/framework-elements.ts` and documented through the Design Decision Framework/Component Handbook/Page Recipes as appropriate.
+
+## Production boundary
+
+GitHub is the source of truth. Production deployment for the reference site is driven by merges to `main` through `.github/workflows/pages.yml`. `.openai/` and Sites-specific build helpers remain compatibility-only.
