@@ -1,223 +1,496 @@
-@layer globals {
-  .g-skip-link {
-    position: fixed;
-    z-index: 100;
-    inset-block-start: var(--space-2);
-    inset-inline-start: var(--space-2);
-    padding: var(--space-3);
-    color: var(--text-inverse);
-    background: var(--surface-brand-primary);
-    transform: translateY(-200%);
-  }
-  .g-skip-link:focus { transform: translateY(0); }
-  .g-global-header { position: relative; z-index: 10; }
+# **Wharton Web Prototype Framework — Project Handoff**
 
-  .g-global-header__program { block-size: 3.125rem; color: var(--color-neutral-600); background: var(--color-neutral-0); }
-  .g-global-header__program-inner { display: flex; inline-size: 100%; max-inline-size: none; block-size: 100%; align-items: center; gap: 3.125rem; padding-inline: 1.25rem 3.75rem; }
-  .g-global-header__brand { display: grid; flex: 0 0 7.5rem; place-items: center; }
-  .g-global-header__brand img { inline-size: 7.5rem; block-size: auto; }
-  .g-program-navigation { min-inline-size: 0; }
-  .g-program-navigation ul { display: flex; gap: 0.75rem; overflow-x: auto; }
-  .g-program-navigation a {
-    display: block;
-    padding-block: 0.71875rem;
-    color: inherit;
-    font-family: var(--font-family-sans-condensed);
-    font-size: 0.984375rem;
-    line-height: 1.6875;
-    white-space: nowrap;
-  }
-  .g-program-navigation a.g-program-navigation__logo-link { display: flex; block-size: 100%; align-items: center; padding-block: 0; }
-  .g-program-navigation__logo { display: block; inline-size: auto; max-inline-size: 100%; block-size: 0.9375rem; }
+You are taking over an active development project called **Wharton Web Prototype Framework**.
 
-  .g-site-header { color: var(--text-inverse); background: var(--surface-brand-primary); }
-  .g-site-header__inner {
-    position: relative;
-    display: grid;
-    min-block-size: 8.25rem;
-    grid-template-columns: minmax(0, 1fr) auto;
-    grid-template-rows: 5rem 3.25rem;
-    grid-template-areas: "identity actions" "navigation navigation";
-    align-items: center;
-    inline-size: 100%;
-    max-inline-size: none;
-    padding-inline: 1.25rem;
-  }
-  .g-site-identity {
-    grid-area: identity;
-    color: inherit;
-    font-family: var(--font-family-serif);
-    font-size: clamp(1.625rem, 3vw, 1.9375rem);
-    line-height: 1.935;
-    letter-spacing: -0.0375rem;
-    text-decoration: none;
-  }
-  .g-primary-navigation { grid-area: navigation; align-self: stretch; }
-  .g-primary-navigation > ul { display: flex; align-items: stretch; gap: 0; block-size: 100%; }
-  .g-primary-navigation > ul > li { display: flex; }
-  .g-primary-navigation a, .g-primary-navigation summary {
-    display: flex;
-    align-items: center;
-    padding: 0.875rem 0.8125rem 1.0625rem 0.625rem;
-    color: inherit;
-    border-block-start: 0.3125rem solid transparent;
-    font-family: var(--font-family-sans-condensed-bold);
-    font-size: 1.0625rem;
-    line-height: 1;
-    cursor: pointer;
-  }
-  .g-primary-navigation :where(a, summary):hover,
-  .g-primary-navigation :where(a[aria-current="page"], summary[aria-current="page"]) {
-    border-block-start-color: var(--color-blue-500);
-    text-decoration: none;
-  }
-  .g-primary-navigation summary::marker { content: ""; }
-  .g-primary-navigation details { position: relative; block-size: 100%; }
-  .g-primary-navigation details > summary { block-size: 100%; }
-  .g-primary-navigation details > ul { position: absolute; z-index: 2; min-inline-size: 15rem; padding: var(--space-2); color: var(--text-default); background: var(--surface-page); border-block-start: 0.3125rem solid var(--color-blue-500); box-shadow: var(--elevation-raised); }
-  .g-primary-navigation details > ul a { border-block-start: 0; border-block-end: var(--border-thin) solid var(--color-neutral-200); }
+The project is a reusable system for planning, designing, building, reviewing, and publishing high-fidelity Wharton website prototypes that closely map to the Wharton WordPress CMS while remaining independent of WordPress implementation details.
 
-  .g-site-header__actions { grid-area: actions; display: flex; align-items: center; gap: var(--space-3); }
-  .g-site-header__actions > [data-search-open] { position: relative; display: grid; inline-size: 2rem; min-block-size: 2rem; padding: 0; place-items: center; border: 0.125rem solid currentColor; border-radius: 50%; font-size: 0; }
-  .g-site-header__actions > [data-search-open]::before { content: ""; inline-size: 0.5rem; block-size: 0.5rem; border: 0.125rem solid currentColor; border-radius: 50%; }
-  .g-site-header__actions > [data-search-open]::after { content: ""; position: absolute; inline-size: 0.45rem; block-size: 0.125rem; margin: 0.75rem 0 0 0.75rem; background: currentColor; transform: rotate(45deg); }
+The framework is intended to support many future Wharton websites, not just one project.
 
-  :where(.g-mobile-navigation, .g-global-search) { inline-size: min(100%, 28rem); max-inline-size: none; block-size: 100%; max-block-size: none; margin: 0 0 0 auto; padding: 0; border: 0; box-shadow: var(--elevation-raised); }
-  :where(.g-mobile-navigation, .g-global-search)::backdrop { background: rgb(0 44 119 / 76%); }
-  .g-mobile-navigation__header, .g-global-search__header { display: flex; min-block-size: 4.375rem; align-items: center; justify-content: space-between; padding: var(--space-4); color: var(--text-inverse); background: var(--color-blue-900); }
-  .g-mobile-navigation__header .c-control, .g-global-search__header .c-control { border-color: currentColor; }
-  .g-mobile-navigation nav { padding: 0; color: var(--color-blue-900); background: var(--color-neutral-0); }
-  .g-mobile-navigation li :where(a, button) { display: flex; inline-size: 100%; min-block-size: 3.5rem; align-items: center; justify-content: space-between; padding: var(--space-3) var(--space-4); color: inherit; background: transparent; border: 0; border-block-end: var(--border-thin) solid var(--color-neutral-300); text-align: start; }
-  .g-mobile-navigation__section { padding: var(--space-4); color: var(--text-default); background: var(--color-neutral-200); font-family: var(--font-family-sans-bold); }
-  .g-global-search { block-size: auto; max-block-size: calc(100% - 2rem); margin: auto; }
-  .g-global-search .p-search-form { padding: var(--space-8); }
+## **Working Model**
 
-  .g-global-footer { padding-block: 2.5rem; color: var(--text-inverse); background: var(--surface-brand-primary); font-size: 1rem; line-height: 1.5; }
-  .g-global-footer a { color: inherit; }
-  .g-global-footer__additional { margin-block-end: 2rem; border-block-end: var(--border-thin) solid rgb(255 255 255 / 35%); }
-  .g-global-footer__additional > summary { display: flex; min-block-size: 2.75rem; align-items: center; justify-content: space-between; padding-block-end: var(--space-4); font-family: var(--font-family-sans-condensed-bold); cursor: pointer; }
-  .g-global-footer__additional > summary::after { content: "+"; font-family: var(--font-family-sans); font-size: 1.5rem; }
-  .g-global-footer__additional[open] > summary::after { content: "−"; }
-  .g-global-footer__additional > nav ul, .g-global-footer__legal, .g-global-footer__legal ul { display: flex; flex-wrap: wrap; gap: var(--space-4); }
-  .g-global-footer__groups { display: grid; gap: var(--space-8); margin-block: var(--space-8); }
-  .g-global-footer__groups h2 { margin-block-end: var(--space-4); color: inherit; font-family: var(--font-family-sans-condensed-bold); font-size: 1.25rem; }
-  .g-global-footer__groups ul { display: grid; gap: var(--space-2); }
-  .g-global-footer__brand { display: inline-block; margin-block-end: var(--space-8); }
-  .g-global-footer__brand img { inline-size: 9.1875rem; block-size: auto; }
-  .g-global-footer__legal { justify-content: space-between; padding-block-start: var(--space-6); border-block-start: var(--border-thin) solid rgb(255 255 255 / 35%); font-family: var(--font-family-sans-condensed); font-size: 1rem; }
+The permanent framework lives in GitHub and is developed locally.
 
-  @media (max-width: 61.99rem) {
-    .g-global-header__program {
-      block-size: 3.125rem;
-    }
+The local working project is:
 
-    .g-global-header__program-inner {
-      padding-inline: clamp(1rem, 3vw, 1.5rem);
-    }
+`Wharton Web Prototype Framework`
 
-    .g-global-header__brand {
-      flex-basis: 7rem;
-      justify-self: start;
-    }
+The framework is built with:
 
-    .g-global-header__brand img {
-      inline-size: auto;
-      block-size: 1.75rem;
-    }
+* Astro  
+* TypeScript  
+* structured JSON composition  
+* Markdown narrative content  
+* native CSS cascade layers  
+* typed content/entity contracts  
+* reusable components, patterns, globals, and templates  
+* automated validation and visual regression testing
 
-    .g-program-navigation { display: none; }
+The existing architecture should be treated as approved. Do not redesign the architecture unless a genuine blocking issue is discovered.
 
-    .g-site-header {
-      min-block-size: 5.8125rem;
-      margin-block-start: -3.125rem;
-      color: var(--surface-brand-primary);
-      background: linear-gradient(to bottom, transparent 0 3.125rem, var(--surface-brand-primary) 3.125rem);
-    }
+---
 
-    .g-site-header__inner {
-      min-block-size: 3.125rem;
-      grid-template-rows: 3.125rem;
-      grid-template-areas: "identity actions";
-      padding-inline: clamp(1rem, 3vw, 1.5rem);
-    }
+# **Governing Framework Model**
 
-    .g-site-identity {
-      overflow: hidden;
-      inline-size: 1px;
-      block-size: 1px;
-      clip-path: inset(50%);
-      white-space: nowrap;
-    }
+The canonical functional taxonomy is:
 
-    .g-site-header__actions {
-      gap: 0.8125rem;
-    }
+**Tokens → Entities → Components → Patterns → Global Elements → Templates → Utilities → Integrations**
 
-    .g-site-header__actions > [data-search-open] {
-      inline-size: 2.25rem;
-      min-block-size: 2.25rem;
-      border-width: 0.1875rem;
-      font-size: 0;
-    }
+A critical architectural principle is:
 
-    .g-site-header__actions > [data-search-open]::before {
-      inline-size: 0.625rem;
-      block-size: 0.625rem;
-      border-width: 0.1875rem;
-    }
+**The framework models functional concepts, not WordPress artifacts.**
 
-    .g-site-header__actions > [data-search-open]::after {
-      inline-size: 0.625rem;
-      block-size: 0.1875rem;
-      margin: 0.8125rem 0 0 0.8125rem;
-    }
+WordPress CMS elements and Figma design-system components map to this functional model rather than dictating the framework architecture.
 
-    .c-menu-toggle {
-      position: relative;
-      inline-size: 2.25rem;
-      min-block-size: 2.25rem;
-      padding: 0;
-      overflow: hidden;
-      border: 0;
-      font-size: 0;
-    }
+Content and site configuration should remain separate from presentation wherever practical.
 
-    .c-menu-toggle::before {
-      content: "";
-      position: absolute;
-      inset-block-start: 0.1875rem;
-      inset-inline: 0;
-      block-size: 0.3125rem;
-      border-radius: 0.0625rem;
-      background: currentColor;
-      box-shadow: 0 0.75rem 0 currentColor, 0 1.5rem 0 currentColor;
-    }
-  }
+---
 
-  @media (min-width: 42rem) { .g-global-footer__groups { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+# **Project Goal**
 
-  @media (min-width: 62rem) {
-    .g-global-header__program-inner { padding-inline-start: 2.5rem; }
-    .g-site-header__inner { padding-inline: 2.5rem; }
-    .g-primary-navigation { margin-inline-start: -0.625rem; }
-    .g-site-header__actions { position: absolute; inset-block-start: -3.125rem; inset-inline-end: 0; block-size: 3.125rem; color: var(--surface-brand-primary); }
-    .g-site-header__actions > [data-search-open] {
-      inline-size: 2.5rem;
-      min-block-size: 2.5rem;
-      background: center / auto 2.5rem no-repeat url("data:image/png;base64,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");
-      border: 0;
-    }
-    .g-site-header__actions > [data-search-open]::before,
-    .g-site-header__actions > [data-search-open]::after { content: none; }
-    .g-site-header__actions > [data-search-open]:is(:hover, :focus-visible) {
-      background-image: url("data:image/png;base64,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");
-    }
-    .g-global-footer__groups { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-  }
+The framework must eventually allow a user to create a website prototype by combining:
 
-  @media (min-width: 89.0625rem) {
-    .g-global-header__program-inner { padding-inline: 6.25rem 12.5rem; }
-    .g-site-header__inner { padding-inline: 6.25rem; }
-    .g-site-header__actions { inset-inline-end: 6.25rem; }
-  }
-}
+1. the shared Wharton framework,  
+2. a selected Wharton theme,  
+3. site configuration,  
+4. structured content,  
+5. assets,  
+6. page composition.
+
+The first real validation site will eventually be the **Wharton Undergraduate website**, but Undergraduate-specific work has intentionally not begun yet.
+
+---
+
+# **Completed Project Steps**
+
+## **Step 1 — Framework Charter**
+
+Complete.
+
+The framework purpose, guiding principles, source-of-truth hierarchy, toolchain, and future workflow were defined.
+
+## **Step 2 — Repository Foundation**
+
+Complete.
+
+GitHub contains the framework structure, documentation, source, site, content, public asset, and test areas.
+
+## **Step 3 — Current Wharton CMS Audit**
+
+Complete.
+
+The production Wharton CMS and Martech development environment were audited for:
+
+* global styles  
+* typography  
+* navigation  
+* components  
+* page-builder elements  
+* patterns  
+* templates  
+* responsive behavior  
+* interactions  
+* CMS relationships
+
+Remaining backend questions are documented as future WordPress-mapping work and are not blockers.
+
+## **Step 4 — Functional Component Model**
+
+Complete.
+
+The framework taxonomy was established:
+
+**Tokens → Entities → Components → Patterns → Global Elements → Templates → Utilities → Integrations**
+
+Legacy CMS concepts are mapped into this model rather than copied directly.
+
+## **Step 5 — Technical Architecture**
+
+Complete.
+
+The technical architecture is approved and should be treated as governing implementation guidance.
+
+Codex was instructed not to make major architectural choices independently.
+
+## **Step 6 — Core Framework Implementation**
+
+Complete.
+
+Implemented:
+
+* DTCG primitive, semantic, and component design tokens  
+* CSS token-generation pipeline  
+* strict entity contracts  
+* site/navigation/footer/page/section/entity/asset validation  
+* controlled pattern and template registries  
+* generic static routing  
+* JSON page composition  
+* Markdown narrative content  
+* stable-ID asset handling  
+* 19 shared components  
+* 15 reusable patterns  
+* 9 global-shell concepts  
+* all 8 canonical templates  
+* 9 utilities  
+* 8 typed integration interfaces  
+* framework reference catalog  
+* 83 normalized registry entries  
+* testing, ADR, CMS mapping, dependency, site-authoring, and implementation documentation
+
+Validation included:
+
+* Astro/TypeScript  
+* Vitest  
+* Playwright  
+* Axe accessibility scanning  
+* static build audits  
+* visual regression  
+* dependency audit
+
+## **Step 6A — GitHub Synchronization**
+
+Complete.
+
+The local implementation and GitHub main branch were synchronized.
+
+GitHub is the authoritative source of truth.
+
+## **Step 6B — ChatGPT Sites Validation**
+
+Complete.
+
+The neutral framework reference implementation was successfully deployed to ChatGPT Sites and validated.
+
+## **Step 6C — Current Wharton CMS Visual Fidelity**
+
+Complete.
+
+The framework reference implementation was audited against:
+
+* the Wharton Martech development environment  
+* the current Wharton homepage  
+* the Wharton web guide
+
+The implementation is now suitable to preserve as the **current CMS theme**.
+
+---
+
+# **Step 6C Final Results**
+
+The final fidelity audit corrected:
+
+* desktop content width from approximately 1,188px to the intended 1,225px  
+* institutional/program header offsets to follow observed 20px, 40px, and 100px responsive behavior  
+* Story Tile title typography to 30/33px with appropriate margin  
+* disclosure row sizing  
+* footer typography to 16/24px  
+* shared content boundary  
+* global shell alignment  
+* search positioning  
+* responsive shell behavior
+
+Corrected areas include:
+
+### **Tokens**
+
+* fixed 15px content gutter  
+* regenerated token CSS
+
+### **Components**
+
+* promotional Story Cards  
+* disclosure controls  
+* footer typography
+
+### **Patterns**
+
+* Story Tiles  
+* FAQ rows
+
+### **Global Elements**
+
+* institutional header alignment  
+* program header alignment  
+* site identity  
+* navigation alignment  
+* search positioning  
+* footer
+
+### **Templates**
+
+All eight canonical templates inherit the corrected 1,225px content boundary.
+
+No structural template changes were necessary.
+
+No Step 5 architecture decisions were changed.
+
+No Undergraduate content was introduced.
+
+No future Figma/new-theme styling was introduced.
+
+---
+
+# **Step 6C Validation Results**
+
+`npm run validate:complete` passed.
+
+Results:
+
+* Astro/TypeScript: 107 files, 0 errors/warnings/hints  
+* Unit tests: 20 passed  
+* Theme-preview test: passed  
+* Static build: 8 routes  
+* Asset/build audit: 8 routes and 4 assets passed  
+* Playwright: 80 passed, 2 intentional project-specific skips  
+* Axe: all eight routes passed at desktop and mobile sizes  
+* Visual regression: all 16 approved baselines passed  
+* Dependency audit: 0 vulnerabilities
+
+The updated visual baselines were approved only after inspecting the intended desktop and mobile output.
+
+---
+
+# **ChatGPT Sites Deployment**
+
+Site:
+
+**Wharton Framework Reference Test**
+
+Deployment status:
+
+* owner-only/private  
+* Sites version 13  
+* deployment succeeded  
+* hosted parity suite: 80 passed, 2 intentional skips  
+* rendering differences: none  
+* asset differences: none  
+* Sites compatibility changes required: none
+
+Implementation commit:
+
+`af55e491280b8390a65080a571e60f0ca84e4c47`
+
+GitHub documentation/main synchronization commit:
+
+`1be8ce203a7c1f674ef24fbed4b58300ffa0c9a6`
+
+Important documentation includes:
+
+* `docs/architecture.md`  
+* `docs/implementation-status.md`  
+* `docs/repository-tree.md`  
+* `docs/sites-validation.md`  
+* `docs/current-cms-visual-fidelity.md`  
+* `src/registry/framework-elements.ts`
+
+Read these files before changing architecture or framework behavior.
+
+---
+
+# **Known Fidelity Limits**
+
+The following are explicitly unresolved and should not be silently guessed:
+
+* production currently uses both `#A90533` and legacy `#981E32`  
+* font redistribution rights remain unresolved  
+* institutional-logo redistribution rights remain unresolved  
+* fixture imagery does not validate production photography/focal-point behavior  
+* exhaustive legacy tile/plugin variants are not implemented  
+* footer social/support fields are not currently part of the approved data contract  
+* exact mobile closed-shell height varies across templates  
+* legacy icon-font geometry varies  
+* automatic breadcrumb ancestry awaits real structured hierarchy  
+* manual screen-reader review remains outstanding  
+* manual zoom/reflow review remains outstanding  
+* real-content accessibility review remains outstanding
+
+---
+
+# **Current Theme Strategy**
+
+We are now introducing a formal multi-theme architecture.
+
+The completed current Wharton implementation should be preserved as:
+
+`old-theme`
+
+Display/documentation name:
+
+**Current Wharton CMS**
+
+A second theme will later be created from the redesigned Wharton Figma system:
+
+`new-theme`
+
+Display/documentation name:
+
+**Redesigned Wharton**
+
+The two themes must coexist within the same framework.
+
+Do not create two separate codebases.
+
+Do not create two separate framework branches as the long-term theme mechanism.
+
+The shared functional system should remain common:
+
+* entities  
+* components  
+* patterns  
+* global concepts  
+* templates  
+* utilities  
+* integrations  
+* content contracts  
+* site configuration  
+* routing
+
+Themes should primarily control presentation.
+
+Theme-specific markup or behavior should only be introduced when the redesigned component genuinely requires a structural or behavioral difference that cannot reasonably be expressed through styling or controlled variants.
+
+---
+
+# **NEXT STEP — Step 6D: Formalize Multi-Theme Architecture**
+
+Do this next.
+
+Preserve the completed current visual implementation as `old-theme`.
+
+Introduce the formal theme contract required to support:
+
+* `old-theme`  
+* `new-theme`
+
+Do not implement the Figma/new visual system yet.
+
+The framework should support:
+
+## **Site default theme**
+
+Each site should be able to declare:
+
+theme: "old-theme"
+
+or:
+
+theme: "new-theme"
+
+For now, `old-theme` should remain the default/fallback.
+
+## **Development theme override**
+
+Developers should be able to temporarily render the same site/page/content using another theme without modifying the site's permanent configuration.
+
+A query-parameter mechanism such as:
+
+`?theme=old-theme`
+
+and
+
+`?theme=new-theme`
+
+is acceptable if it fits the approved architecture.
+
+## **Reference-site selector**
+
+The internal framework reference/catalog site should allow developers to switch between themes so the same components, patterns, and templates can eventually be compared side by side.
+
+The selector is a development/reference feature and does not need to appear in stakeholder-facing prototypes.
+
+## **Theme contract**
+
+Document:
+
+* theme IDs  
+* display names  
+* token inheritance  
+* CSS loading behavior  
+* component-theme relationship  
+* fallback rules  
+* configuration rules  
+* development override behavior  
+* permitted theme-specific variants  
+* rules for theme-specific markup  
+* testing requirements  
+* visual-regression strategy for multiple themes
+
+## **Architecture principle**
+
+Do not duplicate functional components into separate theme folders unless necessary.
+
+Prefer:
+
+shared component  
+        ↓  
+old-theme presentation  
+new-theme presentation
+
+rather than:
+
+old-theme component copy  
+new-theme component copy
+
+The functional framework remains shared.
+
+---
+
+# **Step 6D Completion Requirements**
+
+At completion, report:
+
+1. final theme architecture  
+2. files created or moved  
+3. how `old-theme` is preserved  
+4. how site-level theme configuration works  
+5. how development override works  
+6. how the reference theme selector works  
+7. fallback behavior  
+8. theme-specific component rules  
+9. tests added or modified  
+10. visual regression strategy  
+11. full validation results  
+12. any architecture deviations  
+13. whether the framework is ready for Step 7
+
+Do not begin Step 7 until Step 6D is complete.
+
+---
+
+# **Step 7 — Future Work**
+
+After Step 6D is complete, the next phase will be:
+
+**Build `new-theme` from the redesigned Wharton Figma design system.**
+
+The goal is not to replace `old-theme`.
+
+The goal is to create a second visual implementation while preserving the same underlying framework and content model.
+
+Components should be classified during Figma integration as appropriate:
+
+* retain  
+* restyle  
+* replace  
+* add  
+* deprecate
+
+Only after `new-theme` is sufficiently established should the Wharton Undergraduate site be migrated into the framework.
+
+---
+
+# **Important Guardrails**
+
+Do not:
+
+* migrate Undergraduate content yet  
+* rewrite the approved architecture  
+* remove `old-theme`  
+* replace shared functional components simply to accommodate visual differences  
+* invent undocumented Wharton behavior  
+* silently resolve unresolved production questions  
+* introduce new dependencies without clear justification  
+* break the existing validation suite  
+* treat the reference site as project-specific production content
+
+When uncertain, preserve the existing architecture and document the unresolved issue.
+
