@@ -1,12 +1,22 @@
 # Wharton Web Prototype Framework
 
-Reusable, static-first framework for high-fidelity Wharton website prototypes. The implementation follows `WHARTON_WEB_PROTOTYPE_FRAMEWORK_CANONICAL_SPEC.md` and keeps the shared framework independent from any one Wharton site.
+Reusable, static-first framework for planning, designing, building, and reviewing high-fidelity Wharton website prototypes. The implementation follows `WHARTON_WEB_PROTOTYPE_FRAMEWORK_CANONICAL_SPEC.md` and keeps the shared framework independent from any one Wharton site.
 
-Step 6 includes a neutral `reference` site—not an Undergraduate migration—to prove that validated site configuration, structured entities, Markdown, and stable asset IDs can render shared components, patterns, global elements, and all eight canonical template types.
+The framework is now more than a component library. It includes a documented decision system that helps Codex, Claude Code, designers, and developers determine which registered components and patterns to use, how to compose complete pages, and how to start future Wharton sites from strategy and content rather than from ad hoc visual choices.
 
-The reference site’s `old-theme` preserves the observed visual language of the live Wharton CMS: the institutional/program shell, Acumin and Minion typography, current blue/red palette, 1,225px content grid, square controls, media-overlay heroes, tiles, tabs, disclosures, forms, and footer treatment. A registered `new-theme` scaffold is ready for the redesigned Figma system in Step 7; both themes use the same neutral content and functional framework.
+The neutral `reference` site proves that validated site configuration, structured entities, Markdown, stable asset IDs, shared components, patterns, global elements, and canonical template types can render through the same functional framework. The reference `old-theme` preserves the observed visual language of the current Wharton CMS. The registered `new-theme` remains the redesign boundary for the evolving Wharton visual system without changing site content or functional contracts.
 
-This repository is the permanent source of truth for framework code, documentation, reusable elements, version history, and project templates. It is intended to reflect the current Wharton CMS as accurately as practical, evolve with approved UX/Figma work, support realistic stakeholder review, and preserve traceability for eventual WordPress handoff.
+GitHub is the permanent source of truth for framework code, documentation, reusable elements, version history, project templates, review history, and deployment history.
+
+## Production
+
+The reference implementation is hosted through GitHub Pages:
+
+`https://flaxmaster1.github.io/wharton-prototype-framework/`
+
+`main` is the production source branch. Reviewed merges to `main` trigger `.github/workflows/pages.yml`, which validates, builds, audits, and deploys the reference site. A change is considered live only after the `Validate and deploy GitHub Pages` workflow succeeds.
+
+ChatGPT Sites remains compatibility-only and is not the primary production workflow.
 
 ## Requirements
 
@@ -23,7 +33,7 @@ npm run dev:reference
 
 Open `http://localhost:4321/`.
 
-The reference development server includes a theme selector. Use it—or append `?theme=old-theme` or `?theme=new-theme`—to review identical page content through either registered theme. `new-theme` is intentionally unstyled until Step 7.
+The reference development server includes a theme selector. Use it, or append `?theme=old-theme` or `?theme=new-theme`, to review identical content through either registered theme.
 
 Build and preview the static output:
 
@@ -32,13 +42,31 @@ npm run build:reference
 npm run preview
 ```
 
-Run the complete local quality gate:
+Run the full local quality gate:
 
 ```sh
 npm run validate
 ```
 
-Visual baselines are checked by `npm run validate`; update them intentionally with `npm run test:visual:update` after reviewing the rendered change.
+For the full QA gate including the dependency audit:
+
+```sh
+npm run validate:complete
+```
+
+## Documentation stack
+
+Use the documentation in this order when planning or building a site:
+
+1. `WHARTON_WEB_PROTOTYPE_FRAMEWORK_CANONICAL_SPEC.md` — governing architecture and guardrails.
+2. `WHARTON_DESIGN_DECISION_FRAMEWORK.md` — how user goals and content relationships map to framework choices.
+3. `src/registry/framework-elements.ts` — machine-readable source of truth for what exists and its contracts.
+4. `docs/component-handbook.md` — detailed use/avoid/variant/accessibility/responsive guidance for components and patterns.
+5. `docs/page-recipes.md` — composition guidance for complete pages and common Wharton site types.
+6. `docs/adding-a-site.md` — practical process for creating a new site root.
+7. `docs/deployment.md` and `docs/testing.md` — production and QA workflows.
+
+See `docs/README.md` for the complete documentation map.
 
 ## Site selection
 
@@ -49,20 +77,28 @@ SITE=reference npm run dev
 SITE=reference npm run build
 ```
 
-An unknown or malformed site ID fails before rendering. A new site should be created under `sites/{site-id}` and should contain configuration, navigation, footer groups, pages, content, entities, assets, and fixtures—not copies of shared framework components.
+An unknown or malformed site ID fails before rendering. A new site should be created under `sites/{site-id}` and contain configuration, navigation, footer groups, pages, content, entities, assets, and fixtures, not copies of shared framework components.
+
+Before composing a new page, consult the Design Decision Framework, registry, Component Handbook, and Page Recipes. New shared components or variants should be created only after existing registered composition is proven insufficient.
 
 ## Architecture at a glance
 
 ```text
+Site strategy + sitemap + content model
+                 ↓
 sites/{site}/ JSON + Markdown + assets
                  ↓
        Zod validation and reference checks
+                 ↓
+ Design Decision Framework + typed registry
                  ↓
    generic route → template registry → pattern registry
                  ↓
  shared Astro components + native layered CSS + local JS
                  ↓
             static HTML and assets
+                 ↓
+        GitHub Pages deployment
 ```
 
 Important paths:
@@ -72,13 +108,21 @@ Important paths:
 - `src/components`, `src/patterns`, `src/global`, `src/templates`: reusable presentation.
 - `src/rendering`: selected-site loading, controlled registries, and page composition.
 - `src/integrations`: provider interfaces and fixture/prototype adapters.
-- `src/themes`: validated theme contract, stylesheet registry, development selector, `old-theme`, and the `new-theme` scaffold.
+- `src/themes`: validated theme contract, stylesheet registry, development selector, `old-theme`, and `new-theme` boundary.
 - `src/registry/framework-elements.ts`: machine-readable implementation registry.
 - `sites/reference`: structured demonstration configuration and placeholder content.
 - `tests`: unit, browser, accessibility, responsive, and visual regression coverage.
 
-See `docs/architecture.md`, `docs/themes.md`, `docs/component-model.md`, `docs/current-cms-visual-fidelity.md`, `docs/testing.md`, `docs/sites-validation.md`, and `docs/implementation-status.md` for detailed guidance.
+## Development workflow
+
+Codex and Claude Code share the same repository instructions in `AGENTS.md`.
+
+- Codex uses `codex/<task>` branches.
+- Claude Code uses `claude/<task>` branches.
+- Documentation/process work uses `docs/<task>` or `workflow/<task>` branches.
+- Work reaches production through reviewed PRs into `main`.
+- Cross-agent work is handed off through `docs/handoffs/current.md`.
 
 ## First validation project
 
-Wharton Undergraduate remains the first full real-site validation. Step 7 should implement it through site configuration, structured content, assets, and shared framework composition rather than by combining or directly migrating legacy HTML.
+Wharton Undergraduate remains the first full real-site validation target. It should be implemented through site strategy, configuration, structured content, assets, shared framework composition, and the documented selection/page-recipe system rather than by directly migrating legacy HTML.
