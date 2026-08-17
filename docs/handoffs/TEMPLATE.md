@@ -33,6 +33,7 @@ Summarize implementation completed. Do not paste a full diff.
 ## Validation
 
 - [ ] `npm run validate`
+- [ ] `npm run build:pages` when deployment-affecting
 - [ ] Relevant focused tests
 - [ ] Responsive review
 - [ ] Keyboard/accessibility review
@@ -48,13 +49,15 @@ List implementation decisions that affect the next developer. Link an ADR if arc
 
 List unresolved defects, assumptions, merge risks, or dependencies. Write `None known` if there are none.
 
-## Sites status
+## Production readiness
 
-- **Needs ChatGPT Sites preview:** yes | no
-- **Preview completed:** yes | no
-- **Production deployment requested/approved:** yes | no
+- **Ready to merge to `main`:** yes | no
+- **Expected production impact:**
+- **GitHub Pages deployment required:** yes | no
 - **Notes:**
+
+A merge to `main` is a production deployment approval because `.github/workflows/pages.yml` automatically validates, builds, and deploys the reference site to GitHub Pages.
 
 ## Exact next action
 
-Give the next developer a concrete first action, including the branch/commit to inspect.
+Give the next developer a concrete first action, including the branch/commit or PR to inspect.
