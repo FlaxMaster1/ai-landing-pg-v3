@@ -19,6 +19,8 @@
     "build": "astro build",
     "prebuild:reference": "npm run generate:tokens",
     "build:reference": "SITE=reference astro build",
+    "prebuild:pages": "npm run generate:tokens",
+    "build:pages": "SITE=reference PAGES_BUILD=true astro build",
     "prebuild:sites": "npm run generate:tokens",
     "build:sites": "SITE=reference SITES_BUILD=true astro build",
     "postbuild:sites": "node scripts/prepare-sites-build.mjs",
