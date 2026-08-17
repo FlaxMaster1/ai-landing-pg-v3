@@ -2,6 +2,8 @@
 
 The canonical specification, `WHARTON_WEB_PROTOTYPE_FRAMEWORK_CANONICAL_SPEC.md`, governs this repository.
 
+This repository may be developed by both Codex and Claude Code. GitHub is the source of truth. Read `docs/agent-collaboration.md` before starting or continuing cross-agent work. If Claude has handed work back, read `docs/handoffs/current.md` and inspect the named branch/commits rather than relying on chat history. Codex-owned implementation should use `codex/<short-task-name>` branches; do not commit implementation work directly to `main`.
+
 1. Do not place site copy in shared components.
 2. Do not create a component when composition or an existing variant is sufficient.
 3. Use tokens instead of arbitrary reusable design values.
@@ -18,3 +20,7 @@ The canonical specification, `WHARTON_WEB_PROTOTYPE_FRAMEWORK_CANONICAL_SPEC.md`
 14. Keep external systems behind typed provider interfaces.
 15. Do not introduce Undergraduate-specific framework shortcuts.
 16. Preserve the static-first rendering default and opt into client JavaScript only for interaction.
+17. Keep one task per branch and avoid unrelated cleanup.
+18. Before editing a shared subsystem, inspect current `main` and any named handoff branch for overlapping work.
+19. For ChatGPT Sites work, treat GitHub source and Sites deployment as separate states; do not assume a push deploys production.
+20. When handing work to Claude Code, use `docs/handoffs/TEMPLATE.md` to populate `docs/handoffs/current.md` with branch, commits, validation, risks, and the exact next action.
