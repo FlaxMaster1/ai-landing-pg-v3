@@ -4,6 +4,8 @@ The canonical specification, `WHARTON_WEB_PROTOTYPE_FRAMEWORK_CANONICAL_SPEC.md`
 
 This repository may be developed by both Codex and Claude Code. GitHub is the source of truth. Read `docs/agent-collaboration.md` before starting or continuing cross-agent work. If Claude has handed work back, read `docs/handoffs/current.md` and inspect the named branch/commits rather than relying on chat history. Codex-owned implementation should use `codex/<short-task-name>` branches; do not commit implementation work directly to `main`.
 
+Production hosting is GitHub Pages. `main` is the production source branch. A successful push to `main` triggers `.github/workflows/pages.yml`, which validates the framework, builds the reference site with `npm run build:pages`, and deploys the resulting `dist/` artifact to GitHub Pages. Do not bypass pull-request review for implementation changes unless Justin explicitly instructs otherwise.
+
 1. Do not place site copy in shared components.
 2. Do not create a component when composition or an existing variant is sufficient.
 3. Use tokens instead of arbitrary reusable design values.
@@ -22,5 +24,6 @@ This repository may be developed by both Codex and Claude Code. GitHub is the so
 16. Preserve the static-first rendering default and opt into client JavaScript only for interaction.
 17. Keep one task per branch and avoid unrelated cleanup.
 18. Before editing a shared subsystem, inspect current `main` and any named handoff branch for overlapping work.
-19. For ChatGPT Sites work, treat GitHub source and Sites deployment as separate states; do not assume a push deploys production.
+19. Treat merge to `main` as a production deployment event because GitHub Pages deploys automatically after the workflow succeeds.
 20. When handing work to Claude Code, use `docs/handoffs/TEMPLATE.md` to populate `docs/handoffs/current.md` with branch, commits, validation, risks, and the exact next action.
+21. Preserve the existing ChatGPT Sites build path only for compatibility; it is no longer the primary production workflow.
