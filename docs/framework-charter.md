@@ -2,48 +2,51 @@
 
 ## Purpose
 
-The Wharton Web Prototype Framework is a reusable system for planning, designing, building, and reviewing high-fidelity website prototypes that closely reflect Wharton’s production WordPress CMS while remaining independent from WordPress implementation details.
+The Wharton Web Prototype Framework is a reusable system for planning, designing, building, and reviewing high-fidelity Wharton websites while remaining independent from any one site and from WordPress implementation details.
 
-The framework allows future website prototypes to be assembled from an established set of Wharton tokens, entities, components, patterns, global elements, templates, utilities, and integration contracts rather than recreated from scratch for every project.
+The framework is intended to let future website projects begin with strategy, audience needs, sitemap, content planning, and wireframes, then apply a consistent Wharton presentation and behavior system around that content. It should function as a reusable platform/skin, not as a collection of predesigned pages that force every site into the same composition.
 
 ## Primary goal
 
-Create a repeatable prototype system that:
+Create a repeatable website system that:
 
-- Reflects the current Wharton CMS as accurately as practical.
+- Reflects the current Wharton CMS as accurately as practical where legacy fidelity is required.
 - Evolves alongside the redesigned Wharton UX and Figma design system.
-- Gives Codex a consistent technical foundation for building new sites.
+- Gives Codex and Claude Code the same documented technical and design-decision foundation.
 - Keeps content separate from layout and presentation.
+- Makes component and pattern selection explicit rather than dependent on agent memory or taste.
 - Supports realistic responsive behavior and interactive functionality.
-- Produces prototypes suitable for stakeholder review in ChatGPT Sites.
+- Produces stakeholder-reviewable prototypes/sites through a normal GitHub workflow.
 - Makes eventual handoff to the Wharton WordPress development team easier.
-- Documents which prototype elements correspond to WordPress CMS concepts.
+- Documents which framework elements correspond to WordPress CMS concepts.
 - Supports many Wharton sites without site-specific framework forks.
 
 ## Framework users
 
-The framework is intended primarily for:
+The framework is intended for:
 
-- Creative and UX planning.
+- Creative, UX, and content strategy.
 - Website redesign and prototype projects.
-- Codex-assisted frontend development.
+- Codex- and Claude-assisted frontend development.
 - Stakeholder review and testing.
 - WordPress implementation reference.
 
 ## Core principle
 
-Every reusable prototype element should have a clear functional identity and a traceable relationship to Wharton’s production CMS where one exists.
+Every reusable element should have a clear functional identity, documented selection logic, and a traceable relationship to Wharton’s production CMS or redesigned system where one exists.
 
 Whenever practical, an element should document:
 
-1. What it is.
-2. When it should be used.
-3. How it behaves.
-4. Its responsive behavior.
-5. Its accessibility requirements.
-6. Its current CMS equivalent.
-7. Its future Figma/design-system equivalent.
-8. Any known WordPress implementation constraints.
+1. what it is;
+2. which user/content problem it solves;
+3. when it should be used;
+4. when it should not be used;
+5. its content contract and variants;
+6. its responsive behavior;
+7. its accessibility requirements;
+8. its current CMS equivalent;
+9. its future Figma/design-system equivalent;
+10. any known WordPress implementation constraints.
 
 ## Canonical framework architecture
 
@@ -54,47 +57,53 @@ Tokens → Entities → Components → Patterns → Global Elements → Template
 ```
 
 ### Tokens
-
 Reusable visual decisions including color, typography, spacing, size, border, elevation, motion, and content-driven breakpoints.
 
 ### Entities
-
 Structured content and navigation data such as Story, Event, Person, Course, NavigationItem, Action, and Asset.
 
 ### Components
-
 Reusable semantic interface elements such as buttons, links, cards, disclosures, form controls, search controls, people, stories, events, statistics, and messages.
 
 ### Patterns
-
 Purposeful compositions such as Hero, PageIntro, CardGrid, FeatureRow, StoryCollection, EventList, FAQ, Tabs, forms, and navigation patterns.
 
 ### Global elements
-
 The shared program navigation, site identity/header, local navigation, mobile navigation, search, footer, and back-to-top shell.
 
 ### Templates
-
 Functional page structures: Homepage, Standard, Landing, Article, Topic, Directory, Search, and Sidebar. Width, title ownership, and sidebar placement are configuration rather than duplicate templates.
 
 ### Utilities
-
 Meaning-neutral layout, container, visibility, surface, media, anchor, screen-reader, and focus-management behavior.
 
 ### Integrations
-
 Typed provider boundaries for events, faculty data, content, forms, video, authentication, search, and analytics.
+
+## Decision and composition system
+
+The framework's reusable design logic is documented as a stack:
+
+1. `WHARTON_WEB_PROTOTYPE_FRAMEWORK_CANONICAL_SPEC.md` governs architecture and guardrails.
+2. `WHARTON_DESIGN_DECISION_FRAMEWORK.md` maps user goals/content relationships to framework choices.
+3. `src/registry/framework-elements.ts` is the machine-readable source of truth for implemented elements and contracts.
+4. `docs/component-handbook.md` documents detailed component/pattern selection and behavior.
+5. `docs/page-recipes.md` documents complete-page and site-type composition guidance.
+
+This system allows any capable agent or developer to make consistent, explainable design decisions from repository evidence rather than conversational memory.
 
 ## Source-of-truth hierarchy
 
 Until the redesigned CMS is complete, the framework recognizes:
 
-1. The approved canonical framework specification for architecture and implementation guardrails.
-2. Current production Wharton CMS evidence for existing functionality and behavior.
-3. Official Wharton visual standards for established brand rules.
-4. Approved Figma designs for new and redesigned components.
-5. Framework documentation for prototype implementation.
-6. Individual website project requirements within the framework boundaries.
+1. the approved canonical framework specification;
+2. accepted architecture decision records;
+3. the shared repository instructions in `AGENTS.md`;
+4. current production Wharton CMS evidence for existing functionality/behavior;
+5. official Wharton visual standards and approved Figma designs;
+6. the Design Decision Framework and typed registry;
+7. the Component Handbook and Page Recipes;
+8. individual website project requirements within framework boundaries.
 
 Where a new Figma pattern intentionally replaces an existing CMS pattern, the registry should document both until the transition is complete.
 
@@ -105,43 +114,59 @@ Functional concepts are canonical. Content and presentation stay separate. Struc
 The operating model is:
 
 ```text
-Wharton Framework + Site Configuration + Structured Content + Assets = Prototype Site
+Site strategy + content + sitemap + wireframes
+                    ↓
+Wharton Framework + Site Configuration + Structured Content + Assets
+                    ↓
+Reusable Wharton website
 ```
 
-Prototype functionality should simulate the production experience closely enough for meaningful stakeholder review without recreating the WordPress backend or carrying forward historical technical debt.
+Prototype functionality should simulate the intended production experience closely enough for meaningful stakeholder review without recreating the WordPress backend or carrying forward historical technical debt.
 
 ## Toolchain
 
-### ChatGPT Project
-
-Research, planning, decision-making, documentation development, CMS analysis, and preparation of approved build specifications.
-
 ### GitHub
+Permanent source of truth for framework/site code, documentation, reusable elements, review history, handoffs, version history, and deployment history.
 
-Permanent source of truth for framework code, documentation, reusable elements, version history, and project templates.
+### Codex and Claude Code
+Peer development agents working against the same repository. Both follow `AGENTS.md`, use agent-owned branches, and hand work through GitHub rather than shared conversational context.
 
-### Codex
-
-Primary development environment for implementing and maintaining framework and site code.
+### ChatGPT
+Strategy, planning, design decisions, documentation development, project direction, review, and Codex-assisted implementation.
 
 ### Figma
-
 Source for approved visual design, design-system evolution, component specifications, and future CMS styles.
 
-### ChatGPT Sites
+### GitHub Pages
+Primary production hosting path for the reference implementation. Reviewed merges to `main` automatically validate/build/deploy through GitHub Actions.
 
-Target hosting and presentation environment for functioning stakeholder prototypes, subject to compatibility validation.
+### ChatGPT Sites
+Compatibility/experimentation path only. It is not the primary source of truth or production workflow.
 
 ## Future project workflow
 
-Research and strategy → site planning → content planning → approved build specification → framework selection → Codex build → prototype review → Sites publication → revisions → WordPress handoff.
+```text
+research + strategy
+→ audience/user goals
+→ sitemap + content planning
+→ wireframes/content hierarchy
+→ select closest page recipes
+→ map content to entities/templates/patterns
+→ Codex or Claude implementation
+→ branch + pull request
+→ review/QA
+→ merge to main
+→ GitHub Pages deployment
+→ revisions
+→ WordPress handoff when appropriate
+```
 
 Reusable improvements discovered during individual projects should be evaluated against the admission rules before inclusion in the shared framework.
 
 ## First validation project
 
-The neutral Step 6 reference site validates the architecture only. Wharton Undergraduate remains the first full real-site validation target for Step 7 and must not dictate or fork the architecture.
+The neutral reference site validates the architecture and documentation system. Wharton Undergraduate remains the first full real-site validation target and must not dictate or fork the architecture.
 
-Undergraduate should be implemented through site configuration, structured content, assets, and shared framework composition rather than by combining or directly migrating legacy HTML.
+Undergraduate should be implemented through strategy, site configuration, structured content, assets, the decision framework, and shared framework composition rather than by combining or directly migrating legacy HTML.
 
 The complete governing requirements remain in `../WHARTON_WEB_PROTOTYPE_FRAMEWORK_CANONICAL_SPEC.md`.
