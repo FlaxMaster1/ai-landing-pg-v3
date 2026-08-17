@@ -1,8 +1,20 @@
 # Claude Code repository instructions
 
-This repository is developed collaboratively by Codex and Claude Code. GitHub is the source of truth for code, project documentation, task state, and handoffs. ChatGPT Sites is the preview, QA, and publishing environment for the hosted prototype.
+This repository is developed collaboratively by Codex and Claude Code. GitHub is the source of truth for code, project documentation, task state, handoffs, and production deployment.
 
 Read `AGENTS.md` and `WHARTON_WEB_PROTOTYPE_FRAMEWORK_CANONICAL_SPEC.md` before making changes. The canonical specification governs when instructions conflict.
+
+## Production model
+
+The production site is hosted with GitHub Pages. `main` is the production source branch. A successful push to `main` triggers `.github/workflows/pages.yml`, which validates the framework, builds the reference site with `npm run build:pages`, and deploys `dist/` to GitHub Pages.
+
+Treat every merge to `main` as a production deployment event. Do not merge your own implementation work to `main` unless Justin or Codex explicitly approves it.
+
+The expected production URL is:
+
+`https://flaxmaster1.github.io/wharton-prototype-framework/`
+
+The existing ChatGPT Sites build path remains in the repository only for compatibility and is no longer the primary hosting workflow.
 
 ## Before starting work
 
@@ -24,6 +36,7 @@ Read `AGENTS.md` and `WHARTON_WEB_PROTOTYPE_FRAMEWORK_CANONICAL_SPEC.md` before 
 - Keep content separate from shared presentation/components.
 - Do not change shared contracts, routing, build configuration, design tokens, or content schemas casually. If the task requires such a change, document the reason and update dependent tests/docs together.
 - Run `npm run validate` before declaring implementation complete. If validation cannot run, report exactly what was not run and why.
+- For deployment-affecting changes, also run `npm run build:pages` when practical.
 - Leave the working tree in a clean, reviewable state before handoff.
 
 ## Required Git workflow
@@ -33,11 +46,12 @@ For every implementation task:
 1. Work on `claude/<short-task-name>`.
 2. Commit the completed work with a clear commit message.
 3. Push the branch to GitHub.
-4. Record the exact branch name and final commit SHA in `docs/handoffs/current.md`.
-5. Do not merge the branch into `main` unless Justin or Codex explicitly instructs you to do so.
-6. Do not deploy directly to production.
+4. Open or prepare a pull request into `main` when the work is review-ready.
+5. Record the exact branch name and final commit SHA in `docs/handoffs/current.md`.
+6. Do not merge the branch into `main` unless Justin or Codex explicitly instructs you to do so.
+7. Do not bypass the GitHub Pages workflow or deploy a separate production copy.
 
-GitHub must contain the code state that is being handed back for review. Do not rely on uncommitted local files as the handoff.
+GitHub must contain the exact code state being handed back for review. Do not rely on uncommitted local files as the handoff.
 
 ## Required handoff back to Codex / ChatGPT
 
@@ -60,55 +74,28 @@ The handoff must include:
 - decisions made
 - unresolved issues, risks, or merge concerns
 - exact recommended next action
-- whether a ChatGPT Sites preview is required
+- whether the change is ready to merge to production
 
 Do not put transient chat history into permanent architecture documentation.
 
-## ChatGPT Sites preview handoff
+## Review and deployment sequence
 
-Claude Code does not own ChatGPT Sites deployment. A GitHub push does not, by itself, mean the hosted ChatGPT Site has been updated.
-
-For any visual, layout, component, template, routing, styling, interaction, or site-content change that Justin is expected to review, set:
-
-`Sites Preview Requested: YES`
-
-The handoff must then contain this information explicitly:
-
-```text
-Sites Preview Requested: YES
-Branch: claude/<task>
-Commit: <exact-sha>
-Validation: PASS | PARTIAL | FAIL
-
-Action for Codex:
-Load this exact branch/commit into the existing ChatGPT Sites project for visual review.
-Do not merge to main or publish to production until Justin approves the preview.
-```
-
-If the change is documentation-only or otherwise does not require a hosted visual review, set:
-
-`Sites Preview Requested: NO`
-
-## Preview and approval sequence
-
-When `Sites Preview Requested: YES`, the expected workflow is:
+The expected workflow is:
 
 1. Claude completes and validates the change.
 2. Claude commits and pushes `claude/<task>`.
-3. Claude updates `docs/handoffs/current.md` with the exact branch and commit SHA.
-4. Codex/ChatGPT reads the handoff and inspects the pushed branch/commit.
-5. Codex loads/builds that exact source state in the existing ChatGPT Sites project for preview and QA.
-6. Justin reviews the preview.
-7. Any requested fixes are made on the owning branch.
-8. After approval, the PR may be merged into `main`.
-9. The approved `main` state is then used for final Sites review and explicit production deployment.
-
-Never assume that preview approval, GitHub merge, and production deployment are the same action.
+3. Claude opens or prepares a PR into `main` and updates `docs/handoffs/current.md`.
+4. Codex/ChatGPT or Justin reviews the diff, validation state, and visual behavior.
+5. Requested fixes stay on the owning branch.
+6. After approval, the PR is merged into `main`.
+7. GitHub Actions validates and builds the Pages artifact.
+8. If the workflow succeeds, GitHub Pages updates production automatically.
+9. If the workflow fails, do not treat the change as deployed; inspect and fix the failed workflow before proceeding.
 
 ## Returning work cleanly
 
 At the end of a Claude task, the repository should make it possible for Justin to tell Codex only:
 
-`Preview Claude's latest work.`
+`Review Claude's latest work.`
 
-Codex should then be able to determine the exact branch, commit, validation state, and requested next action from `docs/handoffs/current.md` without Justin reconstructing the task from conversation history.
+Codex should then be able to determine the exact branch, commit, PR, validation state, production readiness, and requested next action from `docs/handoffs/current.md` without Justin reconstructing the task from conversation history.
