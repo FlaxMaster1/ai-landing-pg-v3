@@ -8,10 +8,11 @@ Before making changes, read:
 
 1. `WHARTON_WEB_PROTOTYPE_FRAMEWORK_CANONICAL_SPEC.md`
 2. `WHARTON_DESIGN_DECISION_FRAMEWORK.md` when selecting, composing, modifying, or creating interface elements
-3. `docs/agent-collaboration.md`
-4. `docs/deployment.md`
-5. `docs/implementation-status.md`
-6. `docs/handoffs/current.md` when continuing or reviewing another agent's work
+3. `docs/component-handbook.md` for component/pattern use, avoid, variant, responsive, accessibility, and adjacent-choice guidance
+4. `docs/agent-collaboration.md`
+5. `docs/deployment.md`
+6. `docs/implementation-status.md`
+7. `docs/handoffs/current.md` when continuing or reviewing another agent's work
 
 If instructions conflict, use this priority order:
 
@@ -19,10 +20,12 @@ If instructions conflict, use this priority order:
 2. accepted ADRs in `docs/decisions/`
 3. this file
 4. `WHARTON_DESIGN_DECISION_FRAMEWORK.md` for component/pattern selection decisions
-5. `docs/deployment.md`
-6. `docs/agent-collaboration.md`
-7. task-specific handoff/instructions
-8. conversational context
+5. `src/registry/framework-elements.ts` for what exists and its machine-readable contract
+6. `docs/component-handbook.md` for detailed selection and usage guidance
+7. `docs/deployment.md`
+8. `docs/agent-collaboration.md`
+9. task-specific handoff/instructions
+10. conversational context
 
 ## Production model
 
@@ -59,7 +62,7 @@ If instructions conflict, use this priority order:
 ## Repository rules
 
 1. Do not place site copy in shared components.
-2. Before selecting or creating an interface element, inspect `src/registry/framework-elements.ts` and apply `WHARTON_DESIGN_DECISION_FRAMEWORK.md`. Prefer an existing registered component, pattern, or composition before introducing a new element or variant.
+2. Before selecting or creating an interface element, inspect `src/registry/framework-elements.ts`, apply `WHARTON_DESIGN_DECISION_FRAMEWORK.md`, and consult `docs/component-handbook.md`. Prefer an existing registered component, pattern, semantic entity presentation, or composition before introducing a new element or variant.
 3. Do not create a component when composition or an existing variant is sufficient.
 4. Use tokens instead of arbitrary reusable design values.
 5. Validate additions against Tokens → Entities → Components → Patterns → Global Elements → Templates → Utilities → Integrations.
@@ -68,7 +71,7 @@ If instructions conflict, use this priority order:
 8. Do not add a dependency without documenting its concrete need.
 9. Run the appropriate validation for the scope. Use `npm run validate` for full local framework QA when practical; deployment-critical checks are defined by `.github/workflows/pages.yml`.
 10. For deployment-affecting work, run `npm run build:pages` when practical.
-11. Update contracts, the registry, tests, and documentation together.
+11. Update contracts, the registry, tests, the decision framework, and the component handbook together when reusable elements change.
 12. Record architecture changes in an ADR before implementing them.
 13. Never duplicate shared framework components into a site folder.
 14. Use functional names rather than WordPress, plugin, or appearance-based names.
