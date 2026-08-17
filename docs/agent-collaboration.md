@@ -4,7 +4,7 @@
 
 Treat Codex and Claude Code as two developers working on one codebase. GitHub is the authoritative source for code, project documentation, task state, handoffs, review, and production deployment history. GitHub Pages is the primary production host for the reference implementation.
 
-Read `docs/deployment.md` for the canonical production workflow.
+`AGENTS.md` is the single agent instruction file for both Codex and Claude Code. Read `docs/deployment.md` for the canonical production workflow.
 
 ## Roles
 
@@ -46,7 +46,7 @@ If conversational instructions conflict with committed governing documentation, 
 1. Define the task and acceptance criteria.
 2. Confirm owner: Codex or Claude.
 3. Developer updates from `main` and creates its branch.
-4. Developer reads governing docs and relevant implementation files.
+4. Developer reads `AGENTS.md`, governing docs, and relevant implementation files.
 5. Implement only the assigned scope.
 6. Run focused tests for the work performed; run `npm run validate` for the full local framework QA gate when practical.
 7. For deployment-affecting work, also run `npm run build:pages` when practical.
@@ -122,4 +122,4 @@ Do not move work to Claude merely because a task is complex. Complexity is handl
 
 ## Returning from Claude to Codex
 
-Justin should normally only need to say: `Review Claude's latest work.` Codex should then read `CLAUDE.md`, `docs/handoffs/current.md`, inspect the named branch/commits and PR, verify validation and deployment readiness, and continue from repository evidence rather than asking Justin to reconstruct the work.
+Justin should normally only need to say: `Review Claude's latest work.` Codex should read `AGENTS.md` and `docs/handoffs/current.md`, inspect the named branch/commits and PR, verify validation and deployment readiness, and continue from repository evidence rather than asking Justin to reconstruct the work.
