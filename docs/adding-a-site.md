@@ -1,5 +1,7 @@
 # Adding a site
 
+For the complete cross-tool kickoff workflow, including ChatGPT Project setup, Work planning, naming conventions, Codex scaffolding, Claude Code local setup, and GitHub handoff, start with `new-site-project-playbook.md`.
+
 A new site should begin with strategy and content structure, not with component selection.
 
 Before creating files, define:
@@ -46,7 +48,7 @@ Before Codex or Claude starts building, capture:
 - missing content/assets;
 - first-prototype acceptance criteria.
 
-This planning artifact should be sufficient for either agent to begin from repository/project evidence rather than reconstructing strategy from chat history.
+This planning artifact should be sufficient for either agent to begin from repository/project evidence rather than reconstructing strategy from chat history. Once the site is scaffolded, move the implementation-critical parts of this planning into `sites/{site-id}/PLAN.md` so both Codex and Claude Code can read them locally.
 
 ## Automated scaffold
 

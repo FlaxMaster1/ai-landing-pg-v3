@@ -30,6 +30,7 @@ This directory contains the working documentation for the Wharton Web Prototype 
 
 ## Building a site
 
+- `new-site-project-playbook.md` — step-by-step workflow for creating a ChatGPT Project, planning in Work, naming the project consistently, scaffolding in Codex, making the repository readable by Claude Code, collaborating through branches, and moving to production.
 - `site-blueprints/README.md` — starter-blueprint system and planning output contract.
 - `site-blueprints/program.md` — program/degree/certificate site starting model.
 - `site-blueprints/department.md` — academic department starting model.
@@ -42,9 +43,9 @@ This directory contains the working documentation for the Wharton Web Prototype 
 - `cms-mapping.md` — mapping between framework concepts and current CMS concepts.
 - `cms-audit/README.md` — source audit material used to establish the framework model.
 
-For new sites, use the sequence:
+For new sites, start with `new-site-project-playbook.md` and use the sequence:
 
-**Strategy → Sitemap → Content model → Wireframes → Site Blueprint → Page Recipes → Design Decision Framework → Typed Registry → Component Handbook → Implementation**
+**ChatGPT Project → Work planning → Strategy → Sitemap → Content model → Wireframes → Site Blueprint → Implementation Brief → Scaffold → Page Recipes → Design Decision Framework → Typed Registry → Component Handbook → Codex/Claude implementation → PR → GitHub Pages**
 
 The current priority is validating this functional workflow end-to-end. `new-theme` work is intentionally deferred until the system is working; site composition must remain theme-independent so new visual styles can later be layered over the same structure.
 
@@ -76,7 +77,7 @@ When documentation conflicts, use this order:
 7. Page Recipes;
 8. Site Blueprints for new-site starting structure;
 9. workflow/deployment/testing documentation;
-10. project-specific instructions;
+10. project-specific instructions including `sites/<site-id>/PLAN.md`;
 11. conversational context.
 
 Historical audit and validation documents may intentionally describe older hosting or implementation states. They should be read as evidence/history unless another governing document explicitly incorporates them into the current workflow.
