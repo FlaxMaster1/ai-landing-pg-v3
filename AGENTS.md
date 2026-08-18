@@ -10,11 +10,13 @@ Before making changes, read:
 2. `WHARTON_DESIGN_DECISION_FRAMEWORK.md` when selecting, composing, modifying, or creating interface elements
 3. `docs/component-handbook.md` for component/pattern use, avoid, variant, responsive, accessibility, and adjacent-choice guidance
 4. `docs/page-recipes.md` when composing complete pages, site sections, or new website structures
-5. `docs/site-blueprints/README.md` and the closest blueprint when starting a new site
-6. `docs/agent-collaboration.md`
-7. `docs/deployment.md`
-8. `docs/implementation-status.md`
-9. `docs/handoffs/current.md` when continuing or reviewing another agent's work
+5. `docs/new-site-project-playbook.md` when starting a new website or transferring a new-site project between ChatGPT, Codex, and Claude Code
+6. `docs/site-blueprints/README.md` and the closest blueprint when starting a new site
+7. `docs/agent-collaboration.md`
+8. `docs/deployment.md`
+9. `docs/implementation-status.md`
+10. `docs/handoffs/current.md` when continuing or reviewing another agent's work
+11. `sites/<site-id>/PLAN.md` when working on a scaffolded website
 
 If instructions conflict, use this priority order:
 
@@ -28,7 +30,7 @@ If instructions conflict, use this priority order:
 8. `docs/site-blueprints/` for new-site starting structure
 9. `docs/deployment.md`
 10. `docs/agent-collaboration.md`
-11. task-specific handoff/instructions
+11. site-specific `PLAN.md` and task-specific handoff/instructions
 12. conversational context
 
 ## Production model
@@ -63,42 +65,52 @@ If instructions conflict, use this priority order:
 - Branch from current `main` unless the task or handoff explicitly names another base.
 - Avoid simultaneous edits to the same subsystem. If overlap is unavoidable, designate an integration owner first.
 
+For site-specific branches, prefer names that include the site ID, for example `codex/ai-research-hub-homepage` or `claude/ai-research-hub-directory`.
+
 ## Before starting implementation
 
 1. Update from the latest `main` unless the handoff specifies another base.
 2. Read the governing documentation listed above.
-3. Inspect recent changes in the files/subsystems you expect to touch.
-4. Check `docs/handoffs/current.md` for active cross-agent work.
-5. Create the appropriate agent-owned branch before implementation.
-6. Do not begin implementation directly on `main`.
+3. If this is a new website, read `docs/new-site-project-playbook.md`, the selected blueprint, and the site's `PLAN.md` after scaffolding.
+4. Inspect recent changes in the files/subsystems you expect to touch.
+5. Check `docs/handoffs/current.md` for active cross-agent work.
+6. Create the appropriate agent-owned branch before implementation.
+7. Do not begin implementation directly on `main`.
+
+## New-site repository context rule
+
+Planning may begin in ChatGPT Projects and Work, but implementation-critical decisions must be readable from the repository. Once a site is scaffolded, maintain `sites/<site-id>/PLAN.md` with the durable site purpose, audiences, journeys, sitemap, template/page-recipe mapping, entity model, CTA model, integrations, missing assets/content, known gaps, and first-prototype acceptance criteria.
+
+Codex and Claude Code must work from the same framework repository and the same `sites/<site-id>` folder. Claude Code should use an up-to-date local clone of this repository rather than a copied standalone website folder. If Claude needs context that exists only in a ChatGPT conversation, move that context into `PLAN.md`, another relevant project document, or `docs/handoffs/current.md` before relying on it for implementation.
 
 ## Repository rules
 
 1. Do not place site copy in shared components.
 2. Before selecting or creating an interface element, inspect `src/registry/framework-elements.ts`, apply `WHARTON_DESIGN_DECISION_FRAMEWORK.md`, and consult `docs/component-handbook.md`. Prefer an existing registered component, pattern, semantic entity presentation, or composition before introducing a new element or variant.
 3. Before composing a complete page or site section, consult `docs/page-recipes.md` and adapt the closest recipe to the actual audience, user goal, content model, and information architecture. Recipes are guidance, not fixed layouts.
-4. Before starting a new website, choose and adapt the closest blueprint in `docs/site-blueprints/`, record the sitemap/template/recipe/entity/CTA mapping, and identify any genuine framework gaps before implementation.
-5. Do not create a component when composition or an existing variant is sufficient.
-6. Use tokens instead of arbitrary reusable design values.
-7. Validate additions against Tokens → Entities → Components → Patterns → Global Elements → Templates → Utilities → Integrations.
-8. Preserve semantic HTML, keyboard operation, visible focus, accessible names, and exactly one H1 owner per page.
-9. Keep site-specific work in `sites/{site}` unless it passes the reusability admission rules.
-10. Do not add a dependency without documenting its concrete need.
-11. Run the appropriate validation for the scope. Use `npm run validate` for full local framework QA when practical; deployment-critical checks are defined by `.github/workflows/pages.yml`.
-12. For deployment-affecting work, run `npm run build:pages` when practical.
-13. Update contracts, the registry, tests, the decision framework, component handbook, page recipes, and affected site blueprints together when reusable elements or composition guidance change.
-14. Record architecture changes in an ADR before implementing them.
-15. Never duplicate shared framework components into a site folder.
-16. Use functional names rather than WordPress, plugin, or appearance-based names.
-17. Do not add a client framework without an approved ADR and concrete need.
-18. Keep external systems behind typed provider interfaces.
-19. Do not introduce Undergraduate-specific framework shortcuts.
-20. Preserve the static-first rendering default and opt into client JavaScript only for interaction.
-21. Keep one task per branch and avoid unrelated cleanup.
-22. Before editing a shared subsystem, inspect current `main` and any named handoff branch for overlapping work.
-23. Do not casually change shared contracts, routing, build configuration, design tokens, or content schemas. If required, document the reason and update dependent tests/docs together.
-24. Leave the working tree clean and reviewable before handoff.
-25. Do not bypass GitHub Pages with a separate manual production copy.
+4. Before starting a new website, follow `docs/new-site-project-playbook.md`, choose and adapt the closest blueprint in `docs/site-blueprints/`, record the sitemap/template/recipe/entity/CTA mapping, and identify any genuine framework gaps before implementation.
+5. Keep the scaffolded site's `PLAN.md` current enough for either Codex or Claude Code to continue without reconstructing strategy from chat history.
+6. Do not create a component when composition or an existing variant is sufficient.
+7. Use tokens instead of arbitrary reusable design values.
+8. Validate additions against Tokens → Entities → Components → Patterns → Global Elements → Templates → Utilities → Integrations.
+9. Preserve semantic HTML, keyboard operation, visible focus, accessible names, and exactly one H1 owner per page.
+10. Keep site-specific work in `sites/{site}` unless it passes the reusability admission rules.
+11. Do not add a dependency without documenting its concrete need.
+12. Run the appropriate validation for the scope. Use `npm run validate` for full local framework QA when practical; deployment-critical checks are defined by `.github/workflows/pages.yml`.
+13. For deployment-affecting work, run `npm run build:pages` when practical.
+14. Update contracts, the registry, tests, the decision framework, component handbook, page recipes, and affected site blueprints together when reusable elements or composition guidance change.
+15. Record architecture changes in an ADR before implementing them.
+16. Never duplicate shared framework components into a site folder.
+17. Use functional names rather than WordPress, plugin, or appearance-based names.
+18. Do not add a client framework without an approved ADR and concrete need.
+19. Keep external systems behind typed provider interfaces.
+20. Do not introduce Undergraduate-specific framework shortcuts.
+21. Preserve the static-first rendering default and opt into client JavaScript only for interaction.
+22. Keep one task per branch and avoid unrelated cleanup.
+23. Before editing a shared subsystem, inspect current `main` and any named handoff branch for overlapping work.
+24. Do not casually change shared contracts, routing, build configuration, design tokens, or content schemas. If required, document the reason and update dependent tests/docs together.
+25. Leave the working tree clean and reviewable before handoff.
+26. Do not bypass GitHub Pages with a separate manual production copy.
 
 ## Required Git workflow
 
