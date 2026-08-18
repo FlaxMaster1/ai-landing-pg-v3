@@ -48,17 +48,40 @@ Before Codex or Claude starts building, capture:
 
 This planning artifact should be sufficient for either agent to begin from repository/project evidence rather than reconstructing strategy from chat history.
 
-## Create the site root
+## Automated scaffold
 
-Create `sites/{site-id}` with:
+Once the site type and ID are known, generate the starter package instead of creating the folder tree manually:
+
+```sh
+npm run create:site -- --type=program --id=executive-mba --name="Executive MBA"
+```
+
+Supported `--type` values are:
+
+- `program`
+- `department`
+- `initiative`
+- `research`
+- `campaign`
+
+The command creates `sites/{site-id}` with starter configuration, blueprint-informed routes, navigation, footer data, empty entity stores, asset directories, fixture guidance, and a `PLAN.md` handoff file. It deliberately uses `old-theme`, disables theme preview, and does not add any `new-theme` implementation.
+
+The generator is intentionally non-destructive. It rejects invalid IDs and refuses to overwrite an existing `sites/{site-id}` directory. Use lowercase letters, numbers, and hyphens for site IDs.
+
+Generated content is scaffolding, not approved IA or copy. Immediately review the generated `PLAN.md`, sitemap, route list, labels, and page templates against the actual project strategy and blueprint.
+
+## Site root
+
+The generated site root contains the required structure:
 
 ```text
 site.config.json
 navigation.json
 footer.json
 assets.json
+PLAN.md
 pages/*.json
-content/*.md
+content/
 entities/{stories,events,people,courses}/*.json
 assets/{images,video,documents}/
 fixtures/
@@ -89,7 +112,7 @@ The current priority is to prove the site-building system before applying the re
 
 Site content and page composition must remain theme-independent so the redesigned styles can later be layered over the same working structure. See `themes.md` for the theme boundary.
 
-## Run the site
+## Run the generated site
 
 ```sh
 SITE=my-site npm run dev
