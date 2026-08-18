@@ -30,11 +30,23 @@ This directory contains the working documentation for the Wharton Web Prototype 
 
 ## Building a site
 
+- `site-blueprints/README.md` — starter-blueprint system and planning output contract.
+- `site-blueprints/program.md` — program/degree/certificate site starting model.
+- `site-blueprints/department.md` — academic department starting model.
+- `site-blueprints/initiative-center.md` — initiative, center, institute, or lab starting model.
+- `site-blueprints/research-hub.md` — research discovery/hub starting model.
+- `site-blueprints/campaign.md` — focused campaign/conversion starting model.
 - `adding-a-site.md` — create a new site root and move from strategy/content planning into framework implementation.
 - `architecture.md` — runtime, rendering, content, token, asset, theme, and hosting architecture.
 - `sites-validation.md` — historical ChatGPT Sites compatibility validation record.
 - `cms-mapping.md` — mapping between framework concepts and current CMS concepts.
 - `cms-audit/README.md` — source audit material used to establish the framework model.
+
+For new sites, use the sequence:
+
+**Strategy → Sitemap → Content model → Wireframes → Site Blueprint → Page Recipes → Design Decision Framework → Typed Registry → Component Handbook → Implementation**
+
+The current priority is validating this functional workflow end-to-end. `new-theme` work is intentionally deferred until the system is working; site composition must remain theme-independent so new visual styles can later be layered over the same structure.
 
 ## Development workflow
 
@@ -62,8 +74,9 @@ When documentation conflicts, use this order:
 5. typed registry for what exists and its machine-readable contract;
 6. Component Handbook;
 7. Page Recipes;
-8. workflow/deployment/testing documentation;
-9. project-specific instructions;
-10. conversational context.
+8. Site Blueprints for new-site starting structure;
+9. workflow/deployment/testing documentation;
+10. project-specific instructions;
+11. conversational context.
 
 Historical audit and validation documents may intentionally describe older hosting or implementation states. They should be read as evidence/history unless another governing document explicitly incorporates them into the current workflow.
