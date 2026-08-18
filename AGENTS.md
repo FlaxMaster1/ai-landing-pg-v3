@@ -10,10 +10,11 @@ Before making changes, read:
 2. `WHARTON_DESIGN_DECISION_FRAMEWORK.md` when selecting, composing, modifying, or creating interface elements
 3. `docs/component-handbook.md` for component/pattern use, avoid, variant, responsive, accessibility, and adjacent-choice guidance
 4. `docs/page-recipes.md` when composing complete pages, site sections, or new website structures
-5. `docs/agent-collaboration.md`
-6. `docs/deployment.md`
-7. `docs/implementation-status.md`
-8. `docs/handoffs/current.md` when continuing or reviewing another agent's work
+5. `docs/site-blueprints/README.md` and the closest blueprint when starting a new site
+6. `docs/agent-collaboration.md`
+7. `docs/deployment.md`
+8. `docs/implementation-status.md`
+9. `docs/handoffs/current.md` when continuing or reviewing another agent's work
 
 If instructions conflict, use this priority order:
 
@@ -24,10 +25,11 @@ If instructions conflict, use this priority order:
 5. `src/registry/framework-elements.ts` for what exists and its machine-readable contract
 6. `docs/component-handbook.md` for detailed selection and usage guidance
 7. `docs/page-recipes.md` for page and site composition guidance
-8. `docs/deployment.md`
-9. `docs/agent-collaboration.md`
-10. task-specific handoff/instructions
-11. conversational context
+8. `docs/site-blueprints/` for new-site starting structure
+9. `docs/deployment.md`
+10. `docs/agent-collaboration.md`
+11. task-specific handoff/instructions
+12. conversational context
 
 ## Production model
 
@@ -41,6 +43,15 @@ If instructions conflict, use this priority order:
 - Full Playwright E2E/accessibility/responsive/visual QA remains a deliberate development gate and is separate from the narrower production deployment gate.
 - ChatGPT Sites is compatibility-only and is not the production source of truth.
 - If the Pages workflow fails, production remains on the last successful deployment. Fix the failure on a branch and merge the correction through the normal review path.
+
+## Current theme-development constraint
+
+- The immediate priority is proving the functional site-building system end-to-end with the existing theme.
+- `new-theme` implementation is intentionally deferred until that system is working reliably.
+- Do not make new-site scaffolding, page composition, content schemas, interactions, accessibility, or deployment depend on `new-theme`.
+- Do not add incidental `new-theme` styling during unrelated work.
+- Keep site structure and content theme-independent so the redesigned visual layer can later be applied to the same working system.
+- Resume `new-theme` work only when the project owner explicitly reopens that phase.
 
 ## Agent branch ownership
 
@@ -66,27 +77,28 @@ If instructions conflict, use this priority order:
 1. Do not place site copy in shared components.
 2. Before selecting or creating an interface element, inspect `src/registry/framework-elements.ts`, apply `WHARTON_DESIGN_DECISION_FRAMEWORK.md`, and consult `docs/component-handbook.md`. Prefer an existing registered component, pattern, semantic entity presentation, or composition before introducing a new element or variant.
 3. Before composing a complete page or site section, consult `docs/page-recipes.md` and adapt the closest recipe to the actual audience, user goal, content model, and information architecture. Recipes are guidance, not fixed layouts.
-4. Do not create a component when composition or an existing variant is sufficient.
-5. Use tokens instead of arbitrary reusable design values.
-6. Validate additions against Tokens → Entities → Components → Patterns → Global Elements → Templates → Utilities → Integrations.
-7. Preserve semantic HTML, keyboard operation, visible focus, accessible names, and exactly one H1 owner per page.
-8. Keep site-specific work in `sites/{site}` unless it passes the reusability admission rules.
-9. Do not add a dependency without documenting its concrete need.
-10. Run the appropriate validation for the scope. Use `npm run validate` for full local framework QA when practical; deployment-critical checks are defined by `.github/workflows/pages.yml`.
-11. For deployment-affecting work, run `npm run build:pages` when practical.
-12. Update contracts, the registry, tests, the decision framework, component handbook, and page recipes together when reusable elements or composition guidance change.
-13. Record architecture changes in an ADR before implementing them.
-14. Never duplicate shared framework components into a site folder.
-15. Use functional names rather than WordPress, plugin, or appearance-based names.
-16. Do not add a client framework without an approved ADR and concrete need.
-17. Keep external systems behind typed provider interfaces.
-18. Do not introduce Undergraduate-specific framework shortcuts.
-19. Preserve the static-first rendering default and opt into client JavaScript only for interaction.
-20. Keep one task per branch and avoid unrelated cleanup.
-21. Before editing a shared subsystem, inspect current `main` and any named handoff branch for overlapping work.
-22. Do not casually change shared contracts, routing, build configuration, design tokens, or content schemas. If required, document the reason and update dependent tests/docs together.
-23. Leave the working tree clean and reviewable before handoff.
-24. Do not bypass GitHub Pages with a separate manual production copy.
+4. Before starting a new website, choose and adapt the closest blueprint in `docs/site-blueprints/`, record the sitemap/template/recipe/entity/CTA mapping, and identify any genuine framework gaps before implementation.
+5. Do not create a component when composition or an existing variant is sufficient.
+6. Use tokens instead of arbitrary reusable design values.
+7. Validate additions against Tokens → Entities → Components → Patterns → Global Elements → Templates → Utilities → Integrations.
+8. Preserve semantic HTML, keyboard operation, visible focus, accessible names, and exactly one H1 owner per page.
+9. Keep site-specific work in `sites/{site}` unless it passes the reusability admission rules.
+10. Do not add a dependency without documenting its concrete need.
+11. Run the appropriate validation for the scope. Use `npm run validate` for full local framework QA when practical; deployment-critical checks are defined by `.github/workflows/pages.yml`.
+12. For deployment-affecting work, run `npm run build:pages` when practical.
+13. Update contracts, the registry, tests, the decision framework, component handbook, page recipes, and affected site blueprints together when reusable elements or composition guidance change.
+14. Record architecture changes in an ADR before implementing them.
+15. Never duplicate shared framework components into a site folder.
+16. Use functional names rather than WordPress, plugin, or appearance-based names.
+17. Do not add a client framework without an approved ADR and concrete need.
+18. Keep external systems behind typed provider interfaces.
+19. Do not introduce Undergraduate-specific framework shortcuts.
+20. Preserve the static-first rendering default and opt into client JavaScript only for interaction.
+21. Keep one task per branch and avoid unrelated cleanup.
+22. Before editing a shared subsystem, inspect current `main` and any named handoff branch for overlapping work.
+23. Do not casually change shared contracts, routing, build configuration, design tokens, or content schemas. If required, document the reason and update dependent tests/docs together.
+24. Leave the working tree clean and reviewable before handoff.
+25. Do not bypass GitHub Pages with a separate manual production copy.
 
 ## Required Git workflow
 
