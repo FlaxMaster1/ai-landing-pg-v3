@@ -5,19 +5,48 @@ A new site should begin with strategy and content structure, not with component 
 Before creating files, define:
 
 1. primary audiences;
-2. primary user goals;
-3. site purpose;
+2. primary user goals and journeys;
+3. site purpose and success criteria;
 4. sitemap and navigation model;
 5. page inventory;
 6. content/entity needs;
-7. wireframe or content hierarchy for key pages.
+7. primary and secondary CTA model;
+8. wireframe or content hierarchy for key pages.
+
+Then select and adapt the closest starter blueprint in `site-blueprints/`:
+
+- `site-blueprints/program.md`
+- `site-blueprints/department.md`
+- `site-blueprints/initiative-center.md`
+- `site-blueprints/research-hub.md`
+- `site-blueprints/campaign.md`
+
+The blueprint is a starting model, not a fixed sitemap. Remove anything that does not serve a validated user need and add project-specific pages when required.
 
 Then consult, in order:
 
-1. `../WHARTON_DESIGN_DECISION_FRAMEWORK.md` for selection logic;
-2. `../src/registry/framework-elements.ts` for what exists;
-3. `component-handbook.md` for detailed component/pattern guidance;
-4. `page-recipes.md` for full-page and site-type composition guidance.
+1. `page-recipes.md` for page/site composition guidance;
+2. `../WHARTON_DESIGN_DECISION_FRAMEWORK.md` for selection logic;
+3. `../src/registry/framework-elements.ts` for what exists;
+4. `component-handbook.md` for detailed component/pattern guidance.
+
+## Planning handoff before implementation
+
+Before Codex or Claude starts building, capture:
+
+- selected blueprint and rationale;
+- approved/draft sitemap;
+- page-to-template mapping;
+- page-to-recipe mapping;
+- entity/content model needs;
+- navigation model;
+- CTA model;
+- integrations required;
+- known framework gaps;
+- missing content/assets;
+- first-prototype acceptance criteria.
+
+This planning artifact should be sufficient for either agent to begin from repository/project evidence rather than reconstructing strategy from chat history.
 
 ## Create the site root
 
@@ -54,7 +83,11 @@ Use an existing page section type from the controlled registry. The build fails 
 
 ## Theme selection
 
-Declare `"theme": "old-theme"` or `"theme": "new-theme"` in `site.config.json`. The property defaults to `old-theme`. Site content and page composition must not branch by theme. See `themes.md` for the theme contract, development override, and allowed theme-specific markup rules.
+The current priority is to prove the site-building system before applying the redesigned visual layer. New sites should therefore use the existing functional theme while their IA, content model, page composition, interactions, responsive behavior, accessibility, and deployment are validated.
+
+`new-theme` implementation is intentionally deferred until the underlying system is working end-to-end. Do not make new-site requirements depend on `new-theme` styling or add `new-theme` work incidentally during site scaffolding.
+
+Site content and page composition must remain theme-independent so the redesigned styles can later be layered over the same working structure. See `themes.md` for the theme boundary.
 
 ## Run the site
 
@@ -75,7 +108,7 @@ If a real use case cannot be expressed with the current registry, document the e
 4. justified new shared component/pattern;
 5. site-specific implementation when the need is not broadly reusable.
 
-Any reusable addition must update the typed registry, Design Decision Framework, Component Handbook, relevant page recipes, tests, and other affected documentation in the same change.
+Any reusable addition must update the typed registry, Design Decision Framework, Component Handbook, relevant Page Recipes/Blueprints, tests, and other affected documentation in the same change.
 
 ## Git and deployment
 
