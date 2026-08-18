@@ -8,6 +8,7 @@
     "npm": ">=9.6.5"
   },
   "scripts": {
+    "create:site": "node scripts/create-site.mjs",
     "generate:tokens": "node scripts/generate-tokens.mjs",
     "check:tokens": "node scripts/generate-tokens.mjs --check",
     "predev": "npm run generate:tokens",
