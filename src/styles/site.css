@@ -102,14 +102,34 @@
   #leadership-support .c-card__action { display: block; }
 
   #research-insights { padding-block-end: var(--space-8); }
+  #research-insights .u-container { max-inline-size: var(--size-content); }
   #research-insights + #research-stories { padding-block-start: 0; }
+  #research-stories .p-story-collection { gap: 0.4rem; }
+  #research-stories .c-card {
+    min-block-size: 25rem;
+    align-content: stretch;
+    color: var(--text-inverse);
+    border: 0;
+  }
+  #research-stories .c-card__body {
+    align-content: center;
+    padding: clamp(2rem, 4vw, 3.75rem);
+  }
+  #research-stories .c-card:nth-child(1) { background: linear-gradient(145deg, #0b4d7f 0%, #052f59 100%); }
+  #research-stories .c-card:nth-child(2) { background: linear-gradient(145deg, #0b3d80 0%, #031d55 100%); }
+  #research-stories .c-card:nth-child(3) { background: linear-gradient(145deg, #0877ad 0%, #104e7a 100%); }
+  #research-stories .c-card:nth-child(4) { background: linear-gradient(145deg, #073a67 0%, #02213e 100%); }
+  #research-stories .c-card:nth-child(5) { background: linear-gradient(145deg, #92072f 0%, #500018 100%); }
+  #research-stories .c-card:nth-child(6) { background: linear-gradient(145deg, #0b5d8f 0%, #063258 100%); }
+  #research-stories :where(.c-card__title, .c-card__title a, .c-eyebrow, .c-card__action) { color: inherit; }
+  #research-stories .c-card__title { font-size: clamp(1.75rem, 3vw, 2.4rem); }
   #news-intro { padding-block-end: var(--space-8); background: #eef2f7; }
   #news-intro + #news-stories { padding-block-start: 0; background: #eef2f7; }
   :where(#research-stories, #news-stories) .c-card {
     min-block-size: 100%;
     background: var(--surface-page);
   }
-  :where(#research-stories, #news-stories) .c-card__title { color: var(--color-blue-900); }
+  #news-stories .c-card__title { color: var(--color-blue-900); }
   :where(#research-stories, #news-stories) .c-card__action { margin-block-start: auto; }
 
   @media (min-width: 42rem) {
@@ -151,6 +171,7 @@
     #dean-james .p-feature-row__media { max-inline-size: 19rem; }
     #approach .p-feature-row__media img,
     #faculty-expertise .p-feature-row__media img { min-block-size: 18rem; }
+    #research-stories .c-card { min-block-size: 20rem; }
   }
   }
 }
