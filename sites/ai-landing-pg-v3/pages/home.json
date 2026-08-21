@@ -16,7 +16,7 @@
         "id": "overview",
         "heading": "The Wharton AI Advantage",
         "text": "We prepare learners to be leaders who use AI with the knowledge, judgment, and accountability their career stage demands. From pre-college through the C-suite, Wharton faculty teach, research, and engage across the full continuum—creating a continuous exchange of ideas that informs what we teach, how we teach, and how AI is applied in business and society.",
-        "image": { "assetId": "faculty-ai-classroom" },
+        "image": { "assetId": "ethan-mollick-hero" },
         "actions": [
           { "label": "Read About Our AI Curriculum", "url": "https://www.wharton.upenn.edu/how-wharton-prepares-business-leaders-in-the-ai-era/", "type": "primary", "external": true },
           { "label": "Explore Your AI Leadership Journey", "url": "#ai-leadership-journey", "type": "secondary" }

@@ -11,5 +11,11 @@
     "alt": "A Wharton AI and Analytics faculty member teaching in a classroom",
     "credit": "The Wharton School",
     "focalPoint": { "x": 0.62, "y": 0.48 }
+  },
+  {
+    "id": "ethan-mollick-hero",
+    "file": "images/ethan-mollick-hero.jpg",
+    "alt": "Wharton professor Ethan Mollick speaking onstage",
+    "focalPoint": { "x": 0.64, "y": 0.48 }
   }
 ]
