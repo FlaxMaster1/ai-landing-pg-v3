@@ -16,6 +16,7 @@ import {
 import { z } from "zod";
 
 const siteIdPattern = /^[a-z0-9-]+$/;
+const assetBasePath = (import.meta.env.BASE_URL ?? "/").replace(/\/?$/, "/");
 
 export interface LoadedSite {
   id: string;
@@ -131,7 +132,7 @@ export function loadSite(siteId = selectedSiteId(), repositoryRoot = process.cwd
     pages: parseDirectory(path.join(root, "pages"), pageSchema),
     assets: parsedAssets.map((asset) => ({
       ...asset,
-      src: `/site-assets/${siteId}/${asset.file}`
+      src: `${assetBasePath}site-assets/${siteId}/${asset.file}`
     })),
     entities: {
       stories: parseDirectory(path.join(root, "entities", "stories"), storySchema),
