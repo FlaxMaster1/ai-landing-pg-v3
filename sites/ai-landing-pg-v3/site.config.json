@@ -1,0 +1,66 @@
+{
+  "id": "ai-landing-pg-v3",
+  "name": "The Wharton AI Advantage",
+  "referenceDomain": "https://www.wharton.upenn.edu/ai/",
+  "prototypeTitle": "The Wharton AI Advantage — V3 prototype",
+  "theme": "old-theme",
+  "institutionalBrand": {
+    "homeUrl": "https://www.wharton.upenn.edu/",
+    "headerLogo": {
+      "src": "https://martechdev.wharton.upenn.edu/wp-content/plugins/martech-chupacabra/includes/images/wharton-logo.svg",
+      "alt": "The Wharton School of the University of Pennsylvania"
+    },
+    "footerLogo": {
+      "src": "https://martechdev.wharton.upenn.edu/wp-content/plugins/martech-chupacabra/includes/images/penn-logo-white.svg",
+      "alt": "University of Pennsylvania"
+    }
+  },
+  "featureFlags": {
+    "search": false,
+    "mobileNavigation": true,
+    "themePreview": false
+  },
+  "defaultSeo": {
+    "titleSuffix": " | The Wharton School",
+    "description": "See how Wharton prepares learners at every career stage to use AI with knowledge, judgment, and accountability."
+  },
+  "ui": {
+    "skipToContent": "Skip to main content",
+    "menu": "Menu",
+    "closeMenu": "Close",
+    "back": "Back",
+    "search": "Search The Wharton AI Advantage",
+    "searchSubmit": "Search",
+    "backToTop": "Back to top",
+    "eventEmpty": "No events are currently available.",
+    "formSuccess": "Thanks. This prototype recorded no personal data.",
+    "programNavigationLabel": "Wharton program navigation",
+    "primaryNavigationLabel": "The Wharton AI Advantage section navigation",
+    "footerLabel": "Institutional footer",
+    "footerAdditionalLinks": "Additional Links",
+    "themeSelector": "Preview theme",
+    "oldTheme": "Old theme — current CMS",
+    "newTheme": "New theme — deferred",
+    "configuredTheme": "Configured theme"
+  },
+  "integrations": {
+    "events": {
+      "provider": "fixture"
+    },
+    "content": {
+      "provider": "fixture"
+    },
+    "faculty": {
+      "provider": "fixture"
+    },
+    "forms": {
+      "provider": "prototype"
+    },
+    "search": {
+      "provider": "fixture"
+    },
+    "analytics": {
+      "provider": "noop"
+    }
+  }
+}

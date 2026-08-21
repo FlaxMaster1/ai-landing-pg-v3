@@ -1,0 +1,15 @@
+[
+  {
+    "id": "erika-james",
+    "file": "images/erika-james.jpg",
+    "alt": "Wharton School Dean Erika H. James",
+    "credit": "The Wharton School"
+  },
+  {
+    "id": "faculty-ai-classroom",
+    "file": "images/faculty-ai-classroom.jpg",
+    "alt": "A Wharton AI and Analytics faculty member teaching in a classroom",
+    "credit": "The Wharton School",
+    "focalPoint": { "x": 0.62, "y": 0.48 }
+  }
+]
