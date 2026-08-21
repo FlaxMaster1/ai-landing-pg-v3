@@ -1,3 +1,156 @@
 @layer site {
   :where([data-site-theme="old-theme"]) { --site-accent: var(--surface-brand-accent); }
+
+  [data-site-id="ai-landing-pg-v3"] {
+  & { scroll-behavior: smooth; }
+
+  :where(#approach, #faculty-expertise, #student-experience, #research-insights) {
+    scroll-margin-block-start: 1rem;
+  }
+
+  .p-hero--media { min-block-size: min(43rem, calc(100svh - 7rem)); }
+  .p-hero::after {
+    background:
+      linear-gradient(90deg, rgb(0 24 67 / 94%) 0%, rgb(0 44 119 / 80%) 45%, rgb(0 44 119 / 28%) 100%);
+  }
+  .p-hero__layout { place-items: center start; }
+  .p-hero__content {
+    max-inline-size: 48rem;
+    justify-items: start;
+    text-align: start;
+  }
+  .p-hero__content h1 { max-inline-size: 15ch; }
+  .p-hero__text { max-inline-size: 64ch; font-size: clamp(1.125rem, 2vw, 1.35rem); }
+  .p-hero .u-layout--cluster { justify-content: start; }
+
+  #by-the-numbers { background: var(--surface-subtle); }
+  #by-the-numbers .p-stats-group { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  #by-the-numbers .c-stat { background: var(--surface-page); }
+
+  #dean-james { background: #f1f4f8; }
+  #dean-james .p-feature-row__media { max-inline-size: 31rem; justify-self: center; }
+  #dean-james .p-feature-row__media img { aspect-ratio: 1; object-fit: cover; }
+  #dean-james .p-feature-row__content > p:not(.c-eyebrow) {
+    color: var(--color-blue-900);
+    font-family: var(--font-family-serif);
+    font-size: clamp(1.25rem, 2.3vw, 1.7rem);
+    line-height: 1.45;
+  }
+  #dean-james h2 { font-family: var(--font-family-sans-condensed-black); }
+
+  #approach .p-feature-row__media img,
+  #faculty-expertise .p-feature-row__media img {
+    min-block-size: 26rem;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+  }
+
+  #ai-leadership-journey { overflow: hidden; background: #eef5fb; }
+  #ai-leadership-journey .u-container { display: grid; }
+  #ai-leadership-journey .c-eyebrow {
+    order: 1;
+    color: var(--color-blue-700);
+    text-align: center;
+  }
+  #ai-leadership-journey .p-card-grid {
+    position: relative;
+    order: 2;
+    margin-block: var(--space-8);
+  }
+  #ai-leadership-journey h2 {
+    order: 3;
+    margin: 0;
+    color: var(--color-blue-900);
+    text-align: center;
+  }
+  #ai-leadership-journey .c-card {
+    min-block-size: 12rem;
+    border-block-start: 0.45rem solid var(--color-blue-500);
+    box-shadow: var(--elevation-raised);
+  }
+  #ai-leadership-journey .c-card__body { align-content: center; text-align: center; }
+  #ai-leadership-journey .c-card__title { color: var(--color-blue-900); }
+  #ai-leadership-journey .c-card p:not(.c-eyebrow) {
+    color: var(--color-blue-700);
+    font-family: var(--font-family-sans-bold);
+  }
+
+  #course-spotlight { background: var(--surface-brand-primary); color: var(--text-inverse); }
+  #course-spotlight :where(h2, .c-eyebrow) { color: inherit; }
+  #course-spotlight .c-button--secondary { color: inherit; border-color: currentColor; }
+
+  #academic-leadership-quote .u-container { max-inline-size: 58rem; }
+  #academic-leadership-quote h2 { color: var(--color-blue-900); }
+
+  #student-experience { padding-block-end: var(--space-8); background: #f4f7fa; }
+  #student-experience + #student-pathways { padding-block-start: 0; background: #f4f7fa; }
+  #student-pathways .c-card { border-block-start: 0.35rem solid var(--surface-brand-accent); }
+  #student-pathways .c-card__action { margin-block-start: auto; }
+
+  #leadership-support { background: var(--color-blue-900); }
+  #leadership-support h2,
+  #leadership-support > .u-container > .c-eyebrow { color: var(--text-inverse); }
+  #leadership-support .p-card-grid { gap: 1rem; }
+  #leadership-support .c-card {
+    min-block-size: 19rem;
+    background: #063e82;
+  }
+  #leadership-support .c-card::after { background: linear-gradient(180deg, rgb(0 44 119 / 18%), rgb(0 25 70 / 72%)); }
+  #leadership-support .c-card:nth-child(2) { background: #075aa4; }
+  #leadership-support .c-card:nth-child(3) { background: #004785; }
+  #leadership-support .c-card__body { position: relative; align-self: end; }
+  #leadership-support .c-card__action { display: block; }
+
+  #research-insights { padding-block-end: var(--space-8); }
+  #research-insights + #research-stories { padding-block-start: 0; }
+  #news-intro { padding-block-end: var(--space-8); background: #eef2f7; }
+  #news-intro + #news-stories { padding-block-start: 0; background: #eef2f7; }
+  :where(#research-stories, #news-stories) .c-card {
+    min-block-size: 100%;
+    background: var(--surface-page);
+  }
+  :where(#research-stories, #news-stories) .c-card__title { color: var(--color-blue-900); }
+  :where(#research-stories, #news-stories) .c-card__action { margin-block-start: auto; }
+
+  @media (min-width: 42rem) {
+    #by-the-numbers .p-stats-group { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  }
+
+  @media (min-width: 62rem) {
+    #ai-leadership-journey .p-card-grid {
+      min-block-size: 23rem;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      align-items: end;
+      gap: 0.75rem;
+      padding-block-start: 5rem;
+    }
+    #ai-leadership-journey .p-card-grid::before {
+      content: "";
+      position: absolute;
+      z-index: 0;
+      inset: 6.5rem 2rem auto;
+      block-size: 0.3rem;
+      background: var(--color-blue-600);
+      clip-path: polygon(0 55%, 94% 0, 94% 34%, 100% 0, 95% 70%, 95% 42%, 0 100%);
+      transform: rotate(-6deg);
+      transform-origin: center;
+    }
+    #ai-leadership-journey .c-card { position: relative; z-index: 1; }
+    #ai-leadership-journey .c-card:nth-child(1) { transform: translateY(3.75rem); }
+    #ai-leadership-journey .c-card:nth-child(2) { transform: translateY(2.5rem); }
+    #ai-leadership-journey .c-card:nth-child(3) { transform: translateY(1.25rem); }
+
+    #leadership-support .p-card-grid { grid-template-columns: 1.08fr 1fr; grid-template-rows: repeat(2, minmax(18rem, auto)); }
+    #leadership-support .c-card:first-child { grid-row: 1 / span 2; min-block-size: 38rem; }
+  }
+
+  @media (max-width: 41.99rem) {
+    .p-hero--media { min-block-size: 38rem; }
+    .p-hero::after { background: rgb(0 32 84 / 86%); }
+    .p-hero__media img { object-position: 62% 50% !important; }
+    #dean-james .p-feature-row__media { max-inline-size: 19rem; }
+    #approach .p-feature-row__media img,
+    #faculty-expertise .p-feature-row__media img { min-block-size: 18rem; }
+  }
+  }
 }

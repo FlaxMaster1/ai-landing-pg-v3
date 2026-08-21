@@ -1,0 +1,18 @@
+{
+  "program": [
+    { "label": "Faculty", "url": "https://faculty.wharton.upenn.edu/", "external": true },
+    { "label": "Youth Program", "url": "https://globalyouth.wharton.upenn.edu/", "external": true },
+    { "label": "Undergrad", "url": "https://undergrad.wharton.upenn.edu/", "external": true },
+    { "label": "MBA", "url": "https://mba.wharton.upenn.edu/", "external": true },
+    { "label": "EMBA", "url": "https://executivemba.wharton.upenn.edu/", "external": true },
+    { "label": "PhD", "url": "https://doctoral.wharton.upenn.edu/", "external": true },
+    { "label": "Exec Ed", "url": "https://executiveeducation.wharton.upenn.edu/", "external": true },
+    { "label": "Wharton Online", "url": "https://online.wharton.upenn.edu/", "external": true }
+  ],
+  "primary": [
+    { "label": "Our Approach", "url": "#approach" },
+    { "label": "Faculty Expertise", "url": "#faculty-expertise" },
+    { "label": "Student Experience", "url": "#student-experience" },
+    { "label": "Research and Insights", "url": "#research-insights" }
+  ]
+}

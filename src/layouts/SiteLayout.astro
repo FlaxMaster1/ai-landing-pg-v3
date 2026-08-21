@@ -16,7 +16,7 @@ const themeStylesheets = Object.fromEntries(
 const themePreviewEnabled = import.meta.env.DEV && site.config.featureFlags.themePreview;
 ---
 <!doctype html>
-<html lang="en" data-site-theme={theme.id} data-configured-theme={theme.id}>
+<html lang="en" data-site-id={site.id} data-site-theme={theme.id} data-configured-theme={theme.id}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />

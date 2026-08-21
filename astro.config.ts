@@ -9,7 +9,7 @@ export default defineConfig({
   adapter: isSitesBuild ? cloudflare({ prerenderEnvironment: "node" }) : undefined,
   output: isSitesBuild ? "server" : "static",
   site: isPagesBuild ? "https://flaxmaster1.github.io" : undefined,
-  base: isPagesBuild ? "/wharton-prototype-framework" : undefined,
+  base: isPagesBuild ? "/ai-landing-pg-v3" : undefined,
   trailingSlash: "always",
   build: {
     format: "directory"

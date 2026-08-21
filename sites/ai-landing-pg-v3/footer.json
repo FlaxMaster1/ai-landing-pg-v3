@@ -1,0 +1,29 @@
+{
+  "additionalLinks": [
+    { "label": "Wharton AI & Analytics Initiative", "url": "https://ai-analytics.wharton.upenn.edu/", "external": true },
+    { "label": "Knowledge at Wharton: AI", "url": "https://knowledge.wharton.upenn.edu/category/ai/", "external": true },
+    { "label": "Penn AI", "url": "https://ai.upenn.edu/", "external": true }
+  ],
+  "institutionalGroups": [
+    {
+      "heading": "Explore Wharton AI",
+      "links": [
+        { "label": "Artificial Intelligence for Business", "url": "https://ai-analytics.wharton.upenn.edu/for-students/", "external": true },
+        { "label": "Executive Education", "url": "https://executiveeducation.wharton.upenn.edu/ai-and-analytics/", "external": true }
+      ]
+    },
+    {
+      "heading": "On this page",
+      "links": [
+        { "label": "Our Approach", "url": "#approach" },
+        { "label": "Faculty Expertise", "url": "#faculty-expertise" },
+        { "label": "Student Experience", "url": "#student-experience" },
+        { "label": "Research and Insights", "url": "#research-insights" }
+      ]
+    }
+  ],
+  "legal": [
+    { "label": "Privacy Policy", "url": "https://www.wharton.upenn.edu/privacy-policy/", "external": true },
+    { "label": "Accessibility", "url": "https://accessibility.web-resources.upenn.edu/", "external": true }
+  ]
+}

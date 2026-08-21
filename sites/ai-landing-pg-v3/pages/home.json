@@ -1,0 +1,183 @@
+[
+  {
+    "route": "/",
+    "template": "homepage",
+    "title": "The Wharton AI Advantage",
+    "titleMode": "hero",
+    "width": "full-window",
+    "sidebar": "none",
+    "seo": {
+      "title": "The Wharton AI Advantage",
+      "description": "See how Wharton prepares learners at every career stage to use AI with knowledge, judgment, and accountability."
+    },
+    "sections": [
+      {
+        "type": "hero",
+        "id": "overview",
+        "heading": "The Wharton AI Advantage",
+        "text": "We prepare learners to be leaders who use AI with the knowledge, judgment, and accountability their career stage demands. From pre-college through the C-suite, Wharton faculty teach, research, and engage across the full continuum—creating a continuous exchange of ideas that informs what we teach, how we teach, and how AI is applied in business and society.",
+        "image": { "assetId": "faculty-ai-classroom" },
+        "actions": [
+          { "label": "Read About Our AI Curriculum", "url": "https://www.wharton.upenn.edu/how-wharton-prepares-business-leaders-in-the-ai-era/", "type": "primary", "external": true },
+          { "label": "Explore Your AI Leadership Journey", "url": "#ai-leadership-journey", "type": "secondary" }
+        ],
+        "variant": "media"
+      },
+      {
+        "type": "statsGroup",
+        "id": "by-the-numbers",
+        "heading": "By the Numbers",
+        "items": [
+          { "value": "90+", "label": "AI and Analytics affiliated faculty" },
+          { "value": "65+", "label": "AI and Analytics courses across degree programs" },
+          { "value": "10", "label": "AI and Analytics Executive Education programs" },
+          { "value": "7", "label": "AI and Analytics research centers and labs" }
+        ]
+      },
+      {
+        "type": "featureRow",
+        "id": "dean-james",
+        "eyebrow": "Leadership Perspective",
+        "heading": "Erika H. James",
+        "text": "“As AI continues to commoditize the world’s access to information, leaders need to prioritize the human skills AI can’t replicate. Things like sense-making, judgement, consensus-building, and above all, accountability. At Wharton, we believe people have and will continue to be essential to business’ ability to positively impact society. In this moment, we must make sure we don’t lose sight of humanity as AI becomes even more embedded in how we learn, work, and live.” — Dean, The Wharton School",
+        "image": { "assetId": "erika-james" },
+        "mediaPosition": "start"
+      },
+      {
+        "type": "featureRow",
+        "id": "approach",
+        "eyebrow": "Our Approach",
+        "heading": "Faculty insight moves between research, the classroom, and practice",
+        "text": "Wharton has always been an innovator and early mover, and our approach to AI is no different. Our world-class faculty teach learners at every stage, from pre-college students to seasoned executives. They see firsthand how people and organizations are using AI to create value—and where the most consequential questions, opportunities, and risks are emerging. Those insights move between research, the classroom, and the world of practice, strengthening learning at every stage. Wharton is where ambitious students, scholars, and leaders come to understand AI’s impact on business and society—and help shape what comes next.",
+        "image": { "assetId": "faculty-ai-classroom" },
+        "mediaPosition": "end"
+      },
+      {
+        "type": "cardGrid",
+        "id": "ai-leadership-journey",
+        "eyebrow": "Wharton faculty teach and research across every stage.",
+        "heading": "Your AI Leadership Journey",
+        "columns": 2,
+        "variant": "editorial",
+        "items": [
+          { "title": "Pre-College", "description": "AI as Tutor and Spark", "eyebrow": "01" },
+          { "title": "Pre-Career", "description": "AI as Co-Pilot", "eyebrow": "02" },
+          { "title": "Early / Mid-Career", "description": "AI as Workflow Partner", "eyebrow": "03" },
+          { "title": "Executive / C-Suite", "description": "AI as Strategic Lever", "eyebrow": "04" }
+        ]
+      },
+      {
+        "type": "featureRow",
+        "id": "faculty-expertise",
+        "eyebrow": "Faculty Expertise",
+        "heading": "Advancing how the world understands AI",
+        "text": "Wharton faculty are advancing how the world understands AI’s impact on business and society—from work and career progression to creativity, healthcare, ethics, and decision-making. They bring those insights directly into Wharton classrooms, connecting new research with the real questions learners and leaders are confronting now. The Wharton AI Research Fund supports faculty exploring how AI is being applied and how it affects people and organizations. The AI Education Innovation Fund helps faculty develop new courses, strengthen existing curricula, and create innovative learning experiences for an AI-enabled world.",
+        "image": { "assetId": "faculty-ai-classroom" },
+        "action": { "label": "Explore AI Research and Insights", "url": "https://knowledge.wharton.upenn.edu/category/ai/", "type": "primary", "external": true },
+        "mediaPosition": "start"
+      },
+      {
+        "type": "featureRow",
+        "id": "course-spotlight",
+        "eyebrow": "Course Spotlight",
+        "heading": "AI in Our Lives: The Behavioral Science of Autonomous Technology",
+        "text": "Taught by Stefano Puntoni, Sebastian S. Kresge Professor of Marketing and Faculty Co-Director of Wharton Human-AI Research, this course examines how AI affects individuals, organizations, and society. Students critically assess both the benefits and risks of autonomous technologies—and the human barriers that shape how AI is adopted and used.",
+        "action": { "label": "Read About Our AI Curriculum", "url": "https://www.wharton.upenn.edu/how-wharton-prepares-business-leaders-in-the-ai-era/", "type": "secondary", "external": true },
+        "mediaPosition": "end"
+      },
+      {
+        "type": "callout",
+        "id": "academic-leadership-quote",
+        "eyebrow": "Leadership Perspective",
+        "heading": "Faculty-led learning for an AI-enabled world",
+        "text": "An approved perspective from Wharton’s academic leadership will appear here, reinforcing how Wharton’s faculty-led, cross-program approach prepares learners to use AI with rigor, judgment, and accountability.",
+        "surface": "subtle"
+      },
+      {
+        "type": "pageIntro",
+        "id": "student-experience",
+        "heading": "Student Experience",
+        "text": "At Wharton, AI is not treated as an elective. It is a core business competency, integrated into how students learn, analyze, build, and lead. Wharton’s Artificial Intelligence for Business curriculum combines the technical skills needed to work with and evaluate AI systems with the business, economic, legal, ethical, psychological, and societal questions those systems create. Beyond the classroom, students apply what they learn to real business challenges, collaborate across disciplines, and test ideas through hands-on experiences."
+      },
+      {
+        "type": "cardGrid",
+        "id": "student-pathways",
+        "columns": 3,
+        "variant": "editorial",
+        "items": [
+          {
+            "title": "Artificial Intelligence for Business",
+            "description": "Dedicated pathways for undergraduate, MBA, and Executive MBA students pair technical fluency with the judgment required to lead responsible adoption.",
+            "action": { "label": "Explore AI Learning for Students", "url": "https://ai-analytics.wharton.upenn.edu/for-students/", "type": "text", "external": true }
+          },
+          {
+            "title": "AI & Analytics Accelerator",
+            "description": "Students work alongside industry experts to tackle real business challenges and develop solutions using machine learning, data, and AI.",
+            "action": { "label": "Explore the Accelerator", "url": "https://ai-analytics.wharton.upenn.edu/for-students/ai-analytics-accelerator/", "type": "text", "external": true }
+          },
+          {
+            "title": "Wharton Hack-AI-thon",
+            "description": "Student teams turn ideas into working solutions through rapid prototyping, interdisciplinary collaboration, and real-world business challenges.",
+            "action": { "label": "See the Hack-AI-thon in Action", "url": "https://www.wharton.upenn.edu/story/ambitious-ideas-and-wins-at-the-wharton-hack-ai-thon/", "type": "text", "external": true }
+          }
+        ]
+      },
+      {
+        "type": "cardGrid",
+        "id": "leadership-support",
+        "eyebrow": "From capability to impact",
+        "heading": "AI leadership at every level",
+        "columns": 2,
+        "variant": "promotional",
+        "items": [
+          {
+            "title": "AI Upskilling",
+            "description": "Wharton extends its AI expertise to professionals and organizations around the world through a portfolio of AI and Analytics programs for executives. Grounded in current faculty research and real business challenges, these programs help leaders move from understanding AI to setting strategy, driving adoption, managing organizational change, and governing its use responsibly.",
+            "action": { "label": "Explore AI and Analytics Programs for Executives", "url": "https://executiveeducation.wharton.upenn.edu/ai-and-analytics/", "type": "text", "external": true }
+          },
+          {
+            "title": "AI Infrastructure",
+            "description": "As one of the first business schools to make bold investments in generative AI, Wharton challenged its community to rethink what it means to teach, learn, research, and work in an AI-enabled world. We continue to expand access to AI tools and learning environments so students, faculty, and staff can experiment in secure, responsible settings."
+          },
+          {
+            "title": "A Global Community of AI Leaders",
+            "description": "Wharton’s global alumni community brings a real-time view of AI in practice back to the School. Leaders across industries share how their organizations are adopting AI, where they are finding value, and what challenges remain—giving faculty and learners direct insight into how AI is changing work and leadership."
+          }
+        ]
+      },
+      {
+        "type": "pageIntro",
+        "id": "research-insights",
+        "heading": "Research and Insights",
+        "text": "Explore new Wharton research and ideas on how AI is changing organizations, skills, creativity, judgment, ethics, and learning."
+      },
+      {
+        "type": "storyCollection",
+        "id": "research-stories",
+        "entityIds": ["accountable-acceleration", "skills-mismatch", "cognitive-surrender", "ai-creativity", "ethical-advice", "ai-learning"],
+        "variant": "grid"
+      },
+      {
+        "type": "pageIntro",
+        "id": "news-intro",
+        "heading": "News and Stories",
+        "text": "See how Wharton faculty, students, alumni, and partners are putting AI research and learning into practice."
+      },
+      {
+        "type": "storyCollection",
+        "id": "news-stories",
+        "entityIds": ["ai-era", "generative-ai-studio", "block-week-seattle", "hack-ai-thon", "dp-enterprise-ai", "penn-today-enterprise-ai"],
+        "variant": "grid"
+      },
+      {
+        "type": "callout",
+        "id": "penn-ai",
+        "eyebrow": "University-wide collaboration",
+        "heading": "Wharton and Penn AI",
+        "text": "As part of the University of Pennsylvania, Wharton brings a business perspective to Penn’s university-wide exploration of artificial intelligence—connecting questions of innovation and adoption with leadership, judgment, and impact.",
+        "action": { "label": "Explore Penn AI", "url": "https://ai.upenn.edu/", "type": "primary", "external": true },
+        "surface": "brand-primary"
+      }
+    ]
+  }
+]

@@ -1,0 +1,98 @@
+[
+  {
+    "id": "accountable-acceleration",
+    "title": "Accountable Acceleration: Gen AI Fast-Tracks Into the Enterprise",
+    "url": "https://knowledge.wharton.upenn.edu/article/how-are-companies-using-gen-ai-in-2025/",
+    "excerpt": "The latest Wharton and GBK Collective study examines how enterprise AI use is moving from experimentation into everyday work—and what leaders are learning about adoption, value, and accountability.",
+    "topic": "Special Report",
+    "source": "Knowledge at Wharton"
+  },
+  {
+    "id": "skills-mismatch",
+    "title": "The Skills Mismatch Economy",
+    "url": "https://knowledge.wharton.upenn.edu/category/ai/",
+    "excerpt": "The Wharton–Accenture Skills Index reveals how AI is reshaping employer demand—and why specialized expertise, domain knowledge, and judgment are becoming more valuable.",
+    "topic": "Special Report",
+    "source": "Knowledge at Wharton"
+  },
+  {
+    "id": "cognitive-surrender",
+    "title": "Cognitive Surrender",
+    "url": "https://knowledge.wharton.upenn.edu/category/ai/",
+    "excerpt": "What happens when people defer too readily to AI? Wharton research examines the consequences for independent thinking, decision-making, and the skills people need to retain.",
+    "topic": "Faculty Research",
+    "source": "Knowledge at Wharton"
+  },
+  {
+    "id": "ai-creativity",
+    "title": "AI and Creativity",
+    "url": "https://knowledge.wharton.upenn.edu/category/ai/",
+    "excerpt": "Generative AI can improve individual output while narrowing the range of ideas a group produces. Wharton research explores how leaders can use AI without sacrificing originality and creative diversity.",
+    "topic": "Faculty Research",
+    "source": "Knowledge at Wharton"
+  },
+  {
+    "id": "ethical-advice",
+    "title": "Would You Trust AI for Ethical Advice?",
+    "url": "https://knowledge.wharton.upenn.edu/article/would-you-trust-ai-for-ethical-advice/",
+    "excerpt": "New research examines how people evaluate AI-generated ethical guidance—and how attitudes shift when the quality of that guidance becomes visible.",
+    "topic": "Faculty Research",
+    "source": "Knowledge at Wharton"
+  },
+  {
+    "id": "ai-learning",
+    "title": "When Does AI Assistance Undermine Learning?",
+    "url": "https://knowledge.wharton.upenn.edu/article/when-does-ai-assistance-undermine-learning/",
+    "excerpt": "Wharton research shows how on-demand AI assistance can reduce productive struggle and weaken long-term skill development, even when learners recognize the risk.",
+    "topic": "Faculty Research",
+    "source": "Knowledge at Wharton"
+  },
+  {
+    "id": "ai-era",
+    "title": "How Wharton Prepares Business Leaders in the AI Era",
+    "url": "https://www.wharton.upenn.edu/how-wharton-prepares-business-leaders-in-the-ai-era/",
+    "excerpt": "Discover Wharton’s Artificial Intelligence for Business curriculum, where technical fluency, ethical reasoning, and real-world application converge.",
+    "topic": "Wharton Story",
+    "source": "The Wharton School"
+  },
+  {
+    "id": "generative-ai-studio",
+    "title": "Learning by Building: Inside Wharton’s Generative AI Studio",
+    "url": "https://ai-analytics.wharton.upenn.edu/news/learning-by-building-inside-whartons-generative-ai-studio/",
+    "excerpt": "Inside a student experience where prototyping, critique, and weekly iteration turn experimentation into learning.",
+    "topic": "Wharton AI & Analytics Story",
+    "source": "Wharton AI & Analytics Initiative"
+  },
+  {
+    "id": "block-week-seattle",
+    "title": "Inside Wharton’s AI Block Week in Seattle",
+    "url": "https://www.wharton.upenn.edu/story/inside-whartons-ai-block-week-in-seattle/",
+    "excerpt": "Executive MBA students connect faculty insight with firsthand lessons from organizations adopting and scaling AI.",
+    "topic": "Wharton Story",
+    "source": "The Wharton School"
+  },
+  {
+    "id": "hack-ai-thon",
+    "title": "Ambitious Ideas and Wins at the Wharton Hack-AI-thon",
+    "url": "https://www.wharton.upenn.edu/story/ambitious-ideas-and-wins-at-the-wharton-hack-ai-thon/",
+    "excerpt": "Penn and Wharton students use AI, business insight, and rapid prototyping to solve a real challenge at scale.",
+    "topic": "Wharton Story",
+    "source": "The Wharton School"
+  },
+  {
+    "id": "dp-enterprise-ai",
+    "title": "Wharton Study Finds Increased Generative AI Usage Among U.S.-Based Companies",
+    "url": "https://www.thedp.com/article/2025/10/penn-wharton-study-generative-ai-increase",
+    "excerpt": "The Daily Pennsylvanian reports on Wharton research showing how quickly generative AI is becoming part of everyday enterprise work.",
+    "topic": "External Media",
+    "source": "The Daily Pennsylvanian"
+  },
+  {
+    "id": "penn-today-enterprise-ai",
+    "title": "How Are Companies Using Generative AI in 2025?",
+    "url": "https://penntoday.upenn.edu/news/how-are-companies-using-generative-ai-2025",
+    "excerpt": "A look at what Wharton Human-AI Research’s annual enterprise survey reveals about adoption, daily use, and the road ahead.",
+    "topic": "Penn Today",
+    "source": "Penn Today"
+  }
+]
