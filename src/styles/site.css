@@ -110,6 +110,9 @@
     background: #063e82;
   }
   #leadership-support .c-card::after { background: linear-gradient(180deg, rgb(0 44 119 / 18%), rgb(0 25 70 / 72%)); }
+  #leadership-support .c-card--promotional:has(> .u-responsive-media) .c-card__body {
+    background-image: linear-gradient(180deg, rgb(0 44 119 / 18%), rgb(0 25 70 / 72%));
+  }
   #leadership-support .c-card:nth-child(2) { background: #075aa4; }
   #leadership-support .c-card:nth-child(3) { background: #004785; }
   #leadership-support .c-card__body { position: relative; align-self: end; }
