@@ -92,10 +92,11 @@
   #academic-leadership-quote h2 { color: var(--color-blue-900); }
 
   #student-experience { padding-block-end: var(--space-8); background: #f4f7fa; }
-  #student-experience .p-feature-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: var(--space-8); align-items: start; }
-  #student-experience h2 { grid-column: 1 / -1; margin-inline: calc(-1 * var(--layout-gutter)); padding-inline: var(--layout-gutter); margin-block-end: var(--space-6); }
-  #student-experience .p-feature-row__media { grid-column: 1; }
-  #student-experience .p-feature-row__content { grid-column: 2 / -1; }
+  #student-experience .p-feature-row { display: grid; grid-template-columns: 1fr; gap: var(--space-4); align-items: start; }
+  #student-experience .p-feature-row__content { display: contents; }
+  #student-experience h2 { order: -1; }
+  #student-experience .p-feature-row__media { order: 0; }
+  #student-experience .p-feature-row__content > *:not(h2) { order: 1; }
   #student-experience .p-feature-row__media img { aspect-ratio: auto; object-fit: cover; width: 100%; }
   #student-experience + #student-pathways { padding-block-start: 0; background: #f4f7fa; }
   #student-pathways .c-card { border-block-start: 0.35rem solid var(--surface-brand-accent); }
@@ -110,7 +111,8 @@
     background: #063e82;
   }
   #leadership-support .c-card::after { background: linear-gradient(180deg, rgb(0 44 119 / 18%), rgb(0 25 70 / 72%)); }
-  #leadership-support .c-card--promotional:has(> .u-responsive-media) .c-card__body {
+  #leadership-support .c-card--promotional:has(> .u-responsive-media) {
+    background-color: #063e82;
     background-image: linear-gradient(180deg, rgb(0 44 119 / 18%), rgb(0 25 70 / 72%));
   }
   #leadership-support .c-card:nth-child(2) { background: #075aa4; }
@@ -184,6 +186,11 @@
     #ai-leadership-journey .c-card:nth-child(1) { transform: translateY(3.75rem); }
     #ai-leadership-journey .c-card:nth-child(2) { transform: translateY(2.5rem); }
     #ai-leadership-journey .c-card:nth-child(3) { transform: translateY(1.25rem); }
+
+    #student-experience .p-feature-row { grid-template-columns: 1fr 1fr 1fr; gap: var(--space-8); }
+    #student-experience .p-feature-row__content { display: grid; grid-column: 2 / -1; gap: var(--space-4); }
+    #student-experience h2 { grid-column: 1 / -1; margin-inline: calc(-1 * var(--layout-gutter)); padding-inline: var(--layout-gutter); margin-block-end: var(--space-6); }
+    #student-experience .p-feature-row__media { grid-column: 1; }
 
     #leadership-support .p-card-grid { grid-template-columns: 1.08fr 1fr; grid-template-rows: repeat(2, minmax(18rem, auto)); }
     #leadership-support .c-card:first-child { grid-row: 1 / span 2; min-block-size: 38rem; }
