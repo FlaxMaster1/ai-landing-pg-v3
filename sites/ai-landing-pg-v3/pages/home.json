@@ -144,12 +144,15 @@
         "mediaPosition": "end"
       },
       {
-        "type": "callout",
+        "type": "featureRow",
         "id": "academic-leadership-quote",
         "eyebrow": "Leadership Perspective",
         "heading": "Faculty-led learning for an AI-enabled world",
         "text": "An approved perspective from Wharton’s academic leadership will appear here, reinforcing how Wharton’s faculty-led, cross-program approach prepares learners to use AI with rigor, judgment, and accountability.",
-        "surface": "subtle"
+        "image": {
+          "assetId": "nancy-rothbard"
+        },
+        "mediaPosition": "start"
       },
       {
         "type": "featureRow",

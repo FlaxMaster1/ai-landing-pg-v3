@@ -49,5 +49,11 @@
     "id": "stefano-teaching",
     "file": "images/stefano-teaching.png",
     "alt": "Professor Stefano Puntoni teaching a Wharton class on AI"
+  },
+  {
+    "id": "nancy-rothbard",
+    "file": "images/nancy-rothbard.jpg",
+    "alt": "Wharton Deputy Dean Nancy Rothbard",
+    "credit": "The Wharton School"
   }
 ]
