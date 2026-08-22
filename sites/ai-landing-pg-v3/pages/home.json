@@ -131,6 +131,7 @@
         "variant": "promotional",
         "items": [
           {
+            "image": { "assetId": "upskill" },
             "title": "AI Upskilling",
             "description": "Our AI insights extend to professionals around the world through a portfolio of AI and Analytics Programs for Executives. At the other end of the learning spectrum, pre-collegiate students gain exposure to valuable AI skills through the Wharton Global Youth Program.",
             "action": { "label": "Explore AI and Analytics Programs for Executives", "url": "https://executiveeducation.wharton.upenn.edu/ai-and-analytics/", "type": "text", "external": true }

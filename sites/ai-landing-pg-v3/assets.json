@@ -17,5 +17,10 @@
     "file": "images/ethan-mollick-hero.jpg",
     "alt": "Wharton professor Ethan Mollick speaking onstage",
     "focalPoint": { "x": 0.64, "y": 0.48 }
+  },
+  {
+    "id": "upskill",
+    "file": "images/upskill.png",
+    "alt": "Wharton Global Forum 2025 panel discussion on AI upskilling"
   }
 ]
