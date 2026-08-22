@@ -53,6 +53,8 @@ The primary navigation is an on-page anchor navigation with exactly four destina
 - `PageIntro`: section-level framing copy.
 - `StoryCollection`: six research entities and six news entities.
 
+Research and News story cards carry their Story topic as a semantic content category. The site maps the six approved categories—Special Reports, Faculty Research, Articles, News & Stories, Multimedia, and Exec Ed—to a consistent Wharton-palette gradient, even when a category is not represented in the current twelve-card lineup.
+
 The leadership journey and three-panel leadership-support mosaic are site-specific compositions implemented through scoped CSS over registered patterns. They do not add shared component variants or alter framework schemas.
 
 ## Content and entity model
