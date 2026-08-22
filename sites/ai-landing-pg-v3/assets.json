@@ -10,13 +10,19 @@
     "file": "images/faculty-ai-classroom.jpg",
     "alt": "A Wharton AI and Analytics faculty member teaching in a classroom",
     "credit": "The Wharton School",
-    "focalPoint": { "x": 0.62, "y": 0.48 }
+    "focalPoint": {
+      "x": 0.62,
+      "y": 0.48
+    }
   },
   {
     "id": "ethan-mollick-hero",
     "file": "images/ethan-mollick-hero.jpg",
     "alt": "Wharton professor Ethan Mollick speaking onstage",
-    "focalPoint": { "x": 0.64, "y": 0.48 }
+    "focalPoint": {
+      "x": 0.64,
+      "y": 0.48
+    }
   },
   {
     "id": "upskill",
@@ -28,5 +34,10 @@
     "file": "images/our-approach.jpg",
     "alt": "Faculty and students in a Wharton classroom engaged in AI discussion",
     "credit": "The Wharton School"
+  },
+  {
+    "id": "penn-ai",
+    "file": "images/penn-ai.png",
+    "alt": "Penn AI — the University of Pennsylvania's AI community"
   }
 ]

@@ -143,6 +143,10 @@
   }
   :where(#research-stories, #news-stories) .c-card__action { margin-block-start: auto; }
 
+  #penn-ai { color: var(--text-inverse); background: #011f5b; }
+  #penn-ai :where(h2, .c-eyebrow, p) { color: inherit; }
+  #penn-ai .p-feature-row__media img { aspect-ratio: 1200 / 630; object-fit: cover; }
+
   @media (min-width: 42rem) {
     #by-the-numbers .p-stats-group { grid-template-columns: repeat(4, minmax(0, 1fr)); }
   }
