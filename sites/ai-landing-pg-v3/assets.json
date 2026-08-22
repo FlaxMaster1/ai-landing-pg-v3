@@ -39,5 +39,10 @@
     "id": "penn-ai",
     "file": "images/penn-ai.png",
     "alt": "Penn AI — the University of Pennsylvania's AI community"
+  },
+  {
+    "id": "student-experience",
+    "file": "images/student-experience.png",
+    "alt": "Wharton students collaborating on AI projects"
   }
 ]
