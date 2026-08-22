@@ -22,5 +22,11 @@
     "id": "upskill",
     "file": "images/upskill.png",
     "alt": "Wharton Global Forum 2025 panel discussion on AI upskilling"
+  },
+  {
+    "id": "our-approach",
+    "file": "images/our-approach.jpg",
+    "alt": "Faculty and students in a Wharton classroom engaged in AI discussion",
+    "credit": "The Wharton School"
   }
 ]
