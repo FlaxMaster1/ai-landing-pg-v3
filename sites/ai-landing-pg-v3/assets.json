@@ -44,5 +44,10 @@
     "id": "student-experience",
     "file": "images/student-experience.png",
     "alt": "Wharton students collaborating on AI projects"
+  },
+  {
+    "id": "stefano-teaching",
+    "file": "images/stefano-teaching.png",
+    "alt": "Professor Stefano Puntoni teaching a Wharton class on AI"
   }
 ]

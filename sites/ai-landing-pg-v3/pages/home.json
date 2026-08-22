@@ -132,6 +132,9 @@
         "eyebrow": "Course Spotlight",
         "heading": "AI in Our Lives: The Behavioral Science of Autonomous Technology",
         "text": "Taught by Stefano Puntoni, Sebastian S. Kresge Professor of Marketing and Faculty Co-Director of Wharton Human-AI Research, this class examines the ways AI impacts individuals, organizations, and society, offering students a chance to critically assess both the benefits and risks of this rapidly evolving technology.",
+        "image": {
+          "assetId": "stefano-teaching"
+        },
         "action": {
           "label": "Read About Our AI Curriculum",
           "url": "https://www.wharton.upenn.edu/how-wharton-prepares-business-leaders-in-the-ai-era/",
