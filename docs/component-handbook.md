@@ -346,6 +346,8 @@ Use Card for a discrete item. Use Callout to emphasize a message. Use FeatureRow
 
 Use for article, story, news, research-story, or editorial-feed items represented by the Story entity.
 
+StoryCard exposes the Story topic as a normalized `data-content-category` value on its card. Site-scoped styles may use that semantic hook for a documented content-type color system; topic meaning must remain in the content model rather than being inferred from card position.
+
 ### Avoid when
 
 Do not duplicate Story metadata into a generic Card just to achieve a different visual style. If the needed treatment is broadly reusable, extend the StoryCard variant system deliberately.

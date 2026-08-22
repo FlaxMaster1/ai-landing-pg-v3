@@ -8,12 +8,13 @@ interface Props {
   eyebrow?: string;
   image?: Asset;
   action?: Action;
+  contentCategory?: string;
   variant?: "editorial" | "promotional" | "navigation" | "feature" | "compact" | "media-led" | "text-led";
   headingLevel?: "h2" | "h3";
 }
-const { title, description, eyebrow, image, action, variant = "promotional", headingLevel = "h3" } = Astro.props;
+const { title, description, eyebrow, image, action, contentCategory, variant = "promotional", headingLevel = "h3" } = Astro.props;
 ---
-<article class:list={["c-card", `c-card--${variant}`]}>
+<article class:list={["c-card", `c-card--${variant}`]} data-content-category={contentCategory}>
   {image && <Image asset={image} />}
   <div class="c-card__body">
     {eyebrow && <p class="c-eyebrow">{eyebrow}</p>}

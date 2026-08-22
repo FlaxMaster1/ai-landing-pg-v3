@@ -4,7 +4,7 @@
     "title": "Accountable Acceleration: Gen AI Fast-Tracks Into the Enterprise",
     "url": "https://knowledge.wharton.upenn.edu/article/how-are-companies-using-gen-ai-in-2025/",
     "excerpt": "The latest Wharton and GBK Collective study examines how enterprise AI use is moving from experimentation into everyday work—and what leaders are learning about adoption, value, and accountability.",
-    "topic": "Special Report",
+    "topic": "Special Reports",
     "source": "Knowledge at Wharton"
   },
   {
@@ -12,7 +12,7 @@
     "title": "The Skills Mismatch Economy",
     "url": "https://knowledge.wharton.upenn.edu/category/ai/",
     "excerpt": "The Wharton–Accenture Skills Index reveals how AI is reshaping employer demand—and why specialized expertise, domain knowledge, and judgment are becoming more valuable.",
-    "topic": "Special Report",
+    "topic": "Special Reports",
     "source": "Knowledge at Wharton"
   },
   {
@@ -52,7 +52,7 @@
     "title": "How Wharton Prepares Business Leaders in the AI Era",
     "url": "https://www.wharton.upenn.edu/how-wharton-prepares-business-leaders-in-the-ai-era/",
     "excerpt": "Discover Wharton’s Artificial Intelligence for Business curriculum, where technical fluency, ethical reasoning, and real-world application converge.",
-    "topic": "Wharton Story",
+    "topic": "News & Stories",
     "source": "The Wharton School"
   },
   {
@@ -60,7 +60,7 @@
     "title": "Learning by Building: Inside Wharton’s Generative AI Studio",
     "url": "https://ai-analytics.wharton.upenn.edu/news/learning-by-building-inside-whartons-generative-ai-studio/",
     "excerpt": "Inside a student experience where prototyping, critique, and weekly iteration turn experimentation into learning.",
-    "topic": "Wharton AI & Analytics Story",
+    "topic": "News & Stories",
     "source": "Wharton AI & Analytics Initiative"
   },
   {
@@ -68,7 +68,7 @@
     "title": "Inside Wharton’s AI Block Week in Seattle",
     "url": "https://www.wharton.upenn.edu/story/inside-whartons-ai-block-week-in-seattle/",
     "excerpt": "Executive MBA students connect faculty insight with firsthand lessons from organizations adopting and scaling AI.",
-    "topic": "Wharton Story",
+    "topic": "News & Stories",
     "source": "The Wharton School"
   },
   {
@@ -76,7 +76,7 @@
     "title": "Ambitious Ideas and Wins at the Wharton Hack-AI-thon",
     "url": "https://www.wharton.upenn.edu/story/ambitious-ideas-and-wins-at-the-wharton-hack-ai-thon/",
     "excerpt": "Penn and Wharton students use AI, business insight, and rapid prototyping to solve a real challenge at scale.",
-    "topic": "Wharton Story",
+    "topic": "News & Stories",
     "source": "The Wharton School"
   },
   {
@@ -84,7 +84,7 @@
     "title": "Wharton Study Finds Increased Generative AI Usage Among U.S.-Based Companies",
     "url": "https://www.thedp.com/article/2025/10/penn-wharton-study-generative-ai-increase",
     "excerpt": "The Daily Pennsylvanian reports on Wharton research showing how quickly generative AI is becoming part of everyday enterprise work.",
-    "topic": "External Media",
+    "topic": "Articles",
     "source": "The Daily Pennsylvanian"
   },
   {
@@ -92,7 +92,7 @@
     "title": "How Are Companies Using Generative AI in 2025?",
     "url": "https://penntoday.upenn.edu/news/how-are-companies-using-generative-ai-2025",
     "excerpt": "A look at what Wharton Human-AI Research’s annual enterprise survey reveals about adoption, daily use, and the road ahead.",
-    "topic": "Penn Today",
+    "topic": "Articles",
     "source": "Penn Today"
   }
 ]
