@@ -92,8 +92,10 @@
   #academic-leadership-quote h2 { color: var(--color-blue-900); }
 
   #student-experience { padding-block-end: var(--space-8); background: #f4f7fa; }
-  #student-experience .u-container { max-inline-size: none; margin-inline: 0; }
-  #student-experience h2 { margin-inline: calc(-1 * var(--layout-gutter)); padding-inline: var(--layout-gutter); }
+  #student-experience .u-container { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: var(--space-8); max-inline-size: none; margin-inline: 0; align-items: start; }
+  #student-experience h2 { grid-column: 1 / -1; margin-inline: calc(-1 * var(--layout-gutter)); padding-inline: var(--layout-gutter); margin-block-end: var(--space-4); }
+  #student-experience .p-page-intro__lead { grid-column: 2 / -1; }
+  #student-experience .u-container::before { content: ""; grid-column: 1; aspect-ratio: 1; background: #d0d8e0; border-radius: 0.5rem; }
   #student-experience + #student-pathways { padding-block-start: 0; background: #f4f7fa; }
   #student-pathways .c-card { border-block-start: 0.35rem solid var(--surface-brand-accent); }
   #student-pathways .c-card__action { margin-block-start: auto; }
