@@ -57,6 +57,13 @@
   .c-card--promotional .c-card__title { margin-block-end: 0.625rem; font-size: 1.875rem; line-height: 1.1; }
   .c-card--promotional .c-card__action { display: none; }
   .c-card--promotional .c-card__body { position: absolute; inset-inline: 0; inset-block-end: 0; }
+  .c-card--promotional:has(> .u-responsive-media) { min-block-size: 0; grid-template-rows: auto 1fr; }
+  .c-card--promotional:has(> .u-responsive-media) > * { grid-area: auto; }
+  .c-card--promotional:has(> .u-responsive-media)::after { content: none; }
+  .c-card--promotional:has(> .u-responsive-media) > .u-responsive-media { position: static; inline-size: 100%; block-size: auto; }
+  .c-card--promotional:has(> .u-responsive-media) .u-responsive-media img { inline-size: 100%; block-size: auto; aspect-ratio: auto; object-fit: contain; }
+  .c-card--promotional:has(> .u-responsive-media) .c-card__body { position: static; align-self: start; }
+  .c-card--promotional:has(> .u-responsive-media) .c-card__action { display: block; }
   .c-card--promotional .c-card__action, .c-card--navigation .c-card__action, .c-card--feature .c-card__action, .c-card--media-led .c-card__action { color: inherit; }
   .c-card--promotional .c-eyebrow, .c-card--navigation .c-eyebrow, .c-card--feature .c-eyebrow, .c-card--media-led .c-eyebrow { color: inherit; }
   :where(.c-card--editorial, .c-card--compact, .c-card--text-led) { border-block-end: var(--border-thin) solid var(--color-neutral-400); }
