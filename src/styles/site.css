@@ -90,6 +90,7 @@
 
   #academic-leadership-quote { background: var(--surface-subtle); }
   #academic-leadership-quote h2 { color: var(--color-blue-900); }
+  #academic-leadership-quote .p-feature-row__media { inline-size: 75%; }
   #academic-leadership-quote .p-feature-row__media img { aspect-ratio: 4 / 3; object-fit: cover; }
 
   #student-experience { padding-block-end: var(--space-8); background: #f4f7fa; }
