@@ -57,7 +57,12 @@
   /* The journey infographic carries its own title, stage labels, and faculty
      line, so the section renders as the image alone. The eyebrow, heading, and
      text stay in the DOM for assistive technology and document structure. */
-  #ai-leadership-journey { overflow: hidden; background: #eef5fb; }
+  #ai-leadership-journey { overflow: hidden; padding-block: 0; background: transparent; }
+  #ai-leadership-journey .u-container {
+    inline-size: 100%;
+    max-inline-size: none;
+    margin-inline: 0;
+  }
   #ai-leadership-journey .p-feature-row { grid-template-columns: 1fr; gap: 0; }
   #ai-leadership-journey .p-feature-row__content {
     position: absolute;
@@ -72,6 +77,7 @@
   }
   #ai-leadership-journey .p-feature-row__media { inline-size: 100%; }
   #ai-leadership-journey .p-feature-row__media img {
+    display: block;
     inline-size: 100%;
     block-size: auto;
     aspect-ratio: auto;
