@@ -54,34 +54,28 @@
     object-fit: cover;
   }
 
+  /* The journey infographic carries its own title, stage labels, and faculty
+     line, so the section renders as the image alone. The eyebrow, heading, and
+     text stay in the DOM for assistive technology and document structure. */
   #ai-leadership-journey { overflow: hidden; background: #eef5fb; }
-  #ai-leadership-journey .u-container { display: grid; }
-  #ai-leadership-journey .c-eyebrow {
-    order: 1;
-    color: var(--color-blue-700);
-    text-align: center;
+  #ai-leadership-journey .p-feature-row { grid-template-columns: 1fr; gap: 0; }
+  #ai-leadership-journey .p-feature-row__content {
+    position: absolute;
+    inline-size: 1px;
+    block-size: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
   }
-  #ai-leadership-journey .p-card-grid {
-    position: relative;
-    order: 2;
-    margin-block: var(--space-8);
-  }
-  #ai-leadership-journey h2 {
-    order: 3;
-    margin: 0;
-    color: var(--color-blue-900);
-    text-align: center;
-  }
-  #ai-leadership-journey .c-card {
-    min-block-size: 12rem;
-    border-block-start: 0.45rem solid var(--color-blue-500);
-    box-shadow: var(--elevation-raised);
-  }
-  #ai-leadership-journey .c-card__body { align-content: center; text-align: center; }
-  #ai-leadership-journey .c-card__title { color: var(--color-blue-900); }
-  #ai-leadership-journey .c-card p:not(.c-eyebrow) {
-    color: var(--color-blue-700);
-    font-family: var(--font-family-sans-bold);
+  #ai-leadership-journey .p-feature-row__media { inline-size: 100%; }
+  #ai-leadership-journey .p-feature-row__media img {
+    inline-size: 100%;
+    block-size: auto;
+    aspect-ratio: auto;
+    object-fit: contain;
   }
 
   #course-spotlight { background: var(--surface-brand-primary); color: var(--text-inverse); }
@@ -166,29 +160,6 @@
   }
 
   @media (min-width: 62rem) {
-    #ai-leadership-journey .p-card-grid {
-      min-block-size: 23rem;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      align-items: end;
-      gap: 0.75rem;
-      padding-block-start: 5rem;
-    }
-    #ai-leadership-journey .p-card-grid::before {
-      content: "";
-      position: absolute;
-      z-index: 0;
-      inset: 6.5rem 2rem auto;
-      block-size: 0.3rem;
-      background: var(--color-blue-600);
-      clip-path: polygon(0 55%, 94% 0, 94% 34%, 100% 0, 95% 70%, 95% 42%, 0 100%);
-      transform: rotate(-6deg);
-      transform-origin: center;
-    }
-    #ai-leadership-journey .c-card { position: relative; z-index: 1; }
-    #ai-leadership-journey .c-card:nth-child(1) { transform: translateY(3.75rem); }
-    #ai-leadership-journey .c-card:nth-child(2) { transform: translateY(2.5rem); }
-    #ai-leadership-journey .c-card:nth-child(3) { transform: translateY(1.25rem); }
-
     #academic-leadership-quote .p-feature-row { grid-template-columns: 1fr 1fr 1fr; gap: var(--space-8); align-items: start; }
     #academic-leadership-quote .p-feature-row__media { grid-column: 1; }
     #academic-leadership-quote .p-feature-row__content { grid-column: 2 / -1; }

@@ -55,5 +55,10 @@
     "file": "images/nancy-rothbard.jpg",
     "alt": "Wharton Deputy Dean Nancy Rothbard",
     "credit": "The Wharton School"
+  },
+  {
+    "id": "ai-leadership-journey",
+    "file": "images/ai-leadership-journey.png",
+    "alt": "Your AI Leadership Journey: a mountain climb rising through four stages. Pre-College, AI as tutor and spark. Pre-Career, AI as co-pilot. Early/Mid-Career, AI as workflow partner. Executive/C-Suite, AI as strategic lever. A path along the ascent reads: Wharton faculty teach and research across all programs."
   }
 ]
