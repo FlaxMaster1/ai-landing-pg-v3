@@ -57,7 +57,8 @@ export const sectionSchema = z.discriminatedUnion("type", [
     aspectRatio: z.string().default("16 / 9"),
     sourceAspectRatio: z.string().default("16 / 9"),
     autoplay: z.boolean().default(false),
-    controls: z.boolean().default(true)
+    controls: z.boolean().default(true),
+    veilColor: z.string().optional()
   }),
   baseSectionSchema.extend({
     type: z.literal("callout"),

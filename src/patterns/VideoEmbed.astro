@@ -1,8 +1,8 @@
 ---
 import Heading from "@components/Heading.astro";
 import Container from "@utilities/Container.astro";
-interface Props { id: string; eyebrow?: string; heading?: string; text?: string; videoId: string; title: string; aspectRatio?: string; sourceAspectRatio?: string; autoplay?: boolean; controls?: boolean; }
-const { id, eyebrow, heading, text, videoId, title, aspectRatio = "16 / 9", sourceAspectRatio = "16 / 9", autoplay = false, controls = true } = Astro.props;
+interface Props { id: string; eyebrow?: string; heading?: string; text?: string; videoId: string; title: string; aspectRatio?: string; sourceAspectRatio?: string; autoplay?: boolean; controls?: boolean; veilColor?: string; }
+const { id, eyebrow, heading, text, videoId, title, aspectRatio = "16 / 9", sourceAspectRatio = "16 / 9", autoplay = false, controls = true, veilColor } = Astro.props;
 const params = `playsinline=1&rel=0&modestbranding=1&controls=${controls ? 1 : 0}`;
 const embedBase = `https://www.youtube-nocookie.com/embed/${videoId}`;
 // The paused fallback always keeps controls so reduced-motion visitors can start playback.
@@ -10,7 +10,7 @@ const pausedSrc = `${embedBase}?playsinline=1&rel=0&modestbranding=1&controls=1`
 const src = autoplay ? `${embedBase}?${params}&autoplay=1&mute=1&loop=1&playlist=${videoId}` : `${embedBase}?${params}`;
 // The frame shows `aspectRatio`; the player keeps `sourceAspectRatio` and is
 // centred, so a narrower frame crops the source evenly on both edges.
-const frameStyle = `--video-aspect-ratio: ${aspectRatio}; --video-source-aspect-ratio: ${sourceAspectRatio}`;
+const frameStyle = [`--video-aspect-ratio: ${aspectRatio}`, `--video-source-aspect-ratio: ${sourceAspectRatio}`, veilColor && `--video-veil-color: ${veilColor}`].filter(Boolean).join("; ");
 ---
 <section id={id} class="p-section p-video-embed" aria-labelledby={heading ? `${id}-heading` : undefined}>
   <Container>
@@ -19,7 +19,7 @@ const frameStyle = `--video-aspect-ratio: ${aspectRatio}; --video-source-aspect-
       {heading && <Heading as="h2" id={`${id}-heading`}>{heading}</Heading>}
       {text && <p>{text}</p>}
     </div>
-    <div class="p-video-embed__frame" style={frameStyle}>
+    <div class:list={["p-video-embed__frame", !controls && "p-video-embed__frame--presentation"]} style={frameStyle}>
       <iframe
         {src}
         {title}
@@ -28,15 +28,33 @@ const frameStyle = `--video-aspect-ratio: ${aspectRatio}; --video-source-aspect-
         allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
         allowfullscreen
       ></iframe>
+      {autoplay && <div class="p-video-embed__veil" data-video-veil aria-hidden="true"></div>}
     </div>
   </Container>
 </section>
 <script>
-  // Autoplaying embeds start paused for visitors who ask for reduced motion.
-  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    document.querySelectorAll<HTMLIFrameElement>("iframe[data-paused-src]").forEach((frame) => {
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  document.querySelectorAll<HTMLIFrameElement>("iframe[data-paused-src]").forEach((frame) => {
+    const veil = frame.parentElement?.querySelector<HTMLElement>("[data-video-veil]");
+
+    // Autoplaying embeds start paused for visitors who ask for reduced motion,
+    // where the player's own poster and controls must stay visible.
+    if (reducedMotion) {
       const pausedSrc = frame.dataset.pausedSrc;
       if (pausedSrc) frame.src = pausedSrc;
-    });
-  }
+      return;
+    }
+
+    // Until playback starts, the player shows its title bar and YouTube button.
+    // Cover it, then reveal the video once it has had a moment to start.
+    if (!veil) return;
+    veil.style.opacity = "1";
+    const reveal = () => { veil.style.opacity = "0"; };
+    // The iframe is cross-origin, so its load event is the only playback signal
+    // available without pulling in the YouTube player API.
+    frame.addEventListener("load", () => window.setTimeout(reveal, 1200));
+    // Never leave the veil up if the player never loads.
+    window.setTimeout(reveal, 6000);
+  });
 </script>

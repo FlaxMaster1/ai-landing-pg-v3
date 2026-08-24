@@ -41,6 +41,17 @@
   .p-video-embed .u-container { display: grid; gap: var(--space-6); }
   .p-video-embed__content { display: grid; gap: var(--space-4); }
   .p-video-embed__frame { position: relative; overflow: hidden; aspect-ratio: var(--video-aspect-ratio, 16 / 9); }
+  /* A control-less embed is presentational: blocking pointer events keeps the
+     player's hover chrome (title, channel avatar, YouTube button) from showing. */
+  .p-video-embed__frame--presentation iframe { pointer-events: none; }
+  .p-video-embed__veil {
+    position: absolute;
+    inset: 0;
+    background: var(--video-veil-color, #000);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--motion-standard) ease-out;
+  }
   .p-video-embed__frame iframe {
     position: absolute;
     inset-inline: 0;

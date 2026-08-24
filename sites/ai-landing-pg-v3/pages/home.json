@@ -79,7 +79,8 @@
         "aspectRatio": "1280 / 700",
         "sourceAspectRatio": "16 / 9",
         "autoplay": true,
-        "controls": false
+        "controls": false,
+        "veilColor": "#080e1c"
       },
       {
         "type": "featureRow",
