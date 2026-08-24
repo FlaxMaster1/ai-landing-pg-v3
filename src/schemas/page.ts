@@ -52,7 +52,10 @@ export const sectionSchema = z.discriminatedUnion("type", [
     type: z.literal("videoEmbed"),
     heading: z.string().optional(),
     text: z.string().optional(),
-    videoId: z.string().regex(/^[A-Za-z0-9_-]{11}$/, "videoId must be an 11-character YouTube ID"),
+    provider: z.enum(["youtube", "vimeo"]).default("youtube"),
+    // YouTube IDs are 11 characters; Vimeo IDs are numeric.
+    videoId: z.string().regex(/^[A-Za-z0-9_-]{6,20}$/, "videoId must be a YouTube or Vimeo video ID"),
+    videoHash: z.string().regex(/^[A-Za-z0-9]+$/).optional(),
     title: z.string().min(1),
     aspectRatio: z.string().default("16 / 9"),
     sourceAspectRatio: z.string().default("16 / 9"),
