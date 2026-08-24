@@ -1,0 +1,38 @@
+---
+import Heading from "@components/Heading.astro";
+import Container from "@utilities/Container.astro";
+interface Props { id: string; eyebrow?: string; heading?: string; text?: string; videoId: string; title: string; aspectRatio?: string; autoplay?: boolean; }
+const { id, eyebrow, heading, text, videoId, title, aspectRatio = "16 / 9", autoplay = false } = Astro.props;
+const params = "playsinline=1&rel=0&modestbranding=1";
+const embedBase = `https://www.youtube-nocookie.com/embed/${videoId}`;
+const pausedSrc = `${embedBase}?${params}`;
+const src = autoplay ? `${pausedSrc}&autoplay=1&mute=1&loop=1&playlist=${videoId}` : pausedSrc;
+---
+<section id={id} class="p-section p-video-embed" aria-labelledby={heading ? `${id}-heading` : undefined}>
+  <Container>
+    <div class="p-video-embed__content">
+      {eyebrow && <p class="c-eyebrow">{eyebrow}</p>}
+      {heading && <Heading as="h2" id={`${id}-heading`}>{heading}</Heading>}
+      {text && <p>{text}</p>}
+    </div>
+    <div class="p-video-embed__frame" style={`--video-aspect-ratio: ${aspectRatio}`}>
+      <iframe
+        {src}
+        {title}
+        data-paused-src={autoplay ? pausedSrc : undefined}
+        loading="lazy"
+        allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
+        allowfullscreen
+      ></iframe>
+    </div>
+  </Container>
+</section>
+<script>
+  // Autoplaying embeds start paused for visitors who ask for reduced motion.
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    document.querySelectorAll<HTMLIFrameElement>("iframe[data-paused-src]").forEach((frame) => {
+      const pausedSrc = frame.dataset.pausedSrc;
+      if (pausedSrc) frame.src = pausedSrc;
+    });
+  }
+</script>

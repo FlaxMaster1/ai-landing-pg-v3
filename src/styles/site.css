@@ -54,17 +54,18 @@
     object-fit: cover;
   }
 
-  /* The journey infographic carries its own title, stage labels, and faculty
-     line, so the section renders as the image alone. The eyebrow, heading, and
-     text stay in the DOM for assistive technology and document structure. */
+  /* The journey animation carries its own title, stage labels, and faculty
+     line, so the section renders as the video alone, edge to edge and flush
+     with the next section. The eyebrow, heading, and text stay in the DOM for
+     assistive technology and document structure. */
   #ai-leadership-journey { overflow: hidden; padding-block: 0; background: transparent; }
   #ai-leadership-journey .u-container {
     inline-size: 100%;
     max-inline-size: none;
     margin-inline: 0;
+    gap: 0;
   }
-  #ai-leadership-journey .p-feature-row { grid-template-columns: 1fr; gap: 0; }
-  #ai-leadership-journey .p-feature-row__content {
+  #ai-leadership-journey .p-video-embed__content {
     position: absolute;
     inline-size: 1px;
     block-size: 1px;
@@ -75,14 +76,7 @@
     white-space: nowrap;
     border: 0;
   }
-  #ai-leadership-journey .p-feature-row__media { inline-size: 100%; }
-  #ai-leadership-journey .p-feature-row__media img {
-    display: block;
-    inline-size: 100%;
-    block-size: auto;
-    aspect-ratio: auto;
-    object-fit: contain;
-  }
+  #ai-leadership-journey .p-video-embed__frame { inline-size: 100%; }
 
   #course-spotlight { background: var(--surface-brand-primary); color: var(--text-inverse); }
   #course-spotlight :where(h2, .c-eyebrow) { color: inherit; }

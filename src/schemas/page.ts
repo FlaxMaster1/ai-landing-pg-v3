@@ -49,6 +49,15 @@ export const sectionSchema = z.discriminatedUnion("type", [
     mediaPosition: z.enum(["start", "end"]).default("start")
   }),
   baseSectionSchema.extend({
+    type: z.literal("videoEmbed"),
+    heading: z.string().optional(),
+    text: z.string().optional(),
+    videoId: z.string().regex(/^[A-Za-z0-9_-]{11}$/, "videoId must be an 11-character YouTube ID"),
+    title: z.string().min(1),
+    aspectRatio: z.string().default("16 / 9"),
+    autoplay: z.boolean().default(false)
+  }),
+  baseSectionSchema.extend({
     type: z.literal("callout"),
     heading: z.string().min(1),
     text: z.string().min(1),
