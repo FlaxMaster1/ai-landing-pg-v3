@@ -76,7 +76,10 @@
         "text": "AI\u2019s role grows with your leadership responsibility: a tutor and spark before college, a co-pilot before your career begins, a workflow partner in early and mid-career, and a strategic lever in the executive suite. Wharton faculty teach and research across all programs.",
         "videoId": "G7C2vclDuJ8",
         "title": "Your AI Leadership Journey \u2014 animated infographic",
-        "autoplay": true
+        "aspectRatio": "1280 / 700",
+        "sourceAspectRatio": "16 / 9",
+        "autoplay": true,
+        "controls": false
       },
       {
         "type": "featureRow",

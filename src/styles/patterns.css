@@ -40,8 +40,18 @@
   .p-feature-row__content .c-button { margin-block-start: var(--space-3); }
   .p-video-embed .u-container { display: grid; gap: var(--space-6); }
   .p-video-embed__content { display: grid; gap: var(--space-4); }
-  .p-video-embed__frame { position: relative; aspect-ratio: var(--video-aspect-ratio, 16 / 9); }
-  .p-video-embed__frame iframe { position: absolute; inset: 0; display: block; inline-size: 100%; block-size: 100%; border: 0; }
+  .p-video-embed__frame { position: relative; overflow: hidden; aspect-ratio: var(--video-aspect-ratio, 16 / 9); }
+  .p-video-embed__frame iframe {
+    position: absolute;
+    inset-inline: 0;
+    inset-block-start: 50%;
+    transform: translateY(-50%);
+    display: block;
+    inline-size: 100%;
+    block-size: auto;
+    aspect-ratio: var(--video-source-aspect-ratio, 16 / 9);
+    border: 0;
+  }
 
   .p-callout { padding-block: var(--layout-section); }
   .p-callout .u-container { display: grid; justify-items: start; gap: var(--space-6); }

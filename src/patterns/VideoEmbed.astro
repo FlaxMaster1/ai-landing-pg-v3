@@ -1,12 +1,16 @@
 ---
 import Heading from "@components/Heading.astro";
 import Container from "@utilities/Container.astro";
-interface Props { id: string; eyebrow?: string; heading?: string; text?: string; videoId: string; title: string; aspectRatio?: string; autoplay?: boolean; }
-const { id, eyebrow, heading, text, videoId, title, aspectRatio = "16 / 9", autoplay = false } = Astro.props;
-const params = "playsinline=1&rel=0&modestbranding=1";
+interface Props { id: string; eyebrow?: string; heading?: string; text?: string; videoId: string; title: string; aspectRatio?: string; sourceAspectRatio?: string; autoplay?: boolean; controls?: boolean; }
+const { id, eyebrow, heading, text, videoId, title, aspectRatio = "16 / 9", sourceAspectRatio = "16 / 9", autoplay = false, controls = true } = Astro.props;
+const params = `playsinline=1&rel=0&modestbranding=1&controls=${controls ? 1 : 0}`;
 const embedBase = `https://www.youtube-nocookie.com/embed/${videoId}`;
-const pausedSrc = `${embedBase}?${params}`;
-const src = autoplay ? `${pausedSrc}&autoplay=1&mute=1&loop=1&playlist=${videoId}` : pausedSrc;
+// The paused fallback always keeps controls so reduced-motion visitors can start playback.
+const pausedSrc = `${embedBase}?playsinline=1&rel=0&modestbranding=1&controls=1`;
+const src = autoplay ? `${embedBase}?${params}&autoplay=1&mute=1&loop=1&playlist=${videoId}` : `${embedBase}?${params}`;
+// The frame shows `aspectRatio`; the player keeps `sourceAspectRatio` and is
+// centred, so a narrower frame crops the source evenly on both edges.
+const frameStyle = `--video-aspect-ratio: ${aspectRatio}; --video-source-aspect-ratio: ${sourceAspectRatio}`;
 ---
 <section id={id} class="p-section p-video-embed" aria-labelledby={heading ? `${id}-heading` : undefined}>
   <Container>
@@ -15,7 +19,7 @@ const src = autoplay ? `${pausedSrc}&autoplay=1&mute=1&loop=1&playlist=${videoId
       {heading && <Heading as="h2" id={`${id}-heading`}>{heading}</Heading>}
       {text && <p>{text}</p>}
     </div>
-    <div class="p-video-embed__frame" style={`--video-aspect-ratio: ${aspectRatio}`}>
+    <div class="p-video-embed__frame" style={frameStyle}>
       <iframe
         {src}
         {title}
