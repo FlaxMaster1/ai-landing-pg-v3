@@ -2,15 +2,15 @@
   {
     "id": "accountable-acceleration",
     "title": "Accountable Acceleration: Gen AI Fast-Tracks Into the Enterprise",
-    "url": "https://knowledge.wharton.upenn.edu/article/how-are-companies-using-gen-ai-in-2025/",
+    "url": "https://knowledge.wharton.upenn.edu/special-report/2025-ai-adoption-report/",
     "excerpt": "The latest Wharton and GBK Collective study examines how enterprise AI use is moving from experimentation into everyday work—and what leaders are learning about adoption, value, and accountability.",
     "topic": "Special Reports",
     "source": "Knowledge at Wharton"
   },
   {
     "id": "skills-mismatch",
-    "title": "The Skills Mismatch Economy",
-    "url": "https://knowledge.wharton.upenn.edu/category/ai/",
+    "title": "The Skills Mismatch Economy: Insights from the Wharton-Accenture Skills Index",
+    "url": "https://knowledge.wharton.upenn.edu/special-report/2025-wharton-accenture-skills-gap-index/",
     "excerpt": "The Wharton–Accenture Skills Index reveals how AI is reshaping employer demand—and why specialized expertise, domain knowledge, and judgment are becoming more valuable.",
     "topic": "Special Reports",
     "source": "Knowledge at Wharton"
@@ -94,5 +94,35 @@
     "excerpt": "A look at what Wharton Human-AI Research’s annual enterprise survey reveals about adoption, daily use, and the road ahead.",
     "topic": "Articles",
     "source": "Penn Today"
+  },
+  {
+    "id": "human-intuition-reasoning",
+    "title": "How AI Is Reshaping Human Intuition and Reasoning",
+    "url": "https://knowledge.wharton.upenn.edu/podcast/ripple-effect/how-ai-is-reshaping-human-intuition-and-reasoning-gideon-nave-and-steven-shaw/",
+    "excerpt": "Gideon Nave and Steven Shaw discuss what happens when people hand their reasoning over to AI instead of working through problems themselves.",
+    "topic": "Multimedia",
+    "source": "Knowledge at Wharton"
+  },
+  {
+    "id": "blue-collar-work",
+    "title": "How AI Is Reshaping Blue-Collar Work and Skills",
+    "url": "https://knowledge.wharton.upenn.edu/podcast/this-week-in-business/how-ai-is-reshaping-blue-collar-work-and-skills/",
+    "excerpt": "Wharton professor Lynn Wu on how AI is changing what blue-collar jobs involve, and why problem-solving and adaptability matter more as it does.",
+    "topic": "Multimedia",
+    "source": "Knowledge at Wharton"
+  },
+  {
+    "id": "holistic-ai-adoption",
+    "title": "Companies still don’t know how to incorporate AI in a holistic way, says Wharton expert",
+    "url": "https://www.msn.com/en-us/money/smallbusiness/companies-still-don-t-know-how-to-incorporate-ai-in-a-holistic-way-says-wharton-expert/ar-AA27yGFn?ocid=finance-verthp-feeds",
+    "topic": "News & Stories",
+    "source": "MSN"
+  },
+  {
+    "id": "ai-job-interviews",
+    "title": "The Job Interview Is Broken. Here’s How AI Could Actually Fix It",
+    "url": "https://www.wsj.com/lifestyle/careers/ai-job-interviews-hiring-decisions-c44d9e31",
+    "topic": "News & Stories",
+    "source": "The Wall Street Journal"
   }
 ]

@@ -24,7 +24,7 @@ describe("validated site content", () => {
     const site = loadSite("ai-landing-pg-v3");
     expect(site.pages).toHaveLength(1);
     expect(site.assets).toHaveLength(10);
-    expect(site.entities.stories).toHaveLength(12);
+    expect(site.entities.stories).toHaveLength(16);
     expect(site.navigation.primary.map(({ label }) => label)).toEqual([
       "Our Approach",
       "Faculty Expertise",

@@ -244,10 +244,10 @@
         "entityIds": [
           "accountable-acceleration",
           "skills-mismatch",
-          "cognitive-surrender",
-          "ai-creativity",
+          "human-intuition-reasoning",
+          "ai-learning",
           "ethical-advice",
-          "ai-learning"
+          "blue-collar-work"
         ],
         "variant": "grid"
       },
@@ -260,12 +260,9 @@
         "type": "storyCollection",
         "id": "news-stories",
         "entityIds": [
-          "ai-era",
-          "generative-ai-studio",
-          "block-week-seattle",
-          "hack-ai-thon",
-          "dp-enterprise-ai",
-          "penn-today-enterprise-ai"
+          "holistic-ai-adoption",
+          "ai-job-interviews",
+          "generative-ai-studio"
         ],
         "variant": "grid"
       },
