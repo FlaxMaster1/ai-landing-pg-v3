@@ -4,10 +4,13 @@ import Button from "@components/Button.astro";
 import Heading from "@components/Heading.astro";
 import Image from "@components/Image.astro";
 import VideoFrame from "@components/VideoFrame.astro";
+import Link from "@components/Link.astro";
 import Container from "@utilities/Container.astro";
+import { linkifyText, type TextLink } from "@utilities/rich-text";
 interface VideoReference { provider?: "youtube" | "vimeo"; videoId: string; videoHash?: string; title: string; aspectRatio?: string; sourceAspectRatio?: string; autoplay?: boolean; controls?: boolean; veilColor?: string; }
-interface Props { id: string; eyebrow?: string; heading: string; text: string; image?: Asset; video?: VideoReference; action?: Action; mediaPosition?: "start" | "end"; }
-const { id, eyebrow, heading, text, image, video, action, mediaPosition = "start" } = Astro.props;
+interface Props { id: string; eyebrow?: string; heading: string; text: string; links?: TextLink[]; image?: Asset; video?: VideoReference; action?: Action; mediaPosition?: "start" | "end"; }
+const { id, eyebrow, heading, text, links, image, video, action, mediaPosition = "start" } = Astro.props;
+const segments = linkifyText(text, links);
 ---
 <section id={id} class="p-section" aria-labelledby={`${id}-heading`}>
   <Container class={`p-feature-row p-feature-row--media-${mediaPosition}`}>
@@ -17,7 +20,9 @@ const { id, eyebrow, heading, text, image, video, action, mediaPosition = "start
     <div class="p-feature-row__content">
       {eyebrow && <p class="c-eyebrow">{eyebrow}</p>}
       <Heading as="h2" id={`${id}-heading`}>{heading}</Heading>
-      <p>{text}</p>
+      <p>{segments.map((segment) => segment.kind === "link"
+        ? <Link href={segment.url} external={segment.external}>{segment.value}</Link>
+        : segment.value)}</p>
       {action && <Button href={action.url} variant={action.type} external={action.external}>{action.label}</Button>}
     </div>
   </Container>
