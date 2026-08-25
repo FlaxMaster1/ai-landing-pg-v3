@@ -10,6 +10,19 @@ const baseSectionSchema = z.object({
 
 const imageReferenceSchema = z.object({ assetId: z.string().min(1) });
 
+const videoReferenceSchema = z.object({
+  provider: z.enum(["youtube", "vimeo"]).default("youtube"),
+  // YouTube IDs are 11 characters; Vimeo IDs are numeric.
+  videoId: z.string().regex(/^[A-Za-z0-9_-]{6,20}$/, "videoId must be a YouTube or Vimeo video ID"),
+  videoHash: z.string().regex(/^[A-Za-z0-9]+$/).optional(),
+  title: z.string().min(1),
+  aspectRatio: z.string().default("16 / 9"),
+  sourceAspectRatio: z.string().default("16 / 9"),
+  autoplay: z.boolean().default(false),
+  controls: z.boolean().default(true),
+  veilColor: z.string().optional()
+});
+
 const cardItemSchema = z.object({
   title: z.string().min(1),
   description: z.string().optional(),
@@ -30,7 +43,7 @@ export const sectionSchema = z.discriminatedUnion("type", [
   baseSectionSchema.extend({
     type: z.literal("pageIntro"),
     heading: z.string().optional(),
-    text: z.string().min(1),
+    text: z.string().min(1).optional(),
     actions: z.array(actionSchema).max(2).optional()
   }),
   baseSectionSchema.extend({
@@ -45,24 +58,15 @@ export const sectionSchema = z.discriminatedUnion("type", [
     heading: z.string().min(1),
     text: z.string().min(1),
     image: imageReferenceSchema.optional(),
+    video: videoReferenceSchema.optional(),
     action: actionSchema.optional(),
     mediaPosition: z.enum(["start", "end"]).default("start")
   }),
   baseSectionSchema.extend({
     type: z.literal("videoEmbed"),
     heading: z.string().optional(),
-    text: z.string().optional(),
-    provider: z.enum(["youtube", "vimeo"]).default("youtube"),
-    // YouTube IDs are 11 characters; Vimeo IDs are numeric.
-    videoId: z.string().regex(/^[A-Za-z0-9_-]{6,20}$/, "videoId must be a YouTube or Vimeo video ID"),
-    videoHash: z.string().regex(/^[A-Za-z0-9]+$/).optional(),
-    title: z.string().min(1),
-    aspectRatio: z.string().default("16 / 9"),
-    sourceAspectRatio: z.string().default("16 / 9"),
-    autoplay: z.boolean().default(false),
-    controls: z.boolean().default(true),
-    veilColor: z.string().optional()
-  }),
+    text: z.string().optional()
+  }).extend(videoReferenceSchema.shape),
   baseSectionSchema.extend({
     type: z.literal("callout"),
     heading: z.string().min(1),

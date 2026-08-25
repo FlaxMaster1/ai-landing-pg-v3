@@ -22,6 +22,6 @@ const { title, description, eyebrow, image, action, contentCategory, variant = "
       {action ? <a href={action.url}>{title}</a> : title}
     </Heading>
     {description && <p>{description}</p>}
-    {action && <span class="c-card__action" aria-hidden="true">{action.label} →</span>}
+    {action && <a class="c-card__action" href={action.url}>{action.label} →</a>}
   </div>
 </article>

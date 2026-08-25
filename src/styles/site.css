@@ -54,8 +54,8 @@
     object-fit: cover;
   }
 
-  /* The journey animation carries its own title, stage labels, and faculty
-     line, so the section renders as the video alone, edge to edge and flush
+  /* The journey infographic carries its own title, stage labels, and faculty
+     line, so the section renders as the image alone, edge to edge and flush
      with the next section. The eyebrow, heading, and text stay in the DOM for
      assistive technology and document structure. */
   #ai-leadership-journey { overflow: hidden; padding-block: 0; background: transparent; }
@@ -63,9 +63,9 @@
     inline-size: 100%;
     max-inline-size: none;
     margin-inline: 0;
-    gap: 0;
   }
-  #ai-leadership-journey .p-video-embed__content {
+  #ai-leadership-journey .p-feature-row { grid-template-columns: 1fr; gap: 0; }
+  #ai-leadership-journey .p-feature-row__content {
     position: absolute;
     inline-size: 1px;
     block-size: 1px;
@@ -76,7 +76,14 @@
     white-space: nowrap;
     border: 0;
   }
-  #ai-leadership-journey .p-video-embed__frame { inline-size: 100%; }
+  #ai-leadership-journey .p-feature-row__media { inline-size: 100%; }
+  #ai-leadership-journey .p-feature-row__media img {
+    display: block;
+    inline-size: 100%;
+    block-size: auto;
+    aspect-ratio: auto;
+    object-fit: contain;
+  }
 
   #course-spotlight { background: var(--surface-brand-primary); color: var(--text-inverse); }
   #course-spotlight :where(h2, .c-eyebrow) { color: inherit; }
@@ -114,7 +121,7 @@
   #leadership-support .c-card:nth-child(2) { background: #075aa4; }
   #leadership-support .c-card:nth-child(3) { background: #004785; }
   #leadership-support .c-card__body { position: relative; align-self: end; }
-  #leadership-support .c-card__action { display: block; }
+  #leadership-support .c-card__action { display: block; color: #990000; }
 
   #research-insights { padding-block-end: var(--space-8); }
   #research-insights .u-container { max-inline-size: var(--size-content); }
@@ -143,6 +150,7 @@
   :where(#research-stories, #news-stories) :where(.c-card__title, .c-card__title a, .c-eyebrow, .c-card__action) { color: inherit; }
   :where(#research-stories, #news-stories) .c-card__title { font-size: clamp(1.75rem, 3vw, 2.4rem); }
   #news-intro { padding-block-end: var(--space-8); background: #eef2f7; }
+  #news-intro .u-container { max-inline-size: var(--size-content); }
   #news-intro + #news-stories { padding-block-start: 0; background: #eef2f7; }
   :where(#research-stories, #news-stories) .c-card {
     min-block-size: 100%;

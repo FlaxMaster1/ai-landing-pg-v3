@@ -15,9 +15,9 @@
         "type": "hero",
         "id": "overview",
         "heading": "The Wharton AI Advantage",
-        "text": "We prepare learners to be leaders that use AI with the knowledge, judgment, and accountability their career stage demands. From pre-college through senior leadership, our faculty teach, research, and engage across the full continuum—creating a feedback loop that informs what we teach, how we teach, and how AI is applied in business and society.",
+        "text": "We prepare learners to be leaders who use AI with the knowledge, judgment, and accountability their career stage demands. From pre-college through senior leadership, our faculty teach, research, and engage across the full continuum—creating a feedback loop that informs what we teach, how we teach, and how AI is applied in business and society.",
         "image": {
-          "assetId": "ethan-mollick-hero"
+          "assetId": "hero-ai"
         },
         "actions": [
           {
@@ -60,7 +60,7 @@
       {
         "type": "featureRow",
         "id": "dean-james",
-        "eyebrow": "Leadership Perspective",
+        "eyebrow": "From the Dean",
         "heading": "Erika H. James",
         "text": "“As AI continues to commoditize the world’s access to information, leaders need to prioritize the human skills AI can’t replicate. Things like sense-making, judgement, consensus-building, and above all, accountability. At Wharton, we believe people have and will continue to be essential to business’ ability to positively impact society. In this moment, we must make sure we don’t lose sight of humanity as AI becomes even more embedded in how we learn, work, and live.” — Dean, The Wharton School",
         "image": {
@@ -69,20 +69,15 @@
         "mediaPosition": "start"
       },
       {
-        "type": "videoEmbed",
+        "type": "featureRow",
         "id": "ai-leadership-journey",
         "eyebrow": "Wharton faculty teach and research across every stage.",
         "heading": "Your AI Leadership Journey",
         "text": "AI\u2019s role grows with your leadership responsibility: a tutor and spark before college, a co-pilot before your career begins, a workflow partner in early and mid-career, and a strategic lever in the executive suite. Wharton faculty teach and research across all programs.",
-        "provider": "vimeo",
-        "videoId": "1220929266",
-        "videoHash": "b0906c0975",
-        "title": "Your AI Leadership Journey \u2014 animated infographic",
-        "aspectRatio": "1280 / 700",
-        "sourceAspectRatio": "16 / 9",
-        "autoplay": true,
-        "controls": false,
-        "veilColor": "#080e1c"
+        "image": {
+          "assetId": "ai-leadership-journey"
+        },
+        "mediaPosition": "start"
       },
       {
         "type": "featureRow",
@@ -118,8 +113,10 @@
         "eyebrow": "Course Spotlight",
         "heading": "AI in Our Lives: The Behavioral Science of Autonomous Technology",
         "text": "Taught by Stefano Puntoni, Sebastian S. Kresge Professor of Marketing and Faculty Co-Director of Wharton Human-AI Research, this class examines the ways AI impacts individuals, organizations, and society, offering students a chance to critically assess both the benefits and risks of this rapidly evolving technology.",
-        "image": {
-          "assetId": "stefano-teaching"
+        "video": {
+          "provider": "youtube",
+          "videoId": "oRUDgEGFTDg",
+          "title": "AI in Our Lives: The Behavioral Science of Autonomous Technology — course overview"
         },
         "action": {
           "label": "Read About Our AI Curriculum",
@@ -222,8 +219,7 @@
       {
         "type": "pageIntro",
         "id": "research-insights",
-        "heading": "Research and Insights",
-        "text": "Explore new Wharton research and ideas on how AI is changing organizations, skills, creativity, judgment, ethics, and learning."
+        "heading": "Research and Insights"
       },
       {
         "type": "storyCollection",
@@ -241,8 +237,7 @@
       {
         "type": "pageIntro",
         "id": "news-intro",
-        "heading": "News and Stories",
-        "text": "See how Wharton faculty, students, alumni, and partners are putting AI research and learning into practice."
+        "heading": "News and Stories"
       },
       {
         "type": "storyCollection",

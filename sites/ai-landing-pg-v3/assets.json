@@ -1,7 +1,7 @@
 [
   {
     "id": "erika-james",
-    "file": "images/erika-james.jpg",
+    "file": "images/erika-james.png",
     "alt": "Wharton School Dean Erika H. James",
     "credit": "The Wharton School"
   },
@@ -16,13 +16,9 @@
     }
   },
   {
-    "id": "ethan-mollick-hero",
-    "file": "images/ethan-mollick-hero.jpg",
-    "alt": "Wharton professor Ethan Mollick speaking onstage",
-    "focalPoint": {
-      "x": 0.64,
-      "y": 0.48
-    }
+    "id": "hero-ai",
+    "file": "images/hero-ai.png",
+    "alt": ""
   },
   {
     "id": "upskill",

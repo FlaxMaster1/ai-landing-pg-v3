@@ -1,0 +1,66 @@
+---
+interface Props { provider?: "youtube" | "vimeo"; videoId: string; videoHash?: string; title: string; aspectRatio?: string; sourceAspectRatio?: string; autoplay?: boolean; controls?: boolean; veilColor?: string; class?: string; }
+const { provider = "youtube", videoId, videoHash, title, aspectRatio = "16 / 9", sourceAspectRatio = "16 / 9", autoplay = false, controls = true, veilColor, class: className } = Astro.props;
+
+// Each provider gets a playing source and a paused fallback. The paused
+// fallback always keeps controls so reduced-motion visitors can start playback.
+const sources = provider === "vimeo"
+  ? (() => {
+      const shared = [videoHash && `h=${videoHash}`, "autopause=0", "badge=0", "dnt=1", "playsinline=1"].filter(Boolean).join("&");
+      // background=1 removes every piece of player chrome and forces muted looping playback.
+      const chrome = controls ? "title=0&byline=0&portrait=0&controls=1" : "background=1";
+      return {
+        src: `https://player.vimeo.com/video/${videoId}?${shared}&${chrome}${autoplay ? "&autoplay=1&muted=1&loop=1" : ""}`,
+        pausedSrc: `https://player.vimeo.com/video/${videoId}?${shared}&title=0&byline=0&portrait=0&controls=1&muted=1&loop=1`
+      };
+    })()
+  : (() => {
+      const base = `https://www.youtube-nocookie.com/embed/${videoId}`;
+      const shared = `playsinline=1&rel=0&modestbranding=1`;
+      return {
+        src: `${base}?${shared}&controls=${controls ? 1 : 0}${autoplay ? `&autoplay=1&mute=1&loop=1&playlist=${videoId}` : ""}`,
+        pausedSrc: `${base}?${shared}&controls=1`
+      };
+    })();
+
+// The frame shows `aspectRatio`; the player keeps `sourceAspectRatio` and is
+// centred, so a narrower frame crops the source evenly on both edges.
+const frameStyle = [`--video-aspect-ratio: ${aspectRatio}`, `--video-source-aspect-ratio: ${sourceAspectRatio}`, veilColor && `--video-veil-color: ${veilColor}`].filter(Boolean).join("; ");
+---
+<div class:list={["p-video-embed__frame", !controls && "p-video-embed__frame--presentation", className]} style={frameStyle}>
+  <iframe
+    src={sources.src}
+    {title}
+    data-paused-src={autoplay ? sources.pausedSrc : undefined}
+    loading="lazy"
+    referrerpolicy="strict-origin-when-cross-origin"
+    allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+    allowfullscreen
+  ></iframe>
+  {autoplay && <div class="p-video-embed__veil" data-video-veil aria-hidden="true"></div>}
+</div>
+<script>
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  document.querySelectorAll<HTMLIFrameElement>("iframe[data-paused-src]").forEach((frame) => {
+    const veil = frame.parentElement?.querySelector<HTMLElement>("[data-video-veil]");
+
+    // Autoplaying embeds start paused for visitors who ask for reduced motion,
+    // where the player's own poster and controls must stay visible.
+    if (reducedMotion) {
+      const pausedSrc = frame.dataset.pausedSrc;
+      if (pausedSrc) frame.src = pausedSrc;
+      return;
+    }
+
+    // Cover the player while it loads, then reveal it once playback can start.
+    if (!veil) return;
+    veil.style.opacity = "1";
+    const reveal = () => { veil.style.opacity = "0"; };
+    // The iframe is cross-origin, so its load event is the only playback signal
+    // available without pulling in the provider's player API.
+    frame.addEventListener("load", () => window.setTimeout(reveal, 1200));
+    // Never leave the veil up if the player never loads.
+    window.setTimeout(reveal, 6000);
+  });
+</script>
