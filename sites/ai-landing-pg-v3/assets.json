@@ -3,17 +3,17 @@
     "id": "erika-james",
     "file": "images/erika-james.png",
     "alt": "Wharton School Dean Erika H. James",
-    "credit": "The Wharton School"
+    "caption": "Erika James, Dean and Reliance Professor of Management and Private Enterprise"
   },
   {
     "id": "faculty-ai-classroom",
     "file": "images/faculty-ai-classroom.jpg",
     "alt": "A Wharton AI and Analytics faculty member teaching in a classroom",
-    "credit": "The Wharton School",
     "focalPoint": {
       "x": 0.62,
       "y": 0.48
-    }
+    },
+    "caption": "Eric Bradlow, Vice Dean of AI & Analytics, Professor of Marketing"
   },
   {
     "id": "hero-ai",
@@ -23,13 +23,14 @@
   {
     "id": "upskill",
     "file": "images/upskill.png",
-    "alt": "Wharton Global Forum 2025 panel discussion on AI upskilling"
+    "alt": "Wharton Global Forum 2025 panel discussion on AI upskilling",
+    "caption": "AI panel session during Wharton Global Forum"
   },
   {
     "id": "our-approach",
     "file": "images/our-approach.jpg",
     "alt": "Faculty and students in a Wharton classroom engaged in AI discussion",
-    "credit": "The Wharton School"
+    "caption": "Lynn Wu, Professor of Operations, Information and Decisions; Director of Embodied AI and Robotics"
   },
   {
     "id": "penn-ai",
@@ -39,7 +40,8 @@
   {
     "id": "student-experience",
     "file": "images/student-experience.png",
-    "alt": "Wharton students collaborating on AI projects"
+    "alt": "Wharton students collaborating on AI projects",
+    "caption": "Design team at the Wharton Hack-AI-Thon"
   },
   {
     "id": "stefano-teaching",
@@ -50,11 +52,12 @@
     "id": "nancy-rothbard",
     "file": "images/nancy-rothbard.jpg",
     "alt": "Wharton Deputy Dean Nancy Rothbard",
-    "credit": "The Wharton School"
+    "caption": "Nancy Rothbard, Deputy Dean, Professor of Management"
   },
   {
     "id": "ai-leadership-journey",
     "file": "images/ai-leadership-journey.png",
+    "mobileFile": "images/ai-leadership-journey-mobile.png",
     "alt": "Your AI Leadership Journey: a mountain climb rising through four stages. Pre-College, AI as tutor and spark. Pre-Career, AI as co-pilot. Early/Mid-Career, AI as workflow partner. Executive/C-Suite, AI as strategic lever. A path along the ascent reads: Wharton faculty teach and research across all programs."
   }
 ]

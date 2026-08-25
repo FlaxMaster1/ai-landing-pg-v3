@@ -1,6 +1,6 @@
 ---
-interface Props { provider?: "youtube" | "vimeo"; videoId: string; videoHash?: string; title: string; aspectRatio?: string; sourceAspectRatio?: string; autoplay?: boolean; controls?: boolean; veilColor?: string; class?: string; }
-const { provider = "youtube", videoId, videoHash, title, aspectRatio = "16 / 9", sourceAspectRatio = "16 / 9", autoplay = false, controls = true, veilColor, class: className } = Astro.props;
+interface Props { provider?: "youtube" | "vimeo"; videoId: string; videoHash?: string; title: string; caption?: string; aspectRatio?: string; sourceAspectRatio?: string; autoplay?: boolean; controls?: boolean; veilColor?: string; class?: string; }
+const { provider = "youtube", videoId, videoHash, title, caption, aspectRatio = "16 / 9", sourceAspectRatio = "16 / 9", autoplay = false, controls = true, veilColor, class: className } = Astro.props;
 
 // Each provider gets a playing source and a paused fallback. The paused
 // fallback always keeps controls so reduced-motion visitors can start playback.
@@ -27,18 +27,21 @@ const sources = provider === "vimeo"
 // centred, so a narrower frame crops the source evenly on both edges.
 const frameStyle = [`--video-aspect-ratio: ${aspectRatio}`, `--video-source-aspect-ratio: ${sourceAspectRatio}`, veilColor && `--video-veil-color: ${veilColor}`].filter(Boolean).join("; ");
 ---
-<div class:list={["p-video-embed__frame", !controls && "p-video-embed__frame--presentation", className]} style={frameStyle}>
-  <iframe
-    src={sources.src}
-    {title}
-    data-paused-src={autoplay ? sources.pausedSrc : undefined}
-    loading="lazy"
-    referrerpolicy="strict-origin-when-cross-origin"
-    allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
-    allowfullscreen
-  ></iframe>
-  {autoplay && <div class="p-video-embed__veil" data-video-veil aria-hidden="true"></div>}
-</div>
+<figure class:list={["u-responsive-media", className]}>
+  <div class:list={["p-video-embed__frame", !controls && "p-video-embed__frame--presentation"]} style={frameStyle}>
+    <iframe
+      src={sources.src}
+      {title}
+      data-paused-src={autoplay ? sources.pausedSrc : undefined}
+      loading="lazy"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+      allowfullscreen
+    ></iframe>
+    {autoplay && <div class="p-video-embed__veil" data-video-veil aria-hidden="true"></div>}
+  </div>
+  {caption && <figcaption>{caption}</figcaption>}
+</figure>
 <script>
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 

@@ -87,6 +87,7 @@
 
   #course-spotlight { background: var(--surface-brand-primary); color: var(--text-inverse); }
   #course-spotlight :where(h2, .c-eyebrow) { color: inherit; }
+  #course-spotlight figcaption { color: rgb(255 255 255 / 78%); }
   #course-spotlight .c-button--secondary { color: inherit; border-color: currentColor; }
 
   #academic-leadership-quote { background: var(--surface-subtle); }
@@ -122,6 +123,11 @@
   #leadership-support .c-card:nth-child(3) { background: #004785; }
   #leadership-support .c-card__body { position: relative; align-self: end; }
   #leadership-support .c-card__action { display: block; color: #0066ff; }
+  #leadership-support .c-card .u-responsive-media figcaption {
+    display: block;
+    padding-inline: 1.875rem;
+    color: rgb(255 255 255 / 78%);
+  }
 
   #research-insights { padding-block-end: var(--space-8); }
   #research-insights .u-container { max-inline-size: var(--size-content); }

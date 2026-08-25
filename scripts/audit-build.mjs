@@ -27,8 +27,12 @@ for (const page of pages) {
 
 const assets = JSON.parse(readFileSync(path.join(siteRoot, "assets.json"), "utf8"));
 for (const asset of assets) {
-  const output = path.join(repositoryRoot, "dist", "site-assets", siteId, asset.file);
-  if (!existsSync(output)) failures.push(`Asset '${asset.id}' was not emitted`);
+  // Art-directed variants must be emitted alongside the default file.
+  for (const [label, file] of [["", asset.file], [" (mobile variant)", asset.mobileFile]]) {
+    if (!file) continue;
+    const output = path.join(repositoryRoot, "dist", "site-assets", siteId, file);
+    if (!existsSync(output)) failures.push(`Asset '${asset.id}'${label} was not emitted`);
+  }
 }
 
 if (failures.length) {

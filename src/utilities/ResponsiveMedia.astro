@@ -5,6 +5,13 @@ const { asset, loading = "lazy", class: className } = Astro.props;
 const focalPosition = asset.focalPoint ? `${asset.focalPoint.x * 100}% ${asset.focalPoint.y * 100}%` : undefined;
 ---
 <figure class:list={["u-responsive-media", className]}>
-  <img src={asset.src} alt={asset.alt} {loading} decoding="async" style={focalPosition ? `object-position: ${focalPosition}` : undefined} />
+  {asset.mobileSrc ? (
+    <picture>
+      <source media="(max-width: 41.99rem)" srcset={asset.mobileSrc} />
+      <img src={asset.src} alt={asset.alt} {loading} decoding="async" style={focalPosition ? `object-position: ${focalPosition}` : undefined} />
+    </picture>
+  ) : (
+    <img src={asset.src} alt={asset.alt} {loading} decoding="async" style={focalPosition ? `object-position: ${focalPosition}` : undefined} />
+  )}
   {(asset.caption || asset.credit) && <figcaption>{asset.caption}{asset.credit && <small>{asset.credit}</small>}</figcaption>}
 </figure>

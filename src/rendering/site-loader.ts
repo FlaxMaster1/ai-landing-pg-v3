@@ -132,7 +132,8 @@ export function loadSite(siteId = selectedSiteId(), repositoryRoot = process.cwd
     pages: parseDirectory(path.join(root, "pages"), pageSchema),
     assets: parsedAssets.map((asset) => ({
       ...asset,
-      src: `${assetBasePath}site-assets/${siteId}/${asset.file}`
+      src: `${assetBasePath}site-assets/${siteId}/${asset.file}`,
+      mobileSrc: asset.mobileFile ? `${assetBasePath}site-assets/${siteId}/${asset.mobileFile}` : undefined
     })),
     entities: {
       stories: parseDirectory(path.join(root, "entities", "stories"), storySchema),

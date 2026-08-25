@@ -16,6 +16,7 @@ const videoReferenceSchema = z.object({
   videoId: z.string().regex(/^[A-Za-z0-9_-]{6,20}$/, "videoId must be a YouTube or Vimeo video ID"),
   videoHash: z.string().regex(/^[A-Za-z0-9]+$/).optional(),
   title: z.string().min(1),
+  caption: z.string().optional(),
   aspectRatio: z.string().default("16 / 9"),
   sourceAspectRatio: z.string().default("16 / 9"),
   autoplay: z.boolean().default(false),

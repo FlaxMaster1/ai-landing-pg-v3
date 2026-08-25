@@ -22,6 +22,9 @@ export interface Asset {
   id: string;
   file: string;
   src: string;
+  /** Art-directed narrow-viewport variant, when the wide crop does not read on phones. */
+  mobileFile?: string;
+  mobileSrc?: string;
   alt: string;
   caption?: string;
   credit?: string;

@@ -116,7 +116,8 @@
         "video": {
           "provider": "youtube",
           "videoId": "oRUDgEGFTDg",
-          "title": "AI in Our Lives: The Behavioral Science of Autonomous Technology — course overview"
+          "title": "AI in Our Lives: The Behavioral Science of Autonomous Technology — course overview",
+          "caption": "Stefano Puntoni, Co-Director of Wharton Human-AI Research, Professor of Marketing"
         },
         "action": {
           "label": "Read About Our AI Curriculum",

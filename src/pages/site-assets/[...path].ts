@@ -18,10 +18,13 @@ export const prerender = true;
 
 export const getStaticPaths = (() => {
   const site = loadSite();
-  return site.assets.map((asset) => ({
-    params: { path: `${site.id}/${asset.file}` },
-    props: { file: path.join(site.root, "assets", asset.file), extension: path.extname(asset.file).toLowerCase() }
-  }));
+  // An asset may carry an art-directed variant, which needs emitting too.
+  return site.assets.flatMap((asset) =>
+    [asset.file, asset.mobileFile].filter((file): file is string => Boolean(file)).map((file) => ({
+      params: { path: `${site.id}/${file}` },
+      props: { file: path.join(site.root, "assets", file), extension: path.extname(file).toLowerCase() }
+    }))
+  );
 }) satisfies GetStaticPaths;
 
 export const GET: APIRoute = ({ props }) => {

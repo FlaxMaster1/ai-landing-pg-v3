@@ -32,6 +32,7 @@ export const navigationItemSchema: z.ZodType<{
 export const assetSchema = z.object({
   id: z.string().min(1),
   file: z.string().min(1).refine((file) => !file.startsWith("/") && !file.split("/").includes(".."), "Asset files must stay inside the site asset root"),
+  mobileFile: z.string().min(1).refine((file) => !file.startsWith("/") && !file.split("/").includes(".."), "Asset files must stay inside the site asset root").optional(),
   alt: z.string(),
   caption: z.string().optional(),
   credit: z.string().optional(),
