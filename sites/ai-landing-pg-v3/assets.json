@@ -59,5 +59,10 @@
     "file": "images/ai-leadership-journey.png",
     "mobileFile": "images/ai-leadership-journey-mobile.png",
     "alt": "Your AI Leadership Journey: a mountain climb rising through four stages. Pre-College, AI as tutor and spark. Pre-Career, AI as co-pilot. Early/Mid-Career, AI as workflow partner. Executive/C-Suite, AI as strategic lever. A path along the ascent reads: Wharton faculty teach and research across all programs."
+  },
+  {
+    "id": "leadership-support-bg",
+    "file": "images/leadership-support-bg.jpg",
+    "alt": ""
   }
 ]

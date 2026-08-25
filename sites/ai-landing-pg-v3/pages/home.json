@@ -206,6 +206,9 @@
       {
         "type": "cardGrid",
         "id": "leadership-support",
+        "backgroundImage": {
+          "assetId": "leadership-support-bg"
+        },
         "eyebrow": "From capability to impact",
         "heading": "AI leadership at every level",
         "columns": 2,

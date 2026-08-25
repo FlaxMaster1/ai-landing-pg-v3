@@ -51,6 +51,7 @@ export const sectionSchema = z.discriminatedUnion("type", [
     type: z.literal("cardGrid"),
     heading: z.string().optional(),
     items: z.array(cardItemSchema).min(1),
+    backgroundImage: imageReferenceSchema.optional(),
     columns: z.union([z.literal(2), z.literal(3)]).default(3),
     variant: z.enum(["editorial", "promotional", "navigation"]).default("promotional")
   }),

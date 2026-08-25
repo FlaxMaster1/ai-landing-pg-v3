@@ -13,7 +13,11 @@ if (section.type === "hero" || section.type === "featureRow") {
   properties = { ...section, image: section.image ? resolveAsset(site, section.image.assetId) : undefined };
 }
 if (section.type === "cardGrid") {
-  properties = { ...section, items: section.items.map((item) => ({ ...item, image: item.image ? resolveAsset(site, item.image.assetId) : undefined })) };
+  properties = {
+    ...section,
+    items: section.items.map((item) => ({ ...item, image: item.image ? resolveAsset(site, item.image.assetId) : undefined })),
+    backgroundImage: section.backgroundImage ? resolveAsset(site, section.backgroundImage.assetId) : undefined
+  };
 }
 if (section.type === "storyCollection") {
   const stories = await providers.content.stories({ ids: section.entityIds });

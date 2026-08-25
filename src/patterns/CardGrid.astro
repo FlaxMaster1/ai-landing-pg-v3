@@ -4,10 +4,10 @@ import Card from "@components/Card.astro";
 import Heading from "@components/Heading.astro";
 import Container from "@utilities/Container.astro";
 interface CardItem { title: string; description?: string; eyebrow?: string; image?: Asset; action?: Action; }
-interface Props { id: string; eyebrow?: string; heading?: string; items: CardItem[]; columns?: 2 | 3; variant?: "editorial" | "promotional" | "navigation"; }
-const { id, eyebrow, heading, items, columns = 3, variant = "promotional" } = Astro.props;
+interface Props { id: string; eyebrow?: string; heading?: string; items: CardItem[]; backgroundImage?: Asset; columns?: 2 | 3; variant?: "editorial" | "promotional" | "navigation"; }
+const { id, eyebrow, heading, items, backgroundImage, columns = 3, variant = "promotional" } = Astro.props;
 ---
-<section id={id} class="p-section" aria-labelledby={heading ? `${id}-heading` : undefined}>
+<section id={id} class="p-section" aria-labelledby={heading ? `${id}-heading` : undefined} style={backgroundImage ? `--section-background-image: url("${backgroundImage.src}")` : undefined}>
   <Container>
     {eyebrow && <p class="c-eyebrow">{eyebrow}</p>}
     {heading && <Heading as="h2" id={`${id}-heading`}>{heading}</Heading>}

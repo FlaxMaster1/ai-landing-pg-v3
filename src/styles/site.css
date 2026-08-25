@@ -106,7 +106,14 @@
   #student-pathways .c-card { border-block-start: 0.35rem solid var(--surface-brand-accent); }
   #student-pathways .c-card__action { margin-block-start: auto; }
 
-  #leadership-support { background: var(--color-blue-900); }
+  /* A photographic section background, darkened so the white card copy holds
+     its contrast wherever the image is bright. */
+  #leadership-support {
+    background-color: var(--color-blue-900);
+    background-image: linear-gradient(rgb(0 20 56 / 82%), rgb(0 20 56 / 82%)), var(--section-background-image, none);
+    background-position: center;
+    background-size: cover;
+  }
   #leadership-support h2,
   #leadership-support > .u-container > .c-eyebrow { color: var(--text-inverse); }
   #leadership-support .p-card-grid { gap: 1rem; }
@@ -119,8 +126,10 @@
     background-color: #063e82;
     background-image: linear-gradient(180deg, rgb(0 44 119 / 18%), rgb(0 25 70 / 72%));
   }
-  #leadership-support .c-card:nth-child(2) { background: #075aa4; }
-  #leadership-support .c-card:nth-child(3) { background: #004785; }
+  #leadership-support .c-card:nth-child(2),
+  #leadership-support .c-card:nth-child(3) { background: transparent; }
+  #leadership-support .c-card:nth-child(2)::after,
+  #leadership-support .c-card:nth-child(3)::after { content: none; }
   #leadership-support .c-card__body { position: relative; align-self: end; }
   #leadership-support .c-card__action { display: block; color: #0066ff; }
   #leadership-support .c-card .u-responsive-media figcaption {
