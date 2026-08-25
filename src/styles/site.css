@@ -121,7 +121,7 @@
   #leadership-support .c-card:nth-child(2) { background: #075aa4; }
   #leadership-support .c-card:nth-child(3) { background: #004785; }
   #leadership-support .c-card__body { position: relative; align-self: end; }
-  #leadership-support .c-card__action { display: block; color: #990000; }
+  #leadership-support .c-card__action { display: block; color: #0066ff; }
 
   #research-insights { padding-block-end: var(--space-8); }
   #research-insights .u-container { max-inline-size: var(--size-content); }
