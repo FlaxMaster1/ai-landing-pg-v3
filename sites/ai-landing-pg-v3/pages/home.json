@@ -143,23 +143,6 @@
         "id": "student-experience",
         "heading": "Student Experience",
         "text": "At Wharton, AI isn’t treated as an elective—it’s viewed as a core business competency and embedded throughout our students’ learning experience. We were the first leading business school to create a dedicated AI MBA major and undergraduate concentration. Our Artificial Intelligence for Business Curriculum explores the technical skills needed to work with and evaluate AI systems, along with the business, economic, legal, ethical, psychological, and societal impacts of AI. Outside the classroom, our AI & Analytics Accelerator pairs students with industry experts to explore real-world business challenges and develop solutions using the latest techniques in machine learning and AI. Students further explore their interests in AI through nearly a dozen AI and Analytics clubs and our annual Wharton Hack-AI-thon.",
-        "links": [
-          {
-            "text": "Artificial Intelligence for Business Curriculum",
-            "url": "https://ai-analytics.wharton.upenn.edu/for-students/",
-            "external": true
-          },
-          {
-            "text": "AI & Analytics Accelerator",
-            "url": "https://ai-analytics.wharton.upenn.edu/for-students/ai-analytics-accelerator/",
-            "external": true
-          },
-          {
-            "text": "Wharton Hack-AI-thon",
-            "url": "https://www.wharton.upenn.edu/story/ambitious-ideas-and-wins-at-the-wharton-hack-ai-thon/",
-            "external": true
-          }
-        ],
         "image": {
           "assetId": "student-experience"
         },
