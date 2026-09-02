@@ -100,6 +100,7 @@ function validateReferences(site: LoadedSite): void {
     for (const section of page.sections) {
       if (section.type === "hero" || section.type === "featureRow") {
         if (section.image) requireIds([section.image.assetId], assetIds, "asset IDs", page.route);
+        if (section.type === "featureRow" && section.mobileImage) requireIds([section.mobileImage.assetId], assetIds, "asset IDs", page.route);
       }
       if (section.type === "cardGrid") {
         requireIds(section.items.flatMap((item) => item.image ? [item.image.assetId] : []), assetIds, "asset IDs", page.route);

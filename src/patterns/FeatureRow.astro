@@ -3,13 +3,18 @@ import type { Action, Asset } from "@entities/index";
 import Button from "@components/Button.astro";
 import Heading from "@components/Heading.astro";
 import Image from "@components/Image.astro";
+import ResponsiveImage from "@components/ResponsiveImage.astro";
 import Container from "@utilities/Container.astro";
-interface Props { id: string; eyebrow?: string; heading: string; text: string; image?: Asset; action?: Action; mediaPosition?: "start" | "end"; }
-const { id, eyebrow, heading, text, image, action, mediaPosition = "start" } = Astro.props;
+interface Props { id: string; eyebrow?: string; heading: string; text: string; image?: Asset; mobileImage?: Asset; action?: Action; mediaPosition?: "start" | "end"; }
+const { id, eyebrow, heading, text, image, mobileImage, action, mediaPosition = "start" } = Astro.props;
 ---
 <section id={id} class="p-section" aria-labelledby={`${id}-heading`}>
   <Container class={`p-feature-row p-feature-row--media-${mediaPosition}`}>
-    {image && <Image asset={image} class="p-feature-row__media" />}
+    {image && mobileImage ? (
+      <ResponsiveImage mobileAsset={mobileImage} desktopAsset={image} class="p-feature-row__media" />
+    ) : image ? (
+      <Image asset={image} class="p-feature-row__media" />
+    ) : null}
     <div class="p-feature-row__content">
       {eyebrow && <p class="c-eyebrow">{eyebrow}</p>}
       <Heading as="h2" id={`${id}-heading`}>{heading}</Heading>

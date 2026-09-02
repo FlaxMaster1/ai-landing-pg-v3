@@ -10,7 +10,11 @@ const Pattern = resolvePattern(section.type) as any;
 let properties: Record<string, unknown> = { ...section };
 
 if (section.type === "hero" || section.type === "featureRow") {
-  properties = { ...section, image: section.image ? resolveAsset(site, section.image.assetId) : undefined };
+  const resolved: any = { ...section, image: section.image ? resolveAsset(site, section.image.assetId) : undefined };
+  if (section.type === "featureRow" && section.mobileImage) {
+    resolved.mobileImage = resolveAsset(site, section.mobileImage.assetId);
+  }
+  properties = resolved;
 }
 if (section.type === "cardGrid") {
   properties = { ...section, items: section.items.map((item) => ({ ...item, image: item.image ? resolveAsset(site, item.image.assetId) : undefined })) };

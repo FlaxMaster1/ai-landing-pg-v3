@@ -17,5 +17,17 @@
     "file": "images/ethan-mollick-hero.jpg",
     "alt": "Wharton professor Ethan Mollick speaking onstage",
     "focalPoint": { "x": 0.64, "y": 0.48 }
+  },
+  {
+    "id": "ai-infograph-desktop",
+    "file": "images/ai-infograph-desktop.png",
+    "alt": "Wharton AI Leadership Journey Infographic",
+    "credit": "The Wharton School"
+  },
+  {
+    "id": "ai-infograph-mobile",
+    "file": "images/ai-infograph-mobile.png",
+    "alt": "Wharton AI Leadership Journey Infographic - Mobile",
+    "credit": "The Wharton School"
   }
 ]
