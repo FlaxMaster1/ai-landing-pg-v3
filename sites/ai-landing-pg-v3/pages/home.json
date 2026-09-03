@@ -92,15 +92,6 @@
       },
       {
         "type": "featureRow",
-        "id": "ai-leadership-infographic",
-        "heading": "Wharton's AI Leadership Continuum",
-        "text": "See how Wharton prepares leaders at every career stage to use AI with knowledge, judgment, and accountability.",
-        "image": { "assetId": "ai-infograph-desktop" },
-        "mobileImage": { "assetId": "ai-infograph-mobile" },
-        "mediaPosition": "start"
-      },
-      {
-        "type": "featureRow",
         "id": "faculty-expertise",
         "eyebrow": "Faculty Expertise",
         "heading": "Advancing how the world understands AI",

@@ -90,17 +90,5 @@
     "id": "nancy-zhang",
     "file": "images/nancy-zhang.png",
     "alt": "Nancy Zhang, Professor of Statistics and Data Science, Vice Dean, Doctoral Programs"
-  },
-  {
-    "id": "ai-infograph-desktop",
-    "file": "images/ai-infograph-desktop.png",
-    "alt": "Wharton AI Leadership Journey Infographic",
-    "credit": "The Wharton School"
-  },
-  {
-    "id": "ai-infograph-mobile",
-    "file": "images/ai-infograph-mobile.png",
-    "alt": "Wharton AI Leadership Journey Infographic - Mobile",
-    "credit": "The Wharton School"
   }
 ]
