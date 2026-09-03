@@ -140,6 +140,7 @@
         "type": "personList",
         "id": "academic-leadership-quote",
         "eyebrow": "Leadership Perspective",
+        "heading": "Faculty-led learning for an AI-enabled world",
         "entityIds": ["cait-lamberton", "michael-roberts-leadership", "kevin-werbach", "nancy-zhang"],
         "variant": "quote"
       },
