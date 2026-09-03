@@ -77,13 +77,13 @@
 
   .c-person-card--quote { grid-template-columns: 1fr; gap: var(--space-3); padding-block: 0; }
   .c-person-card--quote .c-person-card__header { display: grid; grid-template-columns: 1fr; gap: var(--space-3); align-items: start; }
-  .c-person-card--quote .c-person-card__header > .u-responsive-media { inline-size: 7rem; }
+  .c-person-card--quote .c-person-card__header > .u-responsive-media { inline-size: 8.75rem; }
   .c-person-card--quote .c-person-card__meta { font-size: 0.8125rem; line-height: 1.35; }
   .c-person-card--quote blockquote { margin: 0; }
   .c-person-card--quote blockquote p { margin: 0; font-size: 0.9375rem; }
 
   @media (min-width: 42rem) {
-    .c-person-card--quote .c-person-card__header { grid-template-columns: 10rem minmax(0, 1fr); gap: var(--space-4); }
+    .c-person-card--quote .c-person-card__header { grid-template-columns: 12.5rem minmax(0, 1fr); gap: var(--space-4); }
     .c-person-card--quote .c-person-card__header > .u-responsive-media { inline-size: auto; }
     .c-person-card--quote .c-person-card__meta { font-size: 0.9375rem; }
     .c-person-card--quote blockquote p { font-size: 1rem; }
