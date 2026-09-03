@@ -70,5 +70,17 @@
     "id": "leadership-support-bg",
     "file": "images/leadership-support-bg.jpg",
     "alt": ""
+  },
+  {
+    "id": "ai-infograph-desktop",
+    "file": "images/ai-infograph-desktop.png",
+    "alt": "Wharton AI Leadership Journey Infographic",
+    "credit": "The Wharton School"
+  },
+  {
+    "id": "ai-infograph-mobile",
+    "file": "images/ai-infograph-mobile.png",
+    "alt": "Wharton AI Leadership Journey Infographic - Mobile",
+    "credit": "The Wharton School"
   }
 ]

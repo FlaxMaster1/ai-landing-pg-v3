@@ -3,20 +3,25 @@ import type { Action, Asset } from "@entities/index";
 import Button from "@components/Button.astro";
 import Heading from "@components/Heading.astro";
 import Image from "@components/Image.astro";
+import ResponsiveImage from "@components/ResponsiveImage.astro";
 import VideoFrame from "@components/VideoFrame.astro";
 import Link from "@components/Link.astro";
 import Container from "@utilities/Container.astro";
 import { linkifyText, type TextLink } from "@utilities/rich-text";
 interface VideoReference { provider?: "youtube" | "vimeo"; videoId: string; videoHash?: string; title: string; aspectRatio?: string; sourceAspectRatio?: string; autoplay?: boolean; controls?: boolean; veilColor?: string; }
-interface Props { id: string; eyebrow?: string; heading: string; text: string; links?: TextLink[]; image?: Asset; video?: VideoReference; action?: Action; mediaPosition?: "start" | "end"; }
-const { id, eyebrow, heading, text, links, image, video, action, mediaPosition = "start" } = Astro.props;
+interface Props { id: string; eyebrow?: string; heading: string; text: string; links?: TextLink[]; image?: Asset; mobileImage?: Asset; video?: VideoReference; action?: Action; mediaPosition?: "start" | "end"; }
+const { id, eyebrow, heading, text, links, image, mobileImage, video, action, mediaPosition = "start" } = Astro.props;
 const segments = linkifyText(text, links);
 ---
 <section id={id} class="p-section" aria-labelledby={`${id}-heading`}>
   <Container class={`p-feature-row p-feature-row--media-${mediaPosition}`}>
     {video
       ? <VideoFrame {...video} class="p-feature-row__media" />
-      : image && <Image asset={image} class="p-feature-row__media" />}
+      : image && mobileImage ? (
+        <ResponsiveImage mobileAsset={mobileImage} desktopAsset={image} class="p-feature-row__media" />
+      ) : image ? (
+        <Image asset={image} class="p-feature-row__media" />
+      ) : null}
     <div class="p-feature-row__content">
       {eyebrow && <p class="c-eyebrow">{eyebrow}</p>}
       <Heading as="h2" id={`${id}-heading`}>{heading}</Heading>

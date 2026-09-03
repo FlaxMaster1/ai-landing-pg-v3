@@ -61,6 +61,7 @@ export const sectionSchema = z.discriminatedUnion("type", [
     text: z.string().min(1),
     links: z.array(z.object({ text: z.string().min(1), url: z.string().min(1), external: z.boolean().optional() })).optional(),
     image: imageReferenceSchema.optional(),
+    mobileImage: imageReferenceSchema.optional(),
     video: videoReferenceSchema.optional(),
     action: actionSchema.optional(),
     mediaPosition: z.enum(["start", "end"]).default("start")

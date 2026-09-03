@@ -1,0 +1,41 @@
+---
+import type { Asset } from "@entities/index";
+
+interface Props {
+  mobileAsset: Asset;
+  desktopAsset: Asset;
+  loading?: "eager" | "lazy";
+  class?: string;
+}
+
+const { mobileAsset, desktopAsset, loading = "lazy", class: className } = Astro.props;
+const focalPositionDesktop = desktopAsset.focalPoint
+  ? `${desktopAsset.focalPoint.x * 100}% ${desktopAsset.focalPoint.y * 100}%`
+  : undefined;
+const focalPositionMobile = mobileAsset.focalPoint
+  ? `${mobileAsset.focalPoint.x * 100}% ${mobileAsset.focalPoint.y * 100}%`
+  : undefined;
+---
+
+<figure class:list={["u-responsive-media", className]}>
+  <picture>
+    {/* Mobile: display up to 768px */}
+    <source media="(max-width: 768px)" srcset={mobileAsset.src} />
+    {/* Desktop and tablet: 768px and above */}
+    <source media="(min-width: 769px)" srcset={desktopAsset.src} />
+    {/* Fallback for browsers that don't support picture element */}
+    <img
+      src={desktopAsset.src}
+      alt={desktopAsset.alt}
+      {loading}
+      decoding="async"
+      style={focalPositionDesktop ? `object-position: ${focalPositionDesktop}` : undefined}
+    />
+  </picture>
+  {(desktopAsset.caption || desktopAsset.credit) && (
+    <figcaption>
+      {desktopAsset.caption}
+      {desktopAsset.credit && <small>{desktopAsset.credit}</small>}
+    </figcaption>
+  )}
+</figure>
