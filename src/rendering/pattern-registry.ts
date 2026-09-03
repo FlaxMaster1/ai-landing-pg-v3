@@ -1,7 +1,6 @@
 import Hero from "@patterns/Hero.astro";
 import PageIntro from "@patterns/PageIntro.astro";
 import CardGrid from "@patterns/CardGrid.astro";
-import QuoteGrid from "@patterns/QuoteGrid.astro";
 import FeatureRow from "@patterns/FeatureRow.astro";
 import VideoEmbed from "@patterns/VideoEmbed.astro";
 import Callout from "@patterns/Callout.astro";
@@ -18,7 +17,6 @@ export const patternRegistry = {
   hero: Hero,
   pageIntro: PageIntro,
   cardGrid: CardGrid,
-  quoteGrid: QuoteGrid,
   featureRow: FeatureRow,
   videoEmbed: VideoEmbed,
   callout: Callout,

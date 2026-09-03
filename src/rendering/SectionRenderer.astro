@@ -23,12 +23,6 @@ if (section.type === "cardGrid") {
     backgroundImage: section.backgroundImage ? resolveAsset(site, section.backgroundImage.assetId) : undefined
   };
 }
-if (section.type === "quoteGrid") {
-  properties = {
-    ...section,
-    items: section.items.map((item) => ({ ...item, image: item.image ? resolveAsset(site, item.image.assetId) : undefined }))
-  };
-}
 if (section.type === "storyCollection") {
   const stories = await providers.content.stories({ ids: section.entityIds });
   properties = { ...section, stories: stories.map((story) => ({ story, image: story.image ? resolveAsset(site, story.image) : undefined })) };

@@ -3,12 +3,14 @@ import type { Asset, Person } from "@entities/index";
 import Heading from "@components/Heading.astro";
 import PersonCard from "@components/PersonCard.astro";
 import Container from "@utilities/Container.astro";
-interface Props { id: string; heading?: string; people: Array<{ person: Person; image?: Asset }>; variant?: "cards" | "directory"; }
-const { id, heading, people, variant = "cards" } = Astro.props;
+interface Props { id: string; eyebrow?: string; heading?: string; people: Array<{ person: Person; image?: Asset }>; variant?: "cards" | "directory" | "quote"; }
+const { id, eyebrow, heading, people, variant = "cards" } = Astro.props;
+const cardVariant = variant === "directory" ? "directory" : variant === "quote" ? "quote" : "card";
 ---
 <section id={id} class="p-section" aria-labelledby={heading ? `${id}-heading` : undefined}>
   <Container>
+    {eyebrow && <p class="c-eyebrow">{eyebrow}</p>}
     {heading && <Heading as="h2" id={`${id}-heading`}>{heading}</Heading>}
-    <div class:list={["p-person-list", `p-person-list--${variant}`]}>{people.map(({ person, image }) => <PersonCard {person} {image} variant={variant === "directory" ? "directory" : "card"} />)}</div>
+    <div class:list={["p-person-list", `p-person-list--${variant}`]}>{people.map(({ person, image }) => <PersonCard {person} {image} variant={cardVariant} />)}</div>
   </Container>
 </section>

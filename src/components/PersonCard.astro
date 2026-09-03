@@ -2,15 +2,28 @@
 import type { Asset, Person } from "@entities/index";
 import Heading from "./Heading.astro";
 import Image from "./Image.astro";
-interface Props { person: Person; image?: Asset; variant?: "card" | "directory"; }
+interface Props { person: Person; image?: Asset; variant?: "card" | "directory" | "quote"; }
 const { person, image, variant = "card" } = Astro.props;
 ---
-<article class:list={["c-person-card", `c-person-card--${variant}`]}>
-  {image && <Image asset={image} />}
-  <div>
-    <Heading as="h3">{person.name}</Heading>
-    {(person.title || person.affiliation) && <p class="c-person-card__meta">{[person.title, person.affiliation].filter(Boolean).join(" · ")}</p>}
-    {person.bio && <p>{person.bio}</p>}
-    {person.contact?.email && <p><a href={`mailto:${person.contact.email}`}>{person.contact.email}</a></p>}
-  </div>
-</article>
+{variant === "quote" ? (
+  <article class="c-person-card c-person-card--quote">
+    <div class="c-person-card__header">
+      {image && <Image asset={image} />}
+      <div>
+        <Heading as="h3">{person.name}</Heading>
+        {(person.title || person.affiliation) && <p class="c-person-card__meta">{[person.title, person.affiliation].filter(Boolean).join(" · ")}</p>}
+      </div>
+    </div>
+    {person.bio && <blockquote><p>&ldquo;{person.bio}&rdquo;</p></blockquote>}
+  </article>
+) : (
+  <article class:list={["c-person-card", `c-person-card--${variant}`]}>
+    {image && <Image asset={image} />}
+    <div>
+      <Heading as="h3">{person.name}</Heading>
+      {(person.title || person.affiliation) && <p class="c-person-card__meta">{[person.title, person.affiliation].filter(Boolean).join(" · ")}</p>}
+      {person.bio && <p>{person.bio}</p>}
+      {person.contact?.email && <p><a href={`mailto:${person.contact.email}`}>{person.contact.email}</a></p>}
+    </div>
+  </article>
+)}

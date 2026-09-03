@@ -75,19 +75,16 @@
   .c-person-card--directory { border-block-end: var(--border-thin) solid var(--color-neutral-400); }
   .c-person-card .u-responsive-media img { aspect-ratio: 1; }
 
-  .c-quote-card { display: grid; gap: var(--space-3); }
-  .c-quote-card__header { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); gap: var(--space-3); align-items: center; }
-  .c-quote-card__media { margin: 0; }
-  .c-quote-card__media img { aspect-ratio: 1; object-fit: cover; }
-  .c-quote-card__name { font-family: var(--font-family-sans-bold); }
-  .c-quote-card__title { color: var(--text-muted); font-size: 0.8125rem; line-height: 1.35; }
-  .c-quote-card blockquote { margin: 0; }
-  .c-quote-card blockquote p { margin: 0; font-size: 0.9375rem; }
+  .c-person-card--quote { grid-template-columns: 1fr; gap: var(--space-3); padding-block: 0; }
+  .c-person-card--quote .c-person-card__header { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); gap: var(--space-3); align-items: start; }
+  .c-person-card--quote .c-person-card__meta { font-size: 0.8125rem; line-height: 1.35; }
+  .c-person-card--quote blockquote { margin: 0; }
+  .c-person-card--quote blockquote p { margin: 0; font-size: 0.9375rem; }
 
   @media (min-width: 42rem) {
-    .c-quote-card__header { grid-template-columns: 5rem minmax(0, 1fr); gap: var(--space-4); }
-    .c-quote-card__title { font-size: 0.9375rem; }
-    .c-quote-card blockquote p { font-size: 1rem; }
+    .c-person-card--quote .c-person-card__header { grid-template-columns: 5rem minmax(0, 1fr); gap: var(--space-4); }
+    .c-person-card--quote .c-person-card__meta { font-size: 0.9375rem; }
+    .c-person-card--quote blockquote p { font-size: 1rem; }
   }
 
   .c-stat { padding: var(--space-6); border-inline-start: var(--border-thick) solid var(--site-accent); }

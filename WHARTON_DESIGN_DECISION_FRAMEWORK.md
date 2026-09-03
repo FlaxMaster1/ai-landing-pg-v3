@@ -395,6 +395,7 @@ Use for Person entities. Registered variants:
 
 - card
 - directory
+- quote — a testimonial treatment: a compact photo/name/title header row followed by the person's `bio` rendered as a blockquote. Use when a set of named people are being presented as an editorial perspective/testimonial rather than a bio listing. `PersonList` renders this variant in a grid that stays two columns at every breakpoint (does not collapse to one column on narrow viewports) because the content is a small, fixed set of parallel quotes rather than an open-ended browsable collection.
 
 ### CardGrid
 Use when several Card-like items are peers and browsing is the primary behavior. Registered variants currently include editorial, promotional, and navigation.
