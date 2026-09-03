@@ -35,6 +35,11 @@
   .p-page-intro .u-container { display: grid; gap: var(--space-6); }
   .p-card-grid, .p-story-collection, .p-stats-group { display: grid; gap: 0.9375rem; }
   .p-card-grid--promotional { gap: 0.25rem; }
+  .p-quote-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-6) var(--space-4); }
+
+  @media (min-width: 42rem) {
+    .p-quote-grid { gap: var(--space-8) var(--space-8); }
+  }
   .p-feature-row { display: grid; gap: var(--space-8); align-items: center; }
   .p-feature-row__content { display: grid; gap: var(--space-4); }
   .p-feature-row__content .c-button { margin-block-start: var(--space-3); }

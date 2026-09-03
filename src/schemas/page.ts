@@ -79,6 +79,18 @@ export const sectionSchema = z.discriminatedUnion("type", [
     surface: z.enum(["brand-primary", "brand-accent", "subtle"]).default("brand-primary")
   }),
   baseSectionSchema.extend({
+    type: z.literal("quoteGrid"),
+    heading: z.string().optional(),
+    items: z.array(
+      z.object({
+        name: z.string().min(1),
+        title: z.string().optional(),
+        quote: z.string().min(1),
+        image: imageReferenceSchema.optional()
+      })
+    ).min(1)
+  }),
+  baseSectionSchema.extend({
     type: z.literal("statsGroup"),
     heading: z.string().optional(),
     items: z.array(z.object({ value: z.string().min(1), label: z.string().min(1), detail: z.string().optional() })).min(1)

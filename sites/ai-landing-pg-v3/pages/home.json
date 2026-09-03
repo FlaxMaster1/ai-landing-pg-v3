@@ -137,15 +137,35 @@
         "mediaPosition": "end"
       },
       {
-        "type": "featureRow",
+        "type": "quoteGrid",
         "id": "academic-leadership-quote",
         "eyebrow": "Leadership Perspective",
-        "heading": "Faculty-led learning for an AI-enabled world",
-        "text": "“AI can run the numbers, but it cannot necessarily tell us whether to believe them, what to do with them, or how to live with the consequences. Wharton’s value is teaching how to use knowledge well.”",
-        "image": {
-          "assetId": "michael-roberts"
-        },
-        "mediaPosition": "start"
+        "items": [
+          {
+            "name": "Cait Lamberton",
+            "title": "Professor of Marketing, Vice Dean, Undergraduate Division",
+            "quote": "Our role is to help students develop the discipline to learn first, because AI can be a tempting shortcut, and then move from superficial efficiency toward deeper, creative use.",
+            "image": { "assetId": "cait-lamberton" }
+          },
+          {
+            "name": "Michael Roberts",
+            "title": "Professor of Finance, Vice Dean, MBA Program",
+            "quote": "AI can run the numbers, but it cannot necessarily tell us whether to believe them, what to do with them, or how to live with the consequences. Wharton’s value is teaching how to use knowledge well.",
+            "image": { "assetId": "michael-roberts-leadership" }
+          },
+          {
+            "name": "Kevin Werbach",
+            "title": "Professor of Legal Studies & Business Ethics, Vice Dean, Executive MBA Program",
+            "quote": "[The Executive MBA] program gives [our students] dedicated time—in class, during in-person weekends and through assignments—to wrestle with where AI can automate work and make life easier, and where they should double down on the value they uniquely provide as human beings.",
+            "image": { "assetId": "kevin-werbach" }
+          },
+          {
+            "name": "Nancy Zhang",
+            "title": "Professor of Statistics and Data Science, Vice Dean, Doctoral Programs",
+            "quote": "AI can accelerate discovery, but it cannot replace the rigor of asking the right question, testing assumptions, and making the work transparent. Our job is to prepare scholars to use these tools with curiosity, discipline, and accountability.",
+            "image": { "assetId": "nancy-zhang" }
+          }
+        ]
       },
       {
         "type": "featureRow",

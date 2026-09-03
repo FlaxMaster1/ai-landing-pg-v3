@@ -72,6 +72,26 @@
     "alt": ""
   },
   {
+    "id": "cait-lamberton",
+    "file": "images/cait-lamberton.png",
+    "alt": "Cait Lamberton, Professor of Marketing, Vice Dean, Undergraduate Division"
+  },
+  {
+    "id": "michael-roberts-leadership",
+    "file": "images/michael-roberts-leadership.jpg",
+    "alt": "Michael Roberts, Professor of Finance, Vice Dean, MBA Program"
+  },
+  {
+    "id": "kevin-werbach",
+    "file": "images/kevin-werbach.png",
+    "alt": "Kevin Werbach, Professor of Legal Studies & Business Ethics, Vice Dean, Executive MBA Program"
+  },
+  {
+    "id": "nancy-zhang",
+    "file": "images/nancy-zhang.png",
+    "alt": "Nancy Zhang, Professor of Statistics and Data Science, Vice Dean, Doctoral Programs"
+  },
+  {
     "id": "ai-infograph-desktop",
     "file": "images/ai-infograph-desktop.png",
     "alt": "Wharton AI Leadership Journey Infographic",

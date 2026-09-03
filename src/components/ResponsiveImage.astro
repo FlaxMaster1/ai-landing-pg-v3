@@ -12,9 +12,6 @@ const { mobileAsset, desktopAsset, loading = "lazy", class: className } = Astro.
 const focalPositionDesktop = desktopAsset.focalPoint
   ? `${desktopAsset.focalPoint.x * 100}% ${desktopAsset.focalPoint.y * 100}%`
   : undefined;
-const focalPositionMobile = mobileAsset.focalPoint
-  ? `${mobileAsset.focalPoint.x * 100}% ${mobileAsset.focalPoint.y * 100}%`
-  : undefined;
 ---
 
 <figure class:list={["u-responsive-media", className]}>

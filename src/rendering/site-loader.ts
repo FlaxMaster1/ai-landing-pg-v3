@@ -105,6 +105,9 @@ function validateReferences(site: LoadedSite): void {
       if (section.type === "cardGrid") {
         requireIds(section.items.flatMap((item) => item.image ? [item.image.assetId] : []), assetIds, "asset IDs", page.route);
       }
+      if (section.type === "quoteGrid") {
+        requireIds(section.items.flatMap((item) => item.image ? [item.image.assetId] : []), assetIds, "asset IDs", page.route);
+      }
       if (section.type === "storyCollection") requireIds(section.entityIds, storyIds, "story IDs", page.route);
       if (section.type === "eventList") requireIds(section.entityIds, eventIds, "event IDs", page.route);
       if (section.type === "personList") requireIds(section.entityIds, personIds, "person IDs", page.route);
