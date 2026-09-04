@@ -1,7 +1,7 @@
 ---
 import type { Asset, Story } from "@entities/index";
 import Card from "./Card.astro";
-interface Props { story: Story; image?: Asset; variant?: "editorial" | "compact" | "feature"; }
+interface Props { story: Story; image?: Asset; variant?: "editorial" | "compact" | "feature" | "media-led"; }
 const { story, image, variant = "editorial" } = Astro.props;
 const eyebrow = [story.topic, story.date ? new Intl.DateTimeFormat("en-US", { month: "short", day: "numeric", year: "numeric", timeZone: "UTC" }).format(new Date(`${story.date}T00:00:00Z`)) : undefined].filter(Boolean).join(" · ");
 const contentCategory = story.topic

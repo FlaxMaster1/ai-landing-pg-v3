@@ -9,6 +9,6 @@ const { id, heading, stories, variant = "grid", columns = 3 } = Astro.props;
 <section id={id} class="p-section" aria-labelledby={heading ? `${id}-heading` : undefined}>
   <Container>
     {heading && <Heading as="h2" id={`${id}-heading`}>{heading}</Heading>}
-    <div class:list={["p-story-collection", `p-story-collection--${variant}`]} style={`--grid-columns: ${columns}`}>{stories.map(({ story, image }) => <StoryCard {story} {image} variant={variant === "featured" ? "feature" : variant === "list" ? "compact" : "editorial"} />)}</div>
+    <div class:list={["p-story-collection", `p-story-collection--${variant}`]} style={`--grid-columns: ${columns}`}>{stories.map(({ story, image }) => <StoryCard {story} {image} variant={variant === "featured" ? "feature" : variant === "list" ? "compact" : "media-led"} />)}</div>
   </Container>
 </section>
