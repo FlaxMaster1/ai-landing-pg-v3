@@ -23,7 +23,7 @@ describe("validated site content", () => {
   it("loads The Wharton AI Advantage campaign site", () => {
     const site = loadSite("ai-landing-pg-v3");
     expect(site.pages).toHaveLength(1);
-    expect(site.assets).toHaveLength(25);
+    expect(site.assets).toHaveLength(24);
     expect(site.entities.stories).toHaveLength(17);
     expect(site.navigation.primary.map(({ label }) => label)).toEqual([
       "Our Approach",

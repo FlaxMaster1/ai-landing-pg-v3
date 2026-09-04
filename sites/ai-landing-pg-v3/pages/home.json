@@ -250,7 +250,7 @@
           "mba-teamwork-leadership-ai"
         ],
         "variant": "grid",
-        "columns": 4
+        "columns": 2
       },
       {
         "type": "featureRow",

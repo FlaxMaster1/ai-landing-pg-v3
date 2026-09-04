@@ -117,14 +117,9 @@
     "alt": "Learning by Building: Inside Wharton's Generative AI Studio"
   },
   {
-    "id": "story-human-intuition-reasoning",
-    "file": "images/story-human-intuition-reasoning.jpg",
-    "alt": "How AI Is Reshaping Human Intuition and Reasoning"
-  },
-  {
-    "id": "story-blue-collar-work",
-    "file": "images/story-blue-collar-work.jpg",
-    "alt": "How AI Is Reshaping Blue-Collar Work and Skills"
+    "id": "story-podcast-generic",
+    "file": "images/story-podcast-generic.svg",
+    "alt": "Knowledge at Wharton podcast"
   },
   {
     "id": "story-mba-teamwork-leadership-ai",
