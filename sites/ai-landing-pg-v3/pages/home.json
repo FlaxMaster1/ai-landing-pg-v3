@@ -246,9 +246,11 @@
         "entityIds": [
           "holistic-ai-adoption",
           "ai-job-interviews",
-          "generative-ai-studio"
+          "generative-ai-studio",
+          "mba-teamwork-leadership-ai"
         ],
-        "variant": "grid"
+        "variant": "grid",
+        "columns": 4
       },
       {
         "type": "featureRow",

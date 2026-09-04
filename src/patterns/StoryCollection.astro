@@ -3,12 +3,12 @@ import type { Asset, Story } from "@entities/index";
 import Heading from "@components/Heading.astro";
 import StoryCard from "@components/StoryCard.astro";
 import Container from "@utilities/Container.astro";
-interface Props { id: string; heading?: string; stories: Array<{ story: Story; image?: Asset }>; variant?: "grid" | "list" | "featured"; }
-const { id, heading, stories, variant = "grid" } = Astro.props;
+interface Props { id: string; heading?: string; stories: Array<{ story: Story; image?: Asset }>; variant?: "grid" | "list" | "featured"; columns?: 2 | 3 | 4; }
+const { id, heading, stories, variant = "grid", columns = 3 } = Astro.props;
 ---
 <section id={id} class="p-section" aria-labelledby={heading ? `${id}-heading` : undefined}>
   <Container>
     {heading && <Heading as="h2" id={`${id}-heading`}>{heading}</Heading>}
-    <div class:list={["p-story-collection", `p-story-collection--${variant}`]}>{stories.map(({ story, image }) => <StoryCard {story} {image} variant={variant === "featured" ? "feature" : variant === "list" ? "compact" : "editorial"} />)}</div>
+    <div class:list={["p-story-collection", `p-story-collection--${variant}`]} style={`--grid-columns: ${columns}`}>{stories.map(({ story, image }) => <StoryCard {story} {image} variant={variant === "featured" ? "feature" : variant === "list" ? "compact" : "editorial"} />)}</div>
   </Container>
 </section>

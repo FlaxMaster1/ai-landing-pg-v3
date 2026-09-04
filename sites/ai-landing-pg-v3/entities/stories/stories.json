@@ -4,6 +4,7 @@
     "title": "Accountable Acceleration: Gen AI Fast-Tracks Into the Enterprise",
     "url": "https://knowledge.wharton.upenn.edu/special-report/2025-ai-adoption-report/",
     "excerpt": "The latest Wharton and GBK Collective study examines how enterprise AI use is moving from experimentation into everyday work—and what leaders are learning about adoption, value, and accountability.",
+    "image": "story-accountable-acceleration",
     "topic": "Special Reports",
     "source": "Knowledge at Wharton"
   },
@@ -12,6 +13,7 @@
     "title": "The Skills Mismatch Economy: Insights from the Wharton-Accenture Skills Index",
     "url": "https://knowledge.wharton.upenn.edu/special-report/2025-wharton-accenture-skills-gap-index/",
     "excerpt": "The Wharton–Accenture Skills Index reveals how AI is reshaping employer demand—and why specialized expertise, domain knowledge, and judgment are becoming more valuable.",
+    "image": "story-skills-mismatch",
     "topic": "Special Reports",
     "source": "Knowledge at Wharton"
   },
@@ -36,6 +38,7 @@
     "title": "Would You Trust AI for Ethical Advice?",
     "url": "https://knowledge.wharton.upenn.edu/article/would-you-trust-ai-for-ethical-advice/",
     "excerpt": "New research examines how people evaluate AI-generated ethical guidance—and how attitudes shift when the quality of that guidance becomes visible.",
+    "image": "story-ethical-advice",
     "topic": "Faculty Research",
     "source": "Knowledge at Wharton"
   },
@@ -44,6 +47,7 @@
     "title": "When Does AI Assistance Undermine Learning?",
     "url": "https://knowledge.wharton.upenn.edu/article/when-does-ai-assistance-undermine-learning/",
     "excerpt": "Wharton research shows how on-demand AI assistance can reduce productive struggle and weaken long-term skill development, even when learners recognize the risk.",
+    "image": "story-ai-learning",
     "topic": "Faculty Research",
     "source": "Knowledge at Wharton"
   },
@@ -60,6 +64,7 @@
     "title": "Learning by Building: Inside Wharton’s Generative AI Studio",
     "url": "https://ai-analytics.wharton.upenn.edu/news/learning-by-building-inside-whartons-generative-ai-studio/",
     "excerpt": "Inside a student experience where prototyping, critique, and weekly iteration turn experimentation into learning.",
+    "image": "story-generative-ai-studio",
     "topic": "News & Stories",
     "source": "Wharton AI & Analytics Initiative"
   },
@@ -100,6 +105,7 @@
     "title": "How AI Is Reshaping Human Intuition and Reasoning",
     "url": "https://knowledge.wharton.upenn.edu/podcast/ripple-effect/how-ai-is-reshaping-human-intuition-and-reasoning-gideon-nave-and-steven-shaw/",
     "excerpt": "Gideon Nave and Steven Shaw discuss what happens when people hand their reasoning over to AI instead of working through problems themselves.",
+    "image": "story-human-intuition-reasoning",
     "topic": "Multimedia",
     "source": "Knowledge at Wharton"
   },
@@ -108,6 +114,7 @@
     "title": "How AI Is Reshaping Blue-Collar Work and Skills",
     "url": "https://knowledge.wharton.upenn.edu/podcast/this-week-in-business/how-ai-is-reshaping-blue-collar-work-and-skills/",
     "excerpt": "Wharton professor Lynn Wu on how AI is changing what blue-collar jobs involve, and why problem-solving and adaptability matter more as it does.",
+    "image": "story-blue-collar-work",
     "topic": "Multimedia",
     "source": "Knowledge at Wharton"
   },
@@ -115,6 +122,7 @@
     "id": "holistic-ai-adoption",
     "title": "Companies still don’t know how to incorporate AI in a holistic way, says Wharton expert",
     "url": "https://www.msn.com/en-us/money/smallbusiness/companies-still-don-t-know-how-to-incorporate-ai-in-a-holistic-way-says-wharton-expert/ar-AA27yGFn?ocid=finance-verthp-feeds",
+    "image": "story-holistic-ai-adoption",
     "topic": "News & Stories",
     "source": "MSN"
   },
@@ -124,5 +132,14 @@
     "url": "https://www.wsj.com/lifestyle/careers/ai-job-interviews-hiring-decisions-c44d9e31",
     "topic": "News & Stories",
     "source": "The Wall Street Journal"
+  },
+  {
+    "id": "mba-teamwork-leadership-ai",
+    "title": "Wharton’s MBA Experience Begins With Teamwork, Leadership, and AI",
+    "url": "https://www.wharton.upenn.edu/whartons-mba-experience-begins-with-teamwork-leadership-and-ai/",
+    "excerpt": "Wharton’s MBA Pre-Term orientation introduces incoming students to AI alongside leadership and teamwork, preparing them to use AI tools with critical judgment and ethical awareness.",
+    "image": "story-mba-teamwork-leadership-ai",
+    "topic": "News & Stories",
+    "source": "The Wharton School"
   }
 ]

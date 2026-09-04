@@ -90,5 +90,50 @@
     "id": "nancy-zhang",
     "file": "images/nancy-zhang.png",
     "alt": "Nancy Zhang, Professor of Statistics and Data Science, Vice Dean, Doctoral Programs"
+  },
+  {
+    "id": "story-accountable-acceleration",
+    "file": "images/story-accountable-acceleration.jpg",
+    "alt": "Accountable Acceleration: Gen AI Fast-Tracks Into the Enterprise"
+  },
+  {
+    "id": "story-skills-mismatch",
+    "file": "images/story-skills-mismatch.jpg",
+    "alt": "The Skills Mismatch Economy: Insights from the Wharton-Accenture Skills Index"
+  },
+  {
+    "id": "story-ethical-advice",
+    "file": "images/story-ethical-advice.jpg",
+    "alt": "Would You Trust AI for Ethical Advice?"
+  },
+  {
+    "id": "story-ai-learning",
+    "file": "images/story-ai-learning.jpg",
+    "alt": "When Does AI Assistance Undermine Learning?"
+  },
+  {
+    "id": "story-generative-ai-studio",
+    "file": "images/story-generative-ai-studio.jpg",
+    "alt": "Learning by Building: Inside Wharton's Generative AI Studio"
+  },
+  {
+    "id": "story-human-intuition-reasoning",
+    "file": "images/story-human-intuition-reasoning.png",
+    "alt": "How AI Is Reshaping Human Intuition and Reasoning"
+  },
+  {
+    "id": "story-blue-collar-work",
+    "file": "images/story-blue-collar-work.png",
+    "alt": "How AI Is Reshaping Blue-Collar Work and Skills"
+  },
+  {
+    "id": "story-mba-teamwork-leadership-ai",
+    "file": "images/story-mba-teamwork-leadership-ai.jpg",
+    "alt": "Wharton's MBA Experience Begins With Teamwork, Leadership, and AI"
+  },
+  {
+    "id": "story-holistic-ai-adoption",
+    "file": "images/story-holistic-ai-adoption.jpg",
+    "alt": "Companies still don't know how to incorporate AI in a holistic way, says Wharton expert"
   }
 ]

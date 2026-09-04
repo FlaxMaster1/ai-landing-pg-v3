@@ -98,7 +98,8 @@ export const sectionSchema = z.discriminatedUnion("type", [
     type: z.literal("storyCollection"),
     heading: z.string().optional(),
     entityIds: z.array(z.string()).min(1),
-    variant: z.enum(["grid", "list", "featured"]).default("grid")
+    variant: z.enum(["grid", "list", "featured"]).default("grid"),
+    columns: z.union([z.literal(2), z.literal(3), z.literal(4)]).default(3)
   }),
   baseSectionSchema.extend({
     type: z.literal("eventList"),
