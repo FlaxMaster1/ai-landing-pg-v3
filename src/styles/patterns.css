@@ -35,6 +35,7 @@
   .p-page-intro .u-container { display: grid; gap: var(--space-6); }
   .p-card-grid, .p-story-collection, .p-stats-group { display: grid; gap: 0.9375rem; }
   .p-card-grid--promotional { gap: 0.25rem; }
+  .p-story-collection .c-card--media-led::after { background: linear-gradient(180deg, rgb(0 0 0 / 44%), rgb(0 0 0 / 74%)); }
   .p-feature-row { display: grid; gap: var(--space-8); align-items: center; }
   .p-feature-row__content { display: grid; gap: var(--space-4); }
   .p-feature-row__content .c-button { margin-block-start: var(--space-3); }
