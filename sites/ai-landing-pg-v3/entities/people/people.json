@@ -2,28 +2,32 @@
   {
     "id": "cait-lamberton",
     "name": "Cait Lamberton",
-    "title": "Professor of Marketing, Vice Dean, Undergraduate Division",
+    "title": "Professor of Marketing",
+    "affiliation": "Vice Dean, Undergraduate Division",
     "image": "cait-lamberton",
     "bio": "Our role is to help students develop the discipline to learn first, because AI can be a tempting shortcut, and then move from superficial efficiency toward deeper, creative use."
   },
   {
     "id": "michael-roberts-leadership",
     "name": "Michael Roberts",
-    "title": "Professor of Finance, Vice Dean, MBA Program",
+    "title": "Professor of Finance",
+    "affiliation": "Vice Dean, MBA Program",
     "image": "michael-roberts-leadership",
     "bio": "AI can run the numbers, but it cannot necessarily tell us whether to believe them, what to do with them, or how to live with the consequences. Wharton’s value is teaching how to use knowledge well."
   },
   {
     "id": "kevin-werbach",
     "name": "Kevin Werbach",
-    "title": "Professor of Legal Studies & Business Ethics, Vice Dean, Executive MBA Program",
+    "title": "Professor of Legal Studies & Business Ethics",
+    "affiliation": "Vice Dean, Executive MBA Program",
     "image": "kevin-werbach",
     "bio": "[The Executive MBA] program gives [our students] dedicated time—in class, during in-person weekends and through assignments—to wrestle with where AI can automate work and make life easier, and where they should double down on the value they uniquely provide as human beings."
   },
   {
     "id": "nancy-zhang",
     "name": "Nancy Zhang",
-    "title": "Professor of Statistics and Data Science, Vice Dean, Doctoral Programs",
+    "title": "Professor of Statistics and Data Science",
+    "affiliation": "Vice Dean, Doctoral Programs",
     "image": "nancy-zhang",
     "bio": "[Quote Pending]"
   }

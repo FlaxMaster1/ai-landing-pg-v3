@@ -11,7 +11,8 @@ const { person, image, variant = "card" } = Astro.props;
       {image && <Image asset={image} />}
       <div>
         <Heading as="h3">{person.name}</Heading>
-        {(person.title || person.affiliation) && <p class="c-person-card__meta">{[person.title, person.affiliation].filter(Boolean).join(" · ")}</p>}
+        {person.title && <p class="c-person-card__meta">{person.title}</p>}
+        {person.affiliation && <p class="c-person-card__meta">{person.affiliation}</p>}
       </div>
     </div>
     {person.bio && <blockquote><p>&ldquo;{person.bio}&rdquo;</p></blockquote>}
