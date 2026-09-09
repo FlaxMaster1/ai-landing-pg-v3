@@ -39,6 +39,7 @@
   .p-feature-row { display: grid; gap: var(--space-8); align-items: center; }
   .p-feature-row__content { display: grid; gap: var(--space-4); }
   .p-feature-row__heading-group { display: grid; gap: 0; }
+  .p-feature-row__heading-group h2:has(+ .p-feature-row__subtitle-group) { margin-block-end: 0; }
   .p-feature-row__subtitle-group { display: grid; gap: 0; }
   .p-feature-row__subtitle { color: var(--text-muted); font-size: 0.8125rem; line-height: 1.35; margin: 0; }
   .p-feature-row__content .c-button { margin-block-start: var(--space-3); }
