@@ -58,6 +58,7 @@ export const sectionSchema = z.discriminatedUnion("type", [
   baseSectionSchema.extend({
     type: z.literal("featureRow"),
     heading: z.string().min(1),
+    subtitle: z.string().min(1).optional(),
     text: z.string().min(1),
     links: z.array(z.object({ text: z.string().min(1), url: z.string().min(1), external: z.boolean().optional() })).optional(),
     image: imageReferenceSchema.optional(),
