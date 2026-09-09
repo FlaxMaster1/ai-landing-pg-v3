@@ -9,10 +9,5 @@
     { "label": "Exec Ed", "url": "https://executiveeducation.wharton.upenn.edu/", "external": true },
     { "label": "Wharton Online", "url": "https://online.wharton.upenn.edu/", "external": true }
   ],
-  "primary": [
-    { "label": "Our Approach", "url": "#approach" },
-    { "label": "Faculty Expertise", "url": "#faculty-expertise" },
-    { "label": "Student Experience", "url": "#student-experience" },
-    { "label": "Research and Insights", "url": "#research-insights" }
-  ]
+  "primary": []
 }
