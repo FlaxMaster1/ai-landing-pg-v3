@@ -25,12 +25,14 @@ const subtitleLines = subtitle?.split("\n").map((line) => line.trim()).filter(Bo
       ) : null}
     <div class="p-feature-row__content">
       {eyebrow && <p class="c-eyebrow">{eyebrow}</p>}
-      <Heading as="h2" id={`${id}-heading`}>{heading}</Heading>
-      {subtitleLines.length > 0 && (
-        <div class="p-feature-row__subtitle-group">
-          {subtitleLines.map((line) => <p class="p-feature-row__subtitle">{line}</p>)}
-        </div>
-      )}
+      <div class="p-feature-row__heading-group">
+        <Heading as="h2" id={`${id}-heading`}>{heading}</Heading>
+        {subtitleLines.length > 0 && (
+          <div class="p-feature-row__subtitle-group">
+            {subtitleLines.map((line) => <p class="p-feature-row__subtitle">{line}</p>)}
+          </div>
+        )}
+      </div>
       <p>{segments.map((segment) => segment.kind === "link"
         ? <Link href={segment.url} external={segment.external}>{segment.value}</Link>
         : segment.value)}</p>
