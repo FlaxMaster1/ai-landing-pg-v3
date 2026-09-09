@@ -12,7 +12,7 @@
     background: var(--surface-brand-primary);
     isolation: isolate;
   }
-  .p-hero--tall, .p-hero--media { min-block-size: min(18.125rem, calc(50svh - 11.375rem)); }
+  .p-hero--tall, .p-hero--media { min-block-size: 78px; }
   .p-hero::after {
     content: "";
     position: absolute;
