@@ -14,7 +14,11 @@
   .u-anchor-target { position: relative; inset-block-start: -6rem; }
   .u-responsive-media img { inline-size: 100%; block-size: 100%; object-fit: cover; aspect-ratio: 16 / 10; }
   .u-responsive-media figcaption { display: flex; justify-content: space-between; gap: var(--space-4); margin-block-start: var(--space-2); color: var(--text-muted); font-size: 0.85rem; }
-  #dean-james .u-responsive-media img { object-fit: contain; aspect-ratio: auto; inline-size: 100%; block-size: auto; }
+  #dean-james .u-responsive-media { inline-size: 100%; block-size: auto; }
+  #dean-james .u-responsive-media figure { inline-size: 100%; block-size: auto; margin: 0; }
+  #dean-james .u-responsive-media img { object-fit: contain; aspect-ratio: auto; inline-size: 100%; block-size: auto; max-height: none; }
+  #dean-james .u-responsive-media picture { display: block; inline-size: 100%; block-size: auto; }
+  #dean-james .p-feature-row__media { inline-size: 100%; block-size: auto; }
   .u-aspect-ratio { aspect-ratio: var(--aspect-ratio, 16 / 9); overflow: hidden; }
   @media (min-width: 62rem) {
     .u-visible-wide { display: initial; }
