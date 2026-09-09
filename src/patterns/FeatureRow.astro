@@ -12,6 +12,7 @@ interface VideoReference { provider?: "youtube" | "vimeo"; videoId: string; vide
 interface Props { id: string; eyebrow?: string; heading: string; subtitle?: string; text: string; links?: TextLink[]; image?: Asset; mobileImage?: Asset; video?: VideoReference; action?: Action; mediaPosition?: "start" | "end"; }
 const { id, eyebrow, heading, subtitle, text, links, image, mobileImage, video, action, mediaPosition = "start" } = Astro.props;
 const segments = linkifyText(text, links);
+const subtitleLines = subtitle?.split("\n").map((line) => line.trim()).filter(Boolean) ?? [];
 ---
 <section id={id} class="p-section" aria-labelledby={`${id}-heading`}>
   <Container class={`p-feature-row p-feature-row--media-${mediaPosition}`}>
@@ -25,7 +26,11 @@ const segments = linkifyText(text, links);
     <div class="p-feature-row__content">
       {eyebrow && <p class="c-eyebrow">{eyebrow}</p>}
       <Heading as="h2" id={`${id}-heading`}>{heading}</Heading>
-      {subtitle && <p class="p-feature-row__subtitle">{subtitle}</p>}
+      {subtitleLines.length > 0 && (
+        <div class="p-feature-row__subtitle-group">
+          {subtitleLines.map((line) => <p class="p-feature-row__subtitle">{line}</p>)}
+        </div>
+      )}
       <p>{segments.map((segment) => segment.kind === "link"
         ? <Link href={segment.url} external={segment.external}>{segment.value}</Link>
         : segment.value)}</p>
