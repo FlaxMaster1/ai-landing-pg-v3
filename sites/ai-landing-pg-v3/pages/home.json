@@ -58,15 +58,16 @@
         ]
       },
       {
-        "type": "featureRow",
-        "id": "dean-james",
-        "eyebrow": "From the Dean",
-        "heading": "Erika H. James",
-        "text": "“As AI continues to commoditize the world’s access to information, leaders need to prioritize the human skills AI can’t replicate. Things like sense-making, judgement, consensus-building, and above all, accountability. At Wharton, we believe people have and will continue to be essential to business’ ability to positively impact society. In this moment, we must make sure we don’t lose sight of humanity as AI becomes even more embedded in how we learn, work, and live.” — Dean, The Wharton School",
-        "image": {
-          "assetId": "erika-james"
+        “type”: “featureRow”,
+        “id”: “dean-james”,
+        “eyebrow”: “From the Dean”,
+        “heading”: “Erika H. James”,
+        “subtitle”: “Dean and Reliance Professor of Management and Private Enterprise”,
+        “text”: “”As AI continues to commoditize the world’s access to information, leaders need to prioritize the human skills AI can’t replicate. Things like sense-making, judgement, consensus-building, and above all, accountability. At Wharton, we believe people have and will continue to be essential to business’ ability to positively impact society. In this moment, we must make sure we don’t lose sight of humanity as AI becomes even more embedded in how we learn, work, and live.””,
+        “image”: {
+          “assetId”: “erika-james”
         },
-        "mediaPosition": "start"
+        “mediaPosition”: “start”
       },
       {
         "type": "featureRow",
