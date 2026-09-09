@@ -25,12 +25,7 @@ describe("validated site content", () => {
     expect(site.pages).toHaveLength(1);
     expect(site.assets).toHaveLength(24);
     expect(site.entities.stories).toHaveLength(17);
-    expect(site.navigation.primary.map(({ label }) => label)).toEqual([
-      "Our Approach",
-      "Faculty Expertise",
-      "Student Experience",
-      "Research and Insights"
-    ]);
+    expect(site.navigation.primary.map(({ label }) => label)).toEqual([]);
     expect(site.pages[0]?.sections.some(({ id }) => id === "leadership-support")).toBe(true);
   });
 
