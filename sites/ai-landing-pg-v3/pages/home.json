@@ -214,8 +214,14 @@
             }
           },
           {
-            "title": "AI Infrastructure",
-            "description": "As one of the first business schools to make bold investments in generative AI, we challenged our entire community to think differently about what it means to teach, learn, and live in an AI-enabled world. We are continuously expanding our portfolio of AI tools so that every student, faculty, and staff member can experiment in a safe and secure environment."
+            "title": "Leadership Program in AI and Analytics",
+            "description": "Designed for nontechnical senior executives with over ten years of experience, this six-month hybrid course equips you to evaluate artificial intelligence and machine learning through a strategic business lens. Rather than focusing on coding, participants learn to align new technology initiatives with enterprise strategy, navigate complex ethical and regulatory considerations, and develop actionable adoption roadmaps to drive measurable organizational growth.",
+            "action": {
+              "label": "Learn about AI Leadership",
+              "url": "https://online-execed.wharton.upenn.edu/leadership-program-in-ai-and-analytics?utm_source=wh&utm_campaign=school_website&utm_medium=website&_gl=1*aapfvf*_gcl_aw*R0NMLjE3ODc5MjQ1NzYuQ2p3S0NBanc0OFRVQmhCUkVpd0FLMEduUWJQcWZady1rdWdVX1FoTy1HQkJZdWpsb2k2Z2lyd1R5ZlRpWjI3TzNIRVNXUV9hX0F4eG5Sb0NmSTBRQXZEX0J3RQ..*_gcl_au*MTE5MTg2MzM0Mi4xNzgzMjk5NzQz*_ga*NDMxNjgyMTU5LjE3NDA0NTI5ODU.*_ga_K25YKFQT42*czE3ODkwMDY0NjMkbzQyJGcxJHQxNzg5MDA2NDcwJGo1MyRsMCRoMA..",
+              "type": "text",
+              "external": true
+            }
           },
           {
             "title": "A Global Community of AI Leaders",
