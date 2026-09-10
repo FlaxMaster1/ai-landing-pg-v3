@@ -131,7 +131,7 @@
   #leadership-support .c-card:nth-child(2)::after,
   #leadership-support .c-card:nth-child(3)::after { content: none; }
   #leadership-support .c-card__body { position: relative; align-self: end; }
-  #leadership-support .c-card__action { display: block; color: #0066ff; }
+  #leadership-support .c-card__action { display: block; color: #2FB6F2; }
   #leadership-support .c-card .u-responsive-media figcaption {
     display: block;
     padding-inline: 1.875rem;
