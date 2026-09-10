@@ -224,8 +224,14 @@
             }
           },
           {
-            "title": "A Global Community of AI Leaders",
-            "description": "Wharton has the largest business school alumni network on the planet. This community of 108,000+ leaders is deeply engaged with our students, sharing their real-world experience and perspectives on how their firms and industries are harnessing AI in real time."
+            "title": "Digital Strategy in the Era of AI Certificate",
+            "description": "Designed for working professionals, this fully online, four-course program equips you to navigate digital and AI-driven disruption. Rather than treating transformation as merely a technology issue, the curriculum emphasizes the strategic and organizational leadership required for success. You will learn to diagnose disruption, evaluate where AI creates true competitive advantage, and confidently translate digital initiatives into sustained action.",
+            "action": {
+              "label": "Turn AI Disruption Into a Competitive Advantage",
+              "url": "https://executiveeducation.wharton.upenn.edu/for-individuals/all-programs/digital-strategy-in-the-era-of-ai-certificate/",
+              "type": "text",
+              "external": true
+            }
           }
         ]
       },
